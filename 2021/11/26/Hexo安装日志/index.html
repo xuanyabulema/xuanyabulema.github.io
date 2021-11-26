@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="在Ubuntu server 20.04LTS上安装Hexo建议先用su切换为管理员账户，或用root账户登录这样子后续需要sudo的地方就不需要在打了，而且全程su能避免不必要的错误。 root登录Ubuntu流程 1、设置root密码：sudo passwd   2、重启   3、配置sshd_config文件sudo vi &#x2F;etc&#x2F;ssh&#x2F;sshd_config 1PermitRootLo">
+  <meta name="description" content="在Ubuntu server 20.04LTS上安装Hexo建议先用su切换为管理员账户，或用root账户登录这样子后续需要sudo的地方就不需要在打了，而且全程su能避免不必要的错误。 配置root账户登录ubuntu    Hexo简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo安装">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo安装日志">
 <meta property="og:url" content="http://example.com/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="在Ubuntu server 20.04LTS上安装Hexo建议先用su切换为管理员账户，或用root账户登录这样子后续需要sudo的地方就不需要在打了，而且全程su能避免不必要的错误。 root登录Ubuntu流程 1、设置root密码：sudo passwd   2、重启   3、配置sshd_config文件sudo vi &#x2F;etc&#x2F;ssh&#x2F;sshd_config 1PermitRootLo">
+<meta property="og:description" content="在Ubuntu server 20.04LTS上安装Hexo建议先用su切换为管理员账户，或用root账户登录这样子后续需要sudo的地方就不需要在打了，而且全程su能避免不必要的错误。 配置root账户登录ubuntu    Hexo简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。 Hexo安装">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126143949809.png">
 <meta property="og:image" content="http://example.com/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126144204257.png">
 <meta property="og:image" content="http://example.com/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126124826456.png">
 <meta property="og:image" content="http://example.com/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126125502218.png">
 <meta property="article:published_time" content="2021-11-26T07:39:29.000Z">
-<meta property="article:modified_time" content="2021-11-26T08:42:06.523Z">
+<meta property="article:modified_time" content="2021-11-26T08:51:42.583Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -180,7 +180,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-11-26 07:39:29 / Modified: 08:42:06" itemprop="dateCreated datePublished" datetime="2021-11-26T07:39:29+00:00">2021-11-26</time>
+              <time title="Created: 2021-11-26 07:39:29 / Modified: 08:51:42" itemprop="dateCreated datePublished" datetime="2021-11-26T07:39:29+00:00">2021-11-26</time>
             </span>
 
           
@@ -195,13 +195,10 @@
 
       
         <h1 id="在Ubuntu-server-20-04LTS上安装Hexo"><a href="#在Ubuntu-server-20-04LTS上安装Hexo" class="headerlink" title="在Ubuntu server 20.04LTS上安装Hexo"></a>在Ubuntu server 20.04LTS上安装Hexo</h1><h2 id="建议先用su切换为管理员账户，或用root账户登录"><a href="#建议先用su切换为管理员账户，或用root账户登录" class="headerlink" title="建议先用su切换为管理员账户，或用root账户登录"></a>建议先用<code>su</code>切换为管理员账户，或用root账户登录</h2><p>这样子后续需要<code>sudo</code>的地方就不需要在打了，而且全程<code>su</code>能避免不必要的错误。</p>
-<p>root登录Ubuntu流程</p>
-<p>1、设置root密码：<code>sudo passwd</code>  </p>
-<p>2、重启  </p>
-<p>3、配置<code>sshd_config</code>文件<code>sudo vi /etc/ssh/sshd_config</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin yes #（默认为#PermitRootLogin prohibit-password）</span><br></pre></td></tr></table></figure>
+<a href="/2021/11/26/%E9%85%8D%E7%BD%AEroot%E8%B4%A6%E6%88%B7%E7%99%BB%E5%BD%95ubuntu/" title="配置root账户登录ubuntu">配置root账户登录ubuntu</a>
 
-<p>4、重启服务器 service ssh restart</p>
+
+
 <h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> 是一个快速、简洁且高效的博客框架。Hexo 使用 <a target="_blank" rel="noopener" href="https://www.zhihu.com/topic/19590742/hot">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
 <h2 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h2><h3 id="安装前提一：安装git"><a href="#安装前提一：安装git" class="headerlink" title="安装前提一：安装git"></a>安装前提一：安装git</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git-core</span><br></pre></td></tr></table></figure>
 
@@ -317,7 +314,10 @@
     <a href="/2021/11/25/hello-world/" rel="prev" title="Hello World">
       <i class="fa fa-chevron-left"></i> Hello World
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/26/%E9%85%8D%E7%BD%AEroot%E8%B4%A6%E6%88%B7%E7%99%BB%E5%BD%95ubuntu/" rel="next" title="配置root账户登录ubuntu">
+      配置root账户登录ubuntu <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -390,12 +390,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
