@@ -12,6 +12,8 @@
 <blockquote>
 <p><a href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></p>
 </blockquote>
+<span id="more"></span>
+
 <h2 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h2><h3 id="安装前提一：安装git"><a href="#安装前提一：安装git" class="headerlink" title="安装前提一：安装git"></a>安装前提一：安装git</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install git-core</span><br></pre></td></tr></table></figure>
 
 <h3 id="安装前提二：安装Nodejs"><a href="#安装前提二：安装Nodejs" class="headerlink" title="安装前提二：安装Nodejs"></a>安装前提二：安装Nodejs</h3><blockquote>
@@ -133,6 +135,26 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true</span><br><span class="line">  time: true</span><br><span class="line">  total_symbols: true</span><br><span class="line">  total_time: true</span><br><span class="line">  exclude_codeblock: false</span><br><span class="line">  awl: 4</span><br><span class="line">  wpm: 275</span><br><span class="line">  suffix: &quot;mins.&quot;</span><br></pre></td></tr></table></figure>
 
 <p>字数统计严重不对，感觉统计的是字符数</p>
+<h2 id="添加阅读全文"><a href="#添加阅读全文" class="headerlink" title="添加阅读全文"></a>添加阅读全文</h2><blockquote>
+<p><a href="https://theme-next.iissnan.com/faqs.html#read-more">https://theme-next.iissnan.com/faqs.html#read-more</a></p>
+</blockquote>
+<p>将下述内容添加到项添加的范围即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="为博客加上妹子"><a href="#为博客加上妹子" class="headerlink" title="为博客加上妹子"></a>为博客加上妹子</h2><blockquote>
+<p><a href="https://blog.csdn.net/as480133937/article/details/100138838#t26">https://blog.csdn.net/as480133937/article/details/100138838#t26</a></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+
+<p>然后在<code>_config.yml</code>中添加参数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: false</span><br><span class="line">  log: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-&lt;你喜欢的模型名字&gt;</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: true</span><br></pre></td></tr></table></figure>
+
+<p>在站点目录下建文件夹<code>live2d_models</code>，</p>
+<p>再在<code>live2d_models</code>下建文件夹<code>&lt;你喜欢的模型名字&gt;</code>,</p>
+<p>再在<code>&lt;你喜欢的模型名字&gt;</code>下建<code>json</code>文件：<code>&lt;你喜欢的模型名字&gt;.model.json</code></p>
+<p>最后安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install --save live2d-widget-model-&lt;你喜欢的模型名字&gt;</span><br></pre></td></tr></table></figure>
+
 <h1 id="部署Hexo到GitHub"><a href="#部署Hexo到GitHub" class="headerlink" title="部署Hexo到GitHub"></a>部署Hexo到GitHub</h1><h2 id="生成ssh-key以配置和使用GitHub"><a href="#生成ssh-key以配置和使用GitHub" class="headerlink" title="生成ssh key以配置和使用GitHub"></a>生成ssh key以配置和使用GitHub</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;XXXX@email.com&quot;</span><br></pre></td></tr></table></figure>
 
 <p><a href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">查看秘钥并添加至GitHub</a></p>
@@ -187,6 +209,8 @@
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<span id="more"></span>
+
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
@@ -208,6 +232,10 @@
 
 <p>4、重启服务器 service ssh restart</p>
 ]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>Ubuntu</category>
+      </categories>
       <tags>
         <tag>Ubuntu</tag>
       </tags>
