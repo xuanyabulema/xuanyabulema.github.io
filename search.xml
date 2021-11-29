@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo多端同步|迁移</title>
+    <url>/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/</url>
+    <content><![CDATA[<h1 id="新建GitHub分支以保存Hexo博客源文件"><a href="#新建GitHub分支以保存Hexo博客源文件" class="headerlink" title="新建GitHub分支以保存Hexo博客源文件"></a>新建GitHub分支以保存Hexo博客源文件</h1>]]></content>
+      <categories>
+        <category>折腾</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo安装日志</title>
-    <url>/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/</url>
+    <url>/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/</url>
     <content><![CDATA[<h1 id="在Ubuntu-server-20-04LTS上安装Hexo"><a href="#在Ubuntu-server-20-04LTS上安装Hexo" class="headerlink" title="在Ubuntu server 20.04LTS上安装Hexo"></a>在Ubuntu server 20.04LTS上安装Hexo</h1><h2 id="建议先用su切换为管理员账户，或用root账户登录"><a href="#建议先用su切换为管理员账户，或用root账户登录" class="headerlink" title="建议先用su切换为管理员账户，或用root账户登录"></a>建议先用<code>su</code>切换为管理员账户，或用root账户登录</h2><p>这样子后续需要<code>sudo</code>的地方就不需要在打了，而且全程<code>su</code>能避免不必要的错误。</p>
 <a href="/2021/11/26/%E9%85%8D%E7%BD%AEroot%E8%B4%A6%E6%88%B7%E7%99%BB%E5%BD%95Ubuntu/" title="配置root账户登录Ubuntu">配置root账户登录Ubuntu</a>
 
@@ -110,11 +123,11 @@
 
 <p>当该配置被应用后，使用<code>hexo new</code>命令创建新文章时，会生成相同名字的文件夹，也就是文章资源文件夹。</p>
 <p>修改Typora配置</p>
-<p><img src="/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126143949809.png" alt="image-20211126143949809"></p>
+<p><img src="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126143949809.png" alt="image-20211126143949809"></p>
 <p>如复制网络路径的图片<code>https://...../image.jpg</code>粘贴到Typora中叫<code>文章名</code>的文章后，图片会自动变为<code>![](文章名/image.jpg)</code>。</p>
 <p>但我们知道部署后，文件路径是不同的，所以当我们插入完所有的图片后，我们还需要删除每个图片路径中的<code>文件名/</code>。不慌，也很简单。</p>
 <p>在Typora编辑器中，使用<code>&lt;C-f&gt;</code>快捷键，将所有的<code>文章名/</code>替换为空即可删除。</p>
-<p><img src="/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126144204257.png" alt="image-20211126144204257"></p>
+<p><img src="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126144204257.png" alt="image-20211126144204257"></p>
 <h2 id="浏览页面显示当前浏览进度"><a href="#浏览页面显示当前浏览进度" class="headerlink" title="浏览页面显示当前浏览进度"></a>浏览页面显示当前浏览进度</h2><p>打开 <code>themes/next/_config.yml</code>，搜索关键字 <code>scrollpercent</code>，把 <code>false</code> 改为 <code>true</code>。</p>
 <h2 id="Local-Search本地搜索"><a href="#Local-Search本地搜索" class="headerlink" title="Local Search本地搜索"></a>Local Search本地搜索</h2><p>安装插件<code>hexo-generator-searchdb</code></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
@@ -164,11 +177,11 @@
 <p>验证是否连接成功</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126124826456.png" alt="image-20211126124826456"></p>
+<p><img src="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126124826456.png" alt="image-20211126124826456"></p>
 <h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
 
 <h2 id="新建一个GitHub仓库来保存网页"><a href="#新建一个GitHub仓库来保存网页" class="headerlink" title="新建一个GitHub仓库来保存网页"></a>新建一个GitHub仓库来保存网页</h2><p>格式为<code>&lt;你的 GitHub 用户名&gt;.github.io</code></p>
-<p><img src="/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126125502218.png" alt="image-20211126125502218"></p>
+<p><img src="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126125502218.png" alt="image-20211126125502218"></p>
 <h2 id="修改-config-yml"><a href="#修改-config-yml" class="headerlink" title="修改_config.yml"></a>修改<code>_config.yml</code></h2><p>修改末尾为</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: 创建的仓库地址</span><br><span class="line">  branch: 创建的仓库地址的默认分支</span><br></pre></td></tr></table></figure>
 
@@ -200,6 +213,31 @@
         <tag>Hexo</tag>
         <tag>Ubuntu</tag>
         <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo文章模板设置</title>
+    <url>/2021/11/29/Hexo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<blockquote>
+<p><a href="https://shmilybaozi.github.io/2018/11/05/hexo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE/">hexo文章模板设置</a></p>
+</blockquote>
+<p>模板文件信息位于<code>blog/scaffold </code>文件夹下的 <code>post.md</code> 和 <code>draft.md</code></p>
+<p>对应就是 <code>hexo new [layout] &lt;title&gt;</code> 中的 <code>layout</code> , 默认为 <code>post</code>, 草稿为 <code>draft</code>, 如果标题包含空格的话，请使用引号括起来。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line"><span class="section">categories:</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">点击阅读前文前, 首页能看到的文章的简短描述</span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>折腾</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>

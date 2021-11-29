@@ -23,14 +23,14 @@
   <meta name="description" content="在Ubuntu server 20.04LTS上安装Hexo建议先用su切换为管理员账户，或用root账户登录这样子后续需要sudo的地方就不需要在打了，而且全程su能避免不必要的错误。 配置root账户登录Ubuntu    Hexo简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  Hexo中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo安装日志">
-<meta property="og:url" content="https://xuanyabulema.github.io/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/index.html">
+<meta property="og:url" content="https://xuanyabulema.github.io/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/index.html">
 <meta property="og:site_name" content="悬崖不勒马的小站">
 <meta property="og:description" content="在Ubuntu server 20.04LTS上安装Hexo建议先用su切换为管理员账户，或用root账户登录这样子后续需要sudo的地方就不需要在打了，而且全程su能避免不必要的错误。 配置root账户登录Ubuntu    Hexo简介Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  Hexo中">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://xuanyabulema.github.io/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126143949809.png">
-<meta property="og:image" content="https://xuanyabulema.github.io/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126144204257.png">
-<meta property="og:image" content="https://xuanyabulema.github.io/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126124826456.png">
-<meta property="og:image" content="https://xuanyabulema.github.io/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126125502218.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126143949809.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126144204257.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126124826456.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126125502218.png">
 <meta property="article:published_time" content="2021-11-25T23:39:29.000Z">
 <meta property="article:modified_time" content="2021-11-27T10:00:05.917Z">
 <meta property="article:author" content="悬崖不勒马">
@@ -38,9 +38,9 @@
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="GitHub">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://xuanyabulema.github.io/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126143949809.png">
+<meta name="twitter:image" content="https://xuanyabulema.github.io/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126143949809.png">
 
-<link rel="canonical" href="https://xuanyabulema.github.io/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/">
+<link rel="canonical" href="https://xuanyabulema.github.io/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/">
 
 
 <script id="page-configurations">
@@ -196,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xuanyabulema.github.io/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/">
+    <link itemprop="mainEntityOfPage" href="https://xuanyabulema.github.io/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -367,11 +367,11 @@
 
 <p>当该配置被应用后，使用<code>hexo new</code>命令创建新文章时，会生成相同名字的文件夹，也就是文章资源文件夹。</p>
 <p>修改Typora配置</p>
-<p><img src="/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126143949809.png" alt="image-20211126143949809"></p>
+<p><img src="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126143949809.png" alt="image-20211126143949809"></p>
 <p>如复制网络路径的图片<code>https://...../image.jpg</code>粘贴到Typora中叫<code>文章名</code>的文章后，图片会自动变为<code>![](文章名/image.jpg)</code>。</p>
 <p>但我们知道部署后，文件路径是不同的，所以当我们插入完所有的图片后，我们还需要删除每个图片路径中的<code>文件名/</code>。不慌，也很简单。</p>
 <p>在Typora编辑器中，使用<code>&lt;C-f&gt;</code>快捷键，将所有的<code>文章名/</code>替换为空即可删除。</p>
-<p><img src="/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126144204257.png" alt="image-20211126144204257"></p>
+<p><img src="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126144204257.png" alt="image-20211126144204257"></p>
 <h2 id="浏览页面显示当前浏览进度"><a href="#浏览页面显示当前浏览进度" class="headerlink" title="浏览页面显示当前浏览进度"></a>浏览页面显示当前浏览进度</h2><p>打开 <code>themes/next/_config.yml</code>，搜索关键字 <code>scrollpercent</code>，把 <code>false</code> 改为 <code>true</code>。</p>
 <h2 id="Local-Search本地搜索"><a href="#Local-Search本地搜索" class="headerlink" title="Local Search本地搜索"></a>Local Search本地搜索</h2><p>安装插件<code>hexo-generator-searchdb</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
@@ -421,11 +421,11 @@
 <p>验证是否连接成功</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126124826456.png" alt="image-20211126124826456"></p>
+<p><img src="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126124826456.png" alt="image-20211126124826456"></p>
 <h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
 
 <h2 id="新建一个GitHub仓库来保存网页"><a href="#新建一个GitHub仓库来保存网页" class="headerlink" title="新建一个GitHub仓库来保存网页"></a>新建一个GitHub仓库来保存网页</h2><p>格式为<code>&lt;你的 GitHub 用户名&gt;.github.io</code></p>
-<p><img src="/2021/11/25/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126125502218.png" alt="image-20211126125502218"></p>
+<p><img src="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126125502218.png" alt="image-20211126125502218"></p>
 <h2 id="修改-config-yml"><a href="#修改-config-yml" class="headerlink" title="修改_config.yml"></a>修改<code>_config.yml</code></h2><p>修改末尾为</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: 创建的仓库地址</span><br><span class="line">  branch: 创建的仓库地址的默认分支</span><br></pre></td></tr></table></figure>
 
@@ -548,7 +548,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -561,7 +561,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
