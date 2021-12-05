@@ -11,7 +11,9 @@ categories:
 
 # 新建GitHub分支以保存Hexo博客源文件
 
-![image-20211205170753314](Hexo多端同步-迁移/image-20211205170753314.png)
+![image-20211205170753314](image-20211205170753314.png)
+
+<!-- more -->
 
 # 将本地Hexo目录与GitHub的Hexo分支关联上
 
@@ -30,7 +32,7 @@ cd xuanyabulema.github.io/
 
 用`ll`查看文件
 
-![image-20211205171837598](Hexo多端同步-迁移/image-20211205171837598.png)
+![image-20211205171837598](image-20211205171837598.png)
 
 删除`.git/`以外的所有文件
 
@@ -45,7 +47,7 @@ rm -fr !(.git/)
 
 ```shell
 git add -A 
-git commit -m "Hexoy"
+git commit -m "Hexo源文件同步"
 git push origin 
 ```
 
@@ -61,4 +63,18 @@ mv xuanyabulema.github.io/.git/ blog/.git/
 rm -rf .git/
 rm -rf .gitignore
 ```
+
+将变化同步到GitHub
+
+```shell
+git add -A 
+git commit -m "Hexo源文件同步"
+git push origin 
+```
+
+# 新环境配置与同步
+
+
+
+
 
