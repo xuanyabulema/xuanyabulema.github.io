@@ -45,7 +45,7 @@ rm -fr !(.git/)
 
 ```shell
 git add -A 
-git commit -m "--"
+git commit -m "Hexoy"
 git push origin 
 ```
 
