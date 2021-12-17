@@ -2,7 +2,6 @@
 title: Hexo安装日志
 date: 2021-11-26 07:39:29
 categories: 
-- 折腾
 - Hexo
 tags: [Hexo,Ubuntu,GitHub]
 ---
