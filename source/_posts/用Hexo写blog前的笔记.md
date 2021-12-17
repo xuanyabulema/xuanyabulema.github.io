@@ -26,6 +26,8 @@ pickle.dump(a_dict, file)
 file.close()
 ```
 
+<!-- more -->
+
 读取
 
 ```python
@@ -35,8 +37,6 @@ with open('pickle_example.pickle', 'rb') as file:
  
 print(a_dict1)
 ```
-
-<!-- more -->
 
 ## matplotlib.pyplot使用
 
