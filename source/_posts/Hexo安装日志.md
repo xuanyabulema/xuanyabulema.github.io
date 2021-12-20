@@ -429,6 +429,12 @@ npm install --save live2d-widget-model-<你喜欢的模型名字>
 sudo ssh-keygen -t rsa -C "XXXX@email.com"
 ```
 
+以我的为例
+
+```shell
+sudo ssh-keygen -t rsa -C "xuanyabulema@qq.com"
+```
+
 [查看秘钥并添加至GitHub](https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
 ```shell
