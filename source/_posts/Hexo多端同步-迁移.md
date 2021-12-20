@@ -101,8 +101,20 @@ ssh -T git@github.com
 
 ## 将Github上的Hexo源Blog文件同步到本地`./blog`目录下
 
-```
+```shell
 git clone -b Hexo git@github.com:xuanyabulema/xuanyabulema.github.io.git ./blog
+```
+
+变更后同步到Github
+
+```shell
+git add -A && git commit -m "Hexo源文件同步" && git push origin 
+```
+
+其他端变更后同步到本地
+
+```shell
+git pull
 ```
 
 ## 安装Hexo环境
