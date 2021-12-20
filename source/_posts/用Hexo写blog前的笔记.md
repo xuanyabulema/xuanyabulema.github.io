@@ -633,8 +633,8 @@ https://zh.wikipedia.org/wiki/%E5%8F%8C%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC
 tar -xvf FileName.tar 
 tar -cvf FileName.tar DirName	#(注：tar是打包，不是压缩！)
 
-tar -zcvf archive_name.tar.gz directory_to_compress 	# 压缩文件夹
-tar -zxvf archive_name.tar.gz 							# 解压文件夹
+tar -zcvf archive_name.tar.gz directory_to_compress     # 压缩文件夹
+tar -zxvf archive_name.tar.gz                           # 解压文件夹
 ```
 
 ## cp  文件（夹）拷贝
@@ -659,9 +659,9 @@ cp [options] source... directory
 
 ```shell 
 # 将dir1下所有文件复制到dir2下
-cp -r dir1 dir2 	# 如果dir2目录不存在
-cp -r dir1/. dir2 	# 如果dir2目录已存在
-					# 如果这时使用cp -r dir1 dir2,则也会将dir1目录复制到dir2中，明显不符合要求。
+cp -r dir1 dir2     # 如果dir2目录不存在
+cp -r dir1/. dir2   # 如果dir2目录已存在
+                    # 如果这时使用cp -r dir1 dir2,则也会将dir1目录复制到dir2中，明显不符合要求。
 
 ```
 
@@ -681,9 +681,9 @@ mv [options] source... directory
 - **-u**：当源文件比目标文件新或者目标文件不存在时，才执行移动操作。
 
 ```shell
-mv source_file dest_file			# 将源文件名 source_file 改为目标文件名 dest_file
-mv source_file dest_directory   	# 将文件 source_file 移动到目标目录 dest_directory 中
-mv source_directory dest_directory 	# 目录名 dest_directory 已存在，将 source_directory 移动到目录名 dest_directory 中；目录名 dest_directory 不存在则 source_directory 改名为目录名 dest_directory
+mv source_file dest_file            # 将源文件名 source_file 改为目标文件名 dest_file
+mv source_file dest_directory       # 将文件 source_file 移动到目标目录 dest_directory 中
+mv source_directory dest_directory  # 目录名 dest_directory 已存在，将 source_directory 移动到目录名 dest_directory 中；目录名 dest_directory 不存在则 source_directory 改名为目录名 dest_directory
 ```
 
 ## Linux反选删除文件
