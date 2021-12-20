@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo多端同步|迁移</title>
+    <url>/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/</url>
+    <content><![CDATA[<h1 id="新建GitHub分支以保存Hexo博客源文件"><a href="#新建GitHub分支以保存Hexo博客源文件" class="headerlink" title="新建GitHub分支以保存Hexo博客源文件"></a>新建GitHub分支以保存Hexo博客源文件</h1><p><img src="/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/image-20211205170753314.png" alt="image-20211205170753314"></p>
+<span id="more"></span>
+
+<h1 id="将本地Hexo目录与GitHub的Hexo分支关联上"><a href="#将本地Hexo目录与GitHub的Hexo分支关联上" class="headerlink" title="将本地Hexo目录与GitHub的Hexo分支关联上"></a>将本地Hexo目录与GitHub的Hexo分支关联上</h1><p>先将<code>Hexo</code>分支文件clone到本地：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git <span class="built_in">clone</span> -b 分支名 仓库链接</span></span><br><span class="line">git clone -b Hexo git@github.com:xuanyabulema/xuanyabulema.github.io.git</span><br></pre></td></tr></table></figure>
+
+<p>进入拷贝到本地的文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd xuanyabulema.github.io/</span><br></pre></td></tr></table></figure>
+
+<p>用<code>ll</code>查看文件</p>
+<p><img src="/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/image-20211205171837598.png" alt="image-20211205171837598"></p>
+<p>删除<code>.git/</code>以外的所有文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">shopt -s extglob      #（打开extglob模式）</span><br><span class="line">rm -fr !(.git/)  </span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果是多个要排除的，可以这样：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> rm -rf !(file1|file2)</span> </span><br></pre></td></tr></table></figure>
+
+<p>将变化同步到GitHub</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A </span><br><span class="line">git commit -m &quot;Hexo源文件同步&quot;</span><br><span class="line">git push origin </span><br></pre></td></tr></table></figure>
+
+<p>将<code>.git/</code>移到你的本地Hexo源文件夹<code>blog</code>根目录下</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mv xuanyabulema.github.io/.git/ blog/.git/</span><br></pre></td></tr></table></figure>
+
+<p>将博客目录下 themes 文件夹下每个主题文件夹里面的 .git .gitignore 删掉。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -rf .git/</span><br><span class="line">rm -rf .gitignore</span><br></pre></td></tr></table></figure>
+
+<p>将变化同步到GitHub</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A </span><br><span class="line">git commit -m &quot;Hexo源文件同步&quot;</span><br><span class="line">git push origin </span><br></pre></td></tr></table></figure>
+
+<h1 id="新环境配置与同步"><a href="#新环境配置与同步" class="headerlink" title="新环境配置与同步"></a>新环境配置与同步</h1><h2 id="新环境生成ssh-key"><a href="#新环境生成ssh-key" class="headerlink" title="新环境生成ssh key"></a>新环境生成ssh key</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;XXXX@email.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>以我的为例</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;xuanyabulema@qq.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">查看秘钥并添加至GitHub</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat .ssh/id_rsa.qub</span><br></pre></td></tr></table></figure>
+
+<p>然后将<code>cat</code>获取到的结果存至GitHub</p>
+<p>验证是否连接成功</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="将Github上的Hexo源Blog文件同步到本地-blog目录下"><a href="#将Github上的Hexo源Blog文件同步到本地-blog目录下" class="headerlink" title="将Github上的Hexo源Blog文件同步到本地./blog目录下"></a>将Github上的Hexo源Blog文件同步到本地<code>./blog</code>目录下</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone -b Hexo git@github.com:xuanyabulema/xuanyabulema.github.io.git ./blog</span><br></pre></td></tr></table></figure>
+
+<p>变更后同步到Github</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A &amp;&amp; git commit -m &quot;Hexo源文件同步&quot; &amp;&amp; git push origin </span><br></pre></td></tr></table></figure>
+
+<p>其他端变更后同步到本地</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装Hexo环境"><a href="#安装Hexo环境" class="headerlink" title="安装Hexo环境"></a>安装Hexo环境</h2><p><a href="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/#Hexo安装">之前写过</a></p>
+<p>安装Nodejs</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Using Ubuntu</span></span><br><span class="line">curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+
+<p>安装Hexo</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
+
+<p>安装nmp依赖</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo安装日志</title>
+    <url>/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[<h1 id="在Ubuntu-server-20-04LTS上安装Hexo"><a href="#在Ubuntu-server-20-04LTS上安装Hexo" class="headerlink" title="在Ubuntu server 20.04LTS上安装Hexo"></a>在Ubuntu server 20.04LTS上安装Hexo</h1><h2 id="建议先用su切换为管理员账户，或用root账户登录"><a href="#建议先用su切换为管理员账户，或用root账户登录" class="headerlink" title="建议先用su切换为管理员账户，或用root账户登录"></a>建议先用<code>su</code>切换为管理员账户，或用root账户登录</h2><p>这样子后续需要<code>sudo</code>的地方就不需要在打了，而且全程<code>su</code>能避免不必要的错误。</p>
+<a href="/2021/11/26/%E9%85%8D%E7%BD%AEroot%E8%B4%A6%E6%88%B7%E7%99%BB%E5%BD%95Ubuntu/" title="配置root账户登录Ubuntu">配置root账户登录Ubuntu</a>
+
+
+
+<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p><a href="https://hexo.io/zh-cn/docs/">Hexo</a> 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://www.zhihu.com/topic/19590742/hot">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<blockquote>
+<p><a href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h2><h3 id="安装前提一：安装git"><a href="#安装前提一：安装git" class="headerlink" title="安装前提一：安装git"></a>安装前提一：安装git</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install git-core</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装前提二：安装Nodejs"><a href="#安装前提二：安装Nodejs" class="headerlink" title="安装前提二：安装Nodejs"></a>安装前提二：安装Nodejs</h3><blockquote>
+<p><a href="https://github.com/nodesource/distributions#deb">安装Nodejs</a></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Using Ubuntu</span></span><br><span class="line">curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+
+<p>验证安装结果：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node -v </span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p><strong>可安装cnpm替代npm，从而使用国内的淘宝源（可选）</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<p>此安装方式，npm和cnpm不冲突，都可使用。</p>
+<h3 id="正式安装Hexo"><a href="#正式安装Hexo" class="headerlink" title="正式安装Hexo"></a>正式安装Hexo</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
+
+<p>可使用<code>cnpm</code>代替安装<code>sudo cnpm install -g hexo-cli </code>。</p>
+<p>验证安装结果：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="新建一个Blog"><a href="#新建一个Blog" class="headerlink" title="新建一个Blog"></a>新建一个Blog</h2><h3 id="创建Blog存放目录并进行初始化"><a href="#创建Blog存放目录并进行初始化" class="headerlink" title="创建Blog存放目录并进行初始化"></a>创建Blog存放目录并进行初始化</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir blog # 新建一个目录，来保存blog文件，出问题删除该文件夹即可进行重建</span><br><span class="line">cd blog </span><br><span class="line">sudo hexo init # 初始化</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动并预览"><a href="#启动并预览" class="headerlink" title="启动并预览"></a>启动并预览</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo hexo s</span><br></pre></td></tr></table></figure>
+
+<p>在浏览器输入<code>ip:4000</code>即可查看</p>
+<p><code>ip</code>为你搭建Hexo的系统的ip地址，以我为例，即我的Ubuntu系统ip</p>
+<h3 id="新建一片文章"><a href="#新建一片文章" class="headerlink" title="新建一片文章"></a>新建一片文章</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo hexo n &quot;新的文章&quot;</span><br></pre></td></tr></table></figure>
+
+<p>会在你建立的<code>your_blog_directory</code>路径下的<code>/source/_posts/</code>里创建<code>新的文章.md</code>，便可用<a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a>写文章了</p>
+<p>以我为例<code>新的文章.md</code>在目录<code>blog/source/_posts/</code>下</p>
+<h3 id="添加文章后清除缓存文件并重新生成静态文件"><a href="#添加文章后清除缓存文件并重新生成静态文件" class="headerlink" title="添加文章后清除缓存文件并重新生成静态文件"></a>添加文章后清除缓存文件并重新生成静态文件</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo hexo clean &amp;&amp; sudo hexo g</span><br></pre></td></tr></table></figure>
+
+<h1 id="Hexo配置"><a href="#Hexo配置" class="headerlink" title="Hexo配置"></a>Hexo配置</h1><p>在 Hexo 中有两份主要的配置文件，其名称都是<code> _config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的站点配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/hexo/_config.yml</span><br><span class="line">/hexo/themes/next/_config.yml</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a href="https://blog.csdn.net/as480133937/article/details/100138838">Hexo-Next 主题博客个性化配置超详细，超全面(两万字)</a></p>
+</blockquote>
+<h2 id="Hexo基础配置"><a href="#Hexo基础配置" class="headerlink" title="Hexo基础配置"></a>Hexo基础配置</h2><h3 id="作者、语言、时区等设置"><a href="#作者、语言、时区等设置" class="headerlink" title="作者、语言、时区等设置"></a>作者、语言、时区等设置</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Site</span></span><br><span class="line">title: 悬崖不勒马的小站</span><br><span class="line">subtitle: &#x27;&#x27;</span><br><span class="line">description: &#x27;&#x27;</span><br><span class="line">keywords:</span><br><span class="line">author: 悬崖不勒马</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia/Shanghai</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> URL</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span></span><br><span class="line">url: https://xuanyabulema.github.io</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="修改并配置Hexo主题"><a href="#修改并配置Hexo主题" class="headerlink" title="修改并配置Hexo主题"></a>修改并配置Hexo主题</h2><h3 id="替换主题"><a href="#替换主题" class="headerlink" title="替换主题"></a>替换主题</h3><p>以我安装<a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/README.md">nexT</a>主题为例</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd blog</span><br><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+
+<p>更改主题，修改配置文件<code>_config.yml</code>，找到如下代码：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># Themes: https://hexo.io/themes/</span></span></span><br><span class="line">theme: landscape</span><br></pre></td></tr></table></figure>
+
+<p>将<code>theme: landscape</code>改为</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加分类界面"><a href="#添加分类界面" class="headerlink" title="添加分类界面"></a>添加分类界面</h3><blockquote>
+<p><a href="https://tohugo.com/2021/01/26/%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE/Hexo%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE%EF%BC%88%E5%9C%A8Next%E4%B8%BB%E9%A2%98%E4%B8%8B%EF%BC%89/">Hexo添加分类及标签（在Next主题下）</a></p>
+</blockquote>
+<h4 id="新建分类界面"><a href="#新建分类界面" class="headerlink" title="新建分类界面"></a>新建分类界面</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<p>成功后会提示：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">INFO  Created: ~/blog/source/categories/index.md</span><br></pre></td></tr></table></figure>
+
+<p>这样就创建了分类页面，但是这个时候主题还不会识别这个页面为分类页，需要编辑这个新建的页面，让主题识别这个页面，并自动为这个页面显示分类。</p>
+<p>修改<code>index.md</code>为：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 文章分类</span><br><span class="line">date: 2021-01-25 22:37:25</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改主题配置文件"><a href="#修改主题配置文件" class="headerlink" title="修改主题配置文件"></a>修改主题配置文件</h4><p>在<code>themes/next/_config.yml</code>，找到如下代码：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line"><span class="meta">  #</span><span class="bash">about: /about/ || user</span></span><br><span class="line"><span class="meta">  #</span><span class="bash">tags: /tags/ || tags</span></span><br><span class="line"><span class="meta">  #</span><span class="bash">categories: /categories/ || th</span></span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line"><span class="meta">  #</span><span class="bash">schedule: /schedule/ || calendar</span></span><br><span class="line"><span class="meta">  #</span><span class="bash">sitemap: /sitemap.xml || sitemap</span></span><br><span class="line"><span class="meta">  #</span><span class="bash">commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
+
+<p>把 categories 前面的 # 删除，因为默认页面是没有标签界面与分类界面，所以需要我们手动创建添加。</p>
+<h4 id="给文章添加分类信息"><a href="#给文章添加分类信息" class="headerlink" title="给文章添加分类信息"></a>给文章添加分类信息</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo安装日志</span><br><span class="line">date: 2021-11-26 07:39:29</span><br><span class="line">categories: </span><br><span class="line"><span class="bullet">-</span> 折腾</span><br><span class="line"><span class="bullet">-</span> Hexo</span><br><span class="line"><span class="section">tags: [Hexo,ubuntu]</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<p>如上设置二级分类则该篇文章为 折腾分类下的 Hexo分类下。</p>
+<h3 id="添加标签界面"><a href="#添加标签界面" class="headerlink" title="添加标签界面"></a>添加标签界面</h3><p>同分类界面，类似的</p>
+<h4 id="新建标签界面"><a href="#新建标签界面" class="headerlink" title="新建标签界面"></a>新建标签界面</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<p>修改<code>index.md</code>为：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2021-01-25 22:37:25</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改主题配置文件-1"><a href="#修改主题配置文件-1" class="headerlink" title="修改主题配置文件"></a>修改主题配置文件</h4><p>在<code>themes/next/_config.yml</code>，找到如下代码：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line"><span class="meta">  #</span><span class="bash">about: /about/ || user</span></span><br><span class="line"><span class="meta">  #</span><span class="bash">tags: /tags/ || tags</span></span><br><span class="line"><span class="meta">  #</span><span class="bash">categories: /categories/ || th</span></span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line"><span class="meta">  #</span><span class="bash">schedule: /schedule/ || calendar</span></span><br><span class="line"><span class="meta">  #</span><span class="bash">sitemap: /sitemap.xml || sitemap</span></span><br><span class="line"><span class="meta">  #</span><span class="bash">commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
+
+<p>把 tags 前面的 # 删除</p>
+<h4 id="给文章添加标签信息"><a href="#给文章添加标签信息" class="headerlink" title="给文章添加标签信息"></a>给文章添加标签信息</h4><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo安装日志</span><br><span class="line">date: 2021-11-26 07:39:29</span><br><span class="line">categories: </span><br><span class="line"><span class="bullet">-</span> 折腾</span><br><span class="line"><span class="bullet">-</span> Hexo</span><br><span class="line"><span class="section">tags: [Hexo,ubuntu]</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure>
+
+<p>则标签为”Hexo”和”ubuntu”</p>
+<h2 id="配置Markdown与Typora搭配添加图片"><a href="#配置Markdown与Typora搭配添加图片" class="headerlink" title="配置Markdown与Typora搭配添加图片"></a>配置Markdown与Typora搭配添加图片</h2><blockquote>
+<p><a href="https://juejin.cn/post/6882619951857811469">hexo博客中如何插入图片</a></p>
+</blockquote>
+<p>安装插件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo npm install hexo-renderer-marked</span><br></pre></td></tr></table></figure>
+
+<p>修改<code>config.yaml</code>配置：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">post_asset_folder: true</span><br><span class="line">marked:</span><br><span class="line">  prependRoot: true</span><br><span class="line">  postAsset: true</span><br></pre></td></tr></table></figure>
+
+<p>当该配置被应用后，使用<code>hexo new</code>命令创建新文章时，会生成相同名字的文件夹，也就是文章资源文件夹。</p>
+<p>修改Typora配置</p>
+<p><img src="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126143949809.png" alt="image-20211126143949809"></p>
+<p>如复制网络路径的图片<code>https://...../image.jpg</code>粘贴到Typora中叫<code>文章名</code>的文章后，图片会自动变为<code>![](文章名/image.jpg)</code>。</p>
+<p>但我们知道部署后，文件路径是不同的，所以当我们插入完所有的图片后，我们还需要删除每个图片路径中的<code>文件名/</code>。不慌，也很简单。</p>
+<p>在Typora编辑器中，使用<code>&lt;C-f&gt;</code>快捷键，将所有的<code>文章名/</code>替换为空即可删除。</p>
+<p><img src="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126144204257.png" alt="image-20211126144204257"></p>
+<h2 id="浏览页面显示当前浏览进度"><a href="#浏览页面显示当前浏览进度" class="headerlink" title="浏览页面显示当前浏览进度"></a>浏览页面显示当前浏览进度</h2><p>打开 <code>themes/next/_config.yml</code>，搜索关键字 <code>scrollpercent</code>，把 <code>false</code> 改为 <code>true</code>。</p>
+<h2 id="Local-Search本地搜索"><a href="#Local-Search本地搜索" class="headerlink" title="Local Search本地搜索"></a>Local Search本地搜索</h2><p>安装插件<code>hexo-generator-searchdb</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<p>修改<code>_config.yml</code>站点配置文件，新增以下内容到任意位置：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">path: search.xml</span><br><span class="line">field: post</span><br><span class="line">format: html</span><br><span class="line">limit: 10000</span><br></pre></td></tr></table></figure>
+
+<p>编辑  <code>themes/next/_config.yml</code>，启用本地搜索功能：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Local search</span></span><br><span class="line">local_search:</span><br><span class="line">enable: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="增加文章字数统计及阅读时常功能"><a href="#增加文章字数统计及阅读时常功能" class="headerlink" title="增加文章字数统计及阅读时常功能"></a>增加文章字数统计及阅读时常功能</h2><blockquote>
+<p><a href="https://github.com/theme-next/hexo-symbols-count-time">https://github.com/theme-next/hexo-symbols-count-time</a></p>
+</blockquote>
+<p>安装插件<code>hexo-symbols-count-time</code>,执行以下命令:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-symbols-count-time</span><br></pre></td></tr></table></figure>
+
+<p>修改<code>_config.yml</code>站点配置文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true</span><br><span class="line">  time: true</span><br><span class="line">  total_symbols: true</span><br><span class="line">  total_time: true</span><br><span class="line">  exclude_codeblock: false</span><br><span class="line">  awl: 4</span><br><span class="line">  wpm: 275</span><br><span class="line">  suffix: &quot;mins.&quot;</span><br></pre></td></tr></table></figure>
+
+<p>字数统计严重不对，感觉统计的是字符数</p>
+<h2 id="添加阅读全文"><a href="#添加阅读全文" class="headerlink" title="添加阅读全文"></a>添加阅读全文</h2><blockquote>
+<p><a href="https://theme-next.iissnan.com/faqs.html#read-more">https://theme-next.iissnan.com/faqs.html#read-more</a></p>
+</blockquote>
+<p>将下述内容添加到项添加的范围即可</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="为博客加上妹子"><a href="#为博客加上妹子" class="headerlink" title="为博客加上妹子"></a>为博客加上妹子</h2><blockquote>
+<p><a href="https://blog.csdn.net/as480133937/article/details/100138838#t26">https://blog.csdn.net/as480133937/article/details/100138838#t26</a></p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+
+<p>然后在<code>_config.yml</code>中添加参数</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: false</span><br><span class="line">  log: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-&lt;你喜欢的模型名字&gt;</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: true</span><br></pre></td></tr></table></figure>
+
+<p>在站点目录下建文件夹<code>live2d_models</code>，</p>
+<p>再在<code>live2d_models</code>下建文件夹<code>&lt;你喜欢的模型名字&gt;</code>,</p>
+<p>再在<code>&lt;你喜欢的模型名字&gt;</code>下建<code>json</code>文件：<code>&lt;你喜欢的模型名字&gt;.model.json</code></p>
+<p>最后安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install --save live2d-widget-model-&lt;你喜欢的模型名字&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="部署Hexo到GitHub"><a href="#部署Hexo到GitHub" class="headerlink" title="部署Hexo到GitHub"></a>部署Hexo到GitHub</h1><h2 id="生成ssh-key以配置和使用GitHub"><a href="#生成ssh-key以配置和使用GitHub" class="headerlink" title="生成ssh key以配置和使用GitHub"></a>生成ssh key以配置和使用GitHub</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;XXXX@email.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>以我的为例</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;xuanyabulema@qq.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">查看秘钥并添加至GitHub</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat .ssh/id_rsa.qub</span><br></pre></td></tr></table></figure>
+
+<p>然后将<code>cat</code>获取到的结果存至GitHub</p>
+<p>验证是否连接成功</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126124826456.png" alt="image-20211126124826456"></p>
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<h2 id="新建一个GitHub仓库来保存网页"><a href="#新建一个GitHub仓库来保存网页" class="headerlink" title="新建一个GitHub仓库来保存网页"></a>新建一个GitHub仓库来保存网页</h2><p>格式为<code>&lt;你的 GitHub 用户名&gt;.github.io</code></p>
+<p><img src="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/image-20211126125502218.png" alt="image-20211126125502218"></p>
+<h2 id="修改-config-yml"><a href="#修改-config-yml" class="headerlink" title="修改_config.yml"></a>修改<code>_config.yml</code></h2><p>修改末尾为</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: 创建的仓库地址</span><br><span class="line">  branch: 创建的仓库地址的默认分支</span><br></pre></td></tr></table></figure>
+
+<p>以我的为例子</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:xuanyabulema/xuanyabulema.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<h2 id="推送到GitHub"><a href="#推送到GitHub" class="headerlink" title="推送到GitHub"></a>推送到GitHub</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo hexo clean &amp;&amp; sudo hexo d</span><br></pre></td></tr></table></figure>
+
+<p>浏览器输入<code>&lt;你的 GitHub 用户名&gt;.github.io</code>，即可访问</p>
+<p>欢迎访问我的<code>xuanyabulema.github.io</code></p>
+<h2 id="一个坑"><a href="#一个坑" class="headerlink" title="一个坑"></a>一个坑</h2><h3 id="err-Error-Spawn-failed"><a href="#err-Error-Spawn-failed" class="headerlink" title="err: Error: Spawn failed"></a><code>err: Error: Spawn failed</code></h3><p>如果用非root用户<code>ssh-keygen -t rsa -C &quot;XXXX@email.com&quot;</code>，创建将会可以连接的上GitHub，但是在<code>hexo d</code>部署到GitHub时总是失败。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL &#123;</span><br><span class="line">  err: Error: Spawn failed</span><br><span class="line">      at ChildProcess.&lt;anonymous&gt; (/home/zekuan/blog/node_modules/hexo-util/lib/spawn.js:51:21)</span><br><span class="line">      at ChildProcess.emit (node:events:390:28)</span><br><span class="line">      at Process.ChildProcess._handle.onexit (node:internal/child_process:290:12) &#123;</span><br><span class="line">    code: 128</span><br><span class="line">  &#125;</span><br><span class="line">&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s https://hexo.io/docs/troubleshooting.html</span><br></pre></td></tr></table></figure>
+
+<h3 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a><a href="https://bababadboy.github.io/2017/07/15/%E8%BF%9B%E9%80%80%E4%B8%A4%E9%9A%BE-%E7%94%A8%E6%88%B7%E6%9D%83%E9%99%90%E4%B8%8E%E6%AE%B5%E9%94%99%E8%AF%AF/">解决方式</a></h3><p>删除当前已有的<code>.ssh/</code>下的文件</p>
+<p>使用</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;XXXX@email.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>然后将<code>/root/.ssh/id_rsa.pub</code>下的秘钥添加至GitHub，并进行重新推送<code>sudo hexo clean &amp;&amp; sudo hexo d</code></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></p>
+<p><a href="https://github.com/nodesource/distributions#deb">安装Nodejs</a></p>
+<p><a href="https://juejin.cn/post/6882619951857811469">hexo博客中如何插入图片</a></p>
+<p><a href="https://blog.csdn.net/as480133937/article/details/100138838">Hexo-Next 主题博客个性化配置超详细，超全面(两万字)</a></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Ubuntu</tag>
+        <tag>GitHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo常用命令</title>
+    <url>/2021/12/17/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="重新生成Hexo-Blog文件并在本地预览"><a href="#重新生成Hexo-Blog文件并在本地预览" class="headerlink" title="重新生成Hexo Blog文件并在本地预览"></a>重新生成Hexo Blog文件并在本地预览</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<h2 id="重新生成Hexo-Blog文件并部署到Github"><a href="#重新生成Hexo-Blog文件并部署到Github" class="headerlink" title="重新生成Hexo Blog文件并部署到Github"></a>重新生成Hexo Blog文件并部署到Github</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<h2 id="同步整个Hexo文件至Github"><a href="#同步整个Hexo文件至Github" class="headerlink" title="同步整个Hexo文件至Github"></a>同步整个Hexo文件至Github</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A &amp;&amp; git commit -m &quot;Hexo源文件同步&quot; &amp;&amp; git push origin </span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo文章模板设置</title>
+    <url>/2021/11/29/Hexo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<blockquote>
+<p><a href="https://shmilybaozi.github.io/2018/11/05/hexo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE/">hexo文章模板设置</a></p>
+</blockquote>
+<p>模板文件信息位于<code>blog/scaffold </code>文件夹下的 <code>post.md</code> 和 <code>draft.md</code></p>
+<p>对应就是 <code>hexo new [layout] &lt;title&gt;</code> 中的 <code>layout</code> , 默认为 <code>post</code>, 草稿为 <code>draft</code>, 如果标题包含空格的话，请使用引号括起来。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line"><span class="section">categories:</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">点击阅读前文前, 首页能看到的文章的简短描述</span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/12/20/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<span id="more"></span>
+
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>用Hexo写blog前的笔记</title>
+    <url>/2021/12/17/%E7%94%A8Hexo%E5%86%99blog%E5%89%8D%E7%9A%84%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="Snake边缘检测算法"><a href="#Snake边缘检测算法" class="headerlink" title="Snake边缘检测算法"></a>Snake边缘检测算法</h2><p><a href="https://blog.csdn.net/juanjuan1314/article/details/80606532">snake算法总结_老笨妞-CSDN博客_snake算法</a></p>
+<h2 id="使用pickle进行数据的保存与读取"><a href="#使用pickle进行数据的保存与读取" class="headerlink" title="使用pickle进行数据的保存与读取"></a>使用pickle进行数据的保存与读取</h2><p>保存</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line">a_dict = &#123;<span class="string">&#x27;da&#x27;</span>: <span class="number">111</span>, <span class="number">2</span>: [<span class="number">23</span>,<span class="number">1</span>,<span class="number">4</span>], <span class="string">&#x27;23&#x27;</span>: &#123;<span class="number">1</span>:<span class="number">2</span>,<span class="string">&#x27;d&#x27;</span>:<span class="string">&#x27;sad&#x27;</span>&#125;&#125;</span><br><span class="line"><span class="comment"># pickle a variable to a file</span></span><br><span class="line">file = <span class="built_in">open</span>(<span class="string">&#x27;pickle_example.pickle&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line">pickle.dump(a_dict, file)</span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>读取</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># reload a file to a variable</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;pickle_example.pickle&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    a_dict1 =pickle.load(file)</span><br><span class="line"> </span><br><span class="line"><span class="built_in">print</span>(a_dict1)</span><br></pre></td></tr></table></figure>
+
+<h2 id="matplotlib-pyplot使用"><a href="#matplotlib-pyplot使用" class="headerlink" title="matplotlib.pyplot使用"></a>matplotlib.pyplot使用</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">matpltlib.pyplot.figure(</span><br><span class="line">num = <span class="literal">None</span>,               <span class="comment"># 设定figure名称。系统默认按数字升序命名的figure_num（透视表输出窗口）e.g. “figure1”。可自行设定figure名称，名称或是INT，或是str类型；</span></span><br><span class="line">figsize=<span class="literal">None</span>,             <span class="comment"># 设定figure尺寸。系统默认命令是rcParams[&quot;figure.fig.size&quot;] = [6.4, 4.8]，即figure长宽为6.4 * 4.8；</span></span><br><span class="line">dpi=<span class="literal">None</span>,                 <span class="comment"># 设定figure像素密度。系统默命令是rcParams[&quot;sigure.dpi&quot;] = 100；</span></span><br><span class="line">facecolor=<span class="literal">None</span>,           <span class="comment"># 设定figure背景色。系统默认命令是rcParams[&quot;figure.facecolor&quot;] = &#x27;w&#x27;，即白色white；</span></span><br><span class="line"><span class="comment"># 设定要不要绘制轮廓&amp;轮廓颜色。系统默认绘制轮廓，轮廓染色rcParams[&quot;figure.edgecolor&quot;]=&#x27;w&#x27;,即白色white；</span></span><br><span class="line">edgecolor=<span class="literal">None</span>, frameon=<span class="literal">True</span>,    </span><br><span class="line">FigureClass=&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">matplotlib</span>.<span class="title">figure</span>.<span class="title">Figure</span>&#x27;&gt;,   # 设定使不使用一个<span class="title">figure</span>模板。系统默认不使用；</span></span><br><span class="line"><span class="class"><span class="title">clear</span>=<span class="title">False</span>,                     # 设定当同名<span class="title">figure</span>存在时，是否替换它。系统默认<span class="title">False</span>，即不替换。</span></span><br><span class="line"><span class="class">**<span class="title">kwargs</span>)</span></span><br></pre></td></tr></table></figure>
+
+<p>示例一</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, axes = plt.subplots(<span class="number">2</span>, <span class="number">3</span>, num=<span class="string">f&#x27;图片标题&#x27;</span>)  </span><br><span class="line">ax1 = axes[<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">ax2 = axes[<span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line">ax3 = axes[<span class="number">0</span>, <span class="number">2</span>]</span><br><span class="line">ax4 = axes[<span class="number">1</span>, <span class="number">0</span>]</span><br><span class="line">ax5 = axes[<span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">ax6 = axes[<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">axes = [ax1, ax2, ax3, ax4, ax5, ax6]</span><br><span class="line"><span class="keyword">for</span> ax <span class="keyword">in</span> axes:  <span class="comment"># 每个子图设置</span></span><br><span class="line">    ax.set_xticks([]), ax.set_yticks([])  <span class="comment"># 隐藏坐标轴数值</span></span><br><span class="line">    ax.set_xlim([xmin,xmax]) <span class="comment"># s</span></span><br><span class="line">    ax.set_title(<span class="string">&#x27;title&#x27;</span>, fontsize=<span class="number">16</span>, fontfamily=<span class="string">&#x27;sans-serif&#x27;</span>)</span><br><span class="line">    ax.set_xlabel(<span class="string">&#x27;moving image&#x27;</span>, fontsize=<span class="number">14</span>, fontfamily=<span class="string">&#x27;sans-serif&#x27;</span>, fontstyle=<span class="string">&#x27;italic&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>示例二</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment"># First create some toy data:</span></span><br><span class="line">x = np.linspace(<span class="number">0</span>, <span class="number">2</span>*np.pi, <span class="number">400</span>)</span><br><span class="line">y = np.sin(x**<span class="number">2</span>)</span><br><span class="line"><span class="comment"># Create just a figure and only one subplot</span></span><br><span class="line">fig, ax = plt.subplots()</span><br><span class="line">ax.plot(x, y)</span><br><span class="line">ax.set_title(<span class="string">&#x27;Simple plot&#x27;</span>)</span><br><span class="line"><span class="comment"># Create two subplots and unpack the output array immediately</span></span><br><span class="line">f, (ax1, ax2) = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, sharey=<span class="literal">True</span>)</span><br><span class="line">ax1.plot(x, y)</span><br><span class="line">ax1.set_title(<span class="string">&#x27;Sharing Y axis&#x27;</span>)</span><br><span class="line">ax2.scatter(x, y)</span><br><span class="line"><span class="comment"># Create four polar axes and access them through the returned array</span></span><br><span class="line">fig, axs = plt.subplots(<span class="number">2</span>, <span class="number">2</span>, subplot_kw=<span class="built_in">dict</span>(projection=<span class="string">&quot;polar&quot;</span>))</span><br><span class="line">axs[<span class="number">0</span>, <span class="number">0</span>].plot(x, y)</span><br><span class="line">axs[<span class="number">1</span>, <span class="number">1</span>].scatter(x, y)</span><br><span class="line"><span class="comment"># Share a X axis with each column of subplots</span></span><br><span class="line">plt.subplots(<span class="number">2</span>, <span class="number">2</span>, sharex=<span class="string">&#x27;col&#x27;</span>)</span><br><span class="line"><span class="comment"># Share a Y axis with each row of subplots</span></span><br><span class="line">plt.subplots(<span class="number">2</span>, <span class="number">2</span>, sharey=<span class="string">&#x27;row&#x27;</span>)</span><br><span class="line"><span class="comment"># Share both X and Y axes with all subplots</span></span><br><span class="line">plt.subplots(<span class="number">2</span>, <span class="number">2</span>, sharex=<span class="string">&#x27;all&#x27;</span>, sharey=<span class="string">&#x27;all&#x27;</span>)</span><br><span class="line"><span class="comment"># Note that this is the same as</span></span><br><span class="line">plt.subplots(<span class="number">2</span>, <span class="number">2</span>, sharex=<span class="literal">True</span>, sharey=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># Create figure number 10 with a single subplot</span></span><br><span class="line"><span class="comment"># and clears it if it already exists.</span></span><br><span class="line">fig, ax = plt.subplots(num=<span class="number">10</span>, clear=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="散点图"><a href="#散点图" class="headerlink" title="散点图"></a>散点图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment">#分别存放所有点的横坐标和纵坐标，一一对应</span></span><br><span class="line">x_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>]</span><br><span class="line">y_list = [<span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="comment">#创建图并命名</span></span><br><span class="line">plt.figure(<span class="string">&#x27;Scatter fig&#x27;</span>)</span><br><span class="line">ax = plt.gca()</span><br><span class="line"><span class="comment">#设置x轴、y轴名称</span></span><br><span class="line">ax.set_xlabel(<span class="string">&#x27;x&#x27;</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line"><span class="comment">#画散点图，以x_list中的值为横坐标，以y_list中的值为纵坐标</span></span><br><span class="line"><span class="comment">#参数c指定点的颜色，s指定点的大小,alpha指定点的透明度</span></span><br><span class="line">ax.scatter(x_list, y_list, c=<span class="string">&#x27;r&#x27;</span>, s=<span class="number">20</span>, alpha=<span class="number">0.5</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h3 id="连线图"><a href="#连线图" class="headerlink" title="连线图"></a>连线图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment">#分别存放所有点的横坐标和纵坐标，一一对应</span></span><br><span class="line">x_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>]</span><br><span class="line">y_list = [<span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="comment">#创建图并命名</span></span><br><span class="line">plt.figure(<span class="string">&#x27;Line fig&#x27;</span>)</span><br><span class="line">ax = plt.gca()</span><br><span class="line"><span class="comment">#设置x轴、y轴名称</span></span><br><span class="line">ax.set_xlabel(<span class="string">&#x27;x&#x27;</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">&#x27;y&#x27;</span>)</span><br><span class="line"><span class="comment">#画连线图，以x_list中的值为横坐标，以y_list中的值为纵坐标</span></span><br><span class="line"><span class="comment">#参数c指定连线的颜色，linewidth指定连线宽度，alpha指定连线的透明度</span></span><br><span class="line">ax.plot(x_list, y_list, color=<span class="string">&#x27;r&#x27;</span>, linewidth=<span class="number">1</span>, alpha=<span class="number">0.6</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h3 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment">#数据</span></span><br><span class="line">x_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>]</span><br><span class="line">y_list = [<span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">plt.figure(<span class="string">&#x27;Bar fig&#x27;</span>)</span><br><span class="line">ax = plt.gca()</span><br><span class="line">ax.set_xlabel(<span class="string">&#x27;value&#x27;</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">&#x27;count&#x27;</span>)</span><br><span class="line"><span class="comment">#每个直方在x轴上的位置，代表着在x轴上的一个（些）绝对的位置，可以是整数或浮点数</span></span><br><span class="line">xticks = np.arange(<span class="number">1</span>, <span class="built_in">len</span>(x_list)+<span class="number">1</span>)</span><br><span class="line"><span class="comment">#每个直方的宽度</span></span><br><span class="line">bar_width=<span class="number">0.5</span></span><br><span class="line"><span class="comment">#在xticks指定的位置画y_list指定高度的、width指定宽度的直方图</span></span><br><span class="line"><span class="comment">#edgecolor指定每个直方的边框颜色</span></span><br><span class="line"><span class="comment">#传入的xticks与y_list的长度必须相等！</span></span><br><span class="line">ax.bar(xticks, y_list, width=bar_width, edgecolor=<span class="string">&#x27;none&#x27;</span>)</span><br><span class="line">ax.set_xticks(xticks)</span><br><span class="line"><span class="comment">#每个直方下边显示的label，传入的参数为一个列表，列表里可以是数字也可以是字符串</span></span><br><span class="line">ax.set_xticklabels(x_list)</span><br><span class="line"><span class="comment">#横轴的显示范围，该范围小于xticks的范围会造成一部分直方显示不出来</span></span><br><span class="line">ax.set_xlim(<span class="number">0</span>,<span class="built_in">len</span>(xticks)+<span class="number">1</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<img src="%E7%AC%94%E8%AE%B0/image-20210706201916373.png" alt="image-20210706201916373" style="zoom: 33%;" />
+
+
+
+<h3 id="矢量箭头图"><a href="#矢量箭头图" class="headerlink" title="矢量箭头图"></a>矢量箭头图</h3><p><a href="https://www.kuxai.com/post/93">https://www.kuxai.com/post/93</a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">quiver([X, Y], U, V, [C], **kw)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">X, Y define the arrow locations, U, V define the arrow directions, and C optionally sets the color.</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fig, ax = plt.subplots()</span><br><span class="line">x, y = np.meshgrid(np.arange(<span class="number">0</span>, <span class="number">3</span>), np.arange(<span class="number">0</span>, <span class="number">4</span>))</span><br><span class="line">u = np.ones((<span class="number">4</span>, <span class="number">3</span>))</span><br><span class="line">v = np.ones((<span class="number">4</span>, <span class="number">3</span>))</span><br><span class="line">ax.quiver(x, y, u, v)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.figure()</span><br><span class="line">x, y = np.meshgrid(np.arange(<span class="number">0</span>, <span class="number">3</span>), np.arange(<span class="number">0</span>, <span class="number">4</span>))</span><br><span class="line">u = np.ones((<span class="number">4</span>, <span class="number">3</span>))</span><br><span class="line">v = np.ones((<span class="number">4</span>, <span class="number">3</span>))</span><br><span class="line">plt.quiver(x, y, u, v)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="NumPy使用"><a href="#NumPy使用" class="headerlink" title="NumPy使用"></a>NumPy使用</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br></pre></td></tr></table></figure>
+
+<h3 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h3><h4 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">元素乘法：np.multiply(a,b)   a*b</span></span><br><span class="line"><span class="string">矩阵乘法：np.dot(a,b) 或 np.matmul(a,b) 或 a.dot(b) 或直接用 a @ b !</span></span><br><span class="line"><span class="string">唯独注意：*，在 np.array 中重载为元素乘法，在 np.matrix 中重载为矩阵乘法!</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="矩阵取逆"><a href="#矩阵取逆" class="headerlink" title="矩阵取逆"></a>矩阵取逆</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = np.array([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]])  <span class="comment"># 初始化一个非奇异矩阵(数组)</span></span><br><span class="line"><span class="built_in">print</span>(np.linalg.inv(a))  <span class="comment"># 对应于MATLAB中 inv() 函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 矩阵对象可以通过 .I 更方便的求逆</span></span><br><span class="line">A = np.matrix(a)</span><br><span class="line"><span class="built_in">print</span>(A.I)</span><br></pre></td></tr></table></figure>
+
+<h3 id="正态分布"><a href="#正态分布" class="headerlink" title="正态分布"></a>正态分布</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># loc-（平均）钟声峰值所在的位置。</span></span><br><span class="line"><span class="comment"># scale-（标准偏差）图形分布的平坦程度。</span></span><br><span class="line"><span class="comment"># size-返回数组的形状。</span></span><br><span class="line">x = np.random.normal(loc=<span class="number">1</span>, scale=<span class="number">2</span>, size=(<span class="number">2</span>, <span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="从数值范围创建数组"><a href="#从数值范围创建数组" class="headerlink" title="从数值范围创建数组"></a>从数值范围创建数组</h3><h4 id="numpy-arange"><a href="#numpy-arange" class="headerlink" title="numpy.arange"></a>numpy.arange</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">numpy.arange(start, stop, step, dtype)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">start	起始值，默认为0</span></span><br><span class="line"><span class="string">stop	终止值（不包含）</span></span><br><span class="line"><span class="string">step	步长，默认为1</span></span><br><span class="line"><span class="string">dtype	返回ndarray的数据类型，如果没有提供，则会使用输入数据的类型。&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="numpy-linspace"><a href="#numpy-linspace" class="headerlink" title="numpy.linspace"></a>numpy.linspace</h4><p>函数用于创建一个一维数组，数组是一个等差数列构成的，格式如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.linspace(start, stop, num=<span class="number">50</span>, endpoint=<span class="literal">True</span>, retstep=<span class="literal">False</span>, dtype=<span class="literal">None</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">start	序列的起始值</span></span><br><span class="line"><span class="string">stop	序列的终止值，如果endpoint为true，该值包含于数列中</span></span><br><span class="line"><span class="string">num	要生成的等步长的样本数量，默认为50</span></span><br><span class="line"><span class="string">endpoint	该值为 true 时，数列中包含stop值，反之不包含，默认是True。</span></span><br><span class="line"><span class="string">retstep	如果为 True 时，生成的数组中会显示间距，反之不显示。</span></span><br><span class="line"><span class="string">dtype	ndarray 的数据类型&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="numpy-logspace"><a href="#numpy-logspace" class="headerlink" title="numpy.logspace"></a>numpy.logspace</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.logspace(start, stop, num=<span class="number">50</span>, endpoint=<span class="literal">True</span>, base=<span class="number">10.0</span>, dtype=<span class="literal">None</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">start	序列的起始值为：base ** start</span></span><br><span class="line"><span class="string">stop	序列的终止值为：base ** stop。如果endpoint为true，该值包含于数列中</span></span><br><span class="line"><span class="string">num	要生成的等步长的样本数量，默认为50</span></span><br><span class="line"><span class="string">endpoint	该值为 true 时，数列中中包含stop值，反之不包含，默认是True。</span></span><br><span class="line"><span class="string">base	对数 log 的底数。 base 参数意思是取对数的时候 log 的下标。</span></span><br><span class="line"><span class="string">dtype	ndarray 的数据类型&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>示例</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = np.logspace(<span class="number">1.0</span>,  <span class="number">2.0</span>, num =  <span class="number">10</span>)  <span class="comment"># 默认底数是 10</span></span><br><span class="line"><span class="built_in">print</span> (a)</span><br></pre></td></tr></table></figure>
+
+<p>输出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[ 10.           12.91549665     16.68100537      21.5443469  27.82559402      </span><br><span class="line">  35.93813664   46.41588834     59.94842503      77.42636827    100.    ]</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据拷贝"><a href="#数据拷贝" class="headerlink" title="数据拷贝"></a>数据拷贝</h3><p><code>numpy</code>关于copy有三种情况，完全不复制、视图（view）或者叫浅复制（shallow copy）和深复制（deep copy）。</p>
+<p>而<code> b = a[:]</code> 这种形式就属于第二种，即视图，这本质上是一种切片操作（slicing），所有的切片操作返回的都是视图。具体来说，<code>b = a[:]</code>会创建一个新的对象 b（所以 id(b) 和id(a) 返回的结果是不一样的），但是 b 的数据完全来自于a，和 a 保持完全一致，换句话说，b的数据完全由a保管，他们两个的数据变化是一致的，可以看下面的示例:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = np.arange(<span class="number">4</span>)  <span class="comment"># array([0, 1, 2, 3])</span></span><br><span class="line">b = a[:]  <span class="comment"># array([0, 1, 2, 3])</span></span><br><span class="line">b.flags.owndata  <span class="comment"># 返回 False，b 并不保管数据</span></span><br><span class="line">a.flags.owndata  <span class="comment"># 返回 True，数据由 a 保管</span></span><br><span class="line"><span class="comment"># 改变 a 同时也影响到 b</span></span><br><span class="line">a[-<span class="number">1</span>] = <span class="number">10</span>  <span class="comment"># array([0, 1, 2, 10])</span></span><br><span class="line">b  <span class="comment">#  array([0, 1, 2, 10])</span></span><br><span class="line"><span class="comment"># 改变 b 同时也影响到 a</span></span><br><span class="line">b[<span class="number">0</span>] = <span class="number">10</span>  <span class="comment"># array([10, 1, 2, 10])</span></span><br><span class="line">a  <span class="comment"># array([10, 1, 2, 10])</span></span><br></pre></td></tr></table></figure>
+
+<p><code>b = a</code> 和 <code>b = a[:]</code> 的差别就在于后者会创建新的对象，前者不会。两种方式都会导致 <code>a</code> 和 <code>b</code> 的数据相互影响。</p>
+<p>要想不让 <code>a</code> 的改动影响到 <code>b</code>，可以使用深复制：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">unique_b = a.copy()</span><br></pre></td></tr></table></figure>
+
+<h3 id="更改数据类型"><a href="#更改数据类型" class="headerlink" title="更改数据类型"></a>更改数据类型</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">arr = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="built_in">print</span>(arr.dtype)</span><br><span class="line">float_arr = arr.astype(np.float64)</span><br><span class="line"><span class="built_in">print</span>(float_arr.dtype)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="交换行（列）"><a href="#交换行（列）" class="headerlink" title="交换行（列）"></a>交换行（列）</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">test = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>], [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]])</span><br><span class="line"><span class="built_in">print</span>(test)</span><br><span class="line">test1 = test[(<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>), :]  <span class="comment"># 交换行</span></span><br><span class="line"><span class="built_in">print</span>(test1)</span><br><span class="line">test2 = test[:, (<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>)]  <span class="comment"># 交换列</span></span><br><span class="line"><span class="built_in">print</span>(test2)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="添加一行、一列"><a href="#添加一行、一列" class="headerlink" title="添加一行、一列"></a>添加一行、一列</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: UTF-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建数组arr</span></span><br><span class="line">arr = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;第1个数组arr：&#x27;</span>, arr)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;向arr数组添加元素：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.append(arr, [[<span class="number">9</span>, <span class="number">10</span>], [<span class="number">11</span>, <span class="number">12</span>]]))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;原数组：&#x27;</span>, arr)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;沿轴 0(行方向) 添加元素：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.append(arr, [[<span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>], [<span class="number">11</span>, <span class="number">11</span>, <span class="number">11</span>, <span class="number">11</span>]], axis=<span class="number">0</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;沿轴 1(列方向)添加元素：&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.append(arr, [[<span class="number">9</span>, <span class="number">10</span>], [<span class="number">11</span>, <span class="number">12</span>]], axis=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取一列、一行"><a href="#获取一列、一行" class="headerlink" title="获取一列、一行"></a>获取一列、一行</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a=np.arange(<span class="number">9</span>).reshape(<span class="number">3</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(a[<span class="number">1</span>])  <span class="comment">#某列</span></span><br><span class="line">ptint(a[:,<span class="number">1</span>]) <span class="comment">#某列</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="删除某行，某列"><a href="#删除某行，某列" class="headerlink" title="删除某行，某列"></a>删除某行，某列</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br><span class="line">x1 = np.delete(x, <span class="number">1</span>, axis=<span class="number">0</span>)  <span class="comment"># axis=0 删除某行</span></span><br><span class="line"><span class="built_in">print</span>(x1)</span><br><span class="line">x2 = np.delete(x, [<span class="number">1</span>,<span class="number">2</span>], axis=<span class="number">1</span>)  <span class="comment"># axis=1 删除多列</span></span><br><span class="line"><span class="built_in">print</span>(x2)</span><br><span class="line">x3 = np.delete(x, <span class="number">1</span>, axis=<span class="literal">None</span>)  <span class="comment"># axis = None：表示把数组按一维数组平铺在进行索引删除</span></span><br><span class="line"><span class="built_in">print</span>(x3)</span><br></pre></td></tr></table></figure>
+
+<h3 id="行列拼接"><a href="#行列拼接" class="headerlink" title="行列拼接"></a>行列拼接</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]])</span><br><span class="line">b = np.array([[<span class="number">11</span>, <span class="number">21</span>, <span class="number">31</span>], [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br><span class="line">c1 = np.concatenate((a, b), axis=<span class="number">0</span>)  <span class="comment"># 合并行 默认情况下，axis=0可以不写</span></span><br><span class="line"><span class="built_in">print</span>(c1)</span><br><span class="line">c2 = np.concatenate((a, b), axis=<span class="number">1</span>)  <span class="comment"># 合并列</span></span><br><span class="line"><span class="built_in">print</span>(c2)</span><br></pre></td></tr></table></figure>
+
+<h3 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">arr = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]])</span><br><span class="line"><span class="built_in">print</span>(arr)</span><br><span class="line"><span class="built_in">print</span>(arr.T)  <span class="comment"># 方式一</span></span><br><span class="line"><span class="built_in">print</span>(np.transpose(arr))  <span class="comment"># 方式二</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="空数组"><a href="#空数组" class="headerlink" title="空数组"></a>空数组</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">np.empty(shape=(<span class="number">0</span>))</span><br><span class="line">np.empty(shape=(<span class="number">0</span>, <span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="CuPy"><a href="#CuPy" class="headerlink" title="CuPy"></a>CuPy</h2><p>Gpu编程，写的不好的话运行贼慢</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cupy <span class="keyword">as</span> cp</span><br></pre></td></tr></table></figure>
+
+<h3 id="CuPy与NumPy互相转换"><a href="#CuPy与NumPy互相转换" class="headerlink" title="CuPy与NumPy互相转换"></a>CuPy与NumPy互相转换</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">numpy_data = cp.asnumpy(cupy_data)	<span class="comment">#cupy-&gt;numpy</span></span><br><span class="line">cupy_data = cp.asarray(numpy_data)	<span class="comment">#numpy-&gt;cupy</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="OpenCV"><a href="#OpenCV" class="headerlink" title="OpenCV"></a>OpenCV</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br></pre></td></tr></table></figure>
+
+<h3 id="中文路径下的图片读取与保存"><a href="#中文路径下的图片读取与保存" class="headerlink" title="中文路径下的图片读取与保存"></a>中文路径下的图片读取与保存</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 读取</span></span><br><span class="line"><span class="comment"># path是读取图片的路径</span></span><br><span class="line">img = cv.imdecode(np.fromfile(path, dtype=np.uint8), <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存</span></span><br><span class="line"><span class="comment"># &quot;.jpg&quot;是编码方式，可以改成“.bmp” &quot;.png&quot;..... outpath保存的图片输出路径</span></span><br><span class="line">cv.imencode(<span class="string">&#x27;.jpg&#x27;</span>, img)[<span class="number">1</span>].tofile(outpath)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="灰度直方图"><a href="#灰度直方图" class="headerlink" title="灰度直方图"></a>灰度直方图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">cv2.calcHist(images, channels, mask, histSize, ranges[, hist[, accumulate ]]) -&gt;hist</span></span><br><span class="line"><span class="string">imaes:输入的图像</span></span><br><span class="line"><span class="string">channels:选择图像的通道</span></span><br><span class="line"><span class="string">mask:掩膜，是一个大小和image一样的np数组，其中把需要处理的部分指定为1，不需要处理的部分指定为0，一般设置为None，表示处理整幅图像</span></span><br><span class="line"><span class="string">histSize:使用多少个bin(柱子)，一般为256</span></span><br><span class="line"><span class="string">ranges:像素值的范围，一般为[0,255]表示0~255</span></span><br><span class="line"><span class="string">后面两个参数基本不用管。</span></span><br><span class="line"><span class="string">注意，除了mask，其他四个参数都要带[]号。</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">img = interpolated_img_center.astype(np.uint16) <span class="comment">#img需要是整数类型</span></span><br><span class="line">hist = cv2.calcHist([img], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">830</span>], [<span class="number">0</span>, <span class="number">829</span>]) <span class="comment">#img需要绘制的图像，[0]需要绘制的图像通道，</span></span><br><span class="line">plt.plot(hist)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h3 id="利用高斯平滑进行降噪"><a href="#利用高斯平滑进行降噪" class="headerlink" title="利用高斯平滑进行降噪"></a>利用高斯平滑进行降噪</h3><p><a href="https://blog.csdn.net/wuqindeyunque/article/details/103694900">opencv高斯滤波GaussianBlur()详解(sigma取值)_wuqindeyunque的博客-CSDN博客</a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.GaussianBlur(src, ksize, sigmaX[, dst[, sigmaY[, borderType]]]) → dst</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">dst 输出</span></span><br><span class="line"><span class="string">src 输入</span></span><br><span class="line"><span class="string">ksize 卷积核大小，即邻域大小，比如ksize为(3,3)，则对以中心点为中心点3*3的邻域做操作</span></span><br><span class="line"><span class="string">opencv的高斯模糊函数输入了两个σ参数，sigmaX,sigmaY</span></span><br><span class="line"><span class="string">sigmaX是X轴的高斯核的σ，sigmaY是Y轴的高斯核的σ</span></span><br><span class="line"><span class="string">sigma = 0.3*((ksize-1)*0.5-1)+0.8</span></span><br><span class="line"><span class="string">当ksize=3时，sigma=0.8</span></span><br><span class="line"><span class="string">当ksize=5时，sigma为1.1</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">image1 = cv2.GaussianBlur(image_gray,(<span class="number">3</span>,<span class="number">3</span>),<span class="number">0.8</span>,<span class="number">0.8</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h3><h4 id="二维卷积cv2-filter2D"><a href="#二维卷积cv2-filter2D" class="headerlink" title="二维卷积cv2.filter2D"></a>二维卷积cv2.filter2D</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">CV_EXPORTS_W void filter2D( InputArray src, OutputArray dst, <span class="built_in">int</span> ddepth,</span><br><span class="line">                            InputArray kernel, Point anchor=Point(-<span class="number">1</span>,-<span class="number">1</span>),</span><br><span class="line">                            double delta=<span class="number">0</span>, <span class="built_in">int</span> borderType=BORDER_DEFAULT );</span><br><span class="line"><span class="string">&quot;&quot;&quot;参数说明：</span></span><br><span class="line"><span class="string">    InputArray src: 输入图像</span></span><br><span class="line"><span class="string">    OutputArray dst: 输出图像，和输入图像具有相同的尺寸和通道数量</span></span><br><span class="line"><span class="string">    int ddepth: 目标图像深度，如果没写将生成与原图像深度相同的图像。原图像和目标图像支持的图像深度如下：</span></span><br><span class="line"><span class="string">        src.depth() = CV_8U, ddepth = -1/CV_16S/CV_32F/CV_64F</span></span><br><span class="line"><span class="string">        src.depth() = CV_16U/CV_16S, ddepth = -1/CV_32F/CV_64F</span></span><br><span class="line"><span class="string">        src.depth() = CV_32F, ddepth = -1/CV_32F/CV_64F</span></span><br><span class="line"><span class="string">        src.depth() = CV_64F, ddepth = -1/CV_64F</span></span><br><span class="line"><span class="string">    当ddepth输入值为-1时，目标图像和原图像深度保持一致。</span></span><br><span class="line"><span class="string">    InputArray kernel:卷积核（或者是相关核）,一个单通道浮点型矩阵。如果想在图像不同的通道使用不同的kernel，可以先使用split()函数将图像通道事先分开。</span></span><br><span class="line"><span class="string">    Point anchor: 内核的基准点(anchor)，其默认值为(-1,-1)说明位于kernel的中心位置。基准点即kernel中与进行处理的像素点重合的点。</span></span><br><span class="line"><span class="string">    double delta: 在储存目标图像前可选的添加到像素的值，默认值为0</span></span><br><span class="line"><span class="string">    int borderType: 像素向外逼近的方法，默认值是BORDER_DEFAULT,即对全部边界进行计算。&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>用法示例</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">test = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], [<span class="number">7</span>, <span class="number">7</span>, <span class="number">9</span>]])</span><br><span class="line">test = test.astype(np.float64)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;测试矩阵：\n<span class="subst">&#123;test&#125;</span>&#x27;</span>)</span><br><span class="line">reflect101 = cv2.copyMakeBorder(test, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, cv2.BORDER_REFLECT_101)</span><br><span class="line">reflect101 = reflect101.astype(np.float64)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;cv2.filter2D默认填充方式--BORDER_REFLECT_101填充后：\n<span class="subst">&#123;reflect101&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sobel_x = np.array([[-<span class="number">1</span>, -<span class="number">2</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>]])  <span class="comment"># 卷积模板</span></span><br><span class="line">test_gx = cv2.filter2D(test, -<span class="number">1</span>, sobel_x)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;卷积结果：\n<span class="subst">&#123;test_gx&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;填充后的卷积结果：\n<span class="subst">&#123;cv2.filter2D(reflect101, -<span class="number">1</span>, sobel_x)&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.pypandas.cn/">https://www.pypandas.cn/</a></p>
+<p><strong>Pandas</strong> 是 <a href="https://www.python.org/">Python</a>的核心数据分析支持库，提供了快速、灵活、明确的数据结构，旨在简单、直观地处理关系型、标记型数据。Pandas 的目标是成为 Python 数据分析实践与实战的必备高级工具，其长远目标是成为<strong>最强大、最灵活、可以支持任何语言的开源数据分析工具</strong>。经过多年不懈的努力，Pandas 离这个目标已经越来越近了。</p>
+<p>Pandas 适用于处理以下类型的数据：</p>
+<ul>
+<li>与 SQL 或 Excel 表类似的，含异构列的表格数据;</li>
+<li>有序和无序（非固定频率）的时间序列数据;</li>
+<li>带行列标签的矩阵数据，包括同构或异构型数据;</li>
+<li>任意其它形式的观测、统计数据集, 数据转入 Pandas 数据结构时不必事先标记。</li>
+</ul>
+<p>Pandas 的主要数据结构是 <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series">Series</a>（一维数据）与 <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame">DataFrame </a>（二维数据），这两种数据结构足以处理金融、统计、社会科学、工程等领域里的大多数典型用例。对于 R 用户，DataFrame 提供了比 R 语言 data.frame 更丰富的功能。Pandas 基于 <a href="https://www.numpy.org/">NumPy</a>开发，可以与其它第三方科学计算支持库完美集成。</p>
+<h2 id="样条插值"><a href="#样条插值" class="headerlink" title="样条插值"></a>样条插值</h2><p><a href="https://blog.csdn.net/weixin_41799019/article/details/97629116">Python实现线性插值和三次样条插值_XHHP-CSDN博客</a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#进行样条差值</span></span><br><span class="line"><span class="keyword">import</span> scipy.interpolate <span class="keyword">as</span> spi</span><br><span class="line"> </span><br><span class="line"><span class="comment">#进行一阶样条插值</span></span><br><span class="line">ipo1=spi.splrep(X,Y,k=<span class="number">1</span>) 	<span class="comment">#样本点导入，生成参数</span></span><br><span class="line">iy1=spi.splev(new_x,ipo1) 	<span class="comment">#根据观测点和样条参数，生成插值</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#进行三次样条拟合</span></span><br><span class="line">ipo3=spi.splrep(X,Y,k=<span class="number">3</span>) 	<span class="comment">#样本点导入，生成参数</span></span><br><span class="line">iy3=spi.splev(new_x,ipo3) 	<span class="comment">#根据观测点和样条参数，生成插值</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="VScode调试Python代码时解决输出端中文乱码问题"><a href="#VScode调试Python代码时解决输出端中文乱码问题" class="headerlink" title="VScode调试Python代码时解决输出端中文乱码问题"></a>VScode调试Python代码时解决输出端中文乱码问题</h2><p><strong>这种方法相较于下面两种可以一劳永逸</strong></p>
+<p>1.配置电脑的系统变量 → 2.新建系统变量，变量名为：PYTHONIOENCODING，值为：UTF8 → 3.重启VScode</p>
+<h1 id="Pycharm使用"><a href="#Pycharm使用" class="headerlink" title="Pycharm使用"></a>Pycharm使用</h1><h2 id="matplotlib绘图时无法显示中文问题"><a href="#matplotlib绘图时无法显示中文问题" class="headerlink" title="matplotlib绘图时无法显示中文问题"></a>matplotlib绘图时无法显示中文问题</h2><p>在画图语句前，加上以下两行代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">u&#x27;SimHei&#x27;</span>]</span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义函数模块修改后再调用无效"><a href="#自定义函数模块修改后再调用无效" class="headerlink" title="自定义函数模块修改后再调用无效"></a>自定义函数模块修改后再调用无效</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> importlib</span><br><span class="line">importlib.reload(XXXX)  <span class="comment">#xxxx为修改后再调用的函数模块</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h1><h2 id="双线性插值"><a href="#双线性插值" class="headerlink" title="双线性插值"></a>双线性插值</h2><p><a href="https://zh.wikipedia.org/wiki/%E5%8F%8C%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC">https://zh.wikipedia.org/wiki/%E5%8F%8C%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC</a></p>
+<p><img src="/2021/12/17/%E7%94%A8Hexo%E5%86%99blog%E5%89%8D%E7%9A%84%E7%AC%94%E8%AE%B0/image-20211125162223119.png" alt="image-20211125162223119"></p>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="tar-压缩与解压"><a href="#tar-压缩与解压" class="headerlink" title="tar  压缩与解压"></a>tar  压缩与解压</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">需要注意的是，在使用 tar 命令指定选项时可以不在选项前面输入“-”。例如，使用“cvf”选项和 “-cvf”起到的作用一样。</span></span><br><span class="line">tar -xvf FileName.tar </span><br><span class="line">tar -cvf FileName.tar DirName	#(注：tar是打包，不是压缩！)</span><br><span class="line"></span><br><span class="line">tar -zcvf archive_name.tar.gz directory_to_compress     # 压缩文件夹</span><br><span class="line">tar -zxvf archive_name.tar.gz                           # 解压文件夹</span><br></pre></td></tr></table></figure>
+
+<h2 id="cp-文件（夹）拷贝"><a href="#cp-文件（夹）拷贝" class="headerlink" title="cp  文件（夹）拷贝"></a>cp  文件（夹）拷贝</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp [options] source dest</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cp [options] source... directory</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数说明</strong>：</p>
+<ul>
+<li>-a：此选项通常在复制目录时使用，它保留链接、文件属性，并复制目录下的所有内容。其作用等于dpR参数组合。</li>
+<li>-d：复制时保留链接。这里所说的链接相当于 Windows 系统中的快捷方式。</li>
+<li>-f：覆盖已经存在的目标文件而不给出提示。</li>
+<li>-i：与 <strong>-f</strong> 选项相反，在覆盖目标文件之前给出提示，要求用户确认是否覆盖，回答 <strong>y</strong> 时目标文件将被覆盖。</li>
+<li>-p：除复制文件的内容外，还把修改时间和访问权限也复制到新文件中。</li>
+<li>-r：若给出的源文件是一个目录文件，此时将复制该目录下所有的子目录和文件。</li>
+<li>-l：不复制文件，只是生成链接文件。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 将dir1下所有文件复制到dir2下</span></span><br><span class="line">cp -r dir1 dir2     # 如果dir2目录不存在</span><br><span class="line">cp -r dir1/. dir2   # 如果dir2目录已存在</span><br><span class="line">                    # 如果这时使用cp -r dir1 dir2,则也会将dir1目录复制到dir2中，明显不符合要求。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="mv-移动文件（夹）"><a href="#mv-移动文件（夹）" class="headerlink" title="mv  移动文件（夹）"></a>mv  移动文件（夹）</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mv [options] source dest</span><br><span class="line">mv [options] source... directory</span><br></pre></td></tr></table></figure>
+
+<p><strong>参数说明</strong>：</p>
+<ul>
+<li><strong>-b</strong>: 当目标文件或目录存在时，在执行覆盖前，会为其创建一个备份。</li>
+<li><strong>-i</strong>: 如果指定移动的源目录或文件与目标的目录或文件同名，则会先询问是否覆盖旧文件，输入 y 表示直接覆盖，输入 n 表示取消该操作。</li>
+<li><strong>-f</strong>: 如果指定移动的源目录或文件与目标的目录或文件同名，不会询问，直接覆盖旧文件。</li>
+<li><strong>-n</strong>: 不要覆盖任何已存在的文件或目录。</li>
+<li><strong>-u</strong>：当源文件比目标文件新或者目标文件不存在时，才执行移动操作。</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mv source_file dest_file            # 将源文件名 source_file 改为目标文件名 dest_file</span><br><span class="line">mv source_file dest_directory       # 将文件 source_file 移动到目标目录 dest_directory 中</span><br><span class="line">mv source_directory dest_directory  # 目录名 dest_directory 已存在，将 source_directory 移动到目录名 dest_directory 中；目录名 dest_directory 不存在则 source_directory 改名为目录名 dest_directory</span><br></pre></td></tr></table></figure>
+
+<h2 id="Linux反选删除文件"><a href="#Linux反选删除文件" class="headerlink" title="Linux反选删除文件"></a>Linux反选删除文件</h2><p>最简单的方法是</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">shopt -s extglob   #（打开extglob模式）</span><br></pre></td></tr></table></figure>
+
+<p>然后删除除了</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -fr !(file1)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -rf !(file1|file2) </span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h1><h2 id="Docker-qBittorrent-中国优化版"><a href="#Docker-qBittorrent-中国优化版" class="headerlink" title="Docker qBittorrent 中国优化版"></a>Docker qBittorrent 中国优化版</h2><p><a href="https://hub.docker.com/r/superng6/qbittorrent">https://hub.docker.com/r/superng6/qbittorrent</a></p>
+<p><code>PGID</code>、<code>PGID</code>可用命令<code>id</code>获取</p>
+<p><code>your/config</code>用来指定对应的配置保存目录</p>
+<p><code>your/download</code>用来指定对应的下载保存目录</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker create  \</span><br><span class="line">    --name=qbittorrent  \</span><br><span class="line">    -e WEBUIPORT=8080  \</span><br><span class="line">    -e PUID=0 \</span><br><span class="line">    -e PGID=0 \</span><br><span class="line">    -e TZ=Asia/Shanghai \</span><br><span class="line">    -p 6881:6881  \</span><br><span class="line">    -p 6881:6881/udp  \</span><br><span class="line">    -p 8080:8080  \</span><br><span class="line">    -v your/config:/config  \</span><br><span class="line">    -v your/download:/downloads  \</span><br><span class="line">    --restart=always  \</span><br><span class="line">    superng6/qbittorrent:latest</span><br><span class="line">    </span><br><span class="line">docker create  --name=qbittorrent  -e WEBUIPORT=8080  -e PUID=0 -e PGID=0 -e TZ=Asia/Shanghai -p 6881:6881 -p 6881:6881/udp  -p 8080:8080  -v /e/Docker/qbittorrent/config:/config  -v /e/Docker/qbittorrent/download:/downloads  --restart=always  superng6/qbittorrent:latest</span><br></pre></td></tr></table></figure>
+
+<h2 id="docker安装nginx并部署一个html静态网站"><a href="#docker安装nginx并部署一个html静态网站" class="headerlink" title="docker安装nginx并部署一个html静态网站"></a>docker安装nginx并部署一个html静态网站</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -di --name=nginx -p 90:80 -v /home/zekuan/web:/usr/share/nginx/html --restart=always nginx</span><br><span class="line"><span class="meta">#</span><span class="bash"> -d 后台运行</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -i 交互方式运行</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> --name 自定义容器名称</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -p 端口号映射 90 自定义为外部访问端口：80 为nginx容器对外暴露的端口</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -v 目录挂载  冒号前为 外部目录，冒号后为 容器内目录；相当于外部目录中的内容会映射同步到容器内</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="OpenWRT编译代理设置"><a href="#OpenWRT编译代理设置" class="headerlink" title="OpenWRT编译代理设置"></a>OpenWRT编译代理设置</h1><h2 id="git代理设置"><a href="#git代理设置" class="headerlink" title="git代理设置"></a>git代理设置</h2><p><a href="https://www.jianshu.com/p/739f139cf13c">https://www.jianshu.com/p/739f139cf13c</a></p>
+<p><a href="https://nu-ll.github.io/2021/03/04/Linux%E7%BB%88%E7%AB%AF%E4%BB%A3%E7%90%86/">https://nu-ll.github.io/2021/03/04/Linux%E7%BB%88%E7%AB%AF%E4%BB%A3%E7%90%86/</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 当前</span></span><br><span class="line">git config http.proxy <span class="string">&#x27;socks5://192.168.1.11:7893&#x27;</span> </span><br><span class="line">git config https.proxy <span class="string">&#x27;socks5://192.168.1.11:7893&#x27;</span></span><br><span class="line"><span class="comment"># 全局</span></span><br><span class="line">git config --global http.proxy <span class="string">&#x27;socks5://192.168.1.11:7891&#x27;</span> </span><br><span class="line">git config --global https.proxy <span class="string">&#x27;socks5://192.168.1.11:7891&#x27;</span></span><br><span class="line"><span class="comment"># 取消</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
+
+<h2 id="OpenWRT代理设置"><a href="#OpenWRT代理设置" class="headerlink" title="OpenWRT代理设置"></a>OpenWRT代理设置</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">export http_proxy=&quot;http://192.168.1.11:7890&quot;</span><br><span class="line">export https_proxy=&quot;http://192.168.1.11:7890&quot;</span><br><span class="line">export http_proxy=&quot;socks5://192.168.1.11:7891&quot;</span><br><span class="line">export https_proxy=&quot;socks5://192.168.1.11:7891&quot;</span><br><span class="line">export ALL_PROXY=&quot;socks5://192.168.1.11:7893&quot;</span><br><span class="line">export ALL_PROXY=&quot;socks5://192.168.1.222:7891&quot;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>Linux</tag>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>配置root账户登录Ubuntu</title>
+    <url>/2021/11/26/%E9%85%8D%E7%BD%AEroot%E8%B4%A6%E6%88%B7%E7%99%BB%E5%BD%95Ubuntu/</url>
+    <content><![CDATA[<h1 id="配置root登录Ubuntu流程"><a href="#配置root登录Ubuntu流程" class="headerlink" title="配置root登录Ubuntu流程"></a>配置root登录Ubuntu流程</h1><p>1、设置root密码：<code>sudo passwd</code>  </p>
+<p>2、重启  </p>
+<p>3、配置<code>sshd_config</code>文件<code>sudo vi /etc/ssh/sshd_config</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">PermitRootLogin yes #（默认为#PermitRootLogin prohibit-password）</span><br></pre></td></tr></table></figure>
+
+<p>4、重启服务器 service ssh restart</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+</search>
