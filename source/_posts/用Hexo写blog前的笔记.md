@@ -719,7 +719,7 @@ https://hub.docker.com/r/superng6/qbittorrent
 `your/download`用来指定对应的下载保存目录
 
 ```shell
-docker create  \
+docker run -d \
     --name=qbittorrent  \
     -e WEBUIPORT=8080  \
     -e PUID=0 \
@@ -732,8 +732,20 @@ docker create  \
     -v your/download:/downloads  \
     --restart=always  \
     superng6/qbittorrent:latest
-    
-docker create  --name=qbittorrent  -e WEBUIPORT=8080  -e PUID=0 -e PGID=0 -e TZ=Asia/Shanghai -p 6881:6881 -p 6881:6881/udp  -p 8080:8080  -v /e/Docker/qbittorrent/config:/config  -v /e/Docker/qbittorrent/download:/downloads  --restart=always  superng6/qbittorrent:latest
+# 示例
+docker run -d \
+    --name=qbittorrent  \
+    -e WEBUIPORT=8080  \
+    -e PUID=0 \
+    -e PGID=0 \
+    -e TZ=Asia/Shanghai \
+    -p 6881:6881  \
+    -p 6881:6881/udp  \
+    -p 8080:8080  \
+    -v /srv/dev-disk-by-uuid-7ebc0b2c-536e-4cce-b66c-4ba0e0be66eb/ssd/qbittorrent_config/:/config  \
+    -v /srv/dev-disk-by-uuid-7ebc0b2c-536e-4cce-b66c-4ba0e0be66eb/ssd/download/:/downloads  \
+    --restart=always  \
+    superng6/qbittorrent:latest
 ```
 
 ## docker安装nginx并部署一个html静态网站
