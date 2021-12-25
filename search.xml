@@ -273,6 +273,23 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo常用命令</title>
+    <url>/2021/12/17/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="重新生成Hexo-Blog文件并在本地预览"><a href="#重新生成Hexo-Blog文件并在本地预览" class="headerlink" title="重新生成Hexo Blog文件并在本地预览"></a>重新生成Hexo Blog文件并在本地预览</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<h2 id="重新生成Hexo-Blog文件并部署到Github"><a href="#重新生成Hexo-Blog文件并部署到Github" class="headerlink" title="重新生成Hexo Blog文件并部署到Github"></a>重新生成Hexo Blog文件并部署到Github</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<h2 id="同步整个Hexo文件至Github"><a href="#同步整个Hexo文件至Github" class="headerlink" title="同步整个Hexo文件至Github"></a>同步整个Hexo文件至Github</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A &amp;&amp; git commit -m &quot;Hexo源文件同步&quot; &amp;&amp; git push origin </span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo文章模板设置</title>
     <url>/2021/11/29/Hexo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<blockquote>
@@ -287,23 +304,6 @@
 
 
 
-
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo常用命令</title>
-    <url>/2021/12/17/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h2 id="重新生成Hexo-Blog文件并在本地预览"><a href="#重新生成Hexo-Blog文件并在本地预览" class="headerlink" title="重新生成Hexo Blog文件并在本地预览"></a>重新生成Hexo Blog文件并在本地预览</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
-
-<h2 id="重新生成Hexo-Blog文件并部署到Github"><a href="#重新生成Hexo-Blog文件并部署到Github" class="headerlink" title="重新生成Hexo Blog文件并部署到Github"></a>重新生成Hexo Blog文件并部署到Github</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<h2 id="同步整个Hexo文件至Github"><a href="#同步整个Hexo文件至Github" class="headerlink" title="同步整个Hexo文件至Github"></a>同步整个Hexo文件至Github</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A &amp;&amp; git commit -m &quot;Hexo源文件同步&quot; &amp;&amp; git push origin </span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
