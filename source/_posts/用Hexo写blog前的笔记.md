@@ -719,7 +719,7 @@ https://hub.docker.com/r/superng6/qbittorrent
 `your/download`用来指定对应的下载保存目录
 
 ```shell
-docker run  \
+docker run -d \
     --name=qbittorrent  \
     -e WEBUIPORT=8080  \
     -e PUID=0 \
@@ -733,7 +733,7 @@ docker run  \
     --restart=always  \
     superng6/qbittorrent:latest
 # 示例
-docker run  \
+docker run -d \
     --name=qbittorrent  \
     -e WEBUIPORT=8080  \
     -e PUID=0 \
