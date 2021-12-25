@@ -747,6 +747,23 @@ docker run -di --name=nginx -p 90:80 -v /home/zekuan/web:/usr/share/nginx/html -
 # -v 目录挂载  冒号前为 外部目录，冒号后为 容器内目录；相当于外部目录中的内容会映射同步到容器内
 ```
 
+## 安装ddnsto
+
+```shell
+docker run -d \
+    --name=<container name> \
+    -e TOKEN=<填入你的token> \
+    -e DEVICE_IDX=<默认0，如果设备ID重复则为1-100之间> \
+    -v /etc/localtime:/etc/localtime:ro \
+    -e PUID=<uid for user> \
+    -e PGID=<gid for user> \
+    linkease/ddnsto
+# <填入你的token>: 填写从ddnsto控制台拿到的 token。
+# DEVICE_IDX: 默认0，如果设备ID重复则改为1-100之间。
+# PUID/PGID：获取方式：终端输入id即可。
+# 注意要替换 "<>" 里面的内容，且不能出现 "<>"。
+```
+
 
 
 # OpenWRT编译代理设置
