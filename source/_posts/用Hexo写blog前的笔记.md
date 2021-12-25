@@ -757,6 +757,7 @@ docker run -d \
     -v /etc/localtime:/etc/localtime:ro \
     -e PUID=<uid for user> \
     -e PGID=<gid for user> \
+    --restart=always
     linkease/ddnsto
 # <填入你的token>: 填写从ddnsto控制台拿到的 token。
 # DEVICE_IDX: 默认0，如果设备ID重复则改为1-100之间。
