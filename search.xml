@@ -69,6 +69,23 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo常用命令</title>
+    <url>/2021/12/17/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="重新生成Hexo-Blog文件并在本地预览"><a href="#重新生成Hexo-Blog文件并在本地预览" class="headerlink" title="重新生成Hexo Blog文件并在本地预览"></a>重新生成Hexo Blog文件并在本地预览</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+
+<h2 id="重新生成Hexo-Blog文件并部署到Github"><a href="#重新生成Hexo-Blog文件并部署到Github" class="headerlink" title="重新生成Hexo Blog文件并部署到Github"></a>重新生成Hexo Blog文件并部署到Github</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<h2 id="同步整个Hexo文件至Github"><a href="#同步整个Hexo文件至Github" class="headerlink" title="同步整个Hexo文件至Github"></a>同步整个Hexo文件至Github</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A &amp;&amp; git commit -m &quot;Hexo源文件同步&quot; &amp;&amp; git push origin </span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo安装日志</title>
     <url>/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/</url>
     <content><![CDATA[<h1 id="在Ubuntu-server-20-04LTS上安装Hexo"><a href="#在Ubuntu-server-20-04LTS上安装Hexo" class="headerlink" title="在Ubuntu server 20.04LTS上安装Hexo"></a>在Ubuntu server 20.04LTS上安装Hexo</h1><h2 id="建议先用su切换为管理员账户，或用root账户登录"><a href="#建议先用su切换为管理员账户，或用root账户登录" class="headerlink" title="建议先用su切换为管理员账户，或用root账户登录"></a>建议先用<code>su</code>切换为管理员账户，或用root账户登录</h2><p>这样子后续需要<code>sudo</code>的地方就不需要在打了，而且全程<code>su</code>能避免不必要的错误。</p>
@@ -270,23 +287,6 @@
         <tag>Hexo</tag>
         <tag>Ubuntu</tag>
         <tag>GitHub</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo常用命令</title>
-    <url>/2021/12/17/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h2 id="重新生成Hexo-Blog文件并在本地预览"><a href="#重新生成Hexo-Blog文件并在本地预览" class="headerlink" title="重新生成Hexo Blog文件并在本地预览"></a>重新生成Hexo Blog文件并在本地预览</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
-
-<h2 id="重新生成Hexo-Blog文件并部署到Github"><a href="#重新生成Hexo-Blog文件并部署到Github" class="headerlink" title="重新生成Hexo Blog文件并部署到Github"></a>重新生成Hexo Blog文件并部署到Github</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
-
-<h2 id="同步整个Hexo文件至Github"><a href="#同步整个Hexo文件至Github" class="headerlink" title="同步整个Hexo文件至Github"></a>同步整个Hexo文件至Github</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A &amp;&amp; git commit -m &quot;Hexo源文件同步&quot; &amp;&amp; git push origin </span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
