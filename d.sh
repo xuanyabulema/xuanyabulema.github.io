@@ -1,4 +1,9 @@
-hexo clean && hexo g && hexo d
+hexo clean
+hexo g
+hexo d
 sleep 1
-git add -A && git commit -m "Hexo源文件同步" && git push
+git add -A 
+git commit -m "Hexo源文件同步" 
+sleep 1
+git push
 
