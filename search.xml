@@ -526,24 +526,6 @@
       </tags>
   </entry>
   <entry>
-    <title>配置root账户登录Ubuntu</title>
-    <url>/2021/11/26/%E9%85%8D%E7%BD%AEroot%E8%B4%A6%E6%88%B7%E7%99%BB%E5%BD%95Ubuntu/</url>
-    <content><![CDATA[<h1 id="配置root登录Ubuntu流程"><a href="#配置root登录Ubuntu流程" class="headerlink" title="配置root登录Ubuntu流程"></a>配置root登录Ubuntu流程</h1><p>1、设置root密码：<code>sudo passwd</code>  </p>
-<p>2、重启  </p>
-<p>3、配置<code>sshd_config</code>文件<code>sudo vi /etc/ssh/sshd_config</code></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">PermitRootLogin yes #（默认为#PermitRootLogin prohibit-password）</span><br></pre></td></tr></table></figure>
-
-<p>4、重启服务器 service ssh restart</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>只言片语</title>
     <url>/2021/12/26/%E5%8F%AA%E8%A8%80%E7%89%87%E8%AF%AD/</url>
     <content><![CDATA[<p>一些随便的记录</p>
@@ -566,5 +548,23 @@
       <categories>
         <category>笔记</category>
       </categories>
+  </entry>
+  <entry>
+    <title>配置root账户登录Ubuntu</title>
+    <url>/2021/11/26/%E9%85%8D%E7%BD%AEroot%E8%B4%A6%E6%88%B7%E7%99%BB%E5%BD%95Ubuntu/</url>
+    <content><![CDATA[<h1 id="配置root登录Ubuntu流程"><a href="#配置root登录Ubuntu流程" class="headerlink" title="配置root登录Ubuntu流程"></a>配置root登录Ubuntu流程</h1><p>1、设置root密码：<code>sudo passwd</code>  </p>
+<p>2、重启  </p>
+<p>3、配置<code>sshd_config</code>文件<code>sudo vi /etc/ssh/sshd_config</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">PermitRootLogin yes #（默认为#PermitRootLogin prohibit-password）</span><br></pre></td></tr></table></figure>
+
+<p>4、重启服务器 service ssh restart</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+      </tags>
   </entry>
 </search>
