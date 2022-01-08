@@ -549,4 +549,4 @@ sudo ssh-keygen -t rsa -C "XXXX@email.com"
 
 [hexo博客中如何插入图片](https://juejin.cn/post/6882619951857811469)
 
-[Hexo-Next 主题博客个性化配置超详细，超全面(两万字)](https://blog.csdn.net/as480133937/article/details/100138838)
+[Hexo-Next 主题博客个性化配置超详细，超全面(两万字)](https://blog.csdn.net/as480133937/article/details/100138838)    
