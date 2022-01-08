@@ -165,6 +165,21 @@ theme: landscape
 theme: next
 ```
 
+### 设置头像
+
+>https://theme-next.iissnan.com/getting-started.html#avatar-setting
+
+编辑 **主题配置文件**
+
+修改字段 `avatar`， 值设置成头像的链接地址。其中，头像的链接地址可以是：
+
+| 地址             | 值                                                           |
+| :--------------- | :----------------------------------------------------------- |
+| 完整的互联网 URI | `http://example.com/avatar.png`                              |
+| 站点内的地址     | 将头像放置主题目录下的 source/uploads/ （新建 uploads 目录若不存在）<br>配置为：avatar: /uploads/avatar.png<br>或者 放置在 source/images/ 目录下<br>配置为：avatar: /images/avatar.png |
+
+
+
 ### 添加分类界面
 
 > [Hexo添加分类及标签（在Next主题下）](https://tohugo.com/2021/01/26/%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE/Hexo%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE%EF%BC%88%E5%9C%A8Next%E4%B8%BB%E9%A2%98%E4%B8%8B%EF%BC%89/)
