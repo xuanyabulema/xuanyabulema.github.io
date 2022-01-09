@@ -88,7 +88,7 @@ sudo ssh-keygen -t rsa -C "xuanyabulema@qq.com"
 [查看秘钥并添加至GitHub](https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
 ```shell
-cat .ssh/id_rsa.qub
+cat /root/.ssh/id_rsa.pub
 ```
 
 然后将`cat`获取到的结果存至GitHub
