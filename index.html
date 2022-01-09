@@ -207,7 +207,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-01-09 15:41:15 / 修改时间：15:46:00" itemprop="dateCreated datePublished" datetime="2022-01-09T15:41:15+08:00">2022-01-09</time>
+              <time title="创建时间：2022-01-09 15:41:15 / 修改时间：15:50:28" itemprop="dateCreated datePublished" datetime="2022-01-09T15:41:15+08:00">2022-01-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -241,17 +241,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="启用root用户登录"><a href="#启用root用户登录" class="headerlink" title="启用root用户登录"></a>启用root用户登录</h1><p>1、设置root密码：<code>sudo passwd</code></p>
-<p>2、配置<code>sshd_config</code>文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
-
-<p>改为</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin yes #（默认为#PermitRootLogin prohibit-password）</span><br></pre></td></tr></table></figure>
-
-<p>3、重启服务 </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
-
-<p>之后便可用root用户登录</p>
+          <h1 id="系统：Ubuntu-20-04-3-LTS"><a href="#系统：Ubuntu-20-04-3-LTS" class="headerlink" title="系统：Ubuntu 20.04.3 LTS"></a>系统：Ubuntu 20.04.3 LTS</h1>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/01/09/%E4%B8%AA%E4%BA%BA%E8%85%BE%E8%AE%AF%E4%BA%91%E8%BD%BB%E9%87%8F%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/#more" rel="contents">
@@ -717,96 +707,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xuanyabulema.github.io/2021/11/26/%E9%85%8D%E7%BD%AEroot%E8%B4%A6%E6%88%B7%E7%99%BB%E5%BD%95Ubuntu/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="xyblm">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xyblm's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/11/26/%E9%85%8D%E7%BD%AEroot%E8%B4%A6%E6%88%B7%E7%99%BB%E5%BD%95Ubuntu/" class="post-title-link" itemprop="url">配置root账户登录Ubuntu</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-11-26 08:50:06" itemprop="dateCreated datePublished" datetime="2021-11-26T08:50:06+08:00">2021-11-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-20 18:19:27" itemprop="dateModified" datetime="2021-12-20T18:19:27+08:00">2021-12-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="配置root登录Ubuntu流程"><a href="#配置root登录Ubuntu流程" class="headerlink" title="配置root登录Ubuntu流程"></a>配置root登录Ubuntu流程</h1><p>1、设置root密码：<code>sudo passwd</code>  </p>
-<p>2、重启  </p>
-<p>3、配置<code>sshd_config</code>文件<code>sudo vi /etc/ssh/sshd_config</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin yes #（默认为#PermitRootLogin prohibit-password）</span><br></pre></td></tr></table></figure>
-
-<p>4、重启服务器 service ssh restart</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://xuanyabulema.github.io/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -869,7 +769,7 @@
 
       
           <h1 id="在Ubuntu-server-20-04LTS上安装Hexo"><a href="#在Ubuntu-server-20-04LTS上安装Hexo" class="headerlink" title="在Ubuntu server 20.04LTS上安装Hexo"></a>在Ubuntu server 20.04LTS上安装Hexo</h1><h2 id="建议先用su切换为管理员账户，或用root账户登录"><a href="#建议先用su切换为管理员账户，或用root账户登录" class="headerlink" title="建议先用su切换为管理员账户，或用root账户登录"></a>建议先用<code>su</code>切换为管理员账户，或用root账户登录</h2><p>这样子后续需要<code>sudo</code>的地方就不需要在打了，而且全程<code>su</code>能避免不必要的错误。</p>
-<a href="/2021/11/26/%E9%85%8D%E7%BD%AEroot%E8%B4%A6%E6%88%B7%E7%99%BB%E5%BD%95Ubuntu/" title="配置root账户登录Ubuntu">配置root账户登录Ubuntu</a>
+<a href="#">Post not found: 配置root账户登录Ubuntu</a>
 
 
 
@@ -968,7 +868,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
