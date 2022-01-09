@@ -35,7 +35,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;xuanyabulema@qq.com&quot;</span><br></pre></td></tr></table></figure>
 
 <p><a href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">查看秘钥并添加至GitHub</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat .ssh/id_rsa.qub</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat /root/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 
 <p>然后将<code>cat</code>获取到的结果存至GitHub</p>
 <p>验证是否连接成功</p>
