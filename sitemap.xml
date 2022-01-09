@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/tags/index.html</loc>
+    <loc>https://xuanyabulema.github.io/categories/index.html</loc>
     
     <lastmod>2021-12-20</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/categories/index.html</loc>
+    <loc>https://xuanyabulema.github.io/tags/index.html</loc>
     
     <lastmod>2021-12-20</lastmod>
     
@@ -129,7 +129,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/tags/Linux/</loc>
+    <loc>https://xuanyabulema.github.io/tags/Docker/</loc>
     <lastmod>2022-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -143,7 +143,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/tags/Docker/</loc>
+    <loc>https://xuanyabulema.github.io/tags/Linux/</loc>
     <lastmod>2022-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -159,7 +159,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/categories/Ubuntu/</loc>
+    <loc>https://xuanyabulema.github.io/categories/Linux/</loc>
     <lastmod>2022-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -173,28 +173,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/categories/Linux/</loc>
-    <lastmod>2022-01-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/categories/Ubuntu/Docker/</loc>
-    <lastmod>2022-01-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/categories/Linux/Ubuntu/</loc>
-    <lastmod>2022-01-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/categories/Ubuntu/Docker/git/</loc>
     <lastmod>2022-01-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
