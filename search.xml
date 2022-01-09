@@ -335,6 +335,97 @@
       </tags>
   </entry>
   <entry>
+    <title>个人腾讯云轻量应用服务器基础配置</title>
+    <url>/2022/01/09/%E4%B8%AA%E4%BA%BA%E8%85%BE%E8%AE%AF%E4%BA%91%E8%BD%BB%E9%87%8F%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1 id="启用root用户登录"><a href="#启用root用户登录" class="headerlink" title="启用root用户登录"></a>启用root用户登录</h1><p>1、设置root密码：<code>sudo passwd</code></p>
+<p>2、配置<code>sshd_config</code>文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+<p>改为</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">PermitRootLogin yes #（默认为#PermitRootLogin prohibit-password）</span><br></pre></td></tr></table></figure>
+
+<p>3、重启服务 </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
+
+<p>之后便可用root用户登录</p>
+<span id="more"></span>
+
+<h1 id="启用root用户登录-1"><a href="#启用root用户登录-1" class="headerlink" title="启用root用户登录"></a>启用root用户登录</h1><p>1、设置root密码：<code>sudo passwd</code></p>
+<p>2、配置<code>sshd_config</code>文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo nano /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+<p>改为</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">PermitRootLogin yes #（默认为#PermitRootLogin prohibit-password）</span><br></pre></td></tr></table></figure>
+
+<p>3、重启服务 </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
+
+<p>之后便可用root用户登录</p>
+<h1 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h1><blockquote>
+<p><a href="https://docs.docker.com/engine/install/ubuntu/">Install Docker Engine on Ubuntu | Docker Documentation</a></p>
+</blockquote>
+<h2 id="卸载旧版Docker"><a href="#卸载旧版Docker" class="headerlink" title="卸载旧版Docker"></a>卸载旧版Docker</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get remove docker docker-engine docker.io containerd runc</span><br></pre></td></tr></table></figure>
+
+<p>不知道有没有装旧版都可以运行一下上面的</p>
+<h2 id="方法一：通过腾讯云自带源安装"><a href="#方法一：通过腾讯云自带源安装" class="headerlink" title="方法一：通过腾讯云自带源安装"></a>方法一：通过腾讯云自带源安装</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">apt install docker.io</span><br></pre></td></tr></table></figure>
+
+<h2 id="方法二：通过官方仓库安装（网络不好的情况下，安装较慢）"><a href="#方法二：通过官方仓库安装（网络不好的情况下，安装较慢）" class="headerlink" title="方法二：通过官方仓库安装（网络不好的情况下，安装较慢）"></a>方法二：通过官方仓库安装（网络不好的情况下，安装较慢）</h2><p>1、更新 apt 包索引和安装包</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install \</span><br><span class="line">    ca-certificates \</span><br><span class="line">    curl \</span><br><span class="line">    gnupg \</span><br><span class="line">    lsb-release</span><br></pre></td></tr></table></figure>
+
+<p>2、添加 Docker 的官方 GPG 密钥</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</span><br></pre></td></tr></table></figure>
+
+<p>3、使用以下命令设置稳定的存储库</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</span><br></pre></td></tr></table></figure>
+
+<p>4、安装Docker</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装常用Docker"><a href="#安装常用Docker" class="headerlink" title="安装常用Docker"></a>安装常用Docker</h1><h2 id="Portainer-CE"><a href="#Portainer-CE" class="headerlink" title="Portainer CE"></a>Portainer CE</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    -p 8000:8000 -p 9000:9000 \</span><br><span class="line">    --name=portainer \</span><br><span class="line">    --restart=always \</span><br><span class="line">    -v /var/run/docker.sock:/var/run/docker.sock \</span><br><span class="line">    -v portainer_data:/data \</span><br><span class="line">    portainer/portainer-ce</span><br></pre></td></tr></table></figure>
+
+<h2 id="DDNSTO"><a href="#DDNSTO" class="headerlink" title="DDNSTO"></a>DDNSTO</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    --name=&lt;container name&gt; \</span><br><span class="line">    -e TOKEN=&lt;填入你的token&gt; \</span><br><span class="line">    -e DEVICE_IDX=&lt;默认0，如果设备ID重复则为1-100之间&gt; \</span><br><span class="line">    -v /etc/localtime:/etc/localtime:ro \</span><br><span class="line">    -e PUID=&lt;uid for user&gt; \</span><br><span class="line">    -e PGID=&lt;gid for user&gt; \</span><br><span class="line">    --restart=always  \</span><br><span class="line">    linkease/ddnsto</span><br><span class="line"><span class="meta">#</span><span class="bash"> &lt;填入你的token&gt;: 填写从ddnsto控制台拿到的 token。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> DEVICE_IDX: 默认0，如果设备ID重复则改为1-100之间。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> PUID/PGID：获取方式：终端输入id即可。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 注意要替换 <span class="string">&quot;&lt;&gt;&quot;</span> 里面的内容，且不能出现 <span class="string">&quot;&lt;&gt;&quot;</span>。</span></span><br></pre></td></tr></table></figure>
+
+<p>示例</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    --name=ddnsto \</span><br><span class="line">    -e TOKEN=&lt;默认0，如果设备ID重复则为1-100之间&gt; \</span><br><span class="line">    -e DEVICE_IDX=0 \</span><br><span class="line">    -v /etc/localtime:/etc/localtime:ro \</span><br><span class="line">    -e PUID=0 \</span><br><span class="line">    -e PGID=0 \</span><br><span class="line">    --restart=always  \</span><br><span class="line">    linkease/ddnsto</span><br></pre></td></tr></table></figure>
+
+<h2 id="利用Nginx并部署一个HTML静态网站"><a href="#利用Nginx并部署一个HTML静态网站" class="headerlink" title="利用Nginx并部署一个HTML静态网站"></a>利用Nginx并部署一个HTML静态网站</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -di \</span><br><span class="line">    --name=nginx \</span><br><span class="line">    -p 90:80 \</span><br><span class="line">    -v /home/ubuntu/web:/usr/share/nginx/html \</span><br><span class="line">    --restart=always \</span><br><span class="line">    nginx</span><br><span class="line"><span class="meta">#</span><span class="bash"> -d 后台运行</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -i 交互方式运行</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> --name 自定义容器名称</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -p 端口号映射 90 自定义为外部访问端口：80 为nginx容器对外暴露的端口</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -v 目录挂载  冒号前为 外部目录，冒号后为 容器内目录；相当于外部目录中的内容会映射同步到容器内</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="青龙"><a href="#青龙" class="headerlink" title="青龙"></a>青龙</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -dit \</span><br><span class="line">   -v $PWD/ql/config:/ql/config \</span><br><span class="line">   -v $PWD/ql/log:/ql/log \</span><br><span class="line">   -v $PWD/ql/db:/ql/db \</span><br><span class="line">   -p 5700:5700 \</span><br><span class="line">   --name qinglong \</span><br><span class="line">   --hostname qinglong \</span><br><span class="line">   --restart always \</span><br><span class="line">   whyour/qinglong:latest</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h1><h2 id="配置用户名、邮箱等信息"><a href="#配置用户名、邮箱等信息" class="headerlink" title="配置用户名、邮箱等信息"></a>配置用户名、邮箱等信息</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;xuanyabulema&quot;</span><br><span class="line">git config --global user.password &quot;xuanyabulema@qq.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>使用方式</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</span></span><br><span class="line"><span class="meta"> </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1.查看git配置信息</span></span><br><span class="line">git config --list</span><br><span class="line"><span class="meta">  </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2.查看git用户名、密码、邮箱的配置</span></span><br><span class="line">git config user.name</span><br><span class="line">git config user.password</span><br><span class="line">git config user.email</span><br><span class="line"><span class="meta"> </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3.设置git用户名、密码、邮箱的配置</span></span><br><span class="line">git config user.name &quot;yourName&quot;</span><br><span class="line">git config user.password &quot;yourPassword&quot;</span><br><span class="line">git config user.email &quot;your@email.com&quot;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 3.设置git用户名、密码、邮箱的配置（全局配置）</span></span><br><span class="line">git config --global user.name &quot;yourName&quot;</span><br><span class="line">git config --global user.password &quot;yourPassword&quot;</span><br><span class="line">git config --global user.password &quot;your@email.com&quot;</span><br><span class="line"><span class="meta"> </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 4.修改git用户名、密码、邮箱的配置（跟设置语法一样，没有用户名就添加，有了用户名就修改）</span></span><br><span class="line">git config user.name &quot;yourName&quot;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 4.修改git用户名、密码、邮箱的配置（全局配置）</span></span><br><span class="line">git config --global user.name &quot;yourName&quot;</span><br><span class="line"><span class="meta"> </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 5.删除git用户名、密码、邮箱的配置</span></span><br><span class="line">git config --global --unset user.name &quot;yourName&quot;</span><br><span class="line">git config --global --unset user.email &quot;your@email.com&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="连接GitHub"><a href="#连接GitHub" class="headerlink" title="连接GitHub"></a>连接GitHub</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;your@email.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>以我的为例</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;xuanyabulema@qq.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">查看秘钥并添加至GitHub</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat /root/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>然后将<code>cat</code>获取到的结果存至GitHub</p>
+<p>验证是否连接成功</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+        <category>Docker</category>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>只言片语</title>
     <url>/2021/12/26/%E5%8F%AA%E8%A8%80%E7%89%87%E8%AF%AD/</url>
     <content><![CDATA[<p>一些随便的记录</p>
@@ -565,8 +656,8 @@
         <category>笔记</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>Linux</tag>
+        <tag>Python</tag>
         <tag>Docker</tag>
       </tags>
   </entry>
