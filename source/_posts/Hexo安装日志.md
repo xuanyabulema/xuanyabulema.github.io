@@ -18,7 +18,7 @@ tags: [Hexo,Ubuntu,GitHub]
 
 ## Hexo简介
 
-[Hexo](https://hexo.io/zh-cn/docs/) 是一个快速、简洁且高效的博客框架。Hexo 使用 [Markdown](https://www.zhihu.com/topic/19590742/hot)（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
+[Hexo](https://hexo.io/zh-cn/docs/) 是一个快速、简洁且高效的框架。Hexo 使用 [Markdown](https://www.zhihu.com/topic/19590742/hot)（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
 
 >[Hexo中文文档](https://hexo.io/zh-cn/docs/)
 
@@ -118,7 +118,7 @@ sudo hexo clean && sudo hexo g
 /hexo/themes/next/_config.yml
 ```
 
->[Hexo-Next 主题博客个性化配置超详细，超全面(两万字)](https://blog.csdn.net/as480133937/article/details/100138838)
+>[Hexo-Next 主题个性化配置超详细，超全面(两万字)](https://blog.csdn.net/as480133937/article/details/100138838)
 
 ## Hexo基础配置
 
@@ -296,7 +296,7 @@ tags: [Hexo,ubuntu]
 
 ## 配置Markdown与Typora搭配添加图片
 
->[hexo博客中如何插入图片](https://juejin.cn/post/6882619951857811469)
+>[hexo中如何插入图片](https://juejin.cn/post/6882619951857811469)
 
 安装插件：
 
@@ -393,7 +393,7 @@ symbols_count_time:
 <!-- more -->
 ```
 
-## 为博客加上妹子
+## 加上妹子
 
 > https://blog.csdn.net/as480133937/article/details/100138838#t26
 
@@ -547,6 +547,6 @@ sudo ssh-keygen -t rsa -C "XXXX@email.com"
 
 [安装Nodejs](https://github.com/nodesource/distributions#deb)
 
-[hexo博客中如何插入图片](https://juejin.cn/post/6882619951857811469)
+[hexo中如何插入图片](https://juejin.cn/post/6882619951857811469)
 
-[Hexo-Next 主题博客个性化配置超详细，超全面(两万字)](https://blog.csdn.net/as480133937/article/details/100138838)    
+[Hexo-Next 主题个性化配置超详细，超全面(两万字)](https://blog.csdn.net/as480133937/article/details/100138838)    

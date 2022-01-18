@@ -8,7 +8,7 @@ categories:
 
 
 
-# 新建GitHub分支以保存Hexo博客源文件
+# 新建GitHub分支以保存Hexo源文件
 
 ![image-20211205170753314](image-20211205170753314.png)
 
@@ -56,7 +56,7 @@ git push origin
 mv xuanyabulema.github.io/.git/ blog/.git/
 ```
 
-将博客目录下 themes 文件夹下每个主题文件夹里面的 .git .gitignore 删掉。
+将目录下 themes 文件夹下每个主题文件夹里面的 .git .gitignore 删掉。
 
 ```shell
 rm -rf .git/
