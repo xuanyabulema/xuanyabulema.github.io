@@ -1,74 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo多端同步|迁移</title>
-    <url>/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/</url>
-    <content><![CDATA[<h1 id="新建GitHub分支以保存Hexo源文件"><a href="#新建GitHub分支以保存Hexo源文件" class="headerlink" title="新建GitHub分支以保存Hexo源文件"></a>新建GitHub分支以保存Hexo源文件</h1><p><img src="/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/image-20211205170753314.png" alt="image-20211205170753314"></p>
-<span id="more"></span>
-
-<h1 id="将本地Hexo目录与GitHub的Hexo分支关联上"><a href="#将本地Hexo目录与GitHub的Hexo分支关联上" class="headerlink" title="将本地Hexo目录与GitHub的Hexo分支关联上"></a>将本地Hexo目录与GitHub的Hexo分支关联上</h1><p>先将<code>Hexo</code>分支文件clone到本地：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git <span class="built_in">clone</span> -b 分支名 仓库链接</span></span><br><span class="line">git clone -b Hexo git@github.com:xuanyabulema/xuanyabulema.github.io.git</span><br></pre></td></tr></table></figure>
-
-<p>进入拷贝到本地的文件：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd xuanyabulema.github.io/</span><br></pre></td></tr></table></figure>
-
-<p>用<code>ll</code>查看文件</p>
-<p><img src="/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/image-20211205171837598.png" alt="image-20211205171837598"></p>
-<p>删除<code>.git/</code>以外的所有文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">shopt -s extglob      #（打开extglob模式）</span><br><span class="line">rm -fr !(.git/)  </span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果是多个要排除的，可以这样：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> rm -rf !(file1|file2)</span> </span><br></pre></td></tr></table></figure>
-
-<p>将变化同步到GitHub</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A </span><br><span class="line">git commit -m &quot;Hexo源文件同步&quot;</span><br><span class="line">git push origin </span><br></pre></td></tr></table></figure>
-
-<p>将<code>.git/</code>移到你的本地Hexo源文件夹<code>blog</code>根目录下</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mv xuanyabulema.github.io/.git/ blog/.git/</span><br></pre></td></tr></table></figure>
-
-<p>将目录下 themes 文件夹下每个主题文件夹里面的 .git .gitignore 删掉。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -rf .git/</span><br><span class="line">rm -rf .gitignore</span><br></pre></td></tr></table></figure>
-
-<p>将变化同步到GitHub</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A </span><br><span class="line">git commit -m &quot;Hexo源文件同步&quot;</span><br><span class="line">git push origin </span><br></pre></td></tr></table></figure>
-
-<h1 id="新环境配置与同步"><a href="#新环境配置与同步" class="headerlink" title="新环境配置与同步"></a>新环境配置与同步</h1><h2 id="新环境生成ssh-key"><a href="#新环境生成ssh-key" class="headerlink" title="新环境生成ssh key"></a>新环境生成ssh key</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;XXXX@email.com&quot;</span><br></pre></td></tr></table></figure>
-
-<p>以我的为例</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;xuanyabulema@qq.com&quot;</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">查看秘钥并添加至GitHub</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat /root/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-
-<p>然后将<code>cat</code>获取到的结果存至GitHub</p>
-<p>验证是否连接成功</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<h2 id="将Github上的Hexo源Blog文件同步到本地-blog目录下"><a href="#将Github上的Hexo源Blog文件同步到本地-blog目录下" class="headerlink" title="将Github上的Hexo源Blog文件同步到本地./blog目录下"></a>将Github上的Hexo源Blog文件同步到本地<code>./blog</code>目录下</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone -b Hexo git@github.com:xuanyabulema/xuanyabulema.github.io.git ./blog</span><br></pre></td></tr></table></figure>
-
-<p>变更后同步到Github</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A &amp;&amp; git commit -m &quot;Hexo源文件同步&quot; &amp;&amp; git push origin </span><br></pre></td></tr></table></figure>
-
-<p>其他端变更后同步到本地</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装Hexo环境"><a href="#安装Hexo环境" class="headerlink" title="安装Hexo环境"></a>安装Hexo环境</h2><p><a href="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/#Hexo安装">之前写过</a></p>
-<p>安装Nodejs</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Using Ubuntu</span></span><br><span class="line">curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
-
-<p>安装Hexo</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
-
-<p>安装nmp依赖</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo安装日志</title>
     <url>/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/</url>
     <content><![CDATA[<h1 id="在Ubuntu-server-20-04LTS上安装Hexo"><a href="#在Ubuntu-server-20-04LTS上安装Hexo" class="headerlink" title="在Ubuntu server 20.04LTS上安装Hexo"></a>在Ubuntu server 20.04LTS上安装Hexo</h1><h2 id="建议先用su切换为管理员账户，或用root账户登录"><a href="#建议先用su切换为管理员账户，或用root账户登录" class="headerlink" title="建议先用su切换为管理员账户，或用root账户登录"></a>建议先用<code>su</code>切换为管理员账户，或用root账户登录</h2><p>这样子后续需要<code>sudo</code>的地方就不需要在打了，而且全程<code>su</code>能避免不必要的错误。</p>
@@ -294,6 +226,74 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo多端同步|迁移</title>
+    <url>/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/</url>
+    <content><![CDATA[<h1 id="新建GitHub分支以保存Hexo源文件"><a href="#新建GitHub分支以保存Hexo源文件" class="headerlink" title="新建GitHub分支以保存Hexo源文件"></a>新建GitHub分支以保存Hexo源文件</h1><p><img src="/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/image-20211205170753314.png" alt="image-20211205170753314"></p>
+<span id="more"></span>
+
+<h1 id="将本地Hexo目录与GitHub的Hexo分支关联上"><a href="#将本地Hexo目录与GitHub的Hexo分支关联上" class="headerlink" title="将本地Hexo目录与GitHub的Hexo分支关联上"></a>将本地Hexo目录与GitHub的Hexo分支关联上</h1><p>先将<code>Hexo</code>分支文件clone到本地：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git <span class="built_in">clone</span> -b 分支名 仓库链接</span></span><br><span class="line">git clone -b Hexo git@github.com:xuanyabulema/xuanyabulema.github.io.git</span><br></pre></td></tr></table></figure>
+
+<p>进入拷贝到本地的文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd xuanyabulema.github.io/</span><br></pre></td></tr></table></figure>
+
+<p>用<code>ll</code>查看文件</p>
+<p><img src="/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/image-20211205171837598.png" alt="image-20211205171837598"></p>
+<p>删除<code>.git/</code>以外的所有文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">shopt -s extglob      #（打开extglob模式）</span><br><span class="line">rm -fr !(.git/)  </span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果是多个要排除的，可以这样：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> rm -rf !(file1|file2)</span> </span><br></pre></td></tr></table></figure>
+
+<p>将变化同步到GitHub</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A </span><br><span class="line">git commit -m &quot;Hexo源文件同步&quot;</span><br><span class="line">git push origin </span><br></pre></td></tr></table></figure>
+
+<p>将<code>.git/</code>移到你的本地Hexo源文件夹<code>blog</code>根目录下</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mv xuanyabulema.github.io/.git/ blog/.git/</span><br></pre></td></tr></table></figure>
+
+<p>将目录下 themes 文件夹下每个主题文件夹里面的 .git .gitignore 删掉。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -rf .git/</span><br><span class="line">rm -rf .gitignore</span><br></pre></td></tr></table></figure>
+
+<p>将变化同步到GitHub</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A </span><br><span class="line">git commit -m &quot;Hexo源文件同步&quot;</span><br><span class="line">git push origin </span><br></pre></td></tr></table></figure>
+
+<h1 id="新环境配置与同步"><a href="#新环境配置与同步" class="headerlink" title="新环境配置与同步"></a>新环境配置与同步</h1><h2 id="新环境生成ssh-key"><a href="#新环境生成ssh-key" class="headerlink" title="新环境生成ssh key"></a>新环境生成ssh key</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;XXXX@email.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>以我的为例</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;xuanyabulema@qq.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">查看秘钥并添加至GitHub</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat /root/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>然后将<code>cat</code>获取到的结果存至GitHub</p>
+<p>验证是否连接成功</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="将Github上的Hexo源Blog文件同步到本地-blog目录下"><a href="#将Github上的Hexo源Blog文件同步到本地-blog目录下" class="headerlink" title="将Github上的Hexo源Blog文件同步到本地./blog目录下"></a>将Github上的Hexo源Blog文件同步到本地<code>./blog</code>目录下</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone -b Hexo git@github.com:xuanyabulema/xuanyabulema.github.io.git ./blog</span><br></pre></td></tr></table></figure>
+
+<p>变更后同步到Github</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A &amp;&amp; git commit -m &quot;Hexo源文件同步&quot; &amp;&amp; git push origin </span><br></pre></td></tr></table></figure>
+
+<p>其他端变更后同步到本地</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装Hexo环境"><a href="#安装Hexo环境" class="headerlink" title="安装Hexo环境"></a>安装Hexo环境</h2><p><a href="/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/#Hexo安装">之前写过</a></p>
+<p>安装Nodejs</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Using Ubuntu</span></span><br><span class="line">curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+
+<p>安装Hexo</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
+
+<p>安装nmp依赖</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo常用命令</title>
     <url>/2021/12/17/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h2 id="重新生成Hexo-Blog文件并在本地预览"><a href="#重新生成Hexo-Blog文件并在本地预览" class="headerlink" title="重新生成Hexo Blog文件并在本地预览"></a>重新生成Hexo Blog文件并在本地预览</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
@@ -408,8 +408,8 @@
         <category>Ubuntu</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>Ubuntu</tag>
+        <tag>git</tag>
         <tag>Docker</tag>
       </tags>
   </entry>
@@ -440,7 +440,7 @@
   <entry>
     <title>用Hexo写blog前的笔记</title>
     <url>/2021/12/17/%E7%94%A8Hexo%E5%86%99blog%E5%89%8D%E7%9A%84%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="Snake边缘检测算法"><a href="#Snake边缘检测算法" class="headerlink" title="Snake边缘检测算法"></a>Snake边缘检测算法</h2><p><a href="https://blog.csdn.net/juanjuan1314/article/details/80606532">snake算法总结_老笨妞-CSDN博客_snake算法</a></p>
+    <content><![CDATA[<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="Snake边缘检测算法"><a href="#Snake边缘检测算法" class="headerlink" title="Snake边缘检测算法"></a>Snake边缘检测算法</h2><p><a href="https://blog.csdn.net/juanjuan1314/article/details/80606532">snake算法总结_老笨妞-CSDN_snake算法</a></p>
 <h2 id="使用pickle进行数据的保存与读取"><a href="#使用pickle进行数据的保存与读取" class="headerlink" title="使用pickle进行数据的保存与读取"></a>使用pickle进行数据的保存与读取</h2><p>保存</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"></span><br><span class="line">a_dict = &#123;<span class="string">&#x27;da&#x27;</span>: <span class="number">111</span>, <span class="number">2</span>: [<span class="number">23</span>,<span class="number">1</span>,<span class="number">4</span>], <span class="string">&#x27;23&#x27;</span>: &#123;<span class="number">1</span>:<span class="number">2</span>,<span class="string">&#x27;d&#x27;</span>:<span class="string">&#x27;sad&#x27;</span>&#125;&#125;</span><br><span class="line"><span class="comment"># pickle a variable to a file</span></span><br><span class="line">file = <span class="built_in">open</span>(<span class="string">&#x27;pickle_example.pickle&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>)</span><br><span class="line">pickle.dump(a_dict, file)</span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure>
 
@@ -542,7 +542,7 @@
 
 <h3 id="灰度直方图"><a href="#灰度直方图" class="headerlink" title="灰度直方图"></a>灰度直方图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">cv2.calcHist(images, channels, mask, histSize, ranges[, hist[, accumulate ]]) -&gt;hist</span></span><br><span class="line"><span class="string">imaes:输入的图像</span></span><br><span class="line"><span class="string">channels:选择图像的通道</span></span><br><span class="line"><span class="string">mask:掩膜，是一个大小和image一样的np数组，其中把需要处理的部分指定为1，不需要处理的部分指定为0，一般设置为None，表示处理整幅图像</span></span><br><span class="line"><span class="string">histSize:使用多少个bin(柱子)，一般为256</span></span><br><span class="line"><span class="string">ranges:像素值的范围，一般为[0,255]表示0~255</span></span><br><span class="line"><span class="string">后面两个参数基本不用管。</span></span><br><span class="line"><span class="string">注意，除了mask，其他四个参数都要带[]号。</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">img = interpolated_img_center.astype(np.uint16) <span class="comment">#img需要是整数类型</span></span><br><span class="line">hist = cv2.calcHist([img], [<span class="number">0</span>], <span class="literal">None</span>, [<span class="number">830</span>], [<span class="number">0</span>, <span class="number">829</span>]) <span class="comment">#img需要绘制的图像，[0]需要绘制的图像通道，</span></span><br><span class="line">plt.plot(hist)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
-<h3 id="利用高斯平滑进行降噪"><a href="#利用高斯平滑进行降噪" class="headerlink" title="利用高斯平滑进行降噪"></a>利用高斯平滑进行降噪</h3><p><a href="https://blog.csdn.net/wuqindeyunque/article/details/103694900">opencv高斯滤波GaussianBlur()详解(sigma取值)_wuqindeyunque的博客-CSDN博客</a></p>
+<h3 id="利用高斯平滑进行降噪"><a href="#利用高斯平滑进行降噪" class="headerlink" title="利用高斯平滑进行降噪"></a>利用高斯平滑进行降噪</h3><p><a href="https://blog.csdn.net/wuqindeyunque/article/details/103694900">opencv高斯滤波GaussianBlur()详解(sigma取值)_wuqindeyunque的-CSDN</a></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">cv2.GaussianBlur(src, ksize, sigmaX[, dst[, sigmaY[, borderType]]]) → dst</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">dst 输出</span></span><br><span class="line"><span class="string">src 输入</span></span><br><span class="line"><span class="string">ksize 卷积核大小，即邻域大小，比如ksize为(3,3)，则对以中心点为中心点3*3的邻域做操作</span></span><br><span class="line"><span class="string">opencv的高斯模糊函数输入了两个σ参数，sigmaX,sigmaY</span></span><br><span class="line"><span class="string">sigmaX是X轴的高斯核的σ，sigmaY是Y轴的高斯核的σ</span></span><br><span class="line"><span class="string">sigma = 0.3*((ksize-1)*0.5-1)+0.8</span></span><br><span class="line"><span class="string">当ksize=3时，sigma=0.8</span></span><br><span class="line"><span class="string">当ksize=5时，sigma为1.1</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">image1 = cv2.GaussianBlur(image_gray,(<span class="number">3</span>,<span class="number">3</span>),<span class="number">0.8</span>,<span class="number">0.8</span>)</span><br></pre></td></tr></table></figure>
 
 <h3 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h3><h4 id="二维卷积cv2-filter2D"><a href="#二维卷积cv2-filter2D" class="headerlink" title="二维卷积cv2.filter2D"></a>二维卷积cv2.filter2D</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">CV_EXPORTS_W void filter2D( InputArray src, OutputArray dst, <span class="built_in">int</span> ddepth,</span><br><span class="line">                            InputArray kernel, Point anchor=Point(-<span class="number">1</span>,-<span class="number">1</span>),</span><br><span class="line">                            double delta=<span class="number">0</span>, <span class="built_in">int</span> borderType=BORDER_DEFAULT );</span><br><span class="line"><span class="string">&quot;&quot;&quot;参数说明：</span></span><br><span class="line"><span class="string">    InputArray src: 输入图像</span></span><br><span class="line"><span class="string">    OutputArray dst: 输出图像，和输入图像具有相同的尺寸和通道数量</span></span><br><span class="line"><span class="string">    int ddepth: 目标图像深度，如果没写将生成与原图像深度相同的图像。原图像和目标图像支持的图像深度如下：</span></span><br><span class="line"><span class="string">        src.depth() = CV_8U, ddepth = -1/CV_16S/CV_32F/CV_64F</span></span><br><span class="line"><span class="string">        src.depth() = CV_16U/CV_16S, ddepth = -1/CV_32F/CV_64F</span></span><br><span class="line"><span class="string">        src.depth() = CV_32F, ddepth = -1/CV_32F/CV_64F</span></span><br><span class="line"><span class="string">        src.depth() = CV_64F, ddepth = -1/CV_64F</span></span><br><span class="line"><span class="string">    当ddepth输入值为-1时，目标图像和原图像深度保持一致。</span></span><br><span class="line"><span class="string">    InputArray kernel:卷积核（或者是相关核）,一个单通道浮点型矩阵。如果想在图像不同的通道使用不同的kernel，可以先使用split()函数将图像通道事先分开。</span></span><br><span class="line"><span class="string">    Point anchor: 内核的基准点(anchor)，其默认值为(-1,-1)说明位于kernel的中心位置。基准点即kernel中与进行处理的像素点重合的点。</span></span><br><span class="line"><span class="string">    double delta: 在储存目标图像前可选的添加到像素的值，默认值为0</span></span><br><span class="line"><span class="string">    int borderType: 像素向外逼近的方法，默认值是BORDER_DEFAULT,即对全部边界进行计算。&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
@@ -562,7 +562,7 @@
 <li>任意其它形式的观测、统计数据集, 数据转入 Pandas 数据结构时不必事先标记。</li>
 </ul>
 <p>Pandas 的主要数据结构是 <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series">Series</a>（一维数据）与 <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame">DataFrame </a>（二维数据），这两种数据结构足以处理金融、统计、社会科学、工程等领域里的大多数典型用例。对于 R 用户，DataFrame 提供了比 R 语言 data.frame 更丰富的功能。Pandas 基于 <a href="https://www.numpy.org/">NumPy</a>开发，可以与其它第三方科学计算支持库完美集成。</p>
-<h2 id="样条插值"><a href="#样条插值" class="headerlink" title="样条插值"></a>样条插值</h2><p><a href="https://blog.csdn.net/weixin_41799019/article/details/97629116">Python实现线性插值和三次样条插值_XHHP-CSDN博客</a></p>
+<h2 id="样条插值"><a href="#样条插值" class="headerlink" title="样条插值"></a>样条插值</h2><p><a href="https://blog.csdn.net/weixin_41799019/article/details/97629116">Python实现线性插值和三次样条插值_XHHP-CSDN</a></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#进行样条差值</span></span><br><span class="line"><span class="keyword">import</span> scipy.interpolate <span class="keyword">as</span> spi</span><br><span class="line"> </span><br><span class="line"><span class="comment">#进行一阶样条插值</span></span><br><span class="line">ipo1=spi.splrep(X,Y,k=<span class="number">1</span>) 	<span class="comment">#样本点导入，生成参数</span></span><br><span class="line">iy1=spi.splev(new_x,ipo1) 	<span class="comment">#根据观测点和样条参数，生成插值</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#进行三次样条拟合</span></span><br><span class="line">ipo3=spi.splrep(X,Y,k=<span class="number">3</span>) 	<span class="comment">#样本点导入，生成参数</span></span><br><span class="line">iy3=spi.splev(new_x,ipo3) 	<span class="comment">#根据观测点和样条参数，生成插值</span></span><br></pre></td></tr></table></figure>
 
 
