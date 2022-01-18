@@ -10,7 +10,7 @@ categories:
 
 ## Snake边缘检测算法
 
-[snake算法总结_老笨妞-CSDN博客_snake算法](https://blog.csdn.net/juanjuan1314/article/details/80606532)
+[snake算法总结_老笨妞-CSDN_snake算法](https://blog.csdn.net/juanjuan1314/article/details/80606532)
 
 ## 使用pickle进行数据的保存与读取
 
@@ -481,7 +481,7 @@ plt.show()
 
 ### 利用高斯平滑进行降噪
 
-[opencv高斯滤波GaussianBlur()详解(sigma取值)_wuqindeyunque的博客-CSDN博客](https://blog.csdn.net/wuqindeyunque/article/details/103694900)
+[opencv高斯滤波GaussianBlur()详解(sigma取值)_wuqindeyunque的-CSDN](https://blog.csdn.net/wuqindeyunque/article/details/103694900)
 
 ```python
 cv2.GaussianBlur(src, ksize, sigmaX[, dst[, sigmaY[, borderType]]]) → dst
@@ -563,7 +563,7 @@ Pandas 的主要数据结构是 [Series](https://pandas.pydata.org/pandas-docs/s
 
 ## 样条插值
 
-[Python实现线性插值和三次样条插值_XHHP-CSDN博客](https://blog.csdn.net/weixin_41799019/article/details/97629116)
+[Python实现线性插值和三次样条插值_XHHP-CSDN](https://blog.csdn.net/weixin_41799019/article/details/97629116)
 
 ```python
 #进行样条差值
