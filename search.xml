@@ -3,7 +3,7 @@
   <entry>
     <title>Hexo多端同步|迁移</title>
     <url>/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/</url>
-    <content><![CDATA[<h1 id="新建GitHub分支以保存Hexo博客源文件"><a href="#新建GitHub分支以保存Hexo博客源文件" class="headerlink" title="新建GitHub分支以保存Hexo博客源文件"></a>新建GitHub分支以保存Hexo博客源文件</h1><p><img src="/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/image-20211205170753314.png" alt="image-20211205170753314"></p>
+    <content><![CDATA[<h1 id="新建GitHub分支以保存Hexo源文件"><a href="#新建GitHub分支以保存Hexo源文件" class="headerlink" title="新建GitHub分支以保存Hexo源文件"></a>新建GitHub分支以保存Hexo源文件</h1><p><img src="/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/image-20211205170753314.png" alt="image-20211205170753314"></p>
 <span id="more"></span>
 
 <h1 id="将本地Hexo目录与GitHub的Hexo分支关联上"><a href="#将本地Hexo目录与GitHub的Hexo分支关联上" class="headerlink" title="将本地Hexo目录与GitHub的Hexo分支关联上"></a>将本地Hexo目录与GitHub的Hexo分支关联上</h1><p>先将<code>Hexo</code>分支文件clone到本地：</p>
@@ -23,7 +23,7 @@
 <p>将<code>.git/</code>移到你的本地Hexo源文件夹<code>blog</code>根目录下</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mv xuanyabulema.github.io/.git/ blog/.git/</span><br></pre></td></tr></table></figure>
 
-<p>将博客目录下 themes 文件夹下每个主题文件夹里面的 .git .gitignore 删掉。</p>
+<p>将目录下 themes 文件夹下每个主题文件夹里面的 .git .gitignore 删掉。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -rf .git/</span><br><span class="line">rm -rf .gitignore</span><br></pre></td></tr></table></figure>
 
 <p>将变化同步到GitHub</p>
@@ -76,7 +76,7 @@
 
 
 
-<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p><a href="https://hexo.io/zh-cn/docs/">Hexo</a> 是一个快速、简洁且高效的博客框架。Hexo 使用 <a href="https://www.zhihu.com/topic/19590742/hot">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p><a href="https://hexo.io/zh-cn/docs/">Hexo</a> 是一个快速、简洁且高效的框架。Hexo 使用 <a href="https://www.zhihu.com/topic/19590742/hot">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
 <blockquote>
 <p><a href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></p>
 </blockquote>
@@ -120,7 +120,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/hexo/_config.yml</span><br><span class="line">/hexo/themes/next/_config.yml</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p><a href="https://blog.csdn.net/as480133937/article/details/100138838">Hexo-Next 主题博客个性化配置超详细，超全面(两万字)</a></p>
+<p><a href="https://blog.csdn.net/as480133937/article/details/100138838">Hexo-Next 主题个性化配置超详细，超全面(两万字)</a></p>
 </blockquote>
 <h2 id="Hexo基础配置"><a href="#Hexo基础配置" class="headerlink" title="Hexo基础配置"></a>Hexo基础配置</h2><h3 id="作者、语言、时区等设置"><a href="#作者、语言、时区等设置" class="headerlink" title="作者、语言、时区等设置"></a>作者、语言、时区等设置</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Site</span></span><br><span class="line">title: 悬崖不勒马的小站</span><br><span class="line">subtitle: &#x27;&#x27;</span><br><span class="line">description: &#x27;&#x27;</span><br><span class="line">keywords:</span><br><span class="line">author: 悬崖不勒马</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia/Shanghai</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> URL</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span></span><br><span class="line">url: https://xuanyabulema.github.io</span><br></pre></td></tr></table></figure>
 
@@ -189,7 +189,7 @@
 
 <p>则标签为”Hexo”和”ubuntu”</p>
 <h2 id="配置Markdown与Typora搭配添加图片"><a href="#配置Markdown与Typora搭配添加图片" class="headerlink" title="配置Markdown与Typora搭配添加图片"></a>配置Markdown与Typora搭配添加图片</h2><blockquote>
-<p><a href="https://juejin.cn/post/6882619951857811469">hexo博客中如何插入图片</a></p>
+<p><a href="https://juejin.cn/post/6882619951857811469">hexo中如何插入图片</a></p>
 </blockquote>
 <p>安装插件：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo npm install hexo-renderer-marked</span><br></pre></td></tr></table></figure>
@@ -230,7 +230,7 @@
 <p>将下述内容添加到项添加的范围即可</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="为博客加上妹子"><a href="#为博客加上妹子" class="headerlink" title="为博客加上妹子"></a>为博客加上妹子</h2><blockquote>
+<h2 id="加上妹子"><a href="#加上妹子" class="headerlink" title="加上妹子"></a>加上妹子</h2><blockquote>
 <p><a href="https://blog.csdn.net/as480133937/article/details/100138838#t26">https://blog.csdn.net/as480133937/article/details/100138838#t26</a></p>
 </blockquote>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
@@ -281,8 +281,8 @@
 <p>然后将<code>/root/.ssh/id_rsa.pub</code>下的秘钥添加至GitHub，并进行重新推送<code>sudo hexo clean &amp;&amp; sudo hexo d</code></p>
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></p>
 <p><a href="https://github.com/nodesource/distributions#deb">安装Nodejs</a></p>
-<p><a href="https://juejin.cn/post/6882619951857811469">hexo博客中如何插入图片</a></p>
-<p><a href="https://blog.csdn.net/as480133937/article/details/100138838">Hexo-Next 主题博客个性化配置超详细，超全面(两万字)</a>    </p>
+<p><a href="https://juejin.cn/post/6882619951857811469">hexo中如何插入图片</a></p>
+<p><a href="https://blog.csdn.net/as480133937/article/details/100138838">Hexo-Next 主题个性化配置超详细，超全面(两万字)</a>    </p>
 ]]></content>
       <categories>
         <category>Hexo</category>
