@@ -3,6 +3,7 @@ title: Hexo隐藏文章
 date: 2022-01-18 18:19:30
 tags: Hexo
 categories: Hexo
+hidden: true
 ---
 
 
@@ -13,7 +14,7 @@ categories: Hexo
 
 只有知道文章链接的人才可以访问被隐藏的文章。
 
-
+> https://github.com/prinsss/hexo-hide-posts/blob/master/README_ZH.md
 
 <!-- more -->
 
