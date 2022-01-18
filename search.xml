@@ -340,6 +340,9 @@
     <content><![CDATA[<p>本 Hexo 插件可以隐藏指定的文章，并使它们仅可通过链接访问。</p>
 <p>当一篇文章被设置为「隐藏」时，它不会出现在任何列表中（包括首页、存档、分类页面、标签页面、Feed、站点地图等），也不会被搜索引擎索引（前提是搜索引擎遵守 noindex 标签）。</p>
 <p>只有知道文章链接的人才可以访问被隐藏的文章。</p>
+<blockquote>
+<p><a href="https://github.com/prinsss/hexo-hide-posts/blob/master/README_ZH.md">https://github.com/prinsss/hexo-hide-posts/blob/master/README_ZH.md</a></p>
+</blockquote>
 <span id="more"></span>
 
 
