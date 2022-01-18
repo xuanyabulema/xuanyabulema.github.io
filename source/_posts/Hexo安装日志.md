@@ -4,6 +4,7 @@ date: 2021-11-26 07:39:29
 categories: 
 - Hexo
 tags: [Hexo,Ubuntu,GitHub]
+hidden: true
 ---
 
 # 在Ubuntu server 20.04LTS上安装Hexo
