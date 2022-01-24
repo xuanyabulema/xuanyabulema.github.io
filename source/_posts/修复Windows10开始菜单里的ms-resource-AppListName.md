@@ -8,9 +8,7 @@ categories:
 
 # 修复Windows10开始菜单里的ms-resource:AppListName
 
-![image-20220124150119917](修复Windows10开始菜单里的ms-resource-AppListName/image-20220124150119917.png)
-
-
+![image-20220124150605531](image-20220124150605531.png)
 
 <!-- more -->
 
