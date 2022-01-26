@@ -156,8 +156,8 @@
     <content><![CDATA[<h1 id="修复Windows10开始菜单里的ms-resource-AppListName"><a href="#修复Windows10开始菜单里的ms-resource-AppListName" class="headerlink" title="修复Windows10开始菜单里的ms-resource:AppListName"></a>修复Windows10开始菜单里的ms-resource:AppListName</h1><p><img src="/2022/01/24/%E4%BF%AE%E5%A4%8DWindows10%E5%BC%80%E5%A7%8B%E8%8F%9C%E5%8D%95%E9%87%8C%E7%9A%84ms-resource-AppListName/image-20220124150605531.png" alt="image-20220124150605531"></p>
 <span id="more"></span>
 
-<h1 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h1><p><code>ms-resource:AppListName</code> 的玩意，就是微软的「人脉」App</p>
-<p>这两条命令会移除并重新安装「人脉」应用，之后开始菜单里就不再会有恼人的 <code>ms-resource:AppListName</code> 了。</p>
+<h1 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h1><p><code>ms-resource:AppListName</code>  是微软的「人脉」App</p>
+<p>这两条命令会移除并重新安装「人脉」应用</p>
 <figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Get-AppXPackage</span> *microsoft.people* | <span class="built_in">Remove-AppXPackage</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Get-AppXPackage</span> *microsoft.people* <span class="literal">-AllUsers</span> | <span class="keyword">Foreach</span> &#123;<span class="built_in">Add-AppXPackage</span> <span class="literal">-DisableDevelopmentMode</span> <span class="literal">-Register</span> <span class="string">&quot;<span class="variable">$</span>(<span class="variable">$_</span>.InstallLocation)\AppXManifest.xml&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
 
 <p>PS:「人脉」这玩意根本没人用，所以在 Windows 11 里微软已经将其移除了。</p>
