@@ -14,9 +14,9 @@ categories:
 
 # 解决方式
 
-`ms-resource:AppListName` 的玩意，就是微软的「人脉」App
+`ms-resource:AppListName`  是微软的「人脉」App
 
-这两条命令会移除并重新安装「人脉」应用，之后开始菜单里就不再会有恼人的 `ms-resource:AppListName` 了。
+这两条命令会移除并重新安装「人脉」应用
 
 ```powershell
 Get-AppXPackage *microsoft.people* | Remove-AppXPackage
