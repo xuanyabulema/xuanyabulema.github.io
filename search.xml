@@ -370,6 +370,23 @@
       </tags>
   </entry>
   <entry>
+    <title>Linux Shell</title>
+    <url>/2022/01/27/Linux-Shell/</url>
+    <content><![CDATA[<h1 id="linux-Shell命令"><a href="#linux-Shell命令" class="headerlink" title="linux Shell命令"></a>linux Shell命令</h1><span id="more"></span>
+
+<h1 id="date命令"><a href="#date命令" class="headerlink" title="date命令"></a>date命令</h1><p>获取当前时间</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo $(date +%Y-%m-%d&quot; &quot;%H:%M:%S)</span><br></pre></td></tr></table></figure>
+
+<p>获取指定时区的时间</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo $(TZ=UTC-8 date +%Y-%m-%d&quot; &quot;%H:%M:%S)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>个人腾讯云轻量应用服务器基础配置</title>
     <url>/2022/01/09/%E4%B8%AA%E4%BA%BA%E8%85%BE%E8%AE%AF%E4%BA%91%E8%BD%BB%E9%87%8F%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="系统：Ubuntu-20-04-3-LTS"><a href="#系统：Ubuntu-20-04-3-LTS" class="headerlink" title="系统：Ubuntu 20.04.3 LTS"></a>系统：Ubuntu 20.04.3 LTS</h1><span id="more"></span>
@@ -440,7 +457,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Ubuntu</category>
+        <category>Linux</category>
       </categories>
       <tags>
         <tag>git</tag>
