@@ -1,6 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo多端同步|迁移</title>
+    <url>/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/</url>
+    <content><![CDATA[<h1 id="新建GitHub分支以保存Hexo源文件"><a href="#新建GitHub分支以保存Hexo源文件" class="headerlink" title="新建GitHub分支以保存Hexo源文件"></a>新建GitHub分支以保存Hexo源文件</h1><p><img src="/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/image-20211205170753314.png" alt="image-20211205170753314"></p>
+<span id="more"></span>
+
+<h1 id="将本地Hexo目录与GitHub的Hexo分支关联上"><a href="#将本地Hexo目录与GitHub的Hexo分支关联上" class="headerlink" title="将本地Hexo目录与GitHub的Hexo分支关联上"></a>将本地Hexo目录与GitHub的Hexo分支关联上</h1><p>先将<code>Hexo</code>分支文件clone到本地：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">git <span class="built_in">clone</span> -b 分支名 仓库链接</span></span><br><span class="line">git clone -b Hexo git@github.com:xuanyabulema/xuanyabulema.github.io.git</span><br></pre></td></tr></table></figure>
+
+<p>进入拷贝到本地的文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd xuanyabulema.github.io/</span><br></pre></td></tr></table></figure>
+
+<p>用<code>ll</code>查看文件</p>
+<p><img src="/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/image-20211205171837598.png" alt="image-20211205171837598"></p>
+<p>删除<code>.git/</code>以外的所有文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">shopt -s extglob      #（打开extglob模式）</span><br><span class="line">rm -fr !(.git/)  </span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果是多个要排除的，可以这样：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> rm -rf !(file1|file2)</span> </span><br></pre></td></tr></table></figure>
+
+<p>将变化同步到GitHub</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A </span><br><span class="line">git commit -m &quot;Hexo源文件同步&quot;</span><br><span class="line">git push origin </span><br></pre></td></tr></table></figure>
+
+<p>将<code>.git/</code>移到你的本地Hexo源文件夹<code>blog</code>根目录下</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mv xuanyabulema.github.io/.git/ blog/.git/</span><br></pre></td></tr></table></figure>
+
+<p>将目录下 themes 文件夹下每个主题文件夹里面的 .git .gitignore 删掉。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm -rf .git/</span><br><span class="line">rm -rf .gitignore</span><br></pre></td></tr></table></figure>
+
+<p>将变化同步到GitHub</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A </span><br><span class="line">git commit -m &quot;Hexo源文件同步&quot;</span><br><span class="line">git push origin </span><br></pre></td></tr></table></figure>
+
+<h1 id="新环境配置与同步"><a href="#新环境配置与同步" class="headerlink" title="新环境配置与同步"></a>新环境配置与同步</h1><h2 id="新环境生成ssh-key"><a href="#新环境生成ssh-key" class="headerlink" title="新环境生成ssh key"></a>新环境生成ssh key</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;XXXX@email.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p>以我的为例</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo ssh-keygen -t rsa -C &quot;xuanyabulema@qq.com&quot;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">查看秘钥并添加至GitHub</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cat /root/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>然后将<code>cat</code>获取到的结果存至GitHub</p>
+<p>验证是否连接成功</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="将Github上的Hexo源Blog文件同步到本地-blog目录下"><a href="#将Github上的Hexo源Blog文件同步到本地-blog目录下" class="headerlink" title="将Github上的Hexo源Blog文件同步到本地./blog目录下"></a>将Github上的Hexo源Blog文件同步到本地<code>./blog</code>目录下</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone -b Hexo git@github.com:xuanyabulema/xuanyabulema.github.io.git ./blog</span><br></pre></td></tr></table></figure>
+
+<p>变更后同步到Github</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add -A &amp;&amp; git commit -m &quot;Hexo源文件同步&quot; &amp;&amp; git push origin </span><br></pre></td></tr></table></figure>
+
+<p>其他端变更后同步到本地</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装Hexo环境"><a href="#安装Hexo环境" class="headerlink" title="安装Hexo环境"></a>安装Hexo环境</h2><p><a href="/2022/01/09/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/#Hexo安装">之前写过</a></p>
+<p>安装Nodejs</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Using Ubuntu</span></span><br><span class="line">curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+
+<p>安装Hexo</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
+
+<p>安装nmp依赖</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo常用命令</title>
     <url>/2021/12/17/Hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<h2 id="重新生成Hexo网页文件并在本地预览"><a href="#重新生成Hexo网页文件并在本地预览" class="headerlink" title="重新生成Hexo网页文件并在本地预览"></a>重新生成Hexo网页文件并在本地预览</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
@@ -16,6 +84,11 @@
       <tags>
         <tag>Hexo</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2022/01/09/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Hexo文章模板设置</title>
