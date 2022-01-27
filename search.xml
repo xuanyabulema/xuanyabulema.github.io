@@ -156,6 +156,11 @@
 <td align="left">将头像放置主题目录下的 source/uploads/ （新建 uploads 目录若不存在）<br>配置为：avatar: /uploads/avatar.png<br>或者 放置在 source/images/ 目录下<br>配置为：avatar: /images/avatar.png</td>
 </tr>
 </tbody></table>
+<h3 id="设置设置网站的图标Favicon"><a href="#设置设置网站的图标Favicon" class="headerlink" title="设置设置网站的图标Favicon"></a>设置设置网站的图标Favicon</h3><p>图标放在主题资源下<code>/themes/next/source/images</code>里，并且修改主题配置文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: /images/favicon_16x16.ico</span><br><span class="line">  medium: /images/favicon_32x32.ico</span><br><span class="line"><span class="meta">  #</span><span class="bash">apple_touch_icon: /images/apple-touch-icon-next.png</span></span><br><span class="line"><span class="meta">  #</span><span class="bash">safari_pinned_tab: /images/logo.svg</span></span><br><span class="line"><span class="meta">  #</span><span class="bash">android_manifest: /images/manifest.json</span></span><br><span class="line"><span class="meta">  #</span><span class="bash">ms_browserconfig: /images/browserconfig.xml</span></span><br></pre></td></tr></table></figure>
+
+
+
 <h3 id="添加分类界面"><a href="#添加分类界面" class="headerlink" title="添加分类界面"></a>添加分类界面</h3><blockquote>
 <p><a href="https://tohugo.com/2021/01/26/%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE/Hexo%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE%EF%BC%88%E5%9C%A8Next%E4%B8%BB%E9%A2%98%E4%B8%8B%EF%BC%89/">Hexo添加分类及标签（在Next主题下）</a></p>
 </blockquote>
