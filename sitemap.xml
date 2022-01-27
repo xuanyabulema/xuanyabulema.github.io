@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xuanyabulema.github.io/2022/01/27/Linux-Shell/</loc>
+    <loc>https://xuanyabulema.github.io/2022/01/27/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/</loc>
     
     <lastmod>2022-01-27</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/</loc>
+    <loc>https://xuanyabulema.github.io/2021/12/17/%E7%94%A8Hexo%E5%86%99blog%E5%89%8D%E7%9A%84%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2022-01-27</lastmod>
     
@@ -30,15 +30,6 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/</loc>
-    
-    <lastmod>2022-01-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/2021/12/17/%E7%94%A8Hexo%E5%86%99blog%E5%89%8D%E7%9A%84%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2022-01-27</lastmod>
     
@@ -92,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/categories/index.html</loc>
+    <loc>https://xuanyabulema.github.io/tags/index.html</loc>
     
     <lastmod>2021-12-20</lastmod>
     
@@ -101,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/tags/index.html</loc>
+    <loc>https://xuanyabulema.github.io/categories/index.html</loc>
     
     <lastmod>2021-12-20</lastmod>
     
@@ -133,27 +124,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/tags/Ubuntu/</loc>
-    <lastmod>2022-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/tags/GitHub/</loc>
-    <lastmod>2022-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/tags/Docker/</loc>
-    <lastmod>2022-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/tags/Windows/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -162,6 +132,20 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/bug/</loc>
+    <lastmod>2022-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/tags/Ubuntu/</loc>
+    <lastmod>2022-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/tags/Docker/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -191,13 +175,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/categories/Linux/</loc>
-    <lastmod>2022-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/categories/Windows/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -206,6 +183,13 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/categories/%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2022-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/categories/Ubuntu/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
