@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xuanyabulema.github.io/2021/11/29/Hexo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE/</loc>
+    <loc>https://xuanyabulema.github.io/2021/11/26/Hexo%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97/</loc>
     
     <lastmod>2022-01-27</lastmod>
     
@@ -12,6 +12,15 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/2021/12/17/%E7%94%A8Hexo%E5%86%99blog%E5%89%8D%E7%9A%84%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2022-01-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/2021/11/29/Hexo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE/</loc>
     
     <lastmod>2022-01-27</lastmod>
     
@@ -107,6 +116,13 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/Ubuntu/</loc>
+    <lastmod>2022-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/tags/GitHub/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
