@@ -4,7 +4,7 @@ date: 2021-11-26 07:39:29
 categories: 
 - Hexo
 tags: [Hexo,Ubuntu,GitHub]
-hidden: true
+hidden: 
 ---
 
 # 在Ubuntu server 20.04LTS上安装Hexo
@@ -178,6 +178,22 @@ theme: next
 | :--------------- | :----------------------------------------------------------- |
 | 完整的互联网 URI | `http://example.com/avatar.png`                              |
 | 站点内的地址     | 将头像放置主题目录下的 source/uploads/ （新建 uploads 目录若不存在）<br>配置为：avatar: /uploads/avatar.png<br>或者 放置在 source/images/ 目录下<br>配置为：avatar: /images/avatar.png |
+
+### 设置网站的图标Favicon
+
+把图标放在`/themes/next/source/images`里，并且修改主题配置文件：
+
+```shell
+favicon:
+  small: /images/favicon_16x16.ico
+  medium: /images/favicon_32x32.ico
+  #apple_touch_icon: /images/apple-touch-icon-next.png
+  #safari_pinned_tab: /images/logo.svg
+  #android_manifest: /images/manifest.json
+  #ms_browserconfig: /images/browserconfig.xml
+```
+
+
 
 ### 添加分类界面
 
