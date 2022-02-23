@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git使用</title>
+    <url>/2022/02/23/Git%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>Git查看分支信息</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<p>更换分支</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout &lt;branch&gt; # &lt;branch&gt;为分支名</span><br><span class="line">git switch &lt;branch&gt; # &lt;branch&gt;为分支名</span><br></pre></td></tr></table></figure>
+
+<p>创建并切换到新分支</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout -b &lt;branch&gt; # &lt;branch&gt;为分支名</span><br><span class="line">git switch -c &lt;branch&gt; # &lt;branch&gt;为分支名</span><br></pre></td></tr></table></figure>
+
+<p>相当于以下两条命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch &lt;branch&gt; # &lt;branch&gt;为分支名</span><br><span class="line">git checkout &lt;branch&gt; # &lt;branch&gt;为分支名</span><br></pre></td></tr></table></figure>
+
+<p>删除分支</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -d &lt;branch&gt; # &lt;branch&gt;为分支名</span><br></pre></td></tr></table></figure>
+
+<p>合并分支：合并指定分支到当前分支</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge &lt;branch&gt; # &lt;branch&gt;为分支名</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo多端同步|迁移</title>
     <url>/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/</url>
     <content><![CDATA[<h1 id="新建GitHub分支以保存Hexo源文件"><a href="#新建GitHub分支以保存Hexo源文件" class="headerlink" title="新建GitHub分支以保存Hexo源文件"></a>新建GitHub分支以保存Hexo源文件</h1><p><img src="/2021/11/29/Hexo%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5-%E8%BF%81%E7%A7%BB/image-20211205170753314.png" alt="image-20211205170753314"></p>
