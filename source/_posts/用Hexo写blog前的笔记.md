@@ -176,7 +176,7 @@ ax.set_xlim(0,len(xticks)+1)
 plt.show()
 ```
 
-<img src="%E7%AC%94%E8%AE%B0/image-20210706201916373.png" alt="image-20210706201916373" style="zoom: 33%;" />
+![image-20210706201916373](image-20210706201916373.png)
 
 
 
@@ -804,7 +804,7 @@ git config --global --unset https.proxy
 
 
 
-```
+```shell
 export http_proxy="http://192.168.1.11:7890"
 export https_proxy="http://192.168.1.11:7890"
 export http_proxy="socks5://192.168.1.11:7891"
