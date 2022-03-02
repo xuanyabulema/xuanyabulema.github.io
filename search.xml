@@ -373,6 +373,36 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo隐藏文章</title>
+    <url>/2022/01/18/Hexo%E9%9A%90%E8%97%8F%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>本 Hexo 插件可以隐藏指定的文章，并使它们仅可通过链接访问。</p>
+<p>当一篇文章被设置为「隐藏」时，它不会出现在任何列表中（包括首页、存档、分类页面、标签页面、Feed、站点地图等），也不会被搜索引擎索引（前提是搜索引擎遵守 noindex 标签）。</p>
+<p>只有知道文章链接的人才可以访问被隐藏的文章。</p>
+<blockquote>
+<p><a href="https://github.com/prinsss/hexo-hide-posts/blob/master/README_ZH.md">https://github.com/prinsss/hexo-hide-posts/blob/master/README_ZH.md</a></p>
+</blockquote>
+<span id="more"></span>
+
+
+
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-hide-posts --save</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>在站点目录下的<code>_config.yml</code>中如下配置：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> hexo-hide-posts</span></span><br><span class="line">hide_posts:</span><br><span class="line"><span class="meta">  #</span><span class="bash"> 可以改成其他你喜欢的名字</span></span><br><span class="line">  filter: hidden</span><br><span class="line"><span class="meta">  #</span><span class="bash"> 指定你想要传递隐藏文章的位置，比如让所有隐藏文章在存档页面可见</span></span><br><span class="line"><span class="meta">  #</span><span class="bash"> 常见的位置有：index, tag, category, archive, sitemap, feed, etc.</span></span><br><span class="line"><span class="meta">  #</span><span class="bash"> 留空则默认全部隐藏</span></span><br><span class="line">  public_generators: []</span><br><span class="line"><span class="meta">  #</span><span class="bash"> 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录</span></span><br><span class="line">  noindex: true</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>个人腾讯云轻量应用服务器基础配置</title>
     <url>/2022/01/09/%E4%B8%AA%E4%BA%BA%E8%85%BE%E8%AE%AF%E4%BA%91%E8%BD%BB%E9%87%8F%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h1 id="系统：Ubuntu-20-04-3-LTS"><a href="#系统：Ubuntu-20-04-3-LTS" class="headerlink" title="系统：Ubuntu 20.04.3 LTS"></a>系统：Ubuntu 20.04.3 LTS</h1><span id="more"></span>
@@ -412,7 +442,7 @@
 <p>4、安装Docker</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install docker-ce docker-ce-cli containerd.io</span><br></pre></td></tr></table></figure>
 
-<h1 id="安装常用Docker"><a href="#安装常用Docker" class="headerlink" title="安装常用Docker"></a>安装常用Docker</h1><h2 id="Portainer-CE"><a href="#Portainer-CE" class="headerlink" title="Portainer CE"></a>Portainer CE</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    -p 8000:8000 -p 9000:9000 \</span><br><span class="line">    --name=portainer \</span><br><span class="line">    --restart=always \</span><br><span class="line">    -v /var/run/docker.sock:/var/run/docker.sock \</span><br><span class="line">    -v portainer_data:/data \</span><br><span class="line">    portainer/portainer-ce</span><br></pre></td></tr></table></figure>
+<h1 id="安装常用Docker"><a href="#安装常用Docker" class="headerlink" title="安装常用Docker"></a>安装常用Docker</h1><h2 id="Portainer-CE"><a href="#Portainer-CE" class="headerlink" title="Portainer CE"></a>Portainer CE</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    -p 8000:8000 -p 9000:9000 \</span><br><span class="line">    --name=portainer \</span><br><span class="line">    --restart=always \</span><br><span class="line">    -v /var/run/docker.sock:/var/run/docker.sock \</span><br><span class="line">    -v $PWD/portainer_data:/data \</span><br><span class="line">    portainer/portainer-ce</span><br></pre></td></tr></table></figure>
 
 <h2 id="DDNSTO"><a href="#DDNSTO" class="headerlink" title="DDNSTO"></a>DDNSTO</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    --name=&lt;container name&gt; \</span><br><span class="line">    -e TOKEN=&lt;填入你的token&gt; \</span><br><span class="line">    -e DEVICE_IDX=&lt;默认0，如果设备ID重复则为1-100之间&gt; \</span><br><span class="line">    -v /etc/localtime:/etc/localtime:ro \</span><br><span class="line">    -e PUID=&lt;uid for user&gt; \</span><br><span class="line">    -e PGID=&lt;gid for user&gt; \</span><br><span class="line">    --restart=always  \</span><br><span class="line">    linkease/ddnsto</span><br><span class="line"><span class="meta">#</span><span class="bash"> &lt;填入你的token&gt;: 填写从ddnsto控制台拿到的 token。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> DEVICE_IDX: 默认0，如果设备ID重复则改为1-100之间。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> PUID/PGID：获取方式：终端输入id即可。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 注意要替换 <span class="string">&quot;&lt;&gt;&quot;</span> 里面的内容，且不能出现 <span class="string">&quot;&lt;&gt;&quot;</span>。</span></span><br></pre></td></tr></table></figure>
 
@@ -706,36 +736,6 @@
         <tag>Docker</tag>
         <tag>Python</tag>
         <tag>Linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo隐藏文章</title>
-    <url>/2022/01/18/Hexo%E9%9A%90%E8%97%8F%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>本 Hexo 插件可以隐藏指定的文章，并使它们仅可通过链接访问。</p>
-<p>当一篇文章被设置为「隐藏」时，它不会出现在任何列表中（包括首页、存档、分类页面、标签页面、Feed、站点地图等），也不会被搜索引擎索引（前提是搜索引擎遵守 noindex 标签）。</p>
-<p>只有知道文章链接的人才可以访问被隐藏的文章。</p>
-<blockquote>
-<p><a href="https://github.com/prinsss/hexo-hide-posts/blob/master/README_ZH.md">https://github.com/prinsss/hexo-hide-posts/blob/master/README_ZH.md</a></p>
-</blockquote>
-<span id="more"></span>
-
-
-
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-hide-posts --save</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>在站点目录下的<code>_config.yml</code>中如下配置：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> hexo-hide-posts</span></span><br><span class="line">hide_posts:</span><br><span class="line"><span class="meta">  #</span><span class="bash"> 可以改成其他你喜欢的名字</span></span><br><span class="line">  filter: hidden</span><br><span class="line"><span class="meta">  #</span><span class="bash"> 指定你想要传递隐藏文章的位置，比如让所有隐藏文章在存档页面可见</span></span><br><span class="line"><span class="meta">  #</span><span class="bash"> 常见的位置有：index, tag, category, archive, sitemap, feed, etc.</span></span><br><span class="line"><span class="meta">  #</span><span class="bash"> 留空则默认全部隐藏</span></span><br><span class="line">  public_generators: []</span><br><span class="line"><span class="meta">  #</span><span class="bash"> 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录</span></span><br><span class="line">  noindex: true</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
