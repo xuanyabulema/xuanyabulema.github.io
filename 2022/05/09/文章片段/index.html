@@ -27,7 +27,7 @@
 <meta property="og:description" content="一些文章片段的记录">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-09T09:53:34.000Z">
-<meta property="article:modified_time" content="2022-05-09T10:17:43.342Z">
+<meta property="article:modified_time" content="2022-05-09T13:39:07.548Z">
 <meta property="article:author" content="xyblm">
 <meta name="twitter:card" content="summary">
 
@@ -211,7 +211,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-05-09 17:53:34 / 修改时间：18:17:43" itemprop="dateCreated datePublished" datetime="2022-05-09T17:53:34+08:00">2022-05-09</time>
+              <time title="创建时间：2022-05-09 17:53:34 / 修改时间：21:39:07" itemprop="dateCreated datePublished" datetime="2022-05-09T17:53:34+08:00">2022-05-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,7 +229,7 @@
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>6 分钟</span>
             </span>
 
         </div>
@@ -269,6 +269,8 @@
 <p>心脏图像配准是一个比大脑图像配准更复杂的问题，特别是由于心脏和胸腔结构的非刚性和混合运动。此外，与大脑相比，心脏表现出较少的精确的解剖学标志。另外，心脏图像的采集分辨率通常比大脑图像低。</p>
 </blockquote>
 <blockquote>
+<p>A. Registration Methods Based on Geometric Image Features<br>Registration methods based on geometric image features can be divided into registration of a set of points and registration of edges or surfaces.</p>
+<p>A. 基于几何图像特征的配准方法<br>基于几何图像特征的配准方法可分为一组点的配准和边缘或表面的配准。</p>
 <ol>
 <li>Point-Based Registration</li>
 </ol>
@@ -277,6 +279,31 @@
 <li>基于点的注册</li>
 </ol>
 <p>基于点的配准方法通常使用外部标记或解剖学地标。相应的点集通常是在参考图像和浮动图像中手工定义的。基于点的配准方法的优点是，它们可以应用于任何标记或地标可见的成像方式，并且两个点集之间的配准参数计算通常是快速的。</p>
+<p>In landmark-based registration, corresponding anatomical points have to be visible in both registered images. For heart images, there are usually only few spatially accurate anatomical landmarks. In pathological conditions, such as ischemia, the functional alterations can also hide anatomical landmarks [18]. Landmarks have been exploited to estimate rigid registration error in [30], [31], [35], [37], and [38].</p>
+<p>在基于地标的配准中，对应的解剖点必须在两个配准图像中都可见。对于心脏图像，通常只有很少的空间精确解剖标志。在病理条件下，例如缺血，功能改变也可以隐藏解剖标志[18]。在 [30]、[31]、[35]、[37] 和 [38] 中，地标已被用于估计刚性配准误差。</p>
+<ol start="2">
+<li>Edge- and Surface-Based Registration</li>
+</ol>
+<p>The chamfer matching method [43], [44] is often used to register surfaces and point sets. In this method, the sum of the distances between the transformed points and a distance map built upon the segmented surface using the chamfer distance transformation is minimized [45].</p>
+<p>倒角匹配方法 [43]、[44] 常用于配准曲面和点集。在这种方法中，变换点之间的距离之和和使用倒角距离变换建立在分割表面上的距离图的总和被最小化[45]。</p>
+<p>a) Registration methods based on thorax surfaces<br>Cardiac image registration methods based on the registration of the thorax surfaces have been proposed because it is often difficult to extract structural information from the heart surfaces directly.</p>
+<p>a) 基于胸廓表面的注册方法<br>基于胸廓表面的心脏图像配准方法已经被提出，因为通常很难直接从心脏表面提取结构信息。一般来说，胸腔和肺部表面在MR和CT图像以及PET和SPECT透射图像中是很明显的。</p>
+<p>b) Registration methods based on heart surfaces<br>Registration of the heart surfaces may result in better registration of the area of interest [31]. The choice of the surfaces to be registered (e.g., epicardial and/or endocardial) is important. </p>
+<p>b) 基于心脏表面的注册方法<br>心脏表面的配准可能会导致感兴趣区域的更好配准[31]。选择要配准的表面（如心外膜和/或心内膜）是很重要的。</p>
+</blockquote>
+<blockquote>
+<p>B. Registration Methods Based on Voxel Similarity Measures<br>Registration methods based on voxel similarity measures can be divided into methods based on moments and principal axes, intensity difference and correlation methods, and methods based on mutual information.</p>
+<p>B. 基于体素相似性测量的配准方法<br>基于体素相似性测量的配准方法可分为基于矩和主轴的方法、强度差和相关方法以及基于互信息的方法。</p>
+<ol start="3">
+<li>Mutual Information</li>
+</ol>
+<p>Mutual information is an information theory measure of the statistical dependence between two random variables or the amount of information that one variable contains about the other [11], [12], [82]–[83][84]. Mutual information can be qualitatively considered as a measure of how well one image explains the other. The mutual information is maximized at the optimal alignment [77]. No assumptions are made regarding the nature of the relation between the image intensities in the registered images [82]. Therefore, the mutual information method is promising in particular for intermodality registration.</p>
+<p>Intermodality registration differs from intramodality registration because different medical imaging modalities usually have different intensity characteristics and different resolutions, noise characteristics, and fields of view. Several <strong>normalized versions of the mutual information</strong> has been proposed because changes in overlap of very low-intensity regions of the image can disproportionately contribute to the mutual information measure [10]–[11][12].</p>
+<ol start="3">
+<li>互信息</li>
+</ol>
+<p>相互信息是信息论中对两个随机变量之间的统计依赖性或一个变量包含的关于另一个变量的信息量的测量[11], [12], [82]-[83][84]。相互信息可以定性地被认为是衡量一个图像对另一个图像的解释程度。相互信息在最佳排列时达到最大[77]。对于配准图像中的图像强度之间关系的性质，不做任何假设[82]。因此，互信息方法特别适合于模态间配准。</p>
+<p>模式间配准不同于模式内配准，因为不同的医学成像模式通常有不同的强度特征和不同的分辨率、噪声特征和视场。由于图像中非常低强度区域的重叠变化会对相互信息度量产生不成比例的贡献，因此已经提出了几种<strong>归一化的互信息</strong>版本[10]-[11][12]。</p>
 </blockquote>
 
     </div>
