@@ -899,4 +899,38 @@
         <tag>Linux</tag>
       </tags>
   </entry>
+  <entry>
+    <title>解决内部显示不支持自定义分辨率</title>
+    <url>/2022/05/20/%E8%A7%A3%E5%86%B3%E5%86%85%E9%83%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86%E8%BE%A8%E7%8E%87/</url>
+    <content><![CDATA[<h1 id="因特尔®显卡控制中心中内部显示不支持自定义分辨率"><a href="#因特尔®显卡控制中心中内部显示不支持自定义分辨率" class="headerlink" title="因特尔®显卡控制中心中内部显示不支持自定义分辨率"></a><code>因特尔®显卡控制中心</code>中<code>内部显示不支持自定义分辨率</code></h1><p><img src="/2022/05/20/%E8%A7%A3%E5%86%B3%E5%86%85%E9%83%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86%E8%BE%A8%E7%8E%87/image-20220520145631576.png" alt="image-20220520145631576"></p>
+<span id="more"></span>
+
+<p>![屏幕截图 2022-05-20 143822](屏幕截图 2022-05-20 143822.png)</p>
+<h1 id="解决方案：自行安装旧版-Intel®-Graphics-Control-Panel"><a href="#解决方案：自行安装旧版-Intel®-Graphics-Control-Panel" class="headerlink" title="解决方案：自行安装旧版**Intel® Graphics Control Panel**"></a>解决方案：自行安装旧版**<code>Intel® Graphics Control Panel</code>**</h1><p>在<code>Microsoft Store</code>的链接：</p>
+<blockquote>
+<p><a href="https://apps.microsoft.com/store/detail/intel%C2%AE-graphics-control-panel/9NDLCLMMTMRC?hl=zh-cn&gl=CN">https://apps.microsoft.com/store/detail/intel®-graphics-control-panel/9NDLCLMMTMRC?hl=zh-cn&amp;gl=CN</a></p>
+</blockquote>
+<p>但是可能没有安装选项，因为之前没有购买过，即没有安装过。</p>
+<h2 id="进行手动安装"><a href="#进行手动安装" class="headerlink" title="进行手动安装"></a>进行手动安装</h2><p>打开下述网站，粘贴上方的链接并搜索</p>
+<blockquote>
+<p><a href="https://store.rg-adguard.net/">https://store.rg-adguard.net/</a></p>
+</blockquote>
+<p>下载<code>appx</code>后缀的文件</p>
+<p><img src="/2022/05/20/%E8%A7%A3%E5%86%B3%E5%86%85%E9%83%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86%E8%BE%A8%E7%8E%87/image-20220520150735498.png" alt="image-20220520150735498"></p>
+<p>双击运行该文件已完成安装</p>
+<p>或（以管理员方式）打开<code>Windows PowerShell</code>使用命令行安装</p>
+<p><img src="/2022/05/20/%E8%A7%A3%E5%86%B3%E5%86%85%E9%83%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86%E8%BE%A8%E7%8E%87/image-20220520151310067.png" alt="image-20220520151310067"></p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">add-appxpackage</span> .\AppUp.IntelGraphicsControlPanel_3.<span class="number">3.0</span>.<span class="number">0</span>_x64__8j3eq9eme6ctt.Appx</span><br></pre></td></tr></table></figure>
+
+<p>然后打开<code>Intel® Graphics Control Panel</code>可进行自定义分辨率</p>
+<p><img src="/2022/05/20/%E8%A7%A3%E5%86%B3%E5%86%85%E9%83%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%94%AF%E6%8C%81%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%86%E8%BE%A8%E7%8E%87/image-20220520152151440.png" alt="image-20220520152151440"></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>bug</tag>
+      </tags>
+  </entry>
 </search>
