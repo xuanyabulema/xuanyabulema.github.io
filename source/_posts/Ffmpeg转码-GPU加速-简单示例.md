@@ -8,7 +8,7 @@ hidden:
 
 # FFmpeg转码 GPU加速 简单示例
 
-> 常见的h264，hevc(h265)格式视频为例
+> 常见的h264, hevc(h265)格式视频为例
 
 <!-- more -->
 
@@ -16,7 +16,7 @@ hidden:
 
 通过 `h264_cuvid `、 `hevc_cuvid `和 `h264_nvenc `、 `hevc_nvenc `参数来加速`h264`和`hevc`解码和编码。
 
-一、不指定原视频加速解码
+一、不指定原视频解码加速方式
 
 `-c:v hevc_nvenc`加速`hevc`格式编码
 
@@ -24,7 +24,7 @@ hidden:
 ffmpeg -i input.mp4 -c:v hevc_nvenc -b:v 1024k output_265_gpu.mp4
 ```
 
-二、指定原视频解码格式
+二、指定原视频解码加速方式
 
 `h264`编码格式转`hevc`编码格式示例
 
