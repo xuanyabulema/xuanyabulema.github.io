@@ -4,16 +4,16 @@
     <title>FFmpeg转码 GPU加速 简单示例</title>
     <url>/2022/05/25/Ffmpeg%E8%BD%AC%E7%A0%81-GPU%E5%8A%A0%E9%80%9F-%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B/</url>
     <content><![CDATA[<h1 id="FFmpeg转码-GPU加速-简单示例"><a href="#FFmpeg转码-GPU加速-简单示例" class="headerlink" title="FFmpeg转码 GPU加速 简单示例"></a>FFmpeg转码 GPU加速 简单示例</h1><blockquote>
-<p>常见的h264，hevc(h265)格式视频为例</p>
+<p>常见的h264, hevc(h265)格式视频为例</p>
 </blockquote>
 <span id="more"></span>
 
 <h2 id="Nvidia-GPU加速转码"><a href="#Nvidia-GPU加速转码" class="headerlink" title="Nvidia GPU加速转码"></a>Nvidia GPU加速转码</h2><p>通过 <code>h264_cuvid </code>、 <code>hevc_cuvid </code>和 <code>h264_nvenc </code>、 <code>hevc_nvenc </code>参数来加速<code>h264</code>和<code>hevc</code>解码和编码。</p>
-<p>一、不指定原视频加速解码</p>
+<p>一、不指定原视频解码加速方式</p>
 <p><code>-c:v hevc_nvenc</code>加速<code>hevc</code>格式编码</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -c:v hevc_nvenc -b:v 1024k output_265_gpu.mp4</span><br></pre></td></tr></table></figure>
 
-<p>二、指定原视频解码格式</p>
+<p>二、指定原视频解码加速方式</p>
 <p><code>h264</code>编码格式转<code>hevc</code>编码格式示例</p>
 <p><code>-c:v h264_cuvid</code>指定加速<code>h264</code>格式视频解码，<code>-c:v hevc_nvenc</code>加速<code>hevc</code>格式编码</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -c:v h264_cuvid -i input.mp4 -c:v hevc_nvenc -b:v 1024k output_265_gpu.mp4</span><br></pre></td></tr></table></figure>
