@@ -22,7 +22,7 @@
 <p><code>-c:v hevc_cuvid</code>指定加速<code>hevc</code>格式视频解码，<code>-c:v h264_nvenc</code>加速<code>h264</code>格式编码</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ffmpeg -c:v hevc_cuvid -i input.mp4 -c:v h264_nvenc -b:v 2048k output_264_gpu.mp4</span><br></pre></td></tr></table></figure>
 
-<h2 id="Intel-GPU加速转码"><a href="#Intel-GPU加速转码" class="headerlink" title="Intel GPU加速转码"></a>Intel GPU加速转码</h2><p>通过 <code>h264_qsv </code>、 <code>hevc_qsv </code>来加速<code>h264</code>和<code>hevc</code>解码和编码。</p>
+<h2 id="Intel-GPU加速转码"><a href="#Intel-GPU加速转码" class="headerlink" title="Intel GPU加速转码"></a>Intel GPU加速转码</h2><p>通过 <code>h264_qsv</code>、 <code>hevc_qsv</code>来加速<code>h264</code>和<code>hevc</code>解码和编码。</p>
 <p>不同于Nvidia GPU加速参数，Intel GPU加速解码与编码参数一样。</p>
 <p>替换上述Nvidia GPU参数即可实现Intel GPU加速转码。</p>
 ]]></content>
