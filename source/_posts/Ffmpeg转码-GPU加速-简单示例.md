@@ -44,7 +44,7 @@ ffmpeg -c:v hevc_cuvid -i input.mp4 -c:v h264_nvenc -b:v 2048k output_264_gpu.mp
 
 ## Intel GPU加速转码
 
-通过 `h264_qsv `、 `hevc_qsv `来加速`h264`和`hevc`解码和编码。
+通过 `h264_qsv`、 `hevc_qsv`来加速`h264`和`hevc`解码和编码。
 
 不同于Nvidia GPU加速参数，Intel GPU加速解码与编码参数一样。
 
