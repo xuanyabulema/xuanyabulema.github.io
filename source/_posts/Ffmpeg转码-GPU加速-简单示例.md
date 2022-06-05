@@ -14,7 +14,7 @@ hidden:
 
 ## Nvidia GPU加速转码
 
-通过 `h264_cuvid `、 `hevc_cuvid `和 `h264_nvenc `、 `hevc_nvenc `参数来加速`h264`和`hevc`解码和编码。
+通过 `h264_cuvid`、 `hevc_cuvid`和 `h264_nvenc`、 `hevc_nvenc`参数来加速`h264`和`hevc`解码和编码。
 
 一、不指定原视频解码加速方式
 
