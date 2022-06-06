@@ -800,9 +800,7 @@ git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
 
-## OpenWRT代理设置
-
-
+## Ubuntu代理设置
 
 ```shell
 export http_proxy="http://192.168.1.11:7890"
@@ -810,5 +808,18 @@ export https_proxy="http://192.168.1.11:7890"
 export http_proxy="socks5://192.168.1.11:7891"
 export https_proxy="socks5://192.168.1.11:7891"
 export ALL_PROXY="socks5://192.168.1.11:7893"
-export ALL_PROXY="socks5://192.168.1.222:7891"
+
 ```
+
+查看代理
+
+```shell
+echo $ALL_PROXY && echo $https_proxy && echo $http_proxy
+```
+
+取消代理
+
+```shell
+unset ALL_PROXY && unset https_proxy && unset http_proxy
+```
+
