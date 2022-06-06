@@ -921,7 +921,14 @@
 <p><a href="https://nu-ll.github.io/2021/03/04/Linux%E7%BB%88%E7%AB%AF%E4%BB%A3%E7%90%86/">https://nu-ll.github.io/2021/03/04/Linux%E7%BB%88%E7%AB%AF%E4%BB%A3%E7%90%86/</a></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 当前</span></span><br><span class="line">git config http.proxy <span class="string">&#x27;socks5://192.168.1.11:7893&#x27;</span> </span><br><span class="line">git config https.proxy <span class="string">&#x27;socks5://192.168.1.11:7893&#x27;</span></span><br><span class="line"><span class="comment"># 全局</span></span><br><span class="line">git config --global http.proxy <span class="string">&#x27;socks5://192.168.1.11:7891&#x27;</span> </span><br><span class="line">git config --global https.proxy <span class="string">&#x27;socks5://192.168.1.11:7891&#x27;</span></span><br><span class="line"><span class="comment"># 取消</span></span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br><span class="line">git config --global --<span class="built_in">unset</span> https.proxy</span><br></pre></td></tr></table></figure>
 
-<h2 id="OpenWRT代理设置"><a href="#OpenWRT代理设置" class="headerlink" title="OpenWRT代理设置"></a>OpenWRT代理设置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export http_proxy=&quot;http://192.168.1.11:7890&quot;</span><br><span class="line">export https_proxy=&quot;http://192.168.1.11:7890&quot;</span><br><span class="line">export http_proxy=&quot;socks5://192.168.1.11:7891&quot;</span><br><span class="line">export https_proxy=&quot;socks5://192.168.1.11:7891&quot;</span><br><span class="line">export ALL_PROXY=&quot;socks5://192.168.1.11:7893&quot;</span><br><span class="line">export ALL_PROXY=&quot;socks5://192.168.1.222:7891&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="Ubuntu代理设置"><a href="#Ubuntu代理设置" class="headerlink" title="Ubuntu代理设置"></a>Ubuntu代理设置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export http_proxy=&quot;http://192.168.1.11:7890&quot;</span><br><span class="line">export https_proxy=&quot;http://192.168.1.11:7890&quot;</span><br><span class="line">export http_proxy=&quot;socks5://192.168.1.11:7891&quot;</span><br><span class="line">export https_proxy=&quot;socks5://192.168.1.11:7891&quot;</span><br><span class="line">export ALL_PROXY=&quot;socks5://192.168.1.11:7893&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>查看代理</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">echo $ALL_PROXY &amp;&amp; echo $https_proxy &amp;&amp; echo $http_proxy</span><br></pre></td></tr></table></figure>
+
+<p>取消代理</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">unset ALL_PROXY &amp;&amp; unset https_proxy &amp;&amp; unset http_proxy</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>笔记</category>
