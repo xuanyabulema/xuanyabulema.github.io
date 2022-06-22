@@ -56,3 +56,6 @@ conda install pytorch torchvision torchaudio cudatoolkit=11.3
 conda install pytorch=1.11.0 torchvision torchaudio cudatoolkit=11.3
 ```
 
+# pip配置清华源
+
+> https://mirrors.tuna.tsinghua.edu.cn/help/pypi/
