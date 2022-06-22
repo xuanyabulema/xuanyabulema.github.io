@@ -3,8 +3,6 @@ title: Anaconda源配置与Pytorch安装
 date: 2022-06-22 21:51:24
 tags: [Anaconda,Pytorch,cuda]
 categories:
-- Anaconda
-- Pytorch
 hidden:
 ---
 
@@ -44,7 +42,7 @@ conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
 
 `-c pytorch`参数指定为Pytorch官网进行安装
 
-在上述配置清华源后应该删除，使用如下
+在上述配置清华源后可以删除，从而使得从清华源上下，使用如下
 
 ```
 conda install pytorch torchvision torchaudio cudatoolkit=11.3
