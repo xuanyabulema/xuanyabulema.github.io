@@ -1,7 +1,7 @@
 ---
 title: Anaconda包含除外的常用Python库安装
 date: 2022-06-22 22:11:21
-tags:
+tags: [Anaconda,Python]
 categories:
 hidden:
 ---
@@ -10,9 +10,7 @@ Anaconda已经包含不少的python库
 
 除此之外还有一些常用的库的安装
 
-在此记录
-
-其中Anaconda，pip配置的是清华源进行安装
+在此记录，其中Anaconda，pip配置的是清华源进行安装
 
 <!-- more -->
 
