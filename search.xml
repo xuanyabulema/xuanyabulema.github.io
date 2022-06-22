@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Anaconda包含除外的常用Python库安装</title>
+    <url>/2022/06/22/Anaconda%E5%8C%85%E5%90%AB%E9%99%A4%E5%A4%96%E7%9A%84%E5%B8%B8%E7%94%A8Python%E5%BA%93%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p>Anaconda已经包含不少的python库</p>
+<p>除此之外还有一些常用的库的安装</p>
+<p>在此记录</p>
+<p>其中Anaconda，pip配置的是清华源进行安装</p>
+<span id="more"></span>
+
+<h1 id="OpenCV及其扩展模块"><a href="#OpenCV及其扩展模块" class="headerlink" title="OpenCV及其扩展模块"></a>OpenCV及其扩展模块</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install opencv-python</span><br><span class="line">pip install opencv-contrib-python</span><br></pre></td></tr></table></figure>
+
+<h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><p>1.11.0 cuda版</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda install pytorch=1.11.0 torchvision torchaudio cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
+
+<h1 id="安装指定版本的库"><a href="#安装指定版本的库" class="headerlink" title="安装指定版本的库"></a>安装指定版本的库</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install matplotlib==3.4.1</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>Anaconda源配置与Pytorch安装</title>
     <url>/2022/06/22/Anaconda%E6%BA%90%E9%85%8D%E7%BD%AE%E4%B8%8EPytorch%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<h1 id="Anaconda配置清华源"><a href="#Anaconda配置清华源" class="headerlink" title="Anaconda配置清华源"></a>Anaconda配置清华源</h1><blockquote>
@@ -22,6 +40,9 @@
 <p>可以指定一下<code>pytorch</code>版本</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda install pytorch=1.11.0 torchvision torchaudio cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
 
+<h1 id="pip配置清华源"><a href="#pip配置清华源" class="headerlink" title="pip配置清华源"></a>pip配置清华源</h1><blockquote>
+<p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">https://mirrors.tuna.tsinghua.edu.cn/help/pypi/</a></p>
+</blockquote>
 ]]></content>
       <tags>
         <tag>Anaconda</tag>
