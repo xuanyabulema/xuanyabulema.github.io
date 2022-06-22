@@ -162,6 +162,13 @@
   </url>
   
   <url>
+    <loc>https://xuanyabulema.github.io/tags/Python/</loc>
+    <lastmod>2022-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanyabulema.github.io/tags/Pytorch/</loc>
     <lastmod>2022-06-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -226,13 +233,6 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/bug/</loc>
-    <lastmod>2022-06-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/tags/Python/</loc>
     <lastmod>2022-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

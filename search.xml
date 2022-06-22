@@ -5,8 +5,7 @@
     <url>/2022/06/22/Anaconda%E5%8C%85%E5%90%AB%E9%99%A4%E5%A4%96%E7%9A%84%E5%B8%B8%E7%94%A8Python%E5%BA%93%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<p>Anaconda已经包含不少的python库</p>
 <p>除此之外还有一些常用的库的安装</p>
-<p>在此记录</p>
-<p>其中Anaconda，pip配置的是清华源进行安装</p>
+<p>在此记录，其中Anaconda，pip配置的是清华源进行安装</p>
 <span id="more"></span>
 
 <h1 id="OpenCV及其扩展模块"><a href="#OpenCV及其扩展模块" class="headerlink" title="OpenCV及其扩展模块"></a>OpenCV及其扩展模块</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install opencv-python</span><br><span class="line">pip install opencv-contrib-python</span><br></pre></td></tr></table></figure>
@@ -17,6 +16,10 @@
 <h1 id="安装指定版本的库"><a href="#安装指定版本的库" class="headerlink" title="安装指定版本的库"></a>安装指定版本的库</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install matplotlib==3.4.1</span><br></pre></td></tr></table></figure>
 
 ]]></content>
+      <tags>
+        <tag>Anaconda</tag>
+        <tag>Python</tag>
+      </tags>
   </entry>
   <entry>
     <title>Anaconda源配置与Pytorch安装</title>
@@ -984,8 +987,8 @@
         <category>笔记</category>
       </categories>
       <tags>
-        <tag>Docker</tag>
         <tag>Python</tag>
+        <tag>Docker</tag>
         <tag>Linux</tag>
       </tags>
   </entry>
