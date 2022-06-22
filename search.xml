@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Anaconda源配置与Pytorch安装</title>
+    <url>/2022/06/22/Anaconda%E6%BA%90%E9%85%8D%E7%BD%AE%E4%B8%8EPytorch%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<h1 id="Anaconda配置清华源"><a href="#Anaconda配置清华源" class="headerlink" title="Anaconda配置清华源"></a>Anaconda配置清华源</h1><blockquote>
+<p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/</a></p>
+</blockquote>
+<span id="more"></span>
+
+<p>我的配置如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: true</span><br><span class="line">default_channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch-lts</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/simpleitk</span><br><span class="line">custom_channels:</span><br><span class="line">  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud</span><br></pre></td></tr></table></figure>
+
+<h1 id="Pytorch安装"><a href="#Pytorch安装" class="headerlink" title="Pytorch安装"></a>Pytorch安装</h1><p>Pytorch官网的conda安装命令为（安装1.11.0版本的pytorch）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch</span><br></pre></td></tr></table></figure>
+
+<p><code>-c pytorch</code>参数指定为Pytorch官网进行安装</p>
+<p>在上述配置清华源后应该删除，使用如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
+
+<p>有时安装不上cuda版的</p>
+<p>可以指定一下<code>pytorch</code>版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda install pytorch=1.11.0 torchvision torchaudio cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Anaconda</category>
+        <category>Pytorch</category>
+      </categories>
+      <tags>
+        <tag>Anaconda</tag>
+        <tag>Pytorch</tag>
+        <tag>cuda</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FFmpeg转码 GPU加速 简单示例</title>
     <url>/2022/05/25/Ffmpeg%E8%BD%AC%E7%A0%81-GPU%E5%8A%A0%E9%80%9F-%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B/</url>
     <content><![CDATA[<h1 id="FFmpeg转码-GPU加速-简单示例"><a href="#FFmpeg转码-GPU加速-简单示例" class="headerlink" title="FFmpeg转码 GPU加速 简单示例"></a>FFmpeg转码 GPU加速 简单示例</h1><blockquote>
