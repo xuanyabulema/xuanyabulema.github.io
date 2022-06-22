@@ -15,7 +15,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch</span><br></pre></td></tr></table></figure>
 
 <p><code>-c pytorch</code>参数指定为Pytorch官网进行安装</p>
-<p>在上述配置清华源后应该删除，使用如下</p>
+<p>在上述配置清华源后可以删除，从而使得从清华源上下，使用如下</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda install pytorch torchvision torchaudio cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
 
 <p>有时安装不上cuda版的</p>
@@ -23,10 +23,6 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">conda install pytorch=1.11.0 torchvision torchaudio cudatoolkit=11.3</span><br></pre></td></tr></table></figure>
 
 ]]></content>
-      <categories>
-        <category>Anaconda</category>
-        <category>Pytorch</category>
-      </categories>
       <tags>
         <tag>Anaconda</tag>
         <tag>Pytorch</tag>
