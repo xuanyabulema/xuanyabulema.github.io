@@ -8,9 +8,9 @@ hidden:
 
 Anaconda已经包含不少的python库
 
-除此之外还有一些常用的库的安装
+除此之外个人使用还有一些常用的库的安装
 
-在此记录，其中Anaconda，pip配置的是清华源进行安装
+在此记录，其中`Anaconda`, `pip`配置的是清华源进行安装
 
 <!-- more -->
 
@@ -27,6 +27,12 @@ pip install opencv-contrib-python
 
 ```
 conda install pytorch=1.11.0 torchvision torchaudio cudatoolkit=11.3
+```
+
+# pydicom
+
+```
+pip install pydicom
 ```
 
 # 安装指定版本的库
