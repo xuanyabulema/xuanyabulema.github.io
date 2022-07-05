@@ -1,7 +1,7 @@
 ---
 title: Ubuntu20.04设置静态ip
 date: 2022-07-05 20:29:03
-tags: Ubuntu
+tags: [Ubuntu]
 categories:
 hidden:
 ---
