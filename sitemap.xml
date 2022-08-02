@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xuanyabulema.github.io/2022/08/02/PyCharm-python%E6%8E%A7%E5%88%B6%E5%8F%B0%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E8%A7%A3%E5%86%B3/</loc>
+    
+    <lastmod>2022-08-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/2022/01/09/%E4%B8%AA%E4%BA%BA%E8%85%BE%E8%AE%AF%E4%BA%91%E8%BD%BB%E9%87%8F%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</loc>
+    
+    <lastmod>2022-07-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanyabulema.github.io/2022/07/05/Ubuntu20-04%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81ip/</loc>
     
     <lastmod>2022-07-05</lastmod>
@@ -59,15 +77,6 @@
     <loc>https://xuanyabulema.github.io/2022/01/09/%E6%96%87%E7%AB%A0%E7%89%87%E6%AE%B5/</loc>
     
     <lastmod>2022-05-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/2022/01/09/%E4%B8%AA%E4%BA%BA%E8%85%BE%E8%AE%AF%E4%BA%91%E8%BD%BB%E9%87%8F%E5%BA%94%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</loc>
-    
-    <lastmod>2022-03-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -137,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/categories/index.html</loc>
+    <loc>https://xuanyabulema.github.io/tags/index.html</loc>
     
     <lastmod>2021-12-20</lastmod>
     
@@ -146,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/tags/index.html</loc>
+    <loc>https://xuanyabulema.github.io/categories/index.html</loc>
     
     <lastmod>2021-12-20</lastmod>
     
@@ -157,7 +166,7 @@
 
   <url>
     <loc>https://xuanyabulema.github.io/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -165,91 +174,98 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/Anaconda/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/Python/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/Pytorch/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/cuda/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/FFmpeg/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/Git/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/Hexo/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/Ubuntu/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/GitHub/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/tags/PyCharm/</loc>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/Docker/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/Windows/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/bug/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/tags/Linux/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -258,42 +274,42 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/categories/FFmpeg/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/categories/Git/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/categories/Hexo/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/categories/Linux/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/categories/Windows/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://xuanyabulema.github.io/categories/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2022-07-05</lastmod>
+    <lastmod>2022-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
