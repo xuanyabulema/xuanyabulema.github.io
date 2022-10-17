@@ -17,6 +17,10 @@ hidden:
 
 # 将本地Hexo目录与GitHub的Hexo分支关联上
 
+> 2022-10-17更新
+>
+> 建议新建一个私有仓库保存，防止token等泄露
+
 先将`Hexo`分支文件clone到本地：
 
 ```shell

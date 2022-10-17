@@ -104,7 +104,8 @@ menu:
   #sitemap: /sitemap.xml || fa fa-sitemap
   #commonweal: /404/ || fa fa-heartbeat
   阅读: /book/ || fa fa-book
-  折腾: /wrench/ || fa fa-wrench
+  折腾: /microchip/ || fas fa-microchip
+  冲浪: /surfing/ || fab fa-internet-explorer # fa5 图标有些是要fab
 
 # Enable / Disable menu icons / item badges.
 menu_settings:

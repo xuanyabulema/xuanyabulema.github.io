@@ -1,7 +1,7 @@
 ---
 title: 折腾
 date: 2022-01-01 00:00:01
-type: "wrench"
+type: "microchip"
 ---
 
 # 前言
