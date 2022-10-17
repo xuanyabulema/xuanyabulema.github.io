@@ -144,7 +144,7 @@ live2d:
     width: 150
     height: 300
   mobile:
-    show: true
+    show: false
 
 # 让Hexo博客支持emoji显示
 # 首先卸载hexo-renderer-marked 安装hexo-renderer-markdown-it和markdown-it-emoji
