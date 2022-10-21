@@ -146,3 +146,85 @@ menu:
   阅读: /book/ || fa fa-book
 ```
 
+# 插入音视频
+
+## 安装hexo-tag-mmedia
+
+> [安装和基本介绍](https://www.u2sb.com/OpenSw/hexo-tag-mmedia/install.html)
+
+安装命令
+
+```sh
+npm install hexo-tag-mmedia@1 --save
+```
+
+## 配置
+
+- **配置项较多目的是给予最大的自定义权限，默认情况下不做配置也可以使用**。
+- 配置文件放在博客根目录的 `_config.yml` 中
+- default 为默认配置，在 `_config.yml` 中填写就不需要在每个标签全部写入了，所有允许在 mmedia 标签上写入的配置项，均可在 default 下配置。
+
+模板
+
+```yaml
+mmedia:
+  audio:
+    default:
+  video:
+    default:
+  aplayer:
+    js: https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js
+    css: https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css
+    default:
+      contents:
+  meting:
+    js: https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js
+    api:
+    default:
+  dplayer:
+    js: https://cdn.jsdelivr.net/npm/dplayer@1/dist/DPlayer.min.js
+    hls_js: https://cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js
+    dash_js: https://cdn.jsdelivr.net/npm/dashjs/dist/dash.all.min.js
+    shaka_dash_js: https://cdn.jsdelivr.net/npm/shaka-player/dist/shaka-player.compiled.js
+    flv_js: https://cdn.jsdelivr.net/npm/flv.js/dist/flv.min.js
+    webtorrent_js: https://cdn.jsdelivr.net/npm/webtorrent/webtorrent.min.js
+    default:
+      contents:
+  bilibili:
+    default:
+      page: 1
+      danmaku: true
+      allowfullscreen: allowfullscreen
+      sandbox: allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups
+      width: 100%
+      max_width: 850px
+      margin: auto
+  xigua:
+    default:
+      autoplay: false
+      startTime: 0
+      allowfullscreen: allowfullscreen
+      sandbox: allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups
+      width: 100%
+      max_width: 850px
+      margin: auto
+```
+
+## 示例
+
+默认开启弹幕
+
+```markdown
+{% mmedia "bilibili" "bvid:BV1vJ411U7Ji" %}
+```
+
+{% mmedia "bilibili" "bvid:BV1vJ411U7Ji" %}
+
+~~关闭弹幕~~失败
+
+```markdown
+{% mmedia "bilibili" "bvid:BV1vJ411U7Ji" "danmaku:false" %}
+```
+
+{% mmedia "bilibili" "bvid:BV1vJ411U7Ji" "danmaku:false" %}
+

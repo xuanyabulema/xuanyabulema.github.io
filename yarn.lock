@@ -145,6 +145,11 @@
   "resolved" "https://registry.npmmirror.com/ansi-wrap/-/ansi-wrap-0.1.0.tgz"
   "version" "0.1.0"
 
+"any-promise@^1.0.0":
+  "integrity" "sha512-7UvmKalWRt1wgjL1RrGxoSJW/0QZFIegpeGvZG9kjp8vrRu55XTHbwnqq2GpXm9uLbcuhxm3IqX9OB4MZR1b2A=="
+  "resolved" "https://registry.npmmirror.com/any-promise/-/any-promise-1.3.0.tgz"
+  "version" "1.3.0"
+
 "anymatch@^2.0.0":
   "integrity" "sha512-5teOsQWABXHHBFP9y3skS5P3d/WfWXpv3FUpy+LorMrNYaT9pI4oLMQX7jzQ2KklNpGpWHzdCXTDT2Y3XGlZBw=="
   "resolved" "https://registry.npmmirror.com/anymatch/-/anymatch-2.0.0.tgz"
@@ -822,6 +827,11 @@
   "resolved" "https://registry.npmmirror.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz"
   "version" "0.1.1"
 
+"copy-to@^2.0.1":
+  "integrity" "sha512-3DdaFaU/Zf1AnpLiFDeNCD4TOWe3Zl2RZaTzUvWiIk5ERzcCodOE20Vqq4fzCbNoHURFHT4/us/Lfq+S2zyY4w=="
+  "resolved" "https://registry.npmmirror.com/copy-to/-/copy-to-2.0.1.tgz"
+  "version" "2.0.1"
+
 "core-js@^1.1.1":
   "integrity" "sha512-ZiPp9pZlgxpWRu0M+YWbm6+aQ84XEfH1JRXvfOc/fILWI0VKhLC2LX13X1NYq4fULzLMq7Hfh43CSo2/aIaUPA=="
   "resolved" "https://registry.npmmirror.com/core-js/-/core-js-1.2.7.tgz"
@@ -1254,7 +1264,7 @@
   dependencies:
     "es6-promise" "^4.0.3"
 
-"escape-html@~1.0.3":
+"escape-html@^1.0.3", "escape-html@~1.0.3":
   "integrity" "sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow=="
   "resolved" "https://registry.npmmirror.com/escape-html/-/escape-html-1.0.3.tgz"
   "version" "1.0.3"
@@ -1969,6 +1979,16 @@
   dependencies:
     "hexo-util" "1.9.0"
 
+"hexo-tag-mmedia@^1.1.7":
+  "integrity" "sha512-k5xiqDo6ELsxkf/7AsnU6XX+xjML1dW2lO4PmUR22nux27wSD85rJjcnsbIrfjzpK66MJ09xZ98l26L4KxU2pQ=="
+  "resolved" "https://registry.npmmirror.com/hexo-tag-mmedia/-/hexo-tag-mmedia-1.1.7.tgz"
+  "version" "1.1.7"
+  dependencies:
+    "deepmerge" "^4.2.2"
+    "hexo-log" "^2.0.0"
+    "json5" "^2.2.0"
+    "utility" "^1.17.0"
+
 "hexo-theme-landscape@^0.0.3":
   "integrity" "sha512-b0Di+TUVs4ESrNX4ULEh9uQmADpO6kr10rIJ2OGZM8suNQNFKdxn+vJUjnLfKkCPJAfVmS7/S83KCNYe4tpoNw=="
   "resolved" "https://registry.npmmirror.com/hexo-theme-landscape/-/hexo-theme-landscape-0.0.3.tgz"
@@ -2649,7 +2669,7 @@
   dependencies:
     "jju" "^1.1.0"
 
-"json5@^2.1.0":
+"json5@^2.1.0", "json5@^2.2.0":
   "integrity" "sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA=="
   "resolved" "https://registry.npmmirror.com/json5/-/json5-2.2.1.tgz"
   "version" "2.2.1"
@@ -3299,6 +3319,15 @@
     "mkdirp" "~0.5.1"
     "ncp" "~2.0.0"
     "rimraf" "~2.4.0"
+
+"mz@^2.7.0":
+  "integrity" "sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q=="
+  "resolved" "https://registry.npmmirror.com/mz/-/mz-2.7.0.tgz"
+  "version" "2.7.0"
+  dependencies:
+    "any-promise" "^1.0.0"
+    "object-assign" "^4.0.1"
+    "thenify-all" "^1.0.0"
 
 "nanomatch@^1.2.9":
   "integrity" "sha512-fpoe2T0RbHwBTBUOftAfBPaDEi06ufaUai0mE6Yn1kacc3SnTErfb/h+X94VXzI64rKFHYImXSvdwGGCmwOqCA=="
@@ -4844,6 +4873,20 @@
   "resolved" "https://registry.npmmirror.com/text-table/-/text-table-0.2.0.tgz"
   "version" "0.2.0"
 
+"thenify-all@^1.0.0":
+  "integrity" "sha512-RNxQH/qI8/t3thXJDwcstUO4zeqo64+Uy/+sNVRBx4Xn2OX+OZ9oP+iJnNFqplFra2ZUVeKCSa2oVWi3T4uVmA=="
+  "resolved" "https://registry.npmmirror.com/thenify-all/-/thenify-all-1.6.0.tgz"
+  "version" "1.6.0"
+  dependencies:
+    "thenify" ">= 3.1.0 < 4"
+
+"thenify@>= 3.1.0 < 4":
+  "integrity" "sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw=="
+  "resolved" "https://registry.npmmirror.com/thenify/-/thenify-3.3.1.tgz"
+  "version" "3.3.1"
+  dependencies:
+    "any-promise" "^1.0.0"
+
 "through@^2.3.6", "through@>=2.2.7 <3":
   "integrity" "sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg=="
   "resolved" "https://registry.npmmirror.com/through/-/through-2.3.8.tgz"
@@ -4982,6 +5025,13 @@
   "resolved" "https://registry.npmmirror.com/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz"
   "version" "1.0.2"
 
+"unescape@^1.0.1":
+  "integrity" "sha512-O0+af1Gs50lyH1nUu3ZyYS1cRh01Q/kUKatTOkSs7jukXE6/NebucDVxyiDsA9AQ4JC1V1jUH9EO8JX2nMDgGQ=="
+  "resolved" "https://registry.npmmirror.com/unescape/-/unescape-1.0.1.tgz"
+  "version" "1.0.1"
+  dependencies:
+    "extend-shallow" "^2.0.1"
+
 "union-value@^1.0.0":
   "integrity" "sha512-tJfXmxMeWYnczCVs7XAEvIV7ieppALdyepWMkHkwciRpZraG/xwT+s2JN8+pr1+8jCRf80FFzvr+MpQeeoF4Xg=="
   "resolved" "https://registry.npmmirror.com/union-value/-/union-value-1.0.1.tgz"
@@ -5094,6 +5144,17 @@
   "version" "0.10.4"
   dependencies:
     "inherits" "2.0.3"
+
+"utility@^1.17.0":
+  "integrity" "sha512-KdVkF9An/0239BJ4+dqOa7NPrPIOeQE9AGfx0XS16O9DBiHNHRJMoeU5nL6pRGAkgJOqdOu8R4gBRcXnAocJKw=="
+  "resolved" "https://registry.npmmirror.com/utility/-/utility-1.17.0.tgz"
+  "version" "1.17.0"
+  dependencies:
+    "copy-to" "^2.0.1"
+    "escape-html" "^1.0.3"
+    "mkdirp" "^0.5.1"
+    "mz" "^2.7.0"
+    "unescape" "^1.0.1"
 
 "utils-merge@^1.0.0", "utils-merge@1.0.1":
   "integrity" "sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA=="
