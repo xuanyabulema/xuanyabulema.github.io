@@ -192,8 +192,8 @@ sitemap:
   # template: ./sitemap_template.xml
   # template_txt: ./sitemap_template.txt
   rel: false
-  tags: true
-  categories: true
+  tags: false
+  categories: false
 
 
 baidu_url_submit:
