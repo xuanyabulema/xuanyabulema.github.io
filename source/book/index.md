@@ -21,6 +21,8 @@ type: "book"
 
 # WeChat Official Account
 
+#### caoz的梦呓
+
 [那些愚蠢的算计和挣扎](https://mp.weixin.qq.com/s/LmjVpwHp6CHlTGsmzS8ucA)
 
 <p align="right">——caoz的梦呓</p>
@@ -39,5 +41,6 @@ type: "book"
 >
 > 别试图赚取最后一个铜板。
 >
-> ![**caoz的梦呓**](index/qrcode.bmp)
+> ![**caoz的梦呓**](qrcode.bmp)
 
+<img src="index/qrcode.bmp" referrerpolicy="no-referrer" align='right' alt="**caoz的梦呓**">
