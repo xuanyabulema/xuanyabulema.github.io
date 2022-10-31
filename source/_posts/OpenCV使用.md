@@ -273,3 +273,9 @@ kernel =
 ```
 
 ![original & filter2D result](image-20221013000833433.png)
+
+# 直方图
+
+> 参考
+>
+> [《Opencv轻松入门-面向python》学习记录13](https://zhuanlan.zhihu.com/p/395172830)

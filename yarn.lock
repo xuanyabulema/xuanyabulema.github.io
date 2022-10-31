@@ -1839,9 +1839,9 @@
     "timsort" "^0.3.0"
 
 "hexo-generator-searchdb@^1.4.0":
-  "integrity" "sha512-TkwxlqxptRIXHwYeI/V32O2TxXkfqWa37Rrmg347Q+YT1eqk7vQ31vR4zLudBAcSr85ST0VUedYd1/gLBSJl9Q=="
-  "resolved" "https://registry.npmmirror.com/hexo-generator-searchdb/-/hexo-generator-searchdb-1.4.0.tgz"
-  "version" "1.4.0"
+  "integrity" "sha512-7m8IBpZbI6iKb2jRYxs4pghD6Ln8ylQSRGl6MIC4G9wws21vYSXSD8rvC3MoCO+pWBHs6E/mTA/rjG+p2AZfVg=="
+  "resolved" "https://registry.npmmirror.com/hexo-generator-searchdb/-/hexo-generator-searchdb-1.4.1.tgz"
+  "version" "1.4.1"
   dependencies:
     "nunjucks" "^3.2.2"
 
@@ -2385,9 +2385,9 @@
     "ci-info" "^2.0.0"
 
 "is-core-module@^2.9.0":
-  "integrity" "sha512-Erxj2n/LDAZ7H8WNJXd9tw38GYM3dv8rk8Zcs+jJuxYTW7sozH+SS8NtrSjVL1/vpLvWi1hxy96IzjJ3EHTJJg=="
-  "resolved" "https://registry.npmmirror.com/is-core-module/-/is-core-module-2.10.0.tgz"
-  "version" "2.10.0"
+  "integrity" "sha512-RRjxlvLDkD1YJwDbroBHMb+cukurkDWNyHx7D3oNB5x9rb5ogcksMC5wHCadcXoo67gVr/+3GFySh3134zi6rw=="
+  "resolved" "https://registry.npmmirror.com/is-core-module/-/is-core-module-2.11.0.tgz"
+  "version" "2.11.0"
   dependencies:
     "has" "^1.0.3"
 
