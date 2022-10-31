@@ -6,6 +6,8 @@ categories: Git
 hidden:
 ---
 
+# 基础使用
+
 Git查看分支信息
 
 ```shell
@@ -119,4 +121,30 @@ ssh -T git@github.com
 ```
 
 
+
+# 强制**远程覆盖本地**
+
+1、从远程拉取所有内容
+
+```sh
+git fetch --all
+```
+
+2、reset 本地代码
+
+```sh
+git reset --hard origin/master
+```
+
+ 或者如果你在其他分支上：
+
+```sh
+git reset --hard origin/<branch_name>
+```
+
+3、重新拉取对齐
+
+```sh
+git pull
+```
 
