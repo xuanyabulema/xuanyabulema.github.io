@@ -279,3 +279,33 @@ kernel =
 > 参考
 >
 > [《Opencv轻松入门-面向python》学习记录13](https://zhuanlan.zhihu.com/p/395172830)
+
+pass
+
+# 形态学操作
+
+> 参考
+>
+> [OpenCV图像处理-平滑处理、形态学操作](https://zhuanlan.zhihu.com/p/60770435)
+>
+> [形态学图像处理（一）：膨胀与腐蚀](https://www.jianshu.com/p/fc07d3065cf1)
+
+✔️ 包括膨胀、腐蚀、开运算和闭运算等形态学操作
+
+✔️ OpenCV函数：`cv2.erode()`, `cv2.dilate()`, `cv2.morphologyEx()`
+
+## 膨胀
+
+pass
+
+## 腐蚀
+
+pass
+
+## 开运算
+
+pass
+
+## 闭运算
+
+pass
