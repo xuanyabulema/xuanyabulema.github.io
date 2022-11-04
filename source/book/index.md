@@ -26,6 +26,7 @@ type: "book"
 [那些愚蠢的算计和挣扎](https://mp.weixin.qq.com/s/LmjVpwHp6CHlTGsmzS8ucA)
 
 <p align="right">——caoz的梦呓</p>
+<img src="index/qrcode.bmp" referrerpolicy="no-referrer" align='right'>
 
 > 李自成兵临城下，崇祯皇帝筹饷，那些王公大臣还在隐瞒自己的财富，不肯多出一些银两来支援军饷，募兵救国，直到倾覆，所有人成为阶下囚，所有财富被农民起义领袖洗劫一空。从事后而言，他们真的是蠢得不可救药，但是在那个时刻，他们还幻想着帝国坚不可摧，出钱出力来救国是别人的事情，自己坐享其成。
 >
@@ -41,6 +42,10 @@ type: "book"
 >
 > 别试图赚取最后一个铜板。
 >
-> ![**caoz的梦呓**](qrcode.bmp)
 
-<img src="index/qrcode.bmp" referrerpolicy="no-referrer" align='right' alt="**caoz的梦呓**">
+
+
+
+
+
+
