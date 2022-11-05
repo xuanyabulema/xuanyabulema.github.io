@@ -93,22 +93,22 @@ npm install hexo-math --save
 
 ```latex
 $$
-\begin{eqnarray}
-\nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\
-\nabla\cdot\vec{B} &=& 0 \\
-\nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\
-\nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)
-\end{eqnarray}
+\begin{align}
+\nabla\cdot\vec{E} &= \frac{\rho}{\epsilon_0} \\
+\nabla\cdot\vec{B} &= 0 \\
+\nabla\times\vec{E} &= -\frac{\partial B}{\partial t} \\
+\nabla\times\vec{B} &= \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)
+\end{align}
 $$
 ```
 
 $$
-\begin{eqnarray}
-\nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\
-\nabla\cdot\vec{B} &=& 0 \\
-\nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\
-\nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)
-\end{eqnarray}
+\begin{align}
+\nabla\cdot\vec{E} &= \frac{\rho}{\epsilon_0} \\
+\nabla\cdot\vec{B} &= 0 \\
+\nabla\times\vec{E} &= -\frac{\partial B}{\partial t} \\
+\nabla\times\vec{B} &= \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)
+\end{align}
 $$
 
 ## 安装完成后所有npm包
