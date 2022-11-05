@@ -123,3 +123,35 @@ print(dcm[0x0028, 0x0102].value)  # High Bit
 # print(dcm[0x0018, 0x9014].value)  # Phase Contrast
 print(dcm[0x0020, 0x0011].value)  #
 ```
+
+# 窗位、窗宽使用
+
+医学图像的像素颜色位深通常是10~12bit（通常用16bit的变量类型表示，比如 short 和 unsigned short ），而常规显示器的颜色位深是8bit。因此为了更好的呈现医学图像需要对像素值进行映射，将感兴趣的像素值范围映射到8bit显示。
+
+假设窗位$c$、窗宽$w$, 则感兴趣的范围为$[c-\frac{w}{2},c+\frac{w}{2}]$, 映射到$[gray_{min},gray_{max}]$
+
+映射过程是线性的，即求解一个一元二次方程$y=ax+b$的$a, b$即可
+$$
+a=\frac{gray_{max}-gray_{min}}{c+\frac{w}{2}-(c-\frac{w}{2})}=\frac{gray_{max}-gray_{min}}{w}
+$$
+
+$$
+b=gray_{min}-a(c-\frac{w}{2})=gray_{min}-\frac{gray_{max}-gray_{min}}{w}(c-\frac{w}{2})
+$$
+
+则
+$$
+y=ax+b=\frac{gray_{max}-gray_{min}}{w}(x+\frac{w}{2}-x)+gray_{min}
+$$
+
+```python
+Window_Width = dcm[0x0028, 0x1051].value
+Window_Center = dcm[0x0028, 0x1050].value
+# 映射到[0,255]
+gray_max = 255
+gray_min = 0
+img = (img + Window_Width / 2 - Window_Center) / Window_Width * (gray_max - gray_min) + gray_min
+img[img > gray_max] = gray_max
+img[img < gray_min] = gray_min
+```
+
