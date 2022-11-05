@@ -14,7 +14,7 @@ hidden:
 
 # 前言
 
-`Hexo`默认的`Markdown`渲染器是`hexo-renderer-marked`，并不支持`Mathjax`，不支持`emoji`表情，之前为了<a href="{% post_path Hexo 站点配置（补充） %}#让hexo博客支持emoji显示">让网页显示emoji</a>, 将渲染器更换为`hexo-renderer-markdown-it`, 最近发现该渲染器也不支持`Mathjax`，为了让网页显示数学公式，再次更换渲染器。
+`Hexo`默认的`Markdown`渲染器是`hexo-renderer-marked`，并不支持`Mathjax`，不支持`emoji`表情，之前为了<a href="{% post_path Hexo站点配置（补充） %}#让hexo博客支持emoji显示">让网页显示emoji</a>, 将渲染器更换为`hexo-renderer-markdown-it`, 最近发现该渲染器也不支持`Mathjax`，为了让网页显示数学公式，再次更换渲染器。
 
 `Hexo`常见的`Markdown`渲染器有：`hexo-renderer-marked`，`hexo-renderer-kramed`，`hexo-renderer-pandoc`，`hexo-renderer-markdown-it`，`hexo-renderer-markdown-it-plus`，其简单对比如下（参考于：[Hexo的多种Markdown渲染器对比分析](https://bugwz.com/2019/09/17/hexo-markdown-renderer/)），
 
@@ -88,6 +88,28 @@ math:
 ```sh
 npm install hexo-math --save
 ```
+
+## 配置成功后公式示例
+
+```latex
+$$
+\begin{eqnarray}
+\nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\
+\nabla\cdot\vec{B} &=& 0 \\
+\nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\
+\nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)
+\end{eqnarray}
+$$
+```
+
+$$
+\begin{eqnarray}
+\nabla\cdot\vec{E} &=& \frac{\rho}{\epsilon_0} \\
+\nabla\cdot\vec{B} &=& 0 \\
+\nabla\times\vec{E} &=& -\frac{\partial B}{\partial t} \\
+\nabla\times\vec{B} &=& \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)
+\end{eqnarray}
+$$
 
 ## 安装完成后所有npm包
 
