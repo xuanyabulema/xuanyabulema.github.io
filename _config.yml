@@ -151,27 +151,39 @@ live2d:
 # npm un hexo-renderer-marked --save
 # npm i hexo-renderer-markdown-it markdown-it-emoji -S
 # 更改站点的markdown配置
-markdown:
-  render:
+# markdown:
+#   render:
+#     html: true
+#     xhtmlOut: false
+#     breaks: true
+#     linkify: true
+#     typographer: false # 改为false解决“英文的引号会被渲染为中文的引号”的问题
+#     quotes: '“”‘’'
+#   plugins:
+#     - markdown-it-abbr
+#     - markdown-it-footnote
+#     - markdown-it-ins
+#     - markdown-it-sub
+#     - markdown-it-sup
+#     - markdown-it-emoji
+#   anchors:
+#     level: 2
+#     collisionSuffix: 'v'
+#     permalink: true
+#     permalinkClass: header-anchor
+#     permalinkSymbol: ''
+
+markdown_it_plus:
+    highlight: true
     html: true
-    xhtmlOut: false
+    xhtmlOut: true
     breaks: true
+    langPrefix: 
     linkify: true
     typographer: false # 改为false解决“英文的引号会被渲染为中文的引号”的问题
-    quotes: '“”‘’'
-  plugins:
-    - markdown-it-abbr
-    - markdown-it-footnote
-    - markdown-it-ins
-    - markdown-it-sub
-    - markdown-it-sup
-    - markdown-it-emoji
-  anchors:
-    level: 2
-    collisionSuffix: 'v'
-    permalink: true
-    permalinkClass: header-anchor
-    permalinkSymbol: ''
+    quotes: “”‘’
+    pre_class: highlight
+
 
 # 隐藏文章
 hide_posts:
