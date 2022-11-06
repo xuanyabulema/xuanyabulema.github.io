@@ -128,9 +128,9 @@ print(dcm[0x0020, 0x0011].value)  #
 
 医学图像的像素颜色位深通常是10~12bit（通常用16bit的变量类型表示，比如 short 和 unsigned short ），而常规显示器的颜色位深是8bit。因此为了更好的呈现医学图像需要对像素值进行映射，将感兴趣的像素值范围映射到8bit显示。
 
-假设窗位$c$、窗宽$w$, 则感兴趣的范围为$[c-\frac{w}{2},c+\frac{w}{2}]$, 映射到$[gray_{min},gray_{max}]$
+假设窗位$c$、窗宽$w$, 则感兴趣的范围为 $[c-\frac{w}{2},c+\frac{w}{2}]$, 映射到 $[gray_{min},gray_{max}]$
 
-映射过程是线性的，即求解一个一元二次方程$y=ax+b$的$a, b$即可
+映射过程是线性的，即求解一个一元二次方程 $y=ax+b$ 的 $a, b$ 即可
 $$
 a=\frac{gray_{max}-gray_{min}}{c+\frac{w}{2}-(c-\frac{w}{2})}=\frac{gray_{max}-gray_{min}}{w}
 $$
@@ -141,7 +141,7 @@ $$
 
 则
 $$
-y=ax+b=\frac{gray_{max}-gray_{min}}{w}(x+\frac{w}{2}-x)+gray_{min}
+y=ax+b=\frac{gray_{max}-gray_{min}}{w}(x+\frac{w}{2}-c)+gray_{min}
 $$
 
 ```python
