@@ -45,7 +45,7 @@ custom_channels:
 ## pip安装指定版本的库
 
 ```shell
-pip install matplotlib==3.4.1
+pip install matplotlib==3.4.3
 ```
 
 

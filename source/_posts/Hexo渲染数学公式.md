@@ -36,7 +36,7 @@ hidden:
 npm un 渲染器名称 --save
 ```
 
-以为的为例
+以我的为例
 
 ```sh
 npm un hexo-renderer-markdown-it --save
