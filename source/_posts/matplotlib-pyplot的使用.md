@@ -38,3 +38,28 @@ print(fig, im, ax)
 ```python
 Figure(1280x960) AxesImage(160,105.6;992x739.2) AxesSubplot(0.125,0.11;0.775x0.77)
 ```
+
+## pyplot.rcParams属性设置
+
+查看属性
+
+```python
+import matplotlib.pyplot as plt
+
+print(plt.rcParams.keys())
+```
+
+设置rcParams属性
+
+```python
+import matplotlib.pyplot as plt
+
+print(plt.rcParams.keys())
+plt.rcParams.update({
+    'font.family': 'STSong',  # 用宋体显示中文
+    'axes.unicode_minus': 'False',  # 正常显示负号
+    'figure.dpi': 200,
+    # 'mathtext.fontset': 'stix'
+})
+```
+
