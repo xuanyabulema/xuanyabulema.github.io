@@ -73,9 +73,9 @@ print(A.I)
 ### 正态分布的随机数数组
 
 ```python
-# loc-（平均）钟声峰值所在的位置。
-# scale-（标准偏差）图形分布的平坦程度。
-# size-返回数组的形状。
+# loc - 正态分布的均值
+# scale - 正态分布的标准差
+# size - 返回数组的形状。
 x = np.random.normal(loc=1, scale=2, size=(2, 3))
 ```
 

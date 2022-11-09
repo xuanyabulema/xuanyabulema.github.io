@@ -17,7 +17,7 @@ import matplotlib
 ```
 <!-- more -->
 
-# matplotlib.pyplot使用
+# matplotlib.pyplot基础使用
 
 ```python
 import matplotlib.pyplot as plt
@@ -35,8 +35,6 @@ FigureClass=<class 'matplotlib.figure.Figure'>,   # 设定使不使用一个figu
 clear=False,                     # 设定当同名figure存在时，是否替换它。系统默认False，即不替换。
 **kwargs)
 ```
-
-
 
 
 
@@ -218,3 +216,18 @@ plt.show()
 ```
 
 <img src="image-20210706201916373.png" alt="直方图" style="zoom: 50%;" />
+
+# 箱线图matplotlib.pyplot.boxplot
+
+- matplotlib.pyplot.**boxplot**(*x*, *notch=None*, *sym=None*, *vert=None*, *whis=None*, *positions=None*, *widths=None*, *patch_artist=None*, *bootstrap=None*, *usermedians=None*, *conf_intervals=None*, *meanline=None*, *showmeans=None*, *showcaps=None*, *showbox=None*, *showfliers=None*, *boxprops=None*, *labels=None*, *flierprops=None*, *medianprops=None*, *meanprops=None*, *capprops=None*, *whiskerprops=None*, *manage_ticks=True*, *autorange=False*, *zorder=None*, *capwidths=None*, *, *data=None*)[[source\]](https://github.com/matplotlib/matplotlib/blob/v3.6.2/lib/matplotlib/pyplot.py#L2401-L2422)
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.random.normal(loc=0, scale=2, size=(500))  # 正态分布，均值0 方差2
+plt.figure(dpi=200)
+plt.boxplot(x, showmeans=True)
+```
+
+<img src="image-20221109151114921.png" alt="箱线图" style="zoom:50%;" />

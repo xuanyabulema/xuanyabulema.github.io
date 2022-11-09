@@ -280,7 +280,30 @@ kernel =
 >
 > [《Opencv轻松入门-面向python》学习记录13](https://zhuanlan.zhihu.com/p/395172830)
 
-pass
+## matplotlib.pyplot.hist方式呈现
+
+- matplotlib.pyplot.**hist**(*x*, *bins=None*, *range=None*, *density=False*, *weights=None*, *cumulative=False*, *bottom=None*, *histtype='bar'*, *align='mid'*, *orientation='vertical'*, *rwidth=None*, *log=False*, *color=None*, *label=None*, *stacked=False*, *, *data=None*, ***kwargs*)[[source\]](https://github.com/matplotlib/matplotlib/blob/v3.6.2/lib/matplotlib/pyplot.py#L2567-L2578)
+
+*bins*: 直方图横轴密度
+
+*range*: 数据分布范围
+
+```python
+import cv2
+import matplotlib.pyplot as plt
+
+img = cv2.imread(r"./Lenna.jpg", 0)  # 将图像读取为单通道的灰度图像
+if img is not None:  # 判断图像读取是否成功
+    plt.figure(dpi=200)
+    plt.imshow(img, cmap='gray')
+
+    data_ravel = img.ravel()  # 展成一维
+    plt.figure(dpi=200)
+    plt.hist(data_ravel, bins=data_ravel.max() - data_ravel.min())
+    plt.show()
+```
+
+![matplotlib.pyplot.hist方式呈现](image-20221109145710608.png)
 
 # 形态学操作
 
