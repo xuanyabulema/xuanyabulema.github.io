@@ -225,3 +225,21 @@ np.empty(shape=(0))
 np.empty(shape=(0, 4))
 ```
 
+### 取整函数
+
+| 函数名                     | 功能                   |
+| -------------------------- | ---------------------- |
+| numpy.ceil(x,)             | 向正无穷取整           |
+| numpy.floor(x,)            | 向负无穷取整           |
+| numpy.trunc/fix(x,)        | 截取整数部分           |
+| numpy.rint(x,)             | 四舍五入到最近整数     |
+| numpy.around(x,decimals=0) | 四舍五入到给定的小数位 |
+
+​	
+
+
+​	
+​	
+​	
+​	
+
