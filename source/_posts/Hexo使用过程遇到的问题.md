@@ -73,4 +73,17 @@ nghttp3: 0.1.0-DEV
 hexo : 无法将“hexo”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确保路径正确，然后再试一次。
 ```
 
-在PowerShell中输入`npm install -g hexo-cli # -g为全局安装` 再装一遍即可解决
+## 设置用户策略权限
+
+以管理员权限打开`PowerShell`运行以下内容
+
+```powershell
+set-executionpolicy remotesigned 
+```
+
+![设置用户策略权限](image-20221111180832176.png)
+
+## 重装hexo-cli
+
+在`PowerShell`中输入`npm install -g hexo-cli # -g为全局安装` 再装一遍即可解决
+
