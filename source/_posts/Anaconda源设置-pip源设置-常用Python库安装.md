@@ -36,6 +36,22 @@ custom_channels:
   conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 ```
 
+## Mamba替代加速Conda
+
+安装
+
+```sh
+conda install -c conda-forge mamba
+```
+
+使用`Mamba`时其实只要将原有的`Conda`语句中的`conda`替换为`mamba`即可
+
+以安装`conda install numpy`，使用以下命令则可替代
+
+```sh
+mamba install numpy
+```
+
 
 
 # pip配置清华源
