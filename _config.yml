@@ -112,10 +112,10 @@ deploy:
 
 # Local Search本地搜索
 search:
-path: search.xml
-field: post
-format: html
-limit: 10000
+  path: search.xml
+  field: post
+  content: true
+  format: html
 
 # 增加文章字数统计及阅读时常功能
 symbols_count_time:
@@ -216,3 +216,5 @@ baidu_url_submit:
   # xz_appid: 'xxxxxx' ## 你的熊掌号 appid
   # xz_token: 'xxxxxx' ## 你的熊掌号 token
   # xz_count: 10 ## 从所有的提交的数据当中选取最新的10条,该数量跟你的熊掌号而定
+
+
