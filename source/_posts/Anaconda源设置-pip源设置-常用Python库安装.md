@@ -74,6 +74,20 @@ conda install pytorch torchvision torchaudio cudatoolkit=11.3
 conda install pytorch=1.11.0 torchvision torchaudio cudatoolkit=11.3
 ```
 
+# 个人常用库
+
+pip安装
+
+```sh
+pip install opencv-python opencv-contrib-python pydicom nibabel numpy matplotlib
+```
+
+conda安装
+
+```sh
+conda install opencv-python opencv-contrib-python pydicom nibabel numpy matplotlib
+```
+
 
 
 # OpenCV及其扩展模块

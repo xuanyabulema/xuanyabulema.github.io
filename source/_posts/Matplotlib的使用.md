@@ -218,3 +218,61 @@ plt.boxplot(x, showmeans=True)
 ```
 
 <img src="image-20221109151114921.png" alt="箱线图" style="zoom:50%;" />
+
+# 向量图|箭头图matplotlib.pyplot.quiver
+
+*matplotlib.pyplot.quiver(*args, data=None, **kwargs)*[[source\]](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.quiver.html)
+
+```python
+plt.quiver(x, y, u, v, color='r', angles='xy', scale_units='xy', scale=1)
+'''
+x 起点的x坐标 可为一系列点的x的numpy数组，y,u,v同
+y 起点的y坐标 
+u x方向增量，即终点x' = x + u
+v y方向增量，即终点y' = y + v 
+color 颜色
+angles='xy'  保证x,y方向一致
+scale_units='xy'  scale 缩放倍数，绘制长度=实际长度/scale
+'''
+```
+
+使用示例
+
+```python
+import matplotlib.pyplot as plt
+
+plt.figure()
+plt.quiver(5, 5, 3, 2, color='r', angles='xy', scale_units='xy', scale=1)  # scale=1
+plt.quiver(5, 5, 3.2, 2, color='g', angles='xy', scale_units='xy', scale=2)  # scale=2  绘制长度=实际长度/scale
+plt.quiver(5, 5, 3, 2, color='b', scale_units='xy', scale=1)  # 缺失angles='xy'  容易绘制与希望内容不符
+
+plt.grid(True)
+ax = plt.gca()
+ax.set_aspect(1)
+plt.xlim((2, 8))
+plt.ylim((8, 2))  # 交换y方向，在缺失angles='xy'时，容易绘制与希望内容不符
+plt.show()
+```
+
+<img src="image-20221114164049827.png" alt="向量图|箭头图" style="zoom:50%;" />
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Creating arrow
+x = np.arange(0, 2.2, 0.2)
+y = np.arange(0, 2.2, 0.2)
+X, Y = np.meshgrid(x, y)
+u = np.cos(X) * Y
+v = np.sin(Y) * Y
+# creating plot
+fig, ax = plt.subplots(figsize=(5, 5))
+ax.quiver(X, Y, u, v)
+ax.axis([-0.3, 2.3, -0.3, 2.3])
+ax.set_aspect('equal')
+# show plot
+plt.show()
+```
+
+<img src="image-20221114164652946.png" alt="向量图|箭头图" style="zoom:50%;" />
