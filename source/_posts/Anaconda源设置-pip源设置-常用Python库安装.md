@@ -28,14 +28,14 @@ default_channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch-lts
-  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/simpleitk
 custom_channels:
   conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 ```
 
 ## [北京外国语大学开源软件镜像站](https://mirrors.bfsu.edu.cn/)
@@ -58,14 +58,14 @@ default_channels:
   - https://mirrors.bfsu.edu.cn/anaconda/pkgs/main
   - https://mirrors.bfsu.edu.cn/anaconda/pkgs/r
   - https://mirrors.bfsu.edu.cn/anaconda/pkgs/msys2
-  - https://mirrors.bfsu.edu.cn/anaconda/cloud/pytorch
-  - https://mirrors.bfsu.edu.cn/anaconda/cloud/msys2
-  - https://mirrors.bfsu.edu.cn/anaconda/cloud/bioconda
-  - https://mirrors.bfsu.edu.cn/anaconda/cloud/menpo
-  - https://mirrors.bfsu.edu.cn/anaconda/cloud/pytorch-lts
-  - https://mirrors.bfsu.edu.cn/anaconda/cloud/simpleitk
 custom_channels:
   conda-forge: https://mirrors.bfsu.edu.cn/anaconda/cloud
+  msys2: https://mirrors.bfsu.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.bfsu.edu.cn/anaconda/cloud
+  menpo: https://mirrors.bfsu.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.bfsu.edu.cn/anaconda/cloud
+  pytorch-lts: https://mirrors.bfsu.edu.cn/anaconda/cloud
+  simpleitk: https://mirrors.bfsu.edu.cn/anaconda/cloud
 ```
 
 ## Mamba替代加速Conda
@@ -82,6 +82,28 @@ conda install -c conda-forge mamba
 
 ```sh
 mamba install numpy
+```
+
+## Conda安装指定版本库
+
+可以先寻找一下有哪些版本
+
+```sh
+conda search pytorch
+```
+
+<img src="image-20221115163537211.png" alt="conda search pytorch" style="zoom:67%;" />
+
+```sh
+conda search cudatoolkit
+```
+
+<img src="image-20221115163641482.png" alt="conda search cudatoolkit" style="zoom:67%;" />
+
+然后可以指定一下`pytorch, cudatoolkit`版本，比如
+
+```shell
+conda install pytorch=1.12.0 torchvision torchaudio cudatoolkit=11.3
 ```
 
 
@@ -106,40 +128,79 @@ pip install matplotlib==3.4.3
 
 # Pytorch安装
 
-Pytorch官网的conda安装命令为（安装1.11.0版本的pytorch）
+> https://pytorch.org/get-started/locally/
+
+`Pytorch v1.12.1`官网的`conda`安装命令为（安装`CUDA 11.6`版本的`pytorch`）
 
 ```shell
-conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.6 -c pytorch -c conda-forge
 ```
 
-`-c pytorch`参数指定为Pytorch官网进行安装
+`-c pytorch`参数原本指定为Pytorch官网源进行安装，由于源在国外，若未更换`conda`源，国内安装pytorch等容易失败
 
-在上述配置清华源后可以删除，从而使得从清华源上下，使用如下
+![未换源易安装失败](image-20221115184941528.png)
 
-```shell
-conda install pytorch torchvision torchaudio cudatoolkit=11.3
+在[配置上述Anaconda源后](#anaconda配置源)，即可顺利安装，因为若在conda源添加
+
+```
+custom_channels:
+  pytorch: https://mirrors.bfsu.edu.cn/anaconda/cloud
+  conda-forge: https://mirrors.bfsu.edu.cn/anaconda/cloud
 ```
 
-有时安装不上cuda版的
+`-c pytorch` `-c conda-forge`参数则指定到了国内源
 
-可以指定一下`pytorch`版本，比如安装1.11.0 cuda版
+<img src="image-20221115184732086.png" alt="conda配置国内源" style="zoom:67%;" />
 
-```shell
-conda install pytorch=1.11.0 torchvision torchaudio cudatoolkit=11.3
+## V1.13.0
+
+```sh
+# CUDA 11.6
+conda install pytorch torchvision torchaudio pytorch-cuda=11.6 -c pytorch -c nvidia
+# CUDA 11.7
+conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
 ```
+
+## v1.12.1
+
+```sh
+# CUDA 10.2
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=10.2 -c pytorch
+# CUDA 11.3
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
+# CUDA 11.6
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.6 -c pytorch -c conda-forge
+# CPU Only
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cpuonly -c pytorch
+```
+
+## v1.12.0
+
+```sh
+# CUDA 10.2
+conda install pytorch==1.12.0 torchvision==0.13.0 torchaudio==0.12.0 cudatoolkit=10.2 -c pytorch
+# CUDA 11.3
+conda install pytorch==1.12.0 torchvision==0.13.0 torchaudio==0.12.0 cudatoolkit=11.3 -c pytorch
+# CUDA 11.6
+conda install pytorch==1.12.0 torchvision==0.13.0 torchaudio==0.12.0 cudatoolkit=11.6 -c pytorch -c conda-forge
+# CPU Only
+conda install pytorch==1.12.0 torchvision==0.13.0 torchaudio==0.12.0 cpuonly -c pytorch
+```
+
+
 
 # 个人常用库
 
 pip安装
 
 ```sh
-pip install opencv-python opencv-contrib-python pydicom nibabel numpy matplotlib
+pip install opencv-python opencv-contrib-python pydicom nibabel numpy matplotlib==3.4.3
 ```
 
 conda安装
 
 ```sh
-conda install opencv-python opencv-contrib-python pydicom nibabel numpy matplotlib
+conda install numpy matplotlib=3.4.3
 ```
 
 
