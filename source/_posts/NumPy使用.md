@@ -235,11 +235,31 @@ np.empty(shape=(0, 4))
 | numpy.rint(x,)             | 四舍五入到最近整数     |
 | numpy.around(x,decimals=0) | 四舍五入到给定的小数位 |
 
-​	
+### ones_like、zeros_like
 
+生成形状、数据类型一样的全一、全零数组
 
-​	
-​	
-​	
-​	
+```python
+>>> x = np.arange(6)
+>>> x = x.reshape((2, 3))
+>>> x
+array([[0, 1, 2],
+       [3, 4, 5]])
+>>> np.ones_like(x)
+array([[1, 1, 1],
+       [1, 1, 1]])
+>>> np.zeros_like(x)
+array([[0, 0, 0],
+       [0, 0, 0]])
+```
+
+```sh
+>>> y = np.arange(3, dtype=float)
+>>> y
+array([0., 1., 2.])
+>>> np.ones_like(y)
+array([1.,  1.,  1.])
+>>> np.zeros_like(y)
+array([0.,  0.,  0.])
+```
 

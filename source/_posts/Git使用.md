@@ -49,6 +49,23 @@ git branch -d <branch> # <branch>为分支名
 git merge <branch> # <branch>为分支名
 ```
 
+## .gitignore文件配置
+
+```
+# dir 不需要提交的目录
+/node_modules
+.idea/
+
+# file 不需要提交的文件
+config.ini
+
+# log 不需要提交的任意包含后缀名为log的文件
+*.log
+
+# Package Files 不需要提交的任意包含后缀名为jar的文件
+*.jar
+```
+
 
 
 # 配置Git
