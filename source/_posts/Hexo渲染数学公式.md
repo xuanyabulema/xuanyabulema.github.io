@@ -8,10 +8,6 @@ categories:
 hidden:
 ---
 
-
-
-点击阅读前文前, 首页能看到的文章的简短描述
-
 # 前言
 
 `Hexo`默认的`Markdown`渲染器是`hexo-renderer-marked`，并不支持`Mathjax`，不支持`emoji`表情，之前为了<a href="{% post_path Hexo站点配置（补充） %}#让hexo博客支持emoji显示">让网页显示emoji</a>, 将渲染器更换为`hexo-renderer-markdown-it`, 最近发现该渲染器也不支持`Mathjax`，为了让网页显示数学公式，再次更换渲染器。
