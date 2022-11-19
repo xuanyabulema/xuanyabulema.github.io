@@ -66,7 +66,7 @@ $$
 u(x)=\sum_{i=1}^{M} \xi_{i} \phi\left(x-p_{i}\right)+A x+b \tag{3}
 $$
 where $φ(r) = r^2 log r$ and $\xi_{i}$ are $2 × 1$ weighting vectors. The $2 × 2$ matrix $A = [a1, a2]$ and the $2 × 1$ vector $b$ define the affine transformation where $a_1$ and $a_2$ are $2 × 1$ vectors.
-	The unknown parameters $W = [\xi_{1}, . . . , \xi_{M}, a_1, a_2, b]^T$ are determined by substituting the landmark constrains into $Eq. 3$ and solving the resulting equations. Let $\phi_{i,j} = \phi(|p_i − q_j|)$ build the matrix
+	The unknown parameters $W = [\xi_{1}, . . . , \xi_{M}, a_1, a_2, b]^T$ are determined by substituting the landmark constrains into $Eq. 3$ and solving the resulting equations. Let $\phi_{i,j} = \phi(|p_i - q_j|)$ build the matrix
 $$
 K=\left[\begin{array}{cc}
 \Phi & \Lambda \\
@@ -83,7 +83,7 @@ p_{2,1} & p_{2,2} & 1 \\
 p_{M, 1} & p_{M, 2} & 1
 \end{array}\right]  \tag{4}
 $$
-and $O$ is a $3×3$ matrix of zeros. Also, define the $(M +3)×2$ matrix of landmark displacements as $D = [d_1, . . . , d_M, 0, 0, 0]^T$ where $d_i = q_i − p_i$ for $i = 1, . . . , M$. The equations formed by substituting the landmark constrains into $Eq. 3$ can be written in matrix form as $D = KW$. The solution $W$ to this matrix equation is determined by least squares estimation since the matrix $K$ is not guaranteed to be full rank.
+and $O$ is a $3×3$ matrix of zeros. Also, define the $(M +3)×2$ matrix of landmark displacements as $D = [d_1, . . . , d_M, 0, 0, 0]^T$ where $d_i = q_i - p_i$ for $i = 1, . . . , M$. The equations formed by substituting the landmark constrains into $Eq. 3$ can be written in matrix form as $D = KW$. The solution $W$ to this matrix equation is determined by least squares estimation since the matrix $K$ is not guaranteed to be full rank.
 
 ### 注解
 
