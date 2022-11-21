@@ -91,3 +91,8 @@ and $O$ is a $3×3$ matrix of zeros. Also, define the $(M +3)×2$ matrix of land
 
 ## Landmark Consistent Thin-Plate Spline Registration
 
+
+
+# PDF
+
+{% pdf 'Landmark and Intensity-Based, Consistent Thin-Plate Spline Image Registration.pdf' %}
