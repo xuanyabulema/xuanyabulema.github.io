@@ -150,7 +150,7 @@ ax.scatter(x_list, y_list, c='r', s=20, alpha=0.5)
 plt.show()
 ```
 
-<img src="image-20221108230249302.png" alt="散点图" style="zoom: 50%;" />
+<img src="image-20221108230249302.png" alt="散点图" style="zoom: 40%;" />
 
 ### 连线图
 
@@ -172,7 +172,7 @@ ax.plot(x_list, y_list, color='r', linewidth=1, alpha=0.6)
 plt.show()
 ```
 
-<img src="image-20221108230326796.png" alt="连线图" style="zoom: 50%;" />
+<img src="image-20221108230326796.png" alt="连线图" style="zoom: 40%;" />
 
 ### 直方图
 
@@ -202,11 +202,13 @@ ax.set_xlim(0,len(xticks)+1)
 plt.show()
 ```
 
-<img src="image-20210706201916373.png" alt="直方图" style="zoom: 50%;" />
+<img src="image-20210706201916373.png" alt="直方图" style="zoom: 40%;" />
 
 # 箱线图matplotlib.pyplot.boxplot
 
-- matplotlib.pyplot.**boxplot**(*x*, *notch=None*, *sym=None*, *vert=None*, *whis=None*, *positions=None*, *widths=None*, *patch_artist=None*, *bootstrap=None*, *usermedians=None*, *conf_intervals=None*, *meanline=None*, *showmeans=None*, *showcaps=None*, *showbox=None*, *showfliers=None*, *boxprops=None*, *labels=None*, *flierprops=None*, *medianprops=None*, *meanprops=None*, *capprops=None*, *whiskerprops=None*, *manage_ticks=True*, *autorange=False*, *zorder=None*, *capwidths=None*, *, *data=None*)[[source\]](https://github.com/matplotlib/matplotlib/blob/v3.6.2/lib/matplotlib/pyplot.py#L2401-L2422)
+- matplotlib.pyplot.**boxplot**(*x*, *notch=None*, *sym=None*, *vert=None*, *whis=None*, *positions=None*, *widths=None*, *patch_artist=None*, *bootstrap=None*, *usermedians=None*, *conf_intervals=None*, *meanline=None*, *showmeans=None*, *showcaps=None*, *showbox=None*, *showfliers=None*, *boxprops=None*, *labels=None*, *flierprops=None*, *medianprops=None*, *meanprops=None*, *capprops=None*, *whiskerprops=None*, *manage_ticks=True*, *autorange=False*, *zorder=None*, *capwidths=None*, *, *data=None*) [[source]](https://github.com/matplotlib/matplotlib/blob/v3.6.2/lib/matplotlib/pyplot.py#L2401-L2422)
+
+{% post_link 分位数与箱线图（Python） 分位数与箱线图（Python）介绍  %}
 
 ```python
 import numpy as np
@@ -217,7 +219,7 @@ plt.figure(dpi=200)
 plt.boxplot(x, showmeans=True)
 ```
 
-<img src="image-20221109151114921.png" alt="箱线图" style="zoom:50%;" />
+<img src="image-20221109151114921.png" alt="箱线图" style="zoom:40%;" />
 
 # 向量图|箭头图matplotlib.pyplot.quiver
 
@@ -254,7 +256,7 @@ plt.ylim((8, 2))  # 交换y方向，在缺失angles='xy'时，容易绘制与希
 plt.show()
 ```
 
-<img src="image-20221114164049827.png" alt="向量图|箭头图" style="zoom:50%;" />
+<img src="image-20221114164049827.png" alt="向量图|箭头图" style="zoom:40%;" />
 
 ```python
 import numpy as np
@@ -275,4 +277,4 @@ ax.set_aspect('equal')
 plt.show()
 ```
 
-<img src="image-20221114164652946.png" alt="向量图|箭头图" style="zoom:50%;" />
+<img src="image-20221114164652946.png" alt="向量图|箭头图" style="zoom:40%;" />
