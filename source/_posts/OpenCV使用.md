@@ -332,7 +332,3 @@ pass
 ## 闭运算
 
 pass
-
-# 书籍资料
-
-{% pdf 'OpenCV轻松入门 面向Python by 李立宗 (z-lib.org).pdf' %}
