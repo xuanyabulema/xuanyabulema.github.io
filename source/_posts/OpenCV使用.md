@@ -194,6 +194,39 @@ if img is not None:  # 判断图像读取是否成功
 
 ![Lenna OpenCV imshow resize 500*500](image-20221012163252251.png)
 
+## `dst`与`src`坐标对应关系
+
+原始图像`src`与`cvc2.resize()`后图像`dst`坐标对应关系
+$$
+src_x = (dst_x + 0.5) \times (src_{width} / dst_{width}) - 0.5
+$$
+
+$$
+src_y = (dst_y + 0.5) \times (src_{height} / dst_{height}) - 0.5
+$$
+
+> 得出方式
+>
+> 首先易知双线性插值坐标关系
+> $$
+> src_x = dst_x \times (src_{width} / dst_{width})
+> $$
+>
+> $$
+> src_y = dst_y \times (src_{height} / dst_{height})
+> $$
+>
+> `cvc2.resize()`认为每个像素点代表该格子的中心，则有
+> $$
+> src_x+0.5 = (dst_x+0.5) \times (src_{width} / dst_{width})
+> $$
+>
+> $$
+> src_y+0.5 = (dst_y+0.5) \times (src_{height} / dst_{height})
+> $$
+
+
+
 # 图像平滑处理
 
 > 参考
