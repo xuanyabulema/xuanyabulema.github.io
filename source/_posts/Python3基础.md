@@ -70,13 +70,34 @@ print(a)  # array([10, 1, 2, 10])
 
 `b = a` 和 `b = a[:]` 的差别就在于后者会创建新的对象，前者不会。两种方式都会导致 `a` 和 `b` 的数据相互影响。
 
-要想不让 `a` 的改动影响到 `b`，可以使用深复制：
+要想不让 `a` 的改动影响到 `b`，可以使用`copy()`函数：
 
 ```python
 unique_b = a.copy()
 ```
 
+**注意：注意 `copy` 是一个浅复制（shallow copy），不会拷贝数组中的对象元素。**
 
+```python
+>>> a = np.array([1, 'm', [2, 3, 4]], dtype=object)
+>>> b = np.copy(a)
+>>> b[2][0] = 10
+>>> a
+array([1, 'm', list([10, 3, 4])], dtype=object)
+```
+
+为了保证所有内容被拷贝应该使用`copy.deepcopy`
+
+```python
+>>> import copy
+>>> a = np.array([1, 'm', [2, 3, 4]], dtype=object)
+>>> c = copy.deepcopy(a)
+>>> c[2][0] = 10
+>>> c
+array([1, 'm', list([10, 3, 4])], dtype=object)
+>>> a
+array([1, 'm', list([2, 3, 4])], dtype=object)
+```
 
 ## Pytorch数据拷贝
 
