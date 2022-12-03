@@ -152,7 +152,7 @@ custom_channels:
 
 <img src="image-20221115184732086.png" alt="conda配置国内源" style="zoom:67%;" />
 
-## V1.13.0
+## v1.13.0
 
 ```sh
 # CUDA 11.6
