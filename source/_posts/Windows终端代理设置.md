@@ -12,9 +12,7 @@ hidden:
 
 # PowerShell
 
-参考:
-
-> [在 Windows 终端中设置代理](https://www.yixuju.cn/other/talking-about-proxy/)
+> 参考：[在 Windows 终端中设置代理](https://www.yixuju.cn/other/talking-about-proxy/)
 
 ## 临时设置
 

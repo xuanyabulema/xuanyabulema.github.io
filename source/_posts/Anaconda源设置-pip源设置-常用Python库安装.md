@@ -194,7 +194,7 @@ conda install pytorch==1.12.0 torchvision==0.13.0 torchaudio==0.12.0 cpuonly -c 
 pip安装
 
 ```sh
-pip install opencv-python opencv-contrib-python pydicom nibabel numpy matplotlib==3.4.3
+pip install opencv-python opencv-contrib-python pydicom nibabel pandas numpy matplotlib==3.4.3
 ```
 
 conda安装
