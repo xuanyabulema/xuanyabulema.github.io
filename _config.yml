@@ -15,7 +15,7 @@ timezone: Asia/Shanghai
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://xuanyabulema.github.io
 # permalink: :year/:month/:day/:title/
-permalink: posts/:abbrlink.html     # 修改
+permalink: posts/:abbrlink/      # 修改
 # abbrlink config
 abbrlink:
   alg: crc32      #support crc16(default) and crc32
