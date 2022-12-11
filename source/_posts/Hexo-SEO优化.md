@@ -63,14 +63,17 @@ permalink: :title.html    # 修改
 
 但若文章标题是中文，网址会被转义成一堆特别长的数字符号。
 
-# 方案二
+## 方案二
 
 安装插件 `npm install hexo-abbrlink --save`, 使得网站结构变 `域名/posts/xxx.html`
 
 修改站点配置文件：
 
 ```yaml
-permalink: posts/:abbrlink.html     # 修改
+permalink: posts/:abbrlink.html    # 修改
+# 上下两行选一                       # 若改完Hexo博客无法显示图片的话换为下一行试试
+permalink: posts/:abbrlink/         
+
 # abbrlink config
 abbrlink:
   alg: crc32      #support crc16(default) and crc32
