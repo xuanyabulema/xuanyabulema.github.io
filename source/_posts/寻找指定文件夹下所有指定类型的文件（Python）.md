@@ -1,10 +1,11 @@
 ---
 title: 寻找指定文件夹下所有指定类型的文件（Python）
-date: 2022-11-06 15:50:47
 tags:
-- Python
+  - Python
 categories:
-- Python
+  - Python
+abbrlink: a45124aa
+date: 2022-11-06 15:50:47
 hidden:
 ---
 

@@ -1,12 +1,13 @@
 ---
 title: WinSW设置任意程序开机自启动
-date: 2022-09-30 20:26:10
 tags:
-- Windows
-- WinSW
+  - Windows
+  - WinSW
 categories:
-- Windows
-- WinSW
+  - Windows
+  - WinSW
+abbrlink: fe9c77db
+date: 2022-09-30 20:26:10
 hidden:
 ---
 

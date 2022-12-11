@@ -1,10 +1,11 @@
 ---
 title: Python3基础
-date: 2022-07-01 20:30:42
 tags:
-- Python
+  - Python
 categories:
-- Python
+  - Python
+abbrlink: 7dffb0f3
+date: 2022-07-01 20:30:42
 hidden:
 ---
 

@@ -1,10 +1,13 @@
 ---
 title: Hexo多端同步|迁移
+tags:
+  - Hexo
+  - Git
+categories:
+  - Hexo
+abbrlink: 78e1a0fa
 date: 2021-11-29 17:07:32
-tags: [Hexo,Git]
-categories: 
-- Hexo
-hidden: 
+hidden:
 ---
 
 

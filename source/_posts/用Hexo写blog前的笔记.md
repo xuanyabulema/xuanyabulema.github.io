@@ -1,9 +1,15 @@
 ---
 title: 用Hexo写blog前的笔记
-date: 2021-12-17 21:31:57
-tags: [Python,Linux,Docker,OpenWRT,Notes]
+tags:
+  - Python
+  - Linux
+  - Docker
+  - OpenWRT
+  - Notes
 categories:
-- Notes
+  - Notes
+abbrlink: 638f45f0
+date: 2021-12-17 21:31:57
 hidden:
 ---
 

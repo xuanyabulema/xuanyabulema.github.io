@@ -1,13 +1,14 @@
 ---
 title: 分位数与箱线图（Python）
-date: 2022-11-22 21:15:12
 tags:
-- Python
-- Matplotlib
-- NumPy
+  - Python
+  - Matplotlib
+  - NumPy
 categories:
-- Python
-- Matplotlib
+  - Python
+  - Matplotlib
+abbrlink: 5670f1c5
+date: 2022-11-22 21:15:12
 hidden:
 ---
 

@@ -1,12 +1,13 @@
 ---
 title: Windows Server 2008添加远程登录用户
-date: 2022-03-14 15:57:03
 tags:
-- Windows
-- RDP
+  - Windows
+  - RDP
 categories:
-- Windows
-- RDP
+  - Windows
+  - RDP
+abbrlink: 995e7b96
+date: 2022-03-14 15:57:03
 hidden:
 ---
 

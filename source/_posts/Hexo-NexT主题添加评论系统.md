@@ -1,13 +1,14 @@
 ---
 title: Hexo NexT主题添加评论系统
+tags:
+  - Hexo
+  - NexT
+categories:
+  - Hexo
+  - NexT
+abbrlink: 6345b6cc
 date: 2022-10-06 01:26:21
-tags: 
-- Hexo
-- NexT
-categories: 
-- Hexo
-- NexT
-hidden: 
+hidden:
 ---
 
 # 前言

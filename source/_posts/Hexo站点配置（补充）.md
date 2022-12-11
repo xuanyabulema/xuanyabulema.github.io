@@ -1,10 +1,11 @@
 ---
 title: Hexo站点配置（补充）
-date: 2022-10-10 16:52:23
 tags:
-- Hexo
+  - Hexo
 categories:
-- Hexo
+  - Hexo
+abbrlink: 6f73ca97
+date: 2022-10-10 16:52:23
 hidden:
 ---
 

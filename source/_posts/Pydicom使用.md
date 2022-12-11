@@ -1,12 +1,13 @@
 ---
 title: Pydicom使用
-date: 2022-11-04 15:54:07
 tags:
-- Python
-- Pydicom
+  - Python
+  - Pydicom
 categories:
-- Python
-- Pydicom
+  - Python
+  - Pydicom
+abbrlink: b5b84bd9
+date: 2022-11-04 15:54:07
 hidden:
 ---
 

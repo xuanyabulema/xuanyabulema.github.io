@@ -1,9 +1,11 @@
 ---
 title: Hexo常用命令
-date: 2021-12-17 21:42:37
-tags: [Hexo]
+tags:
+  - Hexo
 categories:
-- Hexo
+  - Hexo
+abbrlink: 24caea6b
+date: 2021-12-17 21:42:37
 ---
 
 ## 重新生成Hexo网页文件并在本地预览

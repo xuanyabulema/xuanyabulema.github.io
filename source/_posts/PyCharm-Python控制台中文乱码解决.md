@@ -1,12 +1,13 @@
 ---
 title: PyCharm Python控制台中文乱码解决
+tags:
+  - PyCharm
+  - Python
+categories:
+  - Python
+  - PyCharm
+abbrlink: 492e4b11
 date: 2022-08-02 16:09:37
-tags: 
-- PyCharm
-- Python
-categories: 
-- Python
-- PyCharm
 hidden:
 ---
 

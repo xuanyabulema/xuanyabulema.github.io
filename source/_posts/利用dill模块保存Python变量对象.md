@@ -1,12 +1,13 @@
 ---
 title: 利用dill模块保存Python变量对象
-date: 2022-12-08 14:40:10
 tags:
-- Python
-- dill
+  - Python
+  - dill
 categories:
-- Python
-- dill
+  - Python
+  - dill
+abbrlink: 1a485fb5
+date: 2022-12-08 14:40:10
 hidden:
 ---
 

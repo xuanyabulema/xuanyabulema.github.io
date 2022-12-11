@@ -2,11 +2,12 @@
 title: >-
   阅读记录：Landmark and Intensity-Based, Consistent Thin-Plate Spline Image
   Registration
-date: 2022-11-19 15:25:45
 tags:
-- Notes
+  - Notes
 categories:
-- Notes
+  - Notes
+abbrlink: 5f27e961
+date: 2022-11-19 15:25:45
 hidden:
 ---
 

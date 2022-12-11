@@ -1,10 +1,11 @@
 ---
 title: Python中逻辑运算and和or的短路特性
-date: 2022-12-06 20:18:52
 tags:
-- Python
+  - Python
 categories:
-- Python
+  - Python
+abbrlink: ea4623d
+date: 2022-12-06 20:18:52
 hidden:
 ---
 

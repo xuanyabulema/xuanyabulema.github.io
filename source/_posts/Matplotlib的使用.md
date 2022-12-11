@@ -1,12 +1,13 @@
 ---
 title: Matplotlib的使用
-date: 2022-08-30 19:12:57
-tags: 
-- Python
-- Matplotlib
+tags:
+  - Python
+  - Matplotlib
 categories:
-- Python
-- Matplotlib
+  - Python
+  - Matplotlib
+abbrlink: c924ee39
+date: 2022-08-30 19:12:57
 hidden:
 ---
 

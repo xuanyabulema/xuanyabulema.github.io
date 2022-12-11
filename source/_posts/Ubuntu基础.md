@@ -1,10 +1,11 @@
 ---
 title: Ubuntu基础
-date: 2022-06-17 20:47:34
 tags:
-- Ubuntu
+  - Ubuntu
 categories:
-- Ubuntu
+  - Ubuntu
+abbrlink: 5427ec25
+date: 2022-06-17 20:47:34
 hidden:
 ---
 

@@ -1,12 +1,13 @@
 ---
 title: Anaconda源设置|pip源设置|常用Python库安装
-date: 2022-09-18 17:12:26
 tags:
-- Anaconda
-- pip
-- Python
+  - Anaconda
+  - pip
+  - Python
 categories:
-- Python
+  - Python
+abbrlink: 9aed659c
+date: 2022-09-18 17:12:26
 hidden:
 ---
 

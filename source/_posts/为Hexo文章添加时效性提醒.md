@@ -1,10 +1,11 @@
 ---
 title: 为Hexo文章添加时效性提醒
-date: 2022-10-15 20:31:12
 tags:
-- Hexo
+  - Hexo
 categories:
-- Hexo
+  - Hexo
+abbrlink: b56cf98e
+date: 2022-10-15 20:31:12
 hidden:
 ---
 

@@ -1,10 +1,13 @@
 ---
 title: OpenCV使用
-date: 2022-09-11 16:15:34
-tags: [Python,OpenCV]
+tags:
+  - Python
+  - OpenCV
 categories:
-- Python
-- OpenCV
+  - Python
+  - OpenCV
+abbrlink: c2665980
+date: 2022-09-11 16:15:34
 hidden:
 ---
 

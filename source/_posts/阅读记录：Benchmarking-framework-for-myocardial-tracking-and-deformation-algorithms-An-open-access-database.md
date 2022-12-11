@@ -2,11 +2,12 @@
 title: >-
   阅读记录：Benchmarking framework for myocardial tracking and deformation
   algorithms: An open access database
-date: 2022-10-15 21:52:54
 tags:
-- Notes
+  - Notes
 categories:
-- Notes
+  - Notes
+abbrlink: b3e22ec2
+date: 2022-10-15 21:52:54
 hidden:
 ---
 

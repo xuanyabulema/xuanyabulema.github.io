@@ -1,12 +1,13 @@
 ---
 title: Hexo使用过程遇到的问题
-date: 2022-10-05 17:12:27
 tags:
-- Hexo
-- bug
-categories: 
-- Hexo
-- bug
+  - Hexo
+  - bug
+categories:
+  - Hexo
+  - bug
+abbrlink: 9ec9a0dd
+date: 2022-10-05 17:12:27
 hidden:
 ---
 

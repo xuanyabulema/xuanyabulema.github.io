@@ -1,12 +1,13 @@
 ---
 title: Windows终端代理设置
-date: 2022-11-27 13:45:48
 tags:
-- Windows
-- Terminal
+  - Windows
+  - Terminal
 categories:
-- Windows
-- Terminal
+  - Windows
+  - Terminal
+abbrlink: 99ac490b
+date: 2022-11-27 13:45:48
 hidden:
 ---
 
