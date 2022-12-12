@@ -226,9 +226,9 @@ The ground truth data of this challenge is available: [cMac.zip](http://www.card
 1) we segmented the LV from the selected short-axis dataset by manually deforming a left ventricular model;
 3) we registered the segmented LV mesh to 3DTAG coordinates using DICOM header information.
 
-1) 我们选择触发时间与舒张末期3DTAG帧最接近的短轴SSFP帧。
-2) 我们通过手动变形左心室模型，从选定的短轴数据集中分割出左心室。
-3) 我们使用DICOM头信息将分割后的左心室网格配准到3DTAG的坐标上。
+我们选择触发时间与舒张末期3DTAG帧最接近的短轴SSFP帧。
+我们通过手动变形左心室模型，从选定的短轴数据集中分割出左心室。
+我们使用DICOM头信息将分割后的左心室网格配准到3DTAG的坐标上。
 
 we registered the mesh to 3DUS coordinates as follows. 1) we selected three orthogonal visualization planes to match typical MR acquisition planes; 2) we marked three anatomical landmarks on the four-chamber view; 3) with the corresponding landmarks on the MR datasets, we performed a point based similarity transform on the LV mesh.
 
