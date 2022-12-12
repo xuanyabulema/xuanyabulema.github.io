@@ -81,11 +81,11 @@ In order to visualize the deformation fields provided by the participants, we ob
 
 Fig. 4. A segmentation is obtained from the short-axis SSFP dataset (middle). The LV model is registered to 3DTAG coordinates using DICOM header information (left) and to 3DUS coordinates using a point based similarity transform (right). Red = contours of segmented LV; Yellow = landmarks used for point based registration. (For interpretation of the references to color in this figure legend, the reader is referred to the web version of this article.)
 
-图4. 从短轴SSFP数据集中得到一个分割图（中间）。使用DICOM头信息将左心室模型注册为3DTAG坐标（左），使用基于点的相似性转换将其注册为3DUS坐标（右）。红色=分割的LV轮廓；黄色=用于基于点的注册的地标。(关于本图例中对颜色的解释，请读者参考本文的网络版）。
+图4. 从短轴SSFP数据集中得到一个分割图（中间）。使用DICOM头信息将左心室模型配准到3DTAG坐标（左），使用基于点的相似性转换将其配准到3DUS坐标（右）。红色=分割的LV轮廓；黄色=用于基于点的配准的地标。(关于本图例中对颜色的解释，请读者参考本文的网络版）。
 
 The LV model extracted from the SSFP dataset was registered to 3DUS coordinates as follows: (1) we selected three orthogonal visualization planes to match typical MR acquisition planes; (2) we marked three anatomical landmarks on the four-chamber view; (3) with the corresponding landmarks on the MR datasets, we performed a point based similarity transform on the LV mesh (see Fig. 4).
 
-从SSFP数据集中提取的左心室模型按以下方法注册到3DUS坐标上。(1)我们选择了三个正交的可视化平面来匹配典型的MR采集平面；(2)我们在四腔视图上标记了三个解剖标志；(3)根据MR数据集上的相应标志，我们对LV网格进行了基于点的相似性转换（见图4）。
+从SSFP数据集中提取的左心室模型按以下方法配准到3DUS坐标上。(1)我们选择了三个正交的可视化平面来匹配典型的MR采集平面；(2)我们在四腔视图上标记了三个解剖标志；(3)根据MR数据集上的相应标志，我们对LV网格进行了基于点的相似性转换（见图4）。
 
 ## Ground-truth landmarks
 
