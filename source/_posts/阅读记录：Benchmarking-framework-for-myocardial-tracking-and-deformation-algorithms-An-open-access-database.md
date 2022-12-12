@@ -166,3 +166,274 @@ Fig. 9. Box-plots of tracking errors for each challenger for 3DTAG (top), SSFP (
 SSFP：与3DUS类似，由于3DTAG和SSFP之间的时间错位，只评估了FF和ES的准确性误差。这两个阶段的中值被计算出来，用于模型数据集（UPF=6.18毫米，INRIA=3.93毫米）和志愿者数据集（UPF=3.09毫米，INRIA=4.78毫米）。图8中显示了跟踪精度误差的箱形图。图9显示了质量评估评价所建议的每个子组的跟踪精度误差。
 
 ## Strain curves
+
+
+
+# Motion Tracking Challenge Database
+
+个人整理国内网盘下载方式，如有冒犯请联系删除
+
+For infringement, please contact us deleted.
+
+| 名称                                                         | 简介                                                         | 内容                                               | 下载                                                         |
+| :----------------------------------------------------------- | :----------------------------------------------------------- | :------------------------------------------------- | :----------------------------------------------------------- |
+| **Cardiac Atlas Project**<br />[Motion Tracking Challenge](http://www.cardiacatlas.org/challenges/motion-tracking-challenge/) | 这项挑战的目的是：评估不同运动分析算法应用于多模态心脏数据库的准确性和可重复性 | cine SSFP sequences<br />4D tMR<br />3D ultrasound | 百度网盘：[链接](https://pan.baidu.com/s/1UvHKH5PbAVR5qGG0M7Y4_g?pwd=cxqi) <br/>提取码：cxqi<br />其他：待补充 |
+
+This is the first Cardiac Motion Analysis Challenge that was held at the 2011 MICCAI workshop entitled “Statistical Atlases and Computational Models of the Heart: Imaging and Modelling Challenges” (STACOM’11). The objective of this challenge is to evaluate the accuracy and reproducibility of different motion analysis algorithms applied to a multimodal cardiac database. The database includes a dataset from a dynamic phantom1 and 15 datasets from healthy volunteers. The data was acquired at the Division of Imaging Sciences and Biomedical Engineering, King’s College London, United Kingdom, and the Department of Internal Medicine II – Cardiology, University of Ulm, Germany.（这是第一届心脏运动分析挑战赛，是在2011年MICCAI研讨会上举行的，题为 "心脏的统计图谱和计算模型。影像和建模的挑战"（STACOM'11）。这项挑战的目的是：评估不同运动分析算法应用于多模态心脏数据库的准确性和可重复性。该数据库包括一个动态模型1的数据集和15个健康志愿者的数据集。这些数据是在英国伦敦国王学院影像科学和生物医学工程系以及德国乌尔姆大学内科二系--心脏科获得的。）
+
+## Data
+
+The Cardiac Atlas Project hosts the challenge data. Each case consists of cardiac MRI and 3D ultrasound images. The MR acquisition includes: (1) cine SSFP sequences in 2-chamber, 4-chamber, and short-axis views, (2) a whole-heart SSFP sequence gated at end-diastole and end-expiration; and (3) a 4D tMR sequence2. Sequences including three orthogonal tagged directions will be provided together with a fused grid-tagged volume sequence, in VTK and NIFTI formats. The ultrasound acquisition includes a 4D apical volume acquisition. All the datasets will be provided in anonymized DICOM format. （The Cardiac Atlas Project托管了这些挑战数据。每个案例由心脏MRI和三维超声图像组成。磁共振采集包括 (1)两腔、四腔和短轴视图的cine SSFP序列；(2)在舒张末期和呼气末期门控的全心SSFP序列；以及(3)4D tMR序列2。将以VTK和NIFTI格式提供包括三个正交标记方向的序列，以及融合网格标记的体积序列。超声采集包括4D心尖容积采集。所有的数据集都将以匿名的DICOM格式提供。）
+
+The data are provided with open access policy by attributation. This means that if you publish a paper using these data, then you are requested to cite the following citation:（这些数据是根据开放存取政策提供的。这意味着，如果你使用这些数据发表论文，那么你需要引用以下引文）
+
+C. Tobon-Gomez, M. De Craene, K. McLeod, L. Tautz, W. Shi, A. Hennemuth, A. Prakosa, H. Wang, G. Carr-White, S. Kapetanakis, A. Lutz, V. Rasche, T. Schaeffter, C. Butakoff, O. Friman, T. Mansi, M. Sermesant, X. Zhuang, S. Ourselin, H.-O. Peitgen, X. Pennec, R. Razavi, D. Rueckert, A. F. Frangi, and K. S. Rhode, “[Benchmarking framework for myocardial tracking and deformation algorithms: An open access database](http://dx.doi.org/10.1016/j.media.2013.03.008),” *Med Image Anal*, 17(6), 632–648, 2013.
+
+| No.  | File                                                         | Size     |
+| ---- | ------------------------------------------------------------ | -------- |
+| 1.   | [phantom.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/phantom.zip) | 290.8 MB |
+| 2.   | [v1.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v1.zip) | 396.6 MB |
+| 3.   | [v2.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v2.zip) | 454.7 MB |
+| 4.   | [v4.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v4.zip) | 394.1 MB |
+| 5.   | [v5.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v5.zip) | 390.2 MB |
+| 6.   | [v6.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v6.zip) | 387.1 MB |
+| 7.   | [v7.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v7.zip) | 489.1 MB |
+| 8.   | [v8.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v8.zip) | 472.5 MB |
+| 9.   | [v9.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v9.zip) | 448.8 MB |
+| 10.  | [v10.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v10.zip) | 409.9 MB |
+| 11.  | [v11.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v11.zip) | 491.9 MB |
+| 12.  | [v12.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v12.zip) | 395.8 MB |
+| 13.  | [v13.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v13.zip) | 581.3 MB |
+| 14.  | [v14.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v14.zip) | 461.9 MB |
+| 15.  | [v15.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v15.zip) | 317.2 MB |
+| 16.  | [v16.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/v16.zip) | 399.3 MB |
+
+### Ground truth
+
+The ground truth data of this challenge is available: [cMac.zip](http://www.cardiacatlas.org/files/MOTION-STACOM2011/cMAC.zip) (363.5 MB)
+
+### Additional files
+
+- [Readme.pdf](http://www.cardiacatlas.org/wp-content/uploads/sites/2/2015/12/readme.pdf)
+- [Short axis cine tag registration sheet data](http://www.cardiacatlas.org/wp-content/uploads/sites/2/2015/12/SA_cine_tag_registration.xls) (XLS)
+- [The presentation of motion challenge data](http://www.cardiacatlas.org/files/MOTION-STACOM2011/Motion_Challenge.pptx) (PPTX)
+
+## Readme
+
+### GROUND-TRUTH MESH
+
+1) we selected the short-axis SSFP frame with closest trigger time to the end diastolic 3DTAG frame; 
+1) we segmented the LV from the selected short-axis dataset by manually deforming a left ventricular model;
+3) we registered the segmented LV mesh to 3DTAG coordinates using DICOM header information.
+
+1) 我们选择触发时间与舒张末期3DTAG帧最接近的短轴SSFP帧。
+2) 我们通过手动变形左心室模型，从选定的短轴数据集中分割出左心室。
+3) 我们使用DICOM头信息将分割后的左心室网格配准到3DTAG的坐标上。
+
+we registered the mesh to 3DUS coordinates as follows. 1) we selected three orthogonal visualization planes to match typical MR acquisition planes; 2) we marked three anatomical landmarks on the four-chamber view; 3) with the corresponding landmarks on the MR datasets, we performed a point based similarity transform on the LV mesh.
+
+我们按以下方式将网格配准到3DUS坐标。1）我们选择了三个正交的可视化平面来匹配典型的MR采集平面；2）我们在四腔视图上标记了三个解剖标志；3）根据MR数据集上的相应标志，我们对LV网格进行了基于点的相似性转换。
+
+#### 3DTAG
+
+The mesh was deformed for MEVIS and UPF using ($i = each volunteer)
+
+```
+./GT/3DTAG/phantom/MESH/VTK_COORDINATES/v$i
+./GT/3DTAG/v$i/MESH/VTK_COORDINATES/v$i
+```
+
+The mesh was deformed for IUCL using ($i = each volunteer)
+
+```
+./GT/3DTAG/phantom/MESH/DICOM_COORDINATES/v$i
+./GT/3DTAG/v$i/MESH/DICOM_COORDINATES/v$i
+```
+
+The mesh was deformed for INRIA using ($i = each volunteer)
+
+```
+./GT/3DTAG/phantom/MESH/INRIA_COORDINATES/v$i
+./GT/3DTAG/v$i/MESH/INRIA_COORDINATES/v$i
+```
+
+#### 3DUS
+
+The mesh was deformed for MEVIS and UPF using ($i = each volunteer)
+
+```
+./GT/3DUS/phantom/MESH/VTK_COORDINATES/v$i
+./GT/3DUS/v$i/MESH/VTK_COORDINATES/v$i
+```
+
+The mesh was deformed for INRIA using ($i = each volunteer)
+
+```
+./GT/3DUS/phantom/MESH/INRIA_COORDINATES/v$i
+./GT/3DUS/v$i/MESH/INRIA_COORDINATES/v$i
+```
+
+#### SSFP
+
+The mesh was deformed for UPF using ($i = each volunteer)
+
+```
+./GT/SSFP/phantom/MESH/VTK_COORDINATES/v$i
+./GT/SSFP/v$i/MESH/VTK_COORDINATES/v$i
+```
+
+The mesh was deformed for INRIA using ($i = each volunteer)
+
+```
+./GT/SSFP/phantom/MESH/INRIA_COORDINATES/v$i
+./GT/SSFP/v$i/MESH/INRIA_COORDINATES/v$i
+```
+
+### GROUND-TRUTH LMKS
+
+3DTAG datasets--> 
+
+8 landmarks for the phantom and 12 landmarks per volunteer: one landmark per wall (anterior, lateral, posterior, septal) per ventricular level (basal, midventricular, apical). These landmarks were used as initialization points and manually tracked by two observers (obs1, obs2). Tracking was performed one landmark at a time (to ensure real 4D tracking).
+
+模型有8个地标，每个志愿者有12个地标：每个室壁（前壁、侧壁、后壁、室间隔）、每个心室水平（基底、中室、心尖）有一个地标。这些地标被用作初始化点，由两名观察员（obs1，obs2）手动跟踪。每次追踪一个地标（以确保真正的4D追踪）。
+
+3DUS datasets--> 
+
+we registered the lmks to 3DUS using a point based similarity transform (explained above). 
+
+我们使用基于点的相似性转换将lmks配准到3DUS（如上所述）。
+
+SSFP datasets--> 
+
+we registered the lmks to SSFP coordinates using DICOM header information.
+
+我们使用DICOM头信息将lmks配准到SSFP坐标。
+
+#### 3DTAG
+
+Tracking for MEVIS, was initialized with lmks from first frame ($i = each volunteer, 00)
+```
+./GT/3DTAG/phantom/LMKS/VTK_COORDINATES/obs1_groundTruth00
+./GT/3DTAG/phantom/LMKS/VTK_COORDINATES/obs2_groundTruth00
+./GT/3DTAG/v$i/LMKS/VTK_COORDINATES/obs1_groundTruth00
+./GT/3DTAG/v$i/LMKS/VTK_COORDINATES/obs2_groundTruth00
+```
+Tracking for IUCL, was initialized with lmks from first frame ($i = each volunteer, 00)
+```
+./GT/3DTAG/phantom/LMKS/DICOM_COORDINATES/obs1_groundTruth00
+./GT/3DTAG/phantom/LMKS/DICOM_COORDINATES/obs2_groundTruth00
+./GT/3DTAG/v$i/LMKS/DICOM_COORDINATES/obs1_groundTruth00
+./GT/3DTAG/v$i/LMKS/DICOM_COORDINATES/obs2_groundTruth00
+```
+Tracking for UPF was initialized with lmks from last frame ($i = each volunteer, \$j = last frame)
+
+```
+./GT/3DTAG/phantom/LMKS/VTK_COORDINATES/obs1_groundTruth$j
+./GT/3DTAG/phantom/LMKS/VTK_COORDINATES/obs2_groundTruth$j
+./GT/3DTAG/v$i/LMKS/VTK_COORDINATES/obs1_groundTruth$j
+./GT/3DTAG/v$i/LMKS/VTK_COORDINATES/obs2_groundTruth$j
+```
+Tracking for INRIA was initialized with lmks from last frame ($i = each volunteer, \$j = last frame)
+
+```
+./GT/3DTAG/phantom/LMKS/INRIA_COORDINATES/obs1_groundTruth$j
+./GT/3DTAG/phantom/LMKS/INRIA_COORDINATES/obs2_groundTruth$j
+./GT/3DTAG/v$i/LMKS/INRIA_COORDINATES/obs1_groundTruth$j
+./GT/3DTAG/v$i/LMKS/INRIA_COORDINATES/obs2_groundTruth$j
+```
+
+NOTE--> in some cases there was no visual difference (between observers) at first frame.
+Therefore--> obs1_groundTruth00 = obs2_groundTruth00
+
+注意------在某些情况下，在第一帧没有视觉差异（观察者之间）。
+因此--> obs1_groundTruth00 = obs2_groundTruth00
+
+#### 3DUS
+
+Tracking for MEVIS and UPF, was initialized with lmks from first frame ($i = each volunteer, 00)
+```
+./GT/3DUS/phantom/LMKS/VTK_COORDINATES/obs1_groundTruth00
+./GT/3DUS/phantom/LMKS/VTK_COORDINATES/obs2_groundTruth00
+./GT/3DUS/v$i/LMKS/VTK_COORDINATES/obs1_groundTruth00
+./GT/3DUS/v$i/LMKS/VTK_COORDINATES/obs2_groundTruth00
+```
+Tracking for INRIA was initialized with lmks from last frame ($i = each volunteer, \$j = last frame)
+```
+./GT/3DUS/phantom/LMKS/INRIA_COORDINATES/obs1_groundTruth$j
+./GT/3DUS/phantom/LMKS/INRIA_COORDINATES/obs2_groundTruth$j
+./GT/3DUS/v$i/LMKS/INRIA_COORDINATES/obs1_groundTruth$j
+./GT/3DUS/v$i/LMKS/INRIA_COORDINATES/obs2_groundTruth$j
+```
+due to temporal miss alignment between 3DTAG and 3DUS, accuracy errors were only evaluated at final frame and end systole (see below for ES time frames per volunteer).
+
+由于3DTAG和3DUS之间的时间错位，准确度误差只在最后一帧和收缩末期进行评估（每个志愿者的ES时间帧见下文）。
+
+NOTE--> in some cases there was no visual difference (between observers) at first frame.
+
+Therefore--> obs1_groundTruth00 = obs2_groundTruth00
+
+注意------在某些情况下，在第一帧没有视觉差异（观察者之间）。
+
+因此--> obs1_groundTruth00 = obs2_groundTruth00
+
+#### SSFP
+
+Tracking for UPF, was initialized with lmks from first frame ($i = each volunteer, 00)
+```
+./GT/SSFP/phantom /LMKS/VTK_COORDINATES/obs1_groundTruth00
+./GT/SSFP/phantom/LMKS/VTK_COORDINATES/obs2_groundTruth00
+./GT/SSFP/v$i/LMKS/VTK_COORDINATES/obs1_groundTruth00
+./GT/SSFP/v$i/LMKS/VTK_COORDINATES/obs2_groundTruth00
+```
+Tracking for INRIA was initialized with lmks from last frame ($i = each volunteer, \$j = last
+frame)
+```
+./GT/SSFP/phantom/LMKS/INRIA_COORDINATES/obs1_groundTruth$j
+./GT/SSFP/phantom/LMKS/INRIA_COORDINATES/obs2_groundTruth$j
+./GT/SSFP/v$i/LMKS/INRIA_COORDINATES/obs1_groundTruth$j
+./GT/SSFP/v$i/LMKS/INRIA_COORDINATES/obs2_groundTruth$j
+```
+NOTE--> in some cases there was no visual difference (between observers) at first frame.
+Therefore--> obs1_groundTruth00 = obs2_groundTruth00
+due to temporal miss alignment between 3DTAG and SSFP, accuracy errors were only evaluated at final frame and end systole (see below for ES time frames per volunteer).
+
+注意------在某些情况下，在第一帧没有视觉差异（观察者之间）。
+因此--> obs1_groundTruth00 = obs2_groundTruth00
+由于3DTAG和SSFP之间的时间错位，准确性误差只在最后一帧和收缩末期进行评估（每个志愿者的ES时间帧见下文）。
+
+### FINAL FRAME (FF) AND END SYSTOLIC FRAMES (ES)
+```
+Volunteers= "v1","v2","v4","v5","v6","v7","v8","v9","v10","v11","v12","v13","v14","v15","v16";
+3DTAG_ff="22","28","25","22","22","30","30","29","26","31","23","37","28","20","24";
+3DUS_ff="13","15","10","14","13","16","13","13","12","14","12","23","17","12","12";
+SSFP_ff="29","29","29","29","29","29","29","29","29","29","29","29","29","29”, "29";
+3DTAG_es="10","10","10","10","10","11","10","10","10","11","10","10","11","8","9";
+3DUS_es= "6","8","6","7","5","6","5","5","6","6","5","6","7","6","5";
+SSFP_es="10","11","11","11","11","9","9","10","10","9","11","9","10","11","11";
+Phantom=”phantom”;
+3DTAG_ff=”26”;
+3DUS_ff=”18”;
+SSFP_ff=”29”;
+3DTAG_es=”10”;
+3DUS_es=”5”;
+SSFP_es=”10”;
+```
+
+### EXCLUDING CRITERIA
+
+（问题数据）排除标准
+
+After obtaining the ground-truth, we calculated the inter-observer variability. The obtained inter-observer errors were analyzed under two criteria. Criterion 1: the final position of the landmark was relatively close to the initial position. We can assume the latter since all datasets are from healthy volunteers who are expected to have cyclic motion. Criterion 2: the final positions suggested by the two observers were relatively close. A landmark was labeled as relatively close when the distance was below the 75th percentile of all measured distances. Landmarks that did not follow both criteria were excluded from further quantification. The median of the inter-observer variability was computed over all time frames for the phantom dataset (0.77mm) and for the volunteer datasets (0.84mm). 
+
+在获得ground-truth后，我们计算了观察者之间的差异性。在两个标准下对获得的观察者间误差进行了分析。标准1：地标的最终位置与初始位置相对接近。我们可以假设是后者，因为所有的数据集都来自健康的志愿者，他们预计会有周期性的运动。标准2：两名观察员建议的最终位置相对接近。当一个地标的距离低于所有测量距离的第75个百分点时，就被标记为相对接近。不符合这两个标准的地标被排除在进一步的量化中。观察者之间的变异性的中位数是在所有时间框架内计算出来的，对于模型数据集（0.77mm）和志愿者数据集（0.84mm）。
+
+For the phantom data, no lmks were excluded. 
+For the volunteers, excluded lmks are summarized below:
+
+对于模型数据，没有排除任何lmks。
+对于志愿者来说，排除的lmks总结如下：
+
+![excluded lmks](image-20221212144732882.png)
+
+
+
