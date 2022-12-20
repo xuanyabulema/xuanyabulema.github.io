@@ -16,7 +16,7 @@ hidden:
 
 按照固有思维，`Windows`下应该使用`PowerShell`或`CMD`来执行`Conda`相关命令来管理`Python`环境。
 
-- 注意：在使用`PowerShell`前应先检查`Anaconda3/Scripts/`已经添加到了系统环境变量下，然后执行
+- <span style="color:rgb(255, 0, 0);font-weight:bold;">注意</span>：在使用`PowerShell`前应先检查`Anaconda3/Scripts/`已经添加到了系统环境变量下，然后执行
 
   ```powershell
   conda init powershell
