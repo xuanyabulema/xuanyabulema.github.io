@@ -140,7 +140,7 @@ conda remove -n your_env_name --all
 
 # Conda环境复制（备份）与迁移
 
-## 复制（备份）
+## 复制（本地备份）
 
 ```shell
 conda create --name myclone --clone myenv
@@ -150,7 +150,7 @@ conda create --name myclone --clone myenv
 
  `myenv` 想复制的现有环境的名称
 
-## 迁移
+## 迁移（不同电脑）
 
 在新电脑上安装旧电脑的环境步骤如下
 
@@ -160,7 +160,7 @@ conda create --name myclone --clone myenv
    conda activate env_name
    ```
 
-2. 到处为`.yaml`文件
+2. 导出为`.yaml`文件
 
    ```shell
    conda env export > environment.yaml
