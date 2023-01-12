@@ -48,10 +48,11 @@ gantt
     
     section 手机
     OnePlus3                                    :milestone, 2016-06-16, 0d
-    OnePlus3    6G + 64G                        :done, 2016-06-16, 2019-11-06
+    Snapdragon 820 6G + 64G                     :done, 2016-06-16, 2019-11-06
     Redmi K20 Pro                               :milestone, 2019-10-19, 0d
-    Redmi K20 Pro   8G + 128G                   :done, 2019-10-19, 2022-03-18
-    Redmi K30s Ultra  8G + 128G                 :milestone, 2022-03-18, 2d
+    Snapdragon 855  8G + 128G                   :done, 2019-10-19, 2022-03-18
+    Redmi K30S Ultra                            :milestone, 2022-03-18, 0d
+    Snapdragon 865  8G + 128G                   :milestone, 2022-03-18, 0d
 ```
 
 # DDR4内存条价格的变迁
