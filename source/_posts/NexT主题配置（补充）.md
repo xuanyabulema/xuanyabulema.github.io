@@ -23,6 +23,26 @@ hidden:
 
 > 参考链接：[【Hexo】NexT 主题的配置使用记录](https://www.cnblogs.com/ywang-wnlo/p/Hexo-NexT.html)
 
+# 渲染 Mermaid 绘图
+
+[安装`hexo-filter-mermaid-diagrams` 插件](https://github.com/webappdevelp/hexo-filter-mermaid-diagrams)
+
+```sh
+npm install hexo-filter-mermaid-diagrams --save
+```
+
+打开 `NexT `主题的 `_config.yml` 配置文件，找到 `mermaid` 的配置项，并设置 `enable: true`，如下所示：
+
+```yaml
+# Mermaid tag
+mermaid:
+  enable: true
+  # Available themes: default | dark | forest | neutral
+  theme:
+    light: default
+    dark: dark
+```
+
 # 阅读进度
 
 阅读进度有两种展示方式
