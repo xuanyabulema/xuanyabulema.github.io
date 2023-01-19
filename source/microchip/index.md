@@ -12,7 +12,7 @@ type: "microchip"
 
 ```mermaid
 gantt
-    title 个人设备使用史
+    title 个人设备使用史（更新于2023-01-13)
     dateFormat  YYYY-MM-DD
     axisFormat  %Y-%m
     
@@ -25,11 +25,11 @@ gantt
     i7-6300u  4G ram                            :done, 2019-12-29, 2021-03-03
     Surface Book 2                              :milestone, 2021-02-12, 0d
     i7-8650u  16G ram  GTX1060 6G               :done, 2021-02-12, 2022-08-18
-    # r7-6800h  16G ram  RTX3060 6G             :active, 2022-06-17, 300d
-    机械革命 蛟龙16      :milestone, 2022-06-17, 0d
-    r7-6800h  16G ram    RTX3060 6G             :milestone, 2022-06-17, 0d
+    机械革命 蛟龙16                               :milestone, 2022-06-17, 0d
+    r7-6800h  16G ram    RTX3060 6G             :active, 2022-06-17, 2023-01-13
     
     section 台式
+    第一台自行组装台式                             :milestone, 2019-02-22, 0d
     r5-2600 8G ram GTX1060 6G                   :done, 2019-02-22, 2019-08-02
     ram + 8G                                    :milestone, 2019-08-02, 0d
     r5-2600 16G ram GTX1060 6G                  :done, 2019-08-02, 2019-11-10
@@ -44,7 +44,7 @@ gantt
     QNCT(i7-8850H ES) 16G ram  GTX960 4G        :done, 2022-08-25, 2022-10-01
     买入：ram 64G                                :milestone, 2022-09-22, 0d
     卖出：QNCT(i7-8850H ES) 买入：r5-5500         :milestone, 2022-09-26, 0d
-    r5-5500 64G ram GTX960 4G                   :milestone, 2022-09-26, 0d
+    r5-5500 64G ram GTX960 4G                   :active, 2022-09-26, 2023-01-13
     
     section 手机
     OnePlus3                                    :milestone, 2016-06-16, 0d
@@ -52,7 +52,7 @@ gantt
     Redmi K20 Pro                               :milestone, 2019-10-19, 0d
     Snapdragon 855  8G + 128G                   :done, 2019-10-19, 2022-03-18
     Redmi K30S Ultra                            :milestone, 2022-03-18, 0d
-    Snapdragon 865  8G + 128G                   :milestone, 2022-03-18, 0d
+    Snapdragon 865  8G + 128G                   :active, 2022-03-18, 2023-01-13
 ```
 
 # DDR4内存条价格的变迁
