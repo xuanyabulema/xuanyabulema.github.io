@@ -17,7 +17,7 @@ type: "surfing"
 
 GitHub仓库：未知
 
-复制网站：[中国传统颜色 | 中国色](http://xyblm2022.xyz:280/)
+复制网站：[中国传统颜色 | 中国色](http://1.116.109.207:280/)
 
 ![中国传统颜色 | 中国色](index/image-20221009012948738.png)
 
@@ -31,7 +31,7 @@ GitHub仓库：未知
 
 GitHub仓库：https://github.com/BlueSky-07/Shuang
 
-复制网站：[双拼练习 @ BlueSky](http://xyblm2022.xyz:180/)
+复制网站：[双拼练习 @ BlueSky](http://1.116.109.207:180/)
 
 ![双拼练习 @ BlueSky](index/image-20221009011543018.png)
 

@@ -681,7 +681,7 @@ cp -r dir1/. dir2   # 如果dir2目录已存在
 
 ```shell
 mv [options] source dest
-mv [options] source... directory
+mv [options] source directory
 ```
 
 **参数说明**：
@@ -693,9 +693,15 @@ mv [options] source... directory
 - **-u**：当源文件比目标文件新或者目标文件不存在时，才执行移动操作。
 
 ```shell
-mv source_file dest_file            # 将源文件名 source_file 改为目标文件名 dest_file
-mv source_file dest_directory       # 将文件 source_file 移动到目标目录 dest_directory 中
-mv source_directory dest_directory  # 目录名 dest_directory 已存在，将 source_directory 移动到目录名 dest_directory 中；目录名 dest_directory 不存在则 source_directory 改名为目录名 dest_directory
+mv source_file dest_file            
+# 将源文件名 source_file 改为目标文件名 dest_file
+
+mv source_file dest_directory       
+# 将文件 source_file 移动到目标目录 dest_directory 中
+
+mv source_directory dest_directory  
+# 目录名 dest_directory 已存在，将 source_directory 移动到目录名 dest_directory 中；
+# 目录名 dest_directory 不存在则 source_directory 改名为目录名 dest_directory
 ```
 
 ## Linux反选删除文件
