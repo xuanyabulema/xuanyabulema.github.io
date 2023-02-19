@@ -10,13 +10,11 @@ date: 2021-11-29 17:07:32
 hidden:
 ---
 
-
-
 # 新建GitHub分支以保存Hexo源文件
 
-![新建Hexo分支](image-20211205170753314.png)
-
 <!-- more -->
+
+![新建Hexo分支](image-20211205170753314.png)
 
 # 将本地Hexo目录与GitHub的Hexo分支关联上
 

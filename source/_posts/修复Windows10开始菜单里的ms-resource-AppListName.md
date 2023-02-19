@@ -12,9 +12,9 @@ date: 2022-01-24 14:58:51
 
 # 修复Windows10开始菜单里的ms-resource:AppListName
 
-![ms-resource:AppListName](image-20220124150605531.png)
-
 <!-- more -->
+
+![ms-resource:AppListName](image-20220124150605531.png)
 
 # 解决方式
 
