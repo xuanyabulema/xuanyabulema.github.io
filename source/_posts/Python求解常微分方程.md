@@ -1,10 +1,9 @@
 ---
-title: 常微分方程
+title: Python求解常微分方程
 tags:
   - Notes
   - Python
   - ODE
-  - PDE
 categories:
   - Python
 abbrlink: 31dab94e
