@@ -14,7 +14,7 @@ hidden:
 
 # 前言
 
-按照固有思维，`Windows`下应该使用`PowerShell`或`CMD`来执行`Conda`相关命令来管理`Python`环境。
+按照固有思维，Windows 下应该使用`PowerShell`或`CMD`来执行`Conda`相关命令来管理`Python`环境。
 
 - <span style="color:rgb(255, 0, 0);font-weight:bold;">注意</span>：在使用`PowerShell`前应先检查`Anaconda3/Scripts/`已经添加到了系统环境变量下，然后执行
 
@@ -25,6 +25,20 @@ hidden:
   否则会出现无法激活切换`conda`环境，[参考](https://stackoverflow.com/a/54811138)
 
 <!-- more -->
+
+- 确保可运行
+
+  ![修改执行策略](image-20230419133127930.png)
+
+  可能出现如上情况，该情况出现的原因是 Windows 上 `.ps1` 默认执行策略为 `Restricted`，用管理器权限运行`PowerShell`执行如下命令：
+
+  ```powershell
+  set-executionpolicy remotesigned
+  ```
+
+  执行后，执行策略修改为为`remotesigned`
+
+  
 
 # 源配置
 
