@@ -2,6 +2,7 @@
 title: Anaconda源设置|pip源设置|常用Python库安装
 tags:
   - Anaconda
+  - Conda
   - pip
   - Python
 categories:

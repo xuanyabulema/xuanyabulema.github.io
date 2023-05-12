@@ -42,7 +42,41 @@ hidden:
 
 # 源配置
 
-> [北外源](https://mirrors.bfsu.edu.cn/help/anaconda/)
+> [Anaconda 镜像 北外源](https://mirrors.bfsu.edu.cn/help/anaconda/)
+
+## 生成 `.condarc`  文件
+
+各系统都可以通过修改用户目录下的 `.condarc` 文件来更改镜像源。Windows 用户无法直接创建名为 `.condarc` 的文件，可先执行如下命令：
+
+```powershell
+conda config --set show_channel_urls yes
+```
+
+生成该文件之后再修改。
+
+## 修改 `.condarc` 文件
+
+```yaml
+channels:
+  - defaults
+show_channel_urls: true
+default_channels:
+  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/main
+  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/r
+  - https://mirrors.bfsu.edu.cn/anaconda/pkgs/msys2
+custom_channels:
+  conda-forge: https://mirrors.bfsu.edu.cn/anaconda/cloud
+  msys2: https://mirrors.bfsu.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.bfsu.edu.cn/anaconda/cloud
+  menpo: https://mirrors.bfsu.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.bfsu.edu.cn/anaconda/cloud
+  pytorch-lts: https://mirrors.bfsu.edu.cn/anaconda/cloud
+  simpleitk: https://mirrors.bfsu.edu.cn/anaconda/cloud
+```
+
+即可添加 Anaconda Python 免费仓库。
+
+运行 `conda clean -i` 清除索引缓存，保证用的是镜像站提供的索引。
 
 # Conda常用命令
 
