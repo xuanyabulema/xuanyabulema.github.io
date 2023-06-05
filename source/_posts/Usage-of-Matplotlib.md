@@ -205,11 +205,11 @@ plt.show()
 
 <img src="image-20210706201916373.png" alt="直方图" style="zoom: 40%;" />
 
-# 箱线图matplotlib.pyplot.boxplot
+# 箱线图 matplotlib.pyplot.boxplot
 
 - matplotlib.pyplot.**boxplot**(*x*, *notch=None*, *sym=None*, *vert=None*, *whis=None*, *positions=None*, *widths=None*, *patch_artist=None*, *bootstrap=None*, *usermedians=None*, *conf_intervals=None*, *meanline=None*, *showmeans=None*, *showcaps=None*, *showbox=None*, *showfliers=None*, *boxprops=None*, *labels=None*, *flierprops=None*, *medianprops=None*, *meanprops=None*, *capprops=None*, *whiskerprops=None*, *manage_ticks=True*, *autorange=False*, *zorder=None*, *capwidths=None*, *, *data=None*) [[source]](https://github.com/matplotlib/matplotlib/blob/v3.6.2/lib/matplotlib/pyplot.py#L2401-L2422)
 
-{% post_link 分位数与箱线图（Python） 分位数与箱线图（Python）介绍  %}
+{% post_link Quantile-and-Boxplots-in-Python 分位数与箱线图介绍  %}
 
 ```python
 import numpy as np
@@ -222,7 +222,7 @@ plt.boxplot(x, showmeans=True)
 
 <img src="image-20221109151114921.png" alt="箱线图" style="zoom:40%;" />
 
-# 向量图|箭头图matplotlib.pyplot.quiver
+# 向量图（箭头图） matplotlib.pyplot.quiver
 
 *matplotlib.pyplot.quiver(*args, data=None, **kwargs)*[[source\]](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.quiver.html)
 

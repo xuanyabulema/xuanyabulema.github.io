@@ -77,7 +77,7 @@ Hexo Markdown文章的标题会自动生成对应的`id`，注意：
 
 示例：跳转到站内之前的文章——Hexo安装日志
 
-{% post_link Hexo安装日志 %}
+{% post_link Hexo-Posts-Links %}
 
 
 
