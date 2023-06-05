@@ -65,6 +65,11 @@ config.ini
 
 # Package Files 不需要提交的任意包含后缀名为jar的文件
 *.jar
+
+# 仅包含文件夹下指定类型文件，以 ".py" 文件为例
+# 先除去该文件夹下所有文件
+/folder/*
+!/folder/*.py 
 ```
 
 
