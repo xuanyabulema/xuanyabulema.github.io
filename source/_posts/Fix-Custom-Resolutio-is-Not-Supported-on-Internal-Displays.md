@@ -1,6 +1,8 @@
 ---
 title: 解决内部显示不支持自定义分辨率
-tags: Windows
+tags:
+  - Windows
+  - bug
 categories:
   - Windows
 abbrlink: 1786a25c
