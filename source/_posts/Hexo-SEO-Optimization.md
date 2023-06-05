@@ -58,7 +58,8 @@ Sitemap: https://xuanyabulema.github.io/sitemap.txt
 ```yaml
 url: https://xuanyabulema.github.io
 # permalink: :year/:month/:day/:title/
-permalink: :title.html    # 修改
+permalink: :title.html    # 修改  两层结构
+permalink: posts/:title.html    # 修改  三层结构  于 posts/ 下
 ```
 
 但若文章标题是中文，网址会被转义成一堆特别长的数字符号。
