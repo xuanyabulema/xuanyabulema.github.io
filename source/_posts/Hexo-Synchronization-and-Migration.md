@@ -14,7 +14,7 @@ hidden:
 
 <!-- more -->
 
-![新建Hexo分支](image-20211205170753314.png)
+![新建Hexo分支](Hexo-Synchronization-and-Migration/image-20211205170753314.png)
 
 # 将本地Hexo目录与GitHub的Hexo分支关联上
 
@@ -37,7 +37,7 @@ cd xuanyabulema.github.io/
 
 用`ll`查看文件
 
-![ll 命令输出](image-20211205171837598.png)
+![ll 命令输出](Hexo-Synchronization-and-Migration/image-20211205171837598.png)
 
 删除`.git/`以外的所有文件
 

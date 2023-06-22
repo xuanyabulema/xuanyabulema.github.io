@@ -28,7 +28,7 @@ hidden:
 
 - 确保可运行
 
-  ![修改执行策略](image-20230419133127930.png)
+  ![修改执行策略](Using-Conda-to-Manage-Python-Environments-on-Windows/image-20230419133127930.png)
 
   可能出现如上情况，该情况出现的原因是 Windows 上 `.ps1` 默认执行策略为 `Restricted`，用管理器权限运行`PowerShell`执行如下命令：
 
@@ -98,7 +98,7 @@ conda install xxx
   conda install numpy matplotlib=3.4.3
   ```
 
-  ![conda install numpy matplotlib=3.4.3](image-20221214160239444.png)
+  ![conda install numpy matplotlib=3.4.3](Using-Conda-to-Manage-Python-Environments-on-Windows/image-20221214160239444.png)
 
 ## 删除指定库
 
@@ -134,7 +134,7 @@ conda env list
 conda info -e
 ```
 
-![查看虚拟环境](image-20221214155735469.png)
+![查看虚拟环境](Using-Conda-to-Manage-Python-Environments-on-Windows/image-20221214155735469.png)
 
 ## 创建新环境
 
@@ -160,7 +160,7 @@ conda activate your_env_name
   conda activate test_env
   ```
 
-  ![激活（切换）环境](image-20221214155922958.png)
+  ![激活（切换）环境](Using-Conda-to-Manage-Python-Environments-on-Windows/image-20221214155922958.png)
 
 ## 关闭虚拟环境（回主环境）
 

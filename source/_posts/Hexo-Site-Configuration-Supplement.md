@@ -122,7 +122,7 @@ hexo new page "book"
 
 编辑`\source\book\index.md`
 
-![\source\book\index.md](image-20221015213916997.png)
+![\source\book\index.md](Hexo-Site-Configuration-Supplement\image-20221015213916997.png)
 
 ```markdown
 ---

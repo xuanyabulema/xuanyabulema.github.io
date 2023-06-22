@@ -14,9 +14,9 @@ hidden:
 
 <!-- more -->
 
-![英特尔®显卡控制中心](image-20220520145631576.png)
+![英特尔®显卡控制中心](Fix-Custom-Resolutio-is-Not-Supported-on-Internal-Displays/image-20220520145631576.png)
 
-![“内部显示不支持自定义分辨率”](143822.png)
+![“内部显示不支持自定义分辨率”](Fix-Custom-Resolutio-is-Not-Supported-on-Internal-Displays/143822.png)
 
 # 解决方案：自行安装旧版`Intel® Graphics Control Panel`
 
@@ -34,13 +34,13 @@ hidden:
 
 下载`appx`后缀的文件
 
-![search and download](image-20220520150735498.png)
+![search and download](Fix-Custom-Resolutio-is-Not-Supported-on-Internal-Displays/image-20220520150735498.png)
 
 双击运行该文件已完成安装
 
 或（以管理员方式）打开`Windows PowerShell`使用命令行安装
 
-![install by terminal](image-20220520151310067.png)
+![install by terminal](Fix-Custom-Resolutio-is-Not-Supported-on-Internal-Displays/image-20220520151310067.png)
 
 ```powershell
 add-appxpackage .\AppUp.IntelGraphicsControlPanel_3.3.0.0_x64__8j3eq9eme6ctt.Appx
@@ -48,5 +48,5 @@ add-appxpackage .\AppUp.IntelGraphicsControlPanel_3.3.0.0_x64__8j3eq9eme6ctt.App
 
 然后打开`Intel® Graphics Control Panel`可进行自定义分辨率
 
-![Intel® Graphics Control Panel](image-20220520152151440.png)
+![Intel® Graphics Control Panel](Fix-Custom-Resolutio-is-Not-Supported-on-Internal-Displays/image-20220520152151440.png)
 

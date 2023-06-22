@@ -14,7 +14,7 @@ date: 2022-01-24 14:58:51
 
 <!-- more -->
 
-![ms-resource:AppListName](image-20220124150605531.png)
+![ms-resource:AppListName](Fix-ms-resource-AppListName-in-Windows-10-Start-Menu/image-20220124150605531.png)
 
 # 解决方式
 

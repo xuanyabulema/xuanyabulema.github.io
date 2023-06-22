@@ -38,7 +38,7 @@ LiveRe 有两个版本：
 
 安装，获取 `uid`：
 
-![LiveRe City 版](livere-get-code.png)
+![LiveRe City 版](Add-Comment-System-in-Hexo-NexT-Theme/livere-get-code.png)
 
 填写（都可以随便填写）完成后，进入到 `管理页面 -> 代码管理 -> 一般网站` 代码中，`data-uid` 即为所需 `uid`。
 
@@ -52,7 +52,7 @@ LiveRe 有两个版本：
 livere_uid: # <your_uid>
 ```
 
-![livere评论效果](image-20221006015901073.png)
+![livere评论效果](Add-Comment-System-in-Hexo-NexT-Theme/image-20221006015901073.png)
 
 # Waline配置教程
 
@@ -64,11 +64,11 @@ livere_uid: # <your_uid>
 
 2. 点击左上角 [创建应用](https://console.leancloud.app/apps) 并起一个你喜欢的名字 (请选择免费的开发版):
 
-   ![创建应用](leancloud-1.f7a36b20.png)
+   ![创建应用](Add-Comment-System-in-Hexo-NexT-Theme/leancloud-1.f7a36b20.png)
 
 3. 进入应用，选择左下角的 `设置` > `应用 Key`。你可以看到你的 `APP ID`,`APP Key` 和 `Master Key`。请记录它们，以便后续使用。
 
-   ![ID 和 Key](leancloud-2.4cc69975.png)
+   ![ID 和 Key](Add-Comment-System-in-Hexo-NexT-Theme/leancloud-2.4cc69975.png)
 
 ## Vercel 部署 (服务端)
 
@@ -82,19 +82,19 @@ livere_uid: # <your_uid>
 
 2. 输入一个你喜欢的 Vercel 项目名称并点击 `Create` 继续:
 
-   ![创建项目](vercel-1.4e9dd7aa.png)
+   ![创建项目](Add-Comment-System-in-Hexo-NexT-Theme/vercel-1.4e9dd7aa.png)
 
 3. 此时 Vercel 会基于 Waline 模板帮助你新建并初始化仓库，仓库名为你之前输入的项目名。
 
-   ![deploy](vercel-3.0918fcee.png)
+   ![deploy](Add-Comment-System-in-Hexo-NexT-Theme/vercel-3.0918fcee.png)
 
    一两分钟后，满屏的烟花会庆祝你部署成功。此时点击 `Go to Dashboard` 可以跳转到应用的控制台。
 
-   ![deploy](vercel-4.f7f4c12b.png)
+   ![deploy](Add-Comment-System-in-Hexo-NexT-Theme/vercel-4.f7f4c12b.png)
 
 4. 点击顶部的 `Settings` - `Environment Variables` 进入环境变量配置页，并配置三个环境变量 `LEAN_ID`, `LEAN_KEY` 和 `LEAN_MASTER_KEY` 。它们的值分别对应上一步在 LeanCloud 中获得的 `APP ID`, `APP KEY`, `Master Key`。
 
-   ![设置环境变量](vercel-5.3a5de7f0.png)
+   ![设置环境变量](Add-Comment-System-in-Hexo-NexT-Theme/vercel-5.3a5de7f0.png)
 
    >注
    >
@@ -102,11 +102,11 @@ livere_uid: # <your_uid>
 
 5. 环境变量配置完成之后点击顶部的 `Deployments` 点击顶部最新的一次部署右侧的 `Redeploy` 按钮进行重新部署。该步骤是为了让刚才设置的环境变量生效。
 
-   ![redeploy](vercel-6.c1af01b1.png)
+   ![redeploy](Add-Comment-System-in-Hexo-NexT-Theme/vercel-6.c1af01b1.png)
 
 6. 此时会跳转到 `Overview` 界面开始部署，等待片刻后 `STATUS` 会变成 `Ready`。此时请点击 `Visit` ，即可跳转到部署好的网站地址，此地址即为你的服务端地址。
 
-   ![redeploy success](vercel-7.2478902b.png)
+   ![redeploy success](Add-Comment-System-in-Hexo-NexT-Theme/vercel-7.2478902b.png)
 
 ## 在Hexo Next主题中配置
 
@@ -146,6 +146,6 @@ waline:
 
 找到评论框，点击 `登录` 按钮，会弹出一个窗口，找到用户注册，默认第一个注册的用户为管理员，所以部署好一定要记得及时注册。
 
-![Waline评论系统](image-20221006015839546.png)
+![Waline评论系统](Add-Comment-System-in-Hexo-NexT-Theme/image-20221006015839546.png)
 
 注册好，登录之后即可进入评论管理的后台，可以对评论进行管理。

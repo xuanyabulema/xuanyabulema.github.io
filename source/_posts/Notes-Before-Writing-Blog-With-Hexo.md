@@ -182,7 +182,7 @@ ax.set_xlim(0,len(xticks)+1)
 plt.show()
 ```
 
-![直方图](image-20210706201916373.png)
+![直方图](Notes-Before-Writing-Blog-With-Hexo/image-20210706201916373.png)
 
 
 
@@ -632,7 +632,7 @@ importlib.reload(XXXX)  #xxxx为修改后再调用的函数模块
 
 https://zh.wikipedia.org/wiki/%E5%8F%8C%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC
 
-![双线性插值 wiki](image-20211125162223119.png)
+![双线性插值 wiki](Notes-Before-Writing-Blog-With-Hexo/image-20211125162223119.png)
 
 
 

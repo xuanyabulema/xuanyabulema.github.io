@@ -94,7 +94,7 @@ $$
 
 ## 绘制箱线图matplotlib.pyplot.boxplot
 
-<img src="image-20221122212253453.png" alt="箱线图" style="zoom:60%;" />
+<img src="Quantile-and-Boxplots-in-Python/image-20221122212253453.png" alt="箱线图" style="zoom:60%;" />
 
 ```python
 import numpy as np

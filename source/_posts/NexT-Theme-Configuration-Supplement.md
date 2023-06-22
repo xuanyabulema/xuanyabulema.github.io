@@ -80,7 +80,7 @@ menu_settings:
   badges: true
 ```
 
-![数量气泡](image-20221006173307465.png)
+![数量气泡](NexT-Theme-Configuration-Supplement/image-20221006173307465.png)
 
 # 设置代码块颜色并添加复制按钮
 

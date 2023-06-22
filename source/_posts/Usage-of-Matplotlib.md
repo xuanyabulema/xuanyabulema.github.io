@@ -93,7 +93,7 @@ for ax in axes:  # 每个子图设置
     ax.set_xlabel('image_label', fontsize=14, fontfamily='sans-serif', fontstyle='italic')
 ```
 
-![示例一](image-20221108225937630.png)
+![示例一](Usage-of-Matplotlib/image-20221108225937630.png)
 
 示例二
 
@@ -151,7 +151,7 @@ ax.scatter(x_list, y_list, c='r', s=20, alpha=0.5)
 plt.show()
 ```
 
-<img src="image-20221108230249302.png" alt="散点图" style="zoom: 40%;" />
+<img src="Usage-of-Matplotlib/image-20221108230249302.png" alt="散点图" style="zoom: 40%;" />
 
 ### 连线图
 
@@ -173,7 +173,7 @@ ax.plot(x_list, y_list, color='r', linewidth=1, alpha=0.6)
 plt.show()
 ```
 
-<img src="image-20221108230326796.png" alt="连线图" style="zoom: 40%;" />
+<img src="Usage-of-Matplotlib/image-20221108230326796.png" alt="连线图" style="zoom: 40%;" />
 
 ### 直方图
 
@@ -203,7 +203,7 @@ ax.set_xlim(0,len(xticks)+1)
 plt.show()
 ```
 
-<img src="image-20210706201916373.png" alt="直方图" style="zoom: 40%;" />
+<img src="Usage-of-Matplotlib/image-20210706201916373.png" alt="直方图" style="zoom: 40%;" />
 
 # 箱线图 matplotlib.pyplot.boxplot
 
@@ -220,7 +220,7 @@ plt.figure(dpi=200)
 plt.boxplot(x, showmeans=True)
 ```
 
-<img src="image-20221109151114921.png" alt="箱线图" style="zoom:40%;" />
+<img src="Usage-of-Matplotlib/image-20221109151114921.png" alt="箱线图" style="zoom:40%;" />
 
 # 向量图（箭头图） matplotlib.pyplot.quiver
 
@@ -257,7 +257,7 @@ plt.ylim((8, 2))  # 交换y方向，在缺失angles='xy'时，容易绘制与希
 plt.show()
 ```
 
-<img src="image-20221114164049827.png" alt="向量图|箭头图" style="zoom:40%;" />
+<img src="Usage-of-Matplotlib/image-20221114164049827.png" alt="向量图|箭头图" style="zoom:40%;" />
 
 ```python
 import numpy as np
@@ -278,4 +278,4 @@ ax.set_aspect('equal')
 plt.show()
 ```
 
-<img src="image-20221114164652946.png" alt="向量图|箭头图" style="zoom:40%;" />
+<img src="Usage-of-Matplotlib/image-20221114164652946.png" alt="向量图|箭头图" style="zoom:40%;" />

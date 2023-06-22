@@ -19,30 +19,30 @@ hidden:
 
 开始->计算机管理->本地用户和组->用户，右键点击新用户
 
-![开始->计算机管理->本地用户和组->用户](image-20221014160317870.png)
+![开始->计算机管理->本地用户和组->用户](Windows-Server-2008-Add-Remote-Desktop-User/image-20221014160317870.png)
 
 密码要求复杂一点，比如大写字母，小写字母加数字的组合。
 
-![账户创建](image-20221014160818067.png)
+![账户创建](Windows-Server-2008-Add-Remote-Desktop-User/image-20221014160818067.png)
 
 # 添加远程登录权限
 
 右键新建的用户名称，选择属性
 
-![右键新建的用户名称，选择属性](image-20221014161223713.png)
+![右键新建的用户名称，选择属性](Windows-Server-2008-Add-Remote-Desktop-User/image-20221014161223713.png)
 
 在隶属于页面点击添加
 
-![在隶属于页面点击添加](image-20221014161301533.png)
+![在隶属于页面点击添加](Windows-Server-2008-Add-Remote-Desktop-User/image-20221014161301533.png)
 
 高级->立即查找->选中“remote Desktop Users”->确定
 
-![高级->立即查找->选中“remote Desktop Users”->确定](image-20221014161719381.png)
+![高级->立即查找->选中“remote Desktop Users”->确定](Windows-Server-2008-Add-Remote-Desktop-User/image-20221014161719381.png)
 
 在自动返回到上一级界面，点击确定
 
-![在自动返回到上一级界面，点击确定](image-20221014161800065.png)
+![在自动返回到上一级界面，点击确定](Windows-Server-2008-Add-Remote-Desktop-User/image-20221014161800065.png)
 
 应用
 
-![应用](image-20221014161819652.png)
+![应用](Windows-Server-2008-Add-Remote-Desktop-User/image-20221014161819652.png)

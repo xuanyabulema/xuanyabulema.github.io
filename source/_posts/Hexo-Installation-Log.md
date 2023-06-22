@@ -374,7 +374,7 @@ marked:
 
 修改Typora配置
 
-![Typora设置——图像](image-20211126143949809.png)
+![Typora设置——图像](Hexo-Installation-Log/image-20211126143949809.png)
 
 如复制网络路径的图片`https://...../image.jpg`粘贴到Typora中叫`文章名`的文章后，图片会自动变为`![](文章名/image.jpg)`。
 
@@ -382,7 +382,7 @@ marked:
 
 在Typora编辑器中，使用`<C-f>`快捷键，将所有的`文章名/`替换为空即可删除。
 
-![Typora替换](image-20211126144204257.png)
+![Typora替换](Hexo-Installation-Log/image-20211126144204257.png)
 
 ## 浏览页面显示当前浏览进度
 
@@ -579,7 +579,7 @@ cat .ssh/id_rsa.qub
 ssh -T git@github.com
 ```
 
-![shell](image-20211126124826456.png)
+![shell](Hexo-Installation-Log/image-20211126124826456.png)
 
 ## 安装插件
 
@@ -591,7 +591,7 @@ sudo npm install --save hexo-deployer-git
 
 格式为`<你的 GitHub 用户名>.github.io`
 
-![GitHub仓库保存网页](image-20211126125502218.png)
+![GitHub仓库保存网页](Hexo-Installation-Log/image-20211126125502218.png)
 
 ## 修改`_config.yml`
 

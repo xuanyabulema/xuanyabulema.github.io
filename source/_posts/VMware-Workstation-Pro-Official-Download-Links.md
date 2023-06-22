@@ -15,7 +15,7 @@ hidden:
 
 <!-- more -->
 
-![Download VMware Workstation Pro](image-20230219154048913.png)
+![Download VMware Workstation Pro](VMware-Workstation-Pro-Official-Download-Links/image-20230219154048913.png)
 
 <span style="color:rgb(255, 0, 0);font-weight:bold;">以下链接可直接进行下载</span>
 

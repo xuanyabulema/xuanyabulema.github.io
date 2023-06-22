@@ -31,13 +31,13 @@ Landmark-based thin-plate spline image registration is one of the most commonly 
 
 Figure 1 shows two MRI images with corresponding landmarks that define the notation used throughout the paper. Assume that the **template** $T(y)$ and target** $S(x)$ images are defined on the continuous domain  $\Omega = [0, 1)^2$ and were constructed from $N_1 × N_2$ pixel images using bilinear interpolation. Let $q_i \in \Omega$, and $p_i \in \Omega$, for $i = 1, . . . , M$, define corresponding landmarks in the template $T$ and target $S$ images, respectively. The forward transformation $h : \Omega \rightarrow \Omega$ is defined as the mapping that transforms $T$ into the shape of $S$ and the reverse transformation $g : \Omega \rightarrow \Omega$ is defined as the mapping that transforms $S$ into the shape of $T$ . The forward transformation $h(x) = x + u(x)$ defines the mapping from the coordinate system of the template to the target and the reverse transformation $g(y) = y + w(y)$ defines the mapping from the coordinate system of the target image to the template for $x, y \in \Omega^1$. The inverse of the forward transformation is defined as $h^{-1}(y) = y + \tilde{u}(y)$ and the reverse transformation is defined as $g^{-1}(x) = x + \tilde{w}(x)$.
 
-<img src="image-20221119182620563.png" alt="Fig. 1. Consistent image registration is based on the principle that the mappings h from T to S and g from S to T define a consistent point-by-point correspondence between the coordinate systems of T and S. Consistency is enforced mathematically by jointly estimating h and g while constraining h and g to be inverse mappings of one another." style="zoom: 40%;" />
+<img src="Reading-Notes-Landmark-and-Intensity-Based-Consistent-Thin-Plate-Spline-Image-Registration/image-20221119182620563.png" alt="Fig. 1. Consistent image registration is based on the principle that the mappings h from T to S and g from S to T define a consistent point-by-point correspondence between the coordinate systems of T and S. Consistency is enforced mathematically by jointly estimating h and g while constraining h and g to be inverse mappings of one another." style="zoom: 40%;" />
 
 ### 注解
 
 标志点(landmark)正反变换能够一致，但是控制点为非标志点时，其 ***TPS*** 正向变换（红色）与逆向变换（绿色）会存在不一致性
 
-<img src="image-20221119205619485.png" alt="图" style="zoom:40%;" />
+<img src="Reading-Notes-Landmark-and-Intensity-Based-Consistent-Thin-Plate-Spline-Image-Registration/image-20221119205619485.png" alt="图" style="zoom:40%;" />
 
 $u(p_i)=q_i - p_i$
 
@@ -96,4 +96,4 @@ and $O$ is a $3×3$ matrix of zeros. Also, define the $(M +3)×2$ matrix of land
 
 # PDF
 
-{% pdf 'Landmark and Intensity-Based, Consistent Thin-Plate Spline Image Registration.pdf' %}
+{% pdf 'Reading-Notes-Landmark-and-Intensity-Based-Consistent-Thin-Plate-Spline-Image-Registration/Landmark and Intensity-Based, Consistent Thin-Plate Spline Image Registration.pdf' %}

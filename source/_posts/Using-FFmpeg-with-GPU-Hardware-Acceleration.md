@@ -55,13 +55,13 @@ ffmpeg -c:v hevc_cuvid -i input.mp4 -c:v h264_nvenc -b:v 2048k output_264_gpu.mp
 
 https://ffmpeg.org/download.html#build-windows
 
-<img src="image-20230512190748060.png" alt="Windows版下载选择界面" style="width: 60%;" />
+<img src="Using-FFmpeg-with-GPU-Hardware-Acceleration/image-20230512190748060.png" alt="Windows版下载选择界面" style="width: 60%;" />
 
 有两种编译好的版本，个人喜欢下载 gyan.dev 编译的版本。
 
 [gyan.dev编译版本下载界面](https://www.gyan.dev/ffmpeg/builds/#release-builds)
 
-![gyan.dev release 界面](image-20230512191221152.png)
+![gyan.dev release 界面](Using-FFmpeg-with-GPU-Hardware-Acceleration/image-20230512191221152.png)
 
 essentials build 中包含的库
 
@@ -83,4 +83,4 @@ amf cuda cuvid d3d11va dxva2 libvpl nvdec nvenc
 
 下载好将 bin 目录添加至环境变量即可使用
 
-<img src="image-20230512192306146.png" alt="FFmpeg bin 目录添加至环境变量" style="width: 50%;" />
+<img src="Using-FFmpeg-with-GPU-Hardware-Acceleration/image-20230512192306146.png" alt="FFmpeg bin 目录添加至环境变量" style="width: 50%;" />

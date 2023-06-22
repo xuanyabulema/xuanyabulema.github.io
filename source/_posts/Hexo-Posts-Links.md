@@ -77,7 +77,7 @@ Hexo Markdown文章的标题会自动生成对应的`id`，注意：
 
 示例：跳转到站内之前的文章——Hexo安装日志
 
-{% post_link Hexo-Posts-Links %}
+{% post_link Hexo-Installation-Log %}
 
 
 
@@ -107,13 +107,13 @@ Hexo Markdown文章的标题会自动生成对应的`id`，注意：
 <a href="{% post_path Hexo安装日志 %}#部署hexo到github">点击跳转到“Hexo安装日志”的“部署Hexo到GitHub”章节</a>
 ```
 
-<a href="{% post_path Hexo安装日志 %}#部署hexo到github">点击跳转到“Hexo安装日志”的“部署Hexo到GitHub”章节</a>
+<a href="{% post_path Hexo-Installation-Log %}#部署hexo到github">点击跳转到“Hexo安装日志”的“部署Hexo到GitHub”章节</a>
 
 ```markdown
 <a href="{% post_path Hexo安装日志 %}#参考链接">点击跳转到“Hexo安装日志”的“参考链接”章节</a>
 ```
 
-<a href="{% post_path Hexo安装日志 %}#参考链接">点击跳转到“Hexo安装日志”的“参考链接”章节</a>
+<a href="{% post_path Hexo-Installation-Log %}#参考链接">点击跳转到“Hexo安装日志”的“参考链接”章节</a>
 
 ## 方式一配置未成功
 

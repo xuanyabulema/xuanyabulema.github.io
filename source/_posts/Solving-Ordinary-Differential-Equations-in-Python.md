@@ -176,7 +176,7 @@ axes[1].set_xlabel("Number of prey")
 axes[1].set_ylabel("Number of predators")
 ```
 
-![Lokta-Volterra](image-20230215211043583.png)
+![Lokta-Volterra](Solving-Ordinary-Differential-Equations-in-Python/image-20230215211043583.png)
 
 其他示例
 
@@ -199,7 +199,7 @@ plt.legend()
 plt.show()
 ```
 
-<img src="image-20230215212252508.png" alt="1" style="width:50%;" />
+<img src="Solving-Ordinary-Differential-Equations-in-Python/image-20230215212252508.png" alt="1" style="width:50%;" />
 
 ```python
 from scipy.integrate import odeint
@@ -230,7 +230,7 @@ ax.plot(track2[:, 0], track2[:, 1], track2[:, 2])
 plt.show()
 ```
 
-<img src="image-20230215212418858.png" alt="2" style="width:50%;" />
+<img src="Solving-Ordinary-Differential-Equations-in-Python/image-20230215212418858.png" alt="2" style="width:50%;" />
 
 
 

@@ -94,13 +94,13 @@ mamba install numpy
 conda search pytorch
 ```
 
-<img src="image-20221115163537211.png" alt="conda search pytorch" style="zoom:67%;" />
+<img src="Anaconda-Mirror-Configuration-Pip-Mirror-Configuration-Frequently-Used-Python-Libraries/image-20221115163537211.png" alt="conda search pytorch" style="zoom:67%;" />
 
 ```sh
 conda search cudatoolkit
 ```
 
-<img src="image-20221115163641482.png" alt="conda search cudatoolkit" style="zoom:67%;" />
+<img src="Anaconda-Mirror-Configuration-Pip-Mirror-Configuration-Frequently-Used-Python-Libraries/image-20221115163641482.png" alt="conda search cudatoolkit" style="zoom:67%;" />
 
 然后可以指定一下`pytorch, cudatoolkit`版本，比如
 
@@ -140,7 +140,7 @@ conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit
 
 `-c pytorch`参数原本指定为Pytorch官网源进行安装，由于源在国外，若未更换`conda`源，国内安装pytorch等容易失败
 
-![未换源易安装失败](image-20221115184941528.png)
+![未换源易安装失败](Anaconda-Mirror-Configuration-Pip-Mirror-Configuration-Frequently-Used-Python-Libraries/image-20221115184941528.png)
 
 在[配置上述Anaconda源后](#anaconda配置源)，即可顺利安装，因为若在conda源添加
 
@@ -152,7 +152,7 @@ custom_channels:
 
 `-c pytorch` `-c conda-forge`参数则指定到了国内源
 
-<img src="image-20221115184732086.png" alt="conda配置国内源" style="zoom:67%;" />
+<img src="Anaconda-Mirror-Configuration-Pip-Mirror-Configuration-Frequently-Used-Python-Libraries/image-20221115184732086.png" alt="conda配置国内源" style="zoom:67%;" />
 
 ## v1.13.0
 

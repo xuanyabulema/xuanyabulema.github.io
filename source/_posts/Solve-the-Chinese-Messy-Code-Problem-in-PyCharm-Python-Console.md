@@ -19,7 +19,7 @@ hidden:
 
 <!-- more -->
 
-![环境变量设置  PYTHONIOENCODING=UTF8](image-20220802163528902.png)
+![环境变量设置  PYTHONIOENCODING=UTF8](Solve-the-Chinese-Messy-Code-Problem-in-PyCharm-Python-Console/image-20220802163528902.png)
 
 ```python
 # -*- coding: utf-8 -*-
@@ -33,11 +33,11 @@ if __name__ == '__main__':
 
 解决前
 
-![配置前控制台显示](image-20220802163535635.png)
+![配置前控制台显示](Solve-the-Chinese-Messy-Code-Problem-in-PyCharm-Python-Console/image-20220802163535635.png)
 
 解决后
 
-![配置后控制台显示](image-20220802163556447.png)
+![配置后控制台显示](Solve-the-Chinese-Messy-Code-Problem-in-PyCharm-Python-Console/image-20220802163556447.png)
 
 ## 其他方案（未有效）
 

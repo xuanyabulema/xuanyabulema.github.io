@@ -19,7 +19,7 @@ hidden:
 
 效果图如下
 
-![文章时效性提示](image-20221015203829818.png)
+![文章时效性提示](Add-Timeliness-Alerts-for-Hexo/image-20221015203829818.png)
 
 # 添加注入器
 
@@ -27,7 +27,7 @@ hidden:
 
 在主题的 `scripts` 目录（没有则新建一个）下新建一个名为 `injector.js` 的文件，
 
-![新建injector.js](image-20221015204435886.png)
+![新建injector.js](Add-Timeliness-Alerts-for-Hexo/image-20221015204435886.png)
 
 内容如下：
 
@@ -44,7 +44,7 @@ hexo.extend.injector.register('body_end', `<script src="/js/outdate.js"></script
 
 在主题的 `source` 目录下新建 `js` 文件夹，新建一个名为 `outdate.js` 的文件，
 
-![新建outdate.js](image-20221015204541482.png)
+![新建outdate.js](Add-Timeliness-Alerts-for-Hexo/image-20221015204541482.png)
 
 添加以下代码：
 

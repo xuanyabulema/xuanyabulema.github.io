@@ -15,7 +15,7 @@ hidden:
 
 <!-- more -->
 
-![已发现 - 尚未编入索引](image-20221211134956046.png)
+![已发现 - 尚未编入索引](Hexo-SEO-Optimization/image-20221211134956046.png)
 
 > 参考
 >

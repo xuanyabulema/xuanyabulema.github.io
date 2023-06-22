@@ -67,7 +67,7 @@ Tracking-based methods: The third category (tracking-based approaches) solves fo
 
 基于跟踪的方法。第三类（基于跟踪的方法）通过优化帧与帧之间的强度相似性来解决空间域的位移问题。图3（第三块）将基于跟踪的方法按照其变换模型排序。变换的空间导数产生应变估计。在基于Demons或块状匹配的方法中，每一步都要进行空间正则化以确保应变结果的平稳。对于其他转换模型，转换的空间导数可以通过分析得到。
 
-![Fig. 3. Classification of motion and strain quantification methods from cine MR, 3DTAG and 3DUS images. The methods evaluated in this paper are written in bold format. ](1-s2.0-S1361841513000388-gr3_lrg-16657543645012.jpg)
+![Fig. 3. Classification of motion and strain quantification methods from cine MR, 3DTAG and 3DUS images. The methods evaluated in this paper are written in bold format. ](Reading-Notes-Benchmarking-framework-for-myocardial-tracking-and-deformation-algorithms-An-open-access-database/1-s2.0-S1361841513000388-gr3_lrg-16657543645012.jpg)
 
 # Evaluation
 
@@ -77,7 +77,7 @@ In order to visualize the deformation fields provided by the participants, we ob
 
 为了使参与者提供的变形场可视化，我们从SSFP数据集中获得了如下的解剖信息。(1)我们选择了触发时间与舒张末期3DTAG帧最接近的短轴SSFP帧；(2)我们通过手动变形左心室模型，从选定的短轴数据集中分割出左心室；(3)我们使用DICOM头信息将分割出的左心室网格配准到3DTAG坐标中（见图4）。
 
-![Fig. 4.](1-s2.0-S1361841513000388-gr4_lrg.jpg)
+![Fig. 4.](Reading-Notes-Benchmarking-framework-for-myocardial-tracking-and-deformation-algorithms-An-open-access-database/1-s2.0-S1361841513000388-gr4_lrg.jpg)
 
 Fig. 4. A segmentation is obtained from the short-axis SSFP dataset (middle). The LV model is registered to 3DTAG coordinates using DICOM header information (left) and to 3DUS coordinates using a point based similarity transform (right). Red = contours of segmented LV; Yellow = landmarks used for point based registration. (For interpretation of the references to color in this figure legend, the reader is referred to the web version of this article.)
 
@@ -93,7 +93,7 @@ In order to generate ground truth landmarks from 3DTAG datasets, we selected 8 l
 
 为了从3DTAG数据集中生成地面真实地标，我们为模型选择了8个地标，每个志愿者选择了12个地标：每个室壁（前壁、侧壁、后壁、室间隔）、每个心室水平（基底、室中、心尖）各一个地标。每个地标被放置在三个正交可视化平面上的标记线的交点上。这些地标被用作初始化点，并由两名观察员手动跟踪。为了实现对地标的真正4D追踪，这个过程是一次一个地标。也就是说，下面的时间框架是可视化的，地标被手动移位以跟踪三个正交平面上的标签标记。这个过程重复进行，直到在整个心动周期内追踪到该地标（见图5和补充材料中的动画）。用GIMIAS（Larrabide等人，2009）进行可视化、分割和追踪。用DICOM头信息转换为SSFP坐标。对于3DUS，我们使用第5.1节中描述的映射法将3DTAG数据集中的地标映射到3DUS坐标。手动追踪的地标被用来评估所有方法的追踪准确性。中位数的统计学意义是用Mann-Whitney检验来评估的。
 
-![Fig. 5.](1-s2.0-S1361841513000388-gr5_lrg.jpg)
+![Fig. 5.](Reading-Notes-Benchmarking-framework-for-myocardial-tracking-and-deformation-algorithms-An-open-access-database/1-s2.0-S1361841513000388-gr5_lrg.jpg)
 
 Fig. 5. Results of manual landmark tracking in two datasets: one with good and one with excellent quality. Note the in-out-of-plane motion of the landmarks due to our 4D tracking strategy. Different colors represent different observers. The white arrows show regions with high inter-observer variability (see animation in [Supplementary material](https://www.sciencedirect.com/science/article/pii/S1361841513000388?via=ihub#s0150)). Yellow = landmarks tracked by observer 1; Red = landmarks tracked by observer 2. Sep = septal wall; Lat = lateral wall; Ant = anterior wall; Pos = posterior wall. (For interpretation of the references to color in this figure legend, the reader is referred to the web version of this article.)
 
@@ -127,7 +127,7 @@ To visualize the results obtained by each challenger, we applied the deformation
 
 为了直观地看到每个挑战者获得的结果，我们将变形场应用于手动分割的网格。得到的结果可以在图6中找到（动画版见补充材料）。
 
-![Fig. 6.](1-s2.0-S1361841513000388-gr6_lrg.jpg)
+![Fig. 6.](Reading-Notes-Benchmarking-framework-for-myocardial-tracking-and-deformation-algorithms-An-open-access-database/1-s2.0-S1361841513000388-gr6_lrg.jpg)
 
 Fig. 6. Deformed meshes for each challenger. The meshes are color mapped with point-to-surface distances to the reference mesh (manually segmented). Results are shown for the end systolic frame (bottom) and the final frame (top): last frame for forward tracking methods, and, first frame for backward tracking methods (see animation in Supplementary material). Sep = septal wall; Lat = lateral wall; Ant= anterior wall; Pos = posterior wall. (For interpretation of the references to color in this figure legend, the reader is referred to the web version of this article.)
 
@@ -139,7 +139,7 @@ Fig. 6. Deformed meshes for each challenger. The meshes are color mapped with po
 
 3DTAG：计算所有时间段的中值，包括模型数据集（MEVIS = 1.20 mm, IUCL = 0.73 mm, UPF = 1.10 mm, INRIA = 1.09 mm）和志愿者数据集（MEVIS = 1.33 mm, IUCL = 1.52 mm, UPF = 1.09 mm, INRIA = 1.32 mm）。图7显示了跟踪精度误差的箱形图。该图还包括收缩末期（ES）帧和最终帧（FF）的精度图。最后一帧对应的是：前向追踪方法的最后一帧，以及后向追踪方法的第一帧。作为补充材料，我们提供了所有参与者的地标跟踪动画。图9显示了质量评估所建议的每个子组的跟踪精度误差。
 
-![Fig. 7.](1-s2.0-S1361841513000388-gr7_lrg.jpg)
+![Fig. 7.](Reading-Notes-Benchmarking-framework-for-myocardial-tracking-and-deformation-algorithms-An-open-access-database/1-s2.0-S1361841513000388-gr7_lrg.jpg)
 
 Fig. 7. Box-plots of tracking errors for each challenger for **3DTAG** datasets of the phantom (top) and the volunteers (bottom). Maximum whisker corresponds to approximately 99.3% coverage if the data were normally distributed. Doted black line represents average inter-observer variability. Pair of samples that yielded statistically non-significant differences (*p* < 0.05) are marked on the plot (†, ‡, §).
 
@@ -149,13 +149,13 @@ Fig. 7. Box-plots of tracking errors for each challenger for **3DTAG** datasets 
 
 **3DUS**: 由于3DTAG和3DUS在时间上的错位，只评估了FF和ES的准确性误差。这两个阶段的中位值被计算出来，用于模型数据集（MEVIS = 4.40 mm，UPF = 3.48 mm，INRIA = 4.78 mm）和志愿者数据集（MEVIS = 3.51 mm，UPF = 3.71 mm，INRIA = 4.07 mm）。图8中显示了跟踪精度的箱形图。图9显示了质量评估所建议的每个子组的跟踪精度误差。
 
-![Fig. 8.](1-s2.0-S1361841513000388-gr8_lrg.jpg)
+![Fig. 8.](Reading-Notes-Benchmarking-framework-for-myocardial-tracking-and-deformation-algorithms-An-open-access-database/1-s2.0-S1361841513000388-gr8_lrg.jpg)
 
 Fig. 8. Box-plots of tracking errors for each challenger for **3DUS** and **SSFP** datasets of the phantom (top) and the volunteers (bottom). Due to temporal miss-alignment accuracies were only computed for FF and ES. Maximum whisker corresponds to approximately 99.3% coverage if the data were normally distributed. Doted black line represents average inter-observer variability on the 3DTAG data. Pair of samples that yielded statistically non-significant differences (*p* < 0.05) are marked on the plot (†, ‡, §).
 
 每个挑战者对幻影（上）和志愿者（下）的3DUS和SSFP数据集的跟踪误差箱形图。由于时间上的错位，只计算了FF和ES的准确性。如果数据为正态分布，最大的晶须对应于大约99.3%的覆盖率。黑线代表3DTAG数据的平均观察者间变异性。图中标注了产生统计学上不显著差异（P<0.05）的一对样本（†，‡，§）。
 
-![Fig. 9.](1-s2.0-S1361841513000388-gr9_lrg-16668794292539.jpg)
+![Fig. 9.](Reading-Notes-Benchmarking-framework-for-myocardial-tracking-and-deformation-algorithms-An-open-access-database/1-s2.0-S1361841513000388-gr9_lrg-16668794292539.jpg)
 
 Fig. 9. Box-plots of tracking errors for each challenger for 3DTAG (top), SSFP (middle) and 3DUS (bottom) datasets grouped by quality grading. One of the 3DUS dataset graded as unusable was discarded. Maximum whisker corresponds to approximately 99.3% coverage if the data were normally distributed. The doted black line represents average inter-observer variability. Pair of samples that yielded statistically non-significant differences (p < 0.05) are marked on the plot (†, ‡, §).
 
@@ -442,7 +442,7 @@ For the volunteers, excluded lmks are summarized below:
 对于模型数据，没有排除任何lmks。
 对于志愿者来说，排除的lmks总结如下：
 
-![excluded lmks](image-20221212144732882.png)
+![excluded lmks](Reading-Notes-Benchmarking-framework-for-myocardial-tracking-and-deformation-algorithms-An-open-access-database/image-20221212144732882.png)
 
 
 

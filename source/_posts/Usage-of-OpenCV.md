@@ -40,7 +40,7 @@ axes[1].imshow(img[:, :, (2, 1, 0)])  # 等同于 axes[1].imshow(img[:, :, ::-1]
 axes[1].set_title('img[:, :, (2, 1, 0)]')  # axes[1].set_title('img[:, :, ::-1]')
 ```
 
-![cv2交换图像通道使得与matplotlib一致](image-20220911161334551.png)
+![cv2交换图像通道使得与matplotlib一致](Usage-of-OpenCV/image-20220911161334551.png)
 
 # 图片的加载、显示、保存
 
@@ -68,9 +68,9 @@ if img is not None:  # 判断图像读取是否成功
     cv2.destroyWindow("Lenna OpenCV imshow")
 ```
 
-![Lenna OpenCV imshow](image-20221011223729375.png)
+![Lenna OpenCV imshow](Usage-of-OpenCV/image-20221011223729375.png)
 
-![Lenna OpenCV imshow GRAYSCALE](image-20221012162313440.png)
+![Lenna OpenCV imshow GRAYSCALE](Usage-of-OpenCV/image-20221012162313440.png)
 
 ##  读取图片 cv2.imread 函数
 
@@ -195,7 +195,7 @@ if img is not None:  # 判断图像读取是否成功
     cv2.destroyWindow("Lenna OpenCV imshow resize 500*500")
 ```
 
-![Lenna OpenCV imshow resize 500*500](image-20221012163252251.png)
+![Lenna OpenCV imshow resize 500*500](Usage-of-OpenCV/image-20221012163252251.png)
 
 ## `dst`与`src`坐标对应关系
 
@@ -265,7 +265,7 @@ if img_o is not None:  # 判断图像读取是否成功
     cv2.destroyAllWindows()  # 关闭所有窗口
 ```
 
-![original & GaussianBlur result](image-20221012165131356.png)
+![original & GaussianBlur result](Usage-of-OpenCV/image-20221012165131356.png)
 
 ## 2D卷积
 
@@ -308,7 +308,7 @@ kernel =
  [0.1 0.1 0.1]]
 ```
 
-![original & filter2D result](image-20221013000833433.png)
+![original & filter2D result](Usage-of-OpenCV/image-20221013000833433.png)
 
 # 直方图
 
@@ -339,7 +339,7 @@ if img is not None:  # 判断图像读取是否成功
     plt.show()
 ```
 
-![matplotlib.pyplot.hist方式呈现](image-20221109145710608.png)
+![matplotlib.pyplot.hist方式呈现](Usage-of-OpenCV/image-20221109145710608.png)
 
 # 形态学操作
 
