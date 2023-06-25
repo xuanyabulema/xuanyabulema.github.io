@@ -1378,15 +1378,15 @@ categories<span class="token punctuation">:</span></span>
 <h2 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h2>
 <p>默认开启弹幕</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-fgCdIvEeduhasUoR" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-fgCdIvEeduhasUoR").style.height=document.getElementById("mmedia-fgCdIvEeduhasUoR").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-ItsvltdFPstmhUjv" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-ItsvltdFPstmhUjv").style.height=document.getElementById("mmedia-ItsvltdFPstmhUjv").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-fgCdIvEeduhasUoR").style.height=document.getElementById("mmedia-fgCdIvEeduhasUoR").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-ItsvltdFPstmhUjv").style.height=document.getElementById("mmedia-ItsvltdFPstmhUjv").scrollWidth*0.76+"px";
     }; </script>
 <p><s>关闭弹幕</s>失败</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" "danmaku:false" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-XeFnpgJvZBEJoBiI" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-XeFnpgJvZBEJoBiI").style.height=document.getElementById("mmedia-XeFnpgJvZBEJoBiI").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-AcKPWwTTEwTJIHUS" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-AcKPWwTTEwTJIHUS").style.height=document.getElementById("mmedia-AcKPWwTTEwTJIHUS").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-XeFnpgJvZBEJoBiI").style.height=document.getElementById("mmedia-XeFnpgJvZBEJoBiI").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-AcKPWwTTEwTJIHUS").style.height=document.getElementById("mmedia-AcKPWwTTEwTJIHUS").scrollWidth*0.76+"px";
     }; </script>
 ]]></content>
       <categories>
@@ -5452,9 +5452,27 @@ conda info <span class="token parameter variable">-e</span><span aria-hidden="tr
   <entry>
     <title>Windows 网络重置</title>
     <url>/posts/Windows-Network-Reset.html</url>
-    <content><![CDATA[<p>点击阅读前文前, 首页能看到的文章的简短描述</p>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>记录一些 Windows 网络重置相关的内容。</p>
+<p>个人常用，使用管理员权限下的 powershell 运行：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">netsh int ip reset<span class="token punctuation">;</span> netsh winsock reset<span class="token punctuation">;</span> ipconfig <span class="token operator">/</span>flushdns<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <span id="more"></span>
+<h1 id="使用系统自带的网络重置"><a class="markdownIt-Anchor" href="#使用系统自带的网络重置"></a> 使用系统自带的网络重置</h1>
+<h2 id="win11"><a class="markdownIt-Anchor" href="#win11"></a> Win11</h2>
+<p>设置——网络和 Internet ——高级选项设置——网络重置</p>
+<h2 id="win10"><a class="markdownIt-Anchor" href="#win10"></a> Win10</h2>
+<p>设置——网络和 Internet ——状态——网络重置</p>
+<h1 id="使用命令"><a class="markdownIt-Anchor" href="#使用命令"></a> 使用命令</h1>
+<h2 id="清理-nds-缓存"><a class="markdownIt-Anchor" href="#清理-nds-缓存"></a> 清理 NDS 缓存</h2>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">ipconfig <span class="token operator">/</span>flushdns<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="重置-winsock-目录"><a class="markdownIt-Anchor" href="#重置-winsock-目录"></a> 重置 Winsock 目录</h2>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">netsh winsock reset<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 id="重置-tcpip-网络协议栈的配置"><a class="markdownIt-Anchor" href="#重置-tcpip-网络协议栈的配置"></a> 重置 TCP/IP 网络协议栈的配置</h1>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">netsh int ip reset<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 ]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
       <tags>
         <tag>Windows</tag>
       </tags>
