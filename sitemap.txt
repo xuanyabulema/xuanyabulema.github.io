@@ -1,3 +1,5 @@
+https://xuanyabulema.github.io/posts/Hexo-Synchronization-and-Migration.html
+https://xuanyabulema.github.io/posts/Windows-Network-Reset.html
 https://xuanyabulema.github.io/tags/index.html
 https://xuanyabulema.github.io/surfing/index.html
 https://xuanyabulema.github.io/microchip/index.html
@@ -41,7 +43,6 @@ https://xuanyabulema.github.io/posts/Hexo-Posts-Links.html
 https://xuanyabulema.github.io/posts/Hexo-Render-Math-Equations.html
 https://xuanyabulema.github.io/posts/Hexo-SEO-Optimization.html
 https://xuanyabulema.github.io/posts/Hexo-Site-Configuration-Supplement.html
-https://xuanyabulema.github.io/posts/Hexo-Synchronization-and-Migration.html
 https://xuanyabulema.github.io/posts/Excellent-UWP-Apps-for-Windows.html
 https://xuanyabulema.github.io/posts/Find-All-Files-With-the-Specified-Extension-in-the-Specified-Folder-in-Python.html
 https://xuanyabulema.github.io/posts/Fix-Custom-Resolutio-is-Not-Supported-on-Internal-Displays.html

@@ -1378,15 +1378,15 @@ categories<span class="token punctuation">:</span></span>
 <h2 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h2>
 <p>默认开启弹幕</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-XIHXfAgPLgsMdAJj" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-XIHXfAgPLgsMdAJj").style.height=document.getElementById("mmedia-XIHXfAgPLgsMdAJj").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-TFVsvWfSdoiTvEaU" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-TFVsvWfSdoiTvEaU").style.height=document.getElementById("mmedia-TFVsvWfSdoiTvEaU").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-XIHXfAgPLgsMdAJj").style.height=document.getElementById("mmedia-XIHXfAgPLgsMdAJj").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-TFVsvWfSdoiTvEaU").style.height=document.getElementById("mmedia-TFVsvWfSdoiTvEaU").scrollWidth*0.76+"px";
     }; </script>
 <p><s>关闭弹幕</s>失败</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" "danmaku:false" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-LOzlPOoiUoyvaoNO" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-LOzlPOoiUoyvaoNO").style.height=document.getElementById("mmedia-LOzlPOoiUoyvaoNO").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-hEaaTnDqJUNySJLZ" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-hEaaTnDqJUNySJLZ").style.height=document.getElementById("mmedia-hEaaTnDqJUNySJLZ").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-LOzlPOoiUoyvaoNO").style.height=document.getElementById("mmedia-LOzlPOoiUoyvaoNO").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-hEaaTnDqJUNySJLZ").style.height=document.getElementById("mmedia-hEaaTnDqJUNySJLZ").scrollWidth*0.76+"px";
     }; </script>
 ]]></content>
       <categories>
@@ -1447,6 +1447,8 @@ categories<span class="token punctuation">:</span></span>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">ssh-keygen <span class="token operator">-</span>t rsa <span class="token operator">-</span>C <span class="token string">"xuanyabulema@qq.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="将github上的hexo源blog文件同步到本地blog目录下"><a class="markdownIt-Anchor" href="#将github上的hexo源blog文件同步到本地blog目录下"></a> 将Github上的Hexo源Blog文件同步到本地<code>./blog</code>目录下</h2>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone <span class="token parameter variable">-b</span> Hexo git@github.com:xuanyabulema/xuanyabulema.github.io.git ./blog<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>后来改为了一个单独的私有仓库，使用如下命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone git@github.com:xuanyabulema/Hexo.git ./blog<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>变更后同步到Github</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span> <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Hexo源文件同步"</span> <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> push origin <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>其他端变更后同步到本地</p>
@@ -5445,6 +5447,16 @@ conda info <span class="token parameter variable">-e</span><span aria-hidden="tr
       </categories>
       <tags>
         <tag>VM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 网络重置</title>
+    <url>/posts/Windows-Network-Reset.html</url>
+    <content><![CDATA[<p>点击阅读前文前, 首页能看到的文章的简短描述</p>
+<span id="more"></span>
+]]></content>
+      <tags>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
