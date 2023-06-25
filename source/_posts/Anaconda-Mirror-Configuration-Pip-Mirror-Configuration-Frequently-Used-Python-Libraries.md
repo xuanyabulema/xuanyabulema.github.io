@@ -1,5 +1,5 @@
 ---
-title: Anaconda源设置|pip源设置|常用Python库安装
+title: Anaconda 源设置 | pip 源设置 | 常用 Python 库安装
 tags:
   - Anaconda
   - Conda

@@ -1,5 +1,5 @@
 ---
-title: Windows下使用Conda管理Python环境
+title: Windows 下使用 Conda 管理 Python 环境
 tags:
   - Python
   - Conda

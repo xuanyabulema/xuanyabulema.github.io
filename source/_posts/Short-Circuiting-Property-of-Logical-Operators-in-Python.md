@@ -1,5 +1,5 @@
 ---
-title: Python中逻辑运算and和or的短路特性
+title: Python 中逻辑运算 and 和 or 的短路特性
 tags:
   - Python
 categories:

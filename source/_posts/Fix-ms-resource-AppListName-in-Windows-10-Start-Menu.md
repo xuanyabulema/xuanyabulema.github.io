@@ -1,5 +1,5 @@
 ---
-title: '修复Windows10开始菜单里的ms-resource:AppListName'
+title: 修复 Windows10 开始菜单里的 ms-resource:AppListName
 tags:
   - Windows
   - bug
@@ -9,7 +9,7 @@ categories:
 date: 2022-01-24 14:58:51
 ---
 
-# 修复Windows10开始菜单里的ms-resource:AppListName
+# 修复 Windows10 开始菜单里的 ms-resource:AppListName
 
 <!-- more -->
 

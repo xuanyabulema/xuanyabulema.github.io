@@ -1,5 +1,5 @@
 ---
-title: 为Hexo文章添加时效性提醒
+title: 为 Hexo 文章添加时效性提醒
 tags:
   - Hexo
 categories:

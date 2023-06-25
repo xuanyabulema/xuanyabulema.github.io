@@ -1,5 +1,5 @@
 ---
-title: NexT主题配置（补充）
+title: NexT 主题配置（补充）
 categories:
   - Hexo
   - NexT

@@ -1,5 +1,5 @@
 ---
-title: Ubuntu基础
+title: Ubuntu 基础
 tags:
   - Ubuntu
 categories:

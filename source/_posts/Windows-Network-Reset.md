@@ -44,7 +44,7 @@ ipconfig /flushdns
 netsh winsock reset
 ```
 
-# 重置 TCP/IP 网络协议栈的配置
+## 重置 TCP/IP 网络协议栈的配置
 
 ```powershell
 netsh int ip reset

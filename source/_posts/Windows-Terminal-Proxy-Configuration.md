@@ -1,5 +1,5 @@
 ---
-title: Windows终端代理设置
+title: Windows 终端代理设置
 tags:
   - Windows
   - Terminal

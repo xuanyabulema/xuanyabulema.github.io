@@ -1,5 +1,5 @@
 ---
-title: Python3基础
+title: Python3 基础
 tags:
   - Python
 categories:

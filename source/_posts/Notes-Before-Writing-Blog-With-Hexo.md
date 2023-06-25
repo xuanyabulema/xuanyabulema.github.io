@@ -1,5 +1,5 @@
 ---
-title: 用Hexo写blog前的笔记
+title: 用 Hexo 写 blog 前的笔记
 tags:
   - Python
   - Linux

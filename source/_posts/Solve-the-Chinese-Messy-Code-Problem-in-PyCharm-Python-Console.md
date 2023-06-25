@@ -1,5 +1,5 @@
 ---
-title: PyCharm Python控制台中文乱码解决
+title: PyCharm Python 控制台中文乱码解决
 tags:
   - PyCharm
   - Python

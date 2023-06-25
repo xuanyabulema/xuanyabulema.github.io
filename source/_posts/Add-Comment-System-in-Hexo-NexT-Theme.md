@@ -1,5 +1,5 @@
 ---
-title: Hexo NexT主题添加评论系统
+title: Hexo NexT 主题添加评论系统
 tags:
   - Hexo
   - NexT

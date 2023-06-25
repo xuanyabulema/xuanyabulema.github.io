@@ -1,5 +1,5 @@
 ---
-title: Hexo文章跳转（链接）
+title: Hexo 文章跳转（链接）
 categories:
   - Hexo
 tags:

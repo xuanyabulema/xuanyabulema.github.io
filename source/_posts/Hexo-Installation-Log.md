@@ -1,5 +1,5 @@
 ---
-title: Hexo安装日志
+title: Hexo 安装日志
 categories:
   - Hexo
 tags:
@@ -11,7 +11,7 @@ date: 2021-11-26 07:39:29
 hidden:
 ---
 
-# 在Ubuntu server 20.04LTS上安装Hexo
+# 在 Ubuntu server 20.04 LTS 上安装 Hexo
 
 ## 建议先用`su`切换为管理员账户，或用root账户登录
 

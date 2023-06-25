@@ -1,5 +1,5 @@
 ---
-title: Hexo多端同步|迁移
+title: Hexo 多端同步|迁移
 tags:
   - Hexo
   - Git

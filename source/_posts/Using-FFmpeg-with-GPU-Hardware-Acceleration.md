@@ -1,5 +1,5 @@
 ---
-title: FFmpeg转码 GPU加速 简单示例
+title: 使用 GPU 加速 FFmpeg 转码的简单示例
 tags: FFmpeg
 categories: FFmpeg
 date: 2022-05-25 20:38:43

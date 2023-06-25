@@ -1,5 +1,5 @@
 ---
-title: Matplotlib的使用
+title: Matplotlib 的使用
 tags:
   - Python
   - Matplotlib

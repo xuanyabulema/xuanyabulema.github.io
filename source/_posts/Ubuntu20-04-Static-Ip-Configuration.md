@@ -1,5 +1,5 @@
 ---
-title: Ubuntu20.04设置静态ip
+title: Ubuntu20.04 设置静态 ip
 tags:
   - Ubuntu
 categories:

@@ -1,5 +1,5 @@
 ---
-title: 利用dill模块保存Python变量对象
+title: 利用 dill 保存 Python 变量对象
 tags:
   - Python
   - dill

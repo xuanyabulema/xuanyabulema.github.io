@@ -1,5 +1,5 @@
 ---
-title: Hexo站点配置（补充）
+title: Hexo 站点配置（补充）
 tags:
   - Hexo
 categories:

@@ -1,5 +1,5 @@
 ---
-title: NumPy使用
+title: NumPy 使用
 tags:
   - Python
   - NumPy

@@ -1,5 +1,5 @@
 ---
-title: Hexo SEO优化
+title: Hexo SEO 优化
 tags:
   - Hexo
 categories:

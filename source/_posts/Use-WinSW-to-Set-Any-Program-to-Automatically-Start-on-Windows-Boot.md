@@ -1,5 +1,5 @@
 ---
-title: 使用WinSW设置任意程序开机自启动
+title: 使用 WinSW 设置任意程序开机自启动
 tags:
   - Windows
   - WinSW

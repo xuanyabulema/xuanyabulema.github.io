@@ -1,5 +1,5 @@
 ---
-title: Hexo渲染数学公式
+title: Hexo 渲染数学公式
 tags:
   - Hexo
 categories:
