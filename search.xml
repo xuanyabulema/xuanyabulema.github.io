@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo NexT主题添加评论系统</title>
+    <title>Hexo NexT 主题添加评论系统</title>
     <url>/posts/Add-Comment-System-in-Hexo-NexT-Theme.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p>为自己的Blog添加一个评论系统不仅有趣，也有利于交流。</p>
@@ -120,7 +120,7 @@
       </tags>
   </entry>
   <entry>
-    <title>为Hexo文章添加时效性提醒</title>
+    <title>为 Hexo 文章添加时效性提醒</title>
     <url>/posts/Add-Timeliness-Alerts-for-Hexo.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p>随着时间的推移，很多程序都会更新，网上很多关于对程序记录的内容往往会过时，出现不能在复现的问题。因此根据文章发布时间设置时效性提醒，有助于读者辨别信息的可靠性。</p>
@@ -182,7 +182,7 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
       </tags>
   </entry>
   <entry>
-    <title>Anaconda源设置|pip源设置|常用Python库安装</title>
+    <title>Anaconda 源设置 | pip 源设置 | 常用 Python 库安装</title>
     <url>/posts/Anaconda-Mirror-Configuration-Pip-Mirror-Configuration-Frequently-Used-Python-Libraries.html</url>
     <content><![CDATA[<h1 id="anaconda配置源"><a class="markdownIt-Anchor" href="#anaconda配置源"></a> Anaconda配置源</h1>
 <h2 id="清华大学开源软件镜像站"><a class="markdownIt-Anchor" href="#清华大学开源软件镜像站"></a> <a href="https://mirrors.tuna.tsinghua.edu.cn/">清华大学开源软件镜像站</a></h2>
@@ -315,7 +315,7 @@ pip <span class="token function">install</span> opencv-contrib-python<span aria-
       </tags>
   </entry>
   <entry>
-    <title>Windows优秀UWP软件</title>
+    <title>Windows 优秀 UWP 软件</title>
     <url>/posts/Excellent-UWP-Apps-for-Windows.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p>Windows 虽然很强大，但是有些功能设计并不是很优秀，如音量调节，屏幕亮度调节等。幸好出现了优秀的开发者，做出了优秀的软件程序用于改善 Windows 的使用体验。</p>
@@ -428,9 +428,9 @@ file_list <span class="token operator">=</span> GetFile<span class="token punctu
       </tags>
   </entry>
   <entry>
-    <title>修复Windows10开始菜单里的ms-resource:AppListName</title>
+    <title>修复 Windows10 开始菜单里的 ms-resource:AppListName</title>
     <url>/posts/Fix-ms-resource-AppListName-in-Windows-10-Start-Menu.html</url>
-    <content><![CDATA[<h1 id="修复windows10开始菜单里的ms-resourceapplistname"><a class="markdownIt-Anchor" href="#修复windows10开始菜单里的ms-resourceapplistname"></a> 修复Windows10开始菜单里的ms-resource:AppListName</h1>
+    <content><![CDATA[<h1 id="修复-windows10-开始菜单里的-ms-resourceapplistname"><a class="markdownIt-Anchor" href="#修复-windows10-开始菜单里的-ms-resourceapplistname"></a> 修复 Windows10 开始菜单里的 ms-resource:AppListName</h1>
 <span id="more"></span>
 <p><img src="Fix-ms-resource-AppListName-in-Windows-10-Start-Menu/image-20220124150605531.png" alt="ms-resource:AppListName"></p>
 <h1 id="解决方式"><a class="markdownIt-Anchor" href="#解决方式"></a> 解决方式</h1>
@@ -455,13 +455,13 @@ file_list <span class="token operator">=</span> GetFile<span class="token punctu
       </tags>
   </entry>
   <entry>
-    <title>Hexo常用命令</title>
+    <title>Hexo 常用命令</title>
     <url>/posts/Hexo-Frequently-Used-Commands.html</url>
-    <content><![CDATA[<h2 id="重新生成hexo网页文件并在本地预览"><a class="markdownIt-Anchor" href="#重新生成hexo网页文件并在本地预览"></a> 重新生成Hexo网页文件并在本地预览</h2>
+    <content><![CDATA[<h2 id="重新生成-hexo-网页文件并在本地预览"><a class="markdownIt-Anchor" href="#重新生成-hexo-网页文件并在本地预览"></a> 重新生成 Hexo 网页文件并在本地预览</h2>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="重新生成hexo网页文件并部署到github"><a class="markdownIt-Anchor" href="#重新生成hexo网页文件并部署到github"></a> 重新生成Hexo网页文件并部署到Github</h2>
+<h2 id="重新生成-hexo-网页文件并部署到-github"><a class="markdownIt-Anchor" href="#重新生成-hexo-网页文件并部署到-github"></a> 重新生成 Hexo 网页文件并部署到 Github</h2>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="同步整个hexo源文件至github"><a class="markdownIt-Anchor" href="#同步整个hexo源文件至github"></a> 同步整个Hexo源文件至Github</h2>
+<h2 id="同步整个-hexo-源文件至-github"><a class="markdownIt-Anchor" href="#同步整个-hexo-源文件至-github"></a> 同步整个 Hexo 源文件至 Github</h2>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span> <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Hexo源文件同步"</span> <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> push origin <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 ]]></content>
       <categories>
@@ -472,9 +472,9 @@ file_list <span class="token operator">=</span> GetFile<span class="token punctu
       </tags>
   </entry>
   <entry>
-    <title>Hexo安装日志</title>
+    <title>Hexo 安装日志</title>
     <url>/posts/Hexo-Installation-Log.html</url>
-    <content><![CDATA[<h1 id="在ubuntu-server-2004lts上安装hexo"><a class="markdownIt-Anchor" href="#在ubuntu-server-2004lts上安装hexo"></a> 在Ubuntu server 20.04LTS上安装Hexo</h1>
+    <content><![CDATA[<h1 id="在-ubuntu-server-2004-lts-上安装-hexo"><a class="markdownIt-Anchor" href="#在-ubuntu-server-2004-lts-上安装-hexo"></a> 在 Ubuntu server 20.04 LTS 上安装 Hexo</h1>
 <h2 id="建议先用su切换为管理员账户或用root账户登录"><a class="markdownIt-Anchor" href="#建议先用su切换为管理员账户或用root账户登录"></a> 建议先用<code>su</code>切换为管理员账户，或用root账户登录</h2>
 <p>这样子后续需要<code>sudo</code>的地方就不需要在打了，而且全程<code>su</code>能避免不必要的错误。</p>
 <p><a href="#启用root用户登录">启用root用户登录</a></p>
@@ -883,7 +883,7 @@ FATAL <span class="token punctuation">&#123;</span>
       </tags>
   </entry>
   <entry>
-    <title>Hexo文章跳转（链接）</title>
+    <title>Hexo 文章跳转（链接）</title>
     <url>/posts/Hexo-Posts-Links.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <blockquote>
@@ -968,7 +968,7 @@ FATAL <span class="token punctuation">&#123;</span>
 <p>即</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% post_link 文章文件名（不要后缀） 文章标题（可选） %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>示例：跳转到站内之前的文章——Hexo安装日志</p>
-<a href="/posts/Hexo-Installation-Log.html" title="Hexo安装日志">Hexo安装日志</a>
+<a href="/posts/Hexo-Installation-Log.html" title="Hexo 安装日志">Hexo 安装日志</a>
 <h1 id="站内其他文章锚点跳转"><a class="markdownIt-Anchor" href="#站内其他文章锚点跳转"></a> 站内其他文章锚点跳转</h1>
 <p>上面的 <code>post_link</code> 方式并不支持跳转到站内其他文章锚点，此外有一点不好的是：目前该方式并不能在<code>Typora</code>这个<code>Mrakdown</code>编辑器中渲染。官方文档还有一个 <code>post_path</code> ，用于获取文章路径。</p>
 <h2 id="方式二"><a class="markdownIt-Anchor" href="#方式二"></a> 方式二</h2>
@@ -1001,7 +1001,7 @@ FATAL <span class="token punctuation">&#123;</span>
       </tags>
   </entry>
   <entry>
-    <title>Hexo渲染数学公式</title>
+    <title>Hexo 渲染数学公式</title>
     <url>/posts/Hexo-Render-Math-Equations.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p><code>Hexo</code>默认的<code>Markdown</code>渲染器是<code>hexo-renderer-marked</code>，并不支持<code>Mathjax</code>，不支持<code>emoji</code>表情，之前为了<a href="#让hexo博客支持emoji显示">让网页显示emoji</a>, 将渲染器更换为<code>hexo-renderer-markdown-it</code>, 最近发现该渲染器也不支持<code>Mathjax</code>，为了让网页显示数学公式，再次更换渲染器。</p>
@@ -1156,7 +1156,7 @@ $$</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span><
       </tags>
   </entry>
   <entry>
-    <title>Hexo SEO优化</title>
+    <title>Hexo SEO 优化</title>
     <url>/posts/Hexo-SEO-Optimization.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p>谷歌搜索提示“已发现 - 尚未编入索引”，进行优化</p>
@@ -1228,7 +1228,7 @@ Sitemap: https:&#x2F;&#x2F;xuanyabulema.github.io&#x2F;sitemap.txt<span aria-hid
       </tags>
   </entry>
   <entry>
-    <title>Hexo站点配置（补充）</title>
+    <title>Hexo 站点配置（补充）</title>
     <url>/posts/Hexo-Site-Configuration-Supplement.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p>之前已经写过一些<code>Hexo</code>站点配置了，看到了一些新颖的（花里胡哨的）设置后，想曾加到我的网站上。</p>
@@ -1378,15 +1378,15 @@ categories<span class="token punctuation">:</span></span>
 <h2 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h2>
 <p>默认开启弹幕</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-ItsvltdFPstmhUjv" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-ItsvltdFPstmhUjv").style.height=document.getElementById("mmedia-ItsvltdFPstmhUjv").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-WlPwPldpPkpkkTYo" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-WlPwPldpPkpkkTYo").style.height=document.getElementById("mmedia-WlPwPldpPkpkkTYo").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-ItsvltdFPstmhUjv").style.height=document.getElementById("mmedia-ItsvltdFPstmhUjv").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-WlPwPldpPkpkkTYo").style.height=document.getElementById("mmedia-WlPwPldpPkpkkTYo").scrollWidth*0.76+"px";
     }; </script>
 <p><s>关闭弹幕</s>失败</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" "danmaku:false" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-AcKPWwTTEwTJIHUS" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-AcKPWwTTEwTJIHUS").style.height=document.getElementById("mmedia-AcKPWwTTEwTJIHUS").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-tfzeeUikUsfLRYHr" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-tfzeeUikUsfLRYHr").style.height=document.getElementById("mmedia-tfzeeUikUsfLRYHr").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-AcKPWwTTEwTJIHUS").style.height=document.getElementById("mmedia-AcKPWwTTEwTJIHUS").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-tfzeeUikUsfLRYHr").style.height=document.getElementById("mmedia-tfzeeUikUsfLRYHr").scrollWidth*0.76+"px";
     }; </script>
 ]]></content>
       <categories>
@@ -1397,7 +1397,7 @@ categories<span class="token punctuation">:</span></span>
       </tags>
   </entry>
   <entry>
-    <title>Hexo多端同步|迁移</title>
+    <title>Hexo 多端同步|迁移</title>
     <url>/posts/Hexo-Synchronization-and-Migration.html</url>
     <content><![CDATA[<h1 id="新建github分支以保存hexo源文件"><a class="markdownIt-Anchor" href="#新建github分支以保存hexo源文件"></a> 新建GitHub分支以保存Hexo源文件</h1>
 <span id="more"></span>
@@ -1508,7 +1508,7 @@ categories<span class="token punctuation">:</span></span>
       </tags>
   </entry>
   <entry>
-    <title>NexT主题配置（补充）</title>
+    <title>NexT 主题配置（补充）</title>
     <url>/posts/NexT-Theme-Configuration-Supplement.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p>之前已经写过一些<code>NexT</code>配置了，看到了一些新颖的（花里胡哨的）设置后，想曾加到我的网站上。</p>
@@ -1658,7 +1658,7 @@ categories<span class="token punctuation">:</span></span>
       </tags>
   </entry>
   <entry>
-    <title>用Hexo写blog前的笔记</title>
+    <title>用 Hexo 写 blog 前的笔记</title>
     <url>/posts/Notes-Before-Writing-Blog-With-Hexo.html</url>
     <content><![CDATA[<h1 id="python"><a class="markdownIt-Anchor" href="#python"></a> Python</h1>
 <h2 id="snake边缘检测算法"><a class="markdownIt-Anchor" href="#snake边缘检测算法"></a> Snake边缘检测算法</h2>
@@ -2576,7 +2576,7 @@ Cardiac motion tracking can also be considered as a 4D intramodality registratio
       </tags>
   </entry>
   <entry>
-    <title>Hexo使用过程遇到的问题</title>
+    <title>Hexo 使用过程遇到的问题</title>
     <url>/posts/Problems-Encountered-During-the-Use-of-Hexo.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p>对在使用Hexo的过程中遇到的问题进行记录</p>
@@ -2637,7 +2637,7 @@ nghttp3: 0.1.0-DEV<span aria-hidden="true" class="line-numbers-rows"><span></spa
       </tags>
   </entry>
   <entry>
-    <title>Python3基础</title>
+    <title>Python3 基础</title>
     <url>/posts/Python3-Basics.html</url>
     <content><![CDATA[<h1 id="python3基础使用"><a class="markdownIt-Anchor" href="#python3基础使用"></a> Python3基础使用</h1>
 <span id="more"></span>
@@ -3424,7 +3424,7 @@ p_{M, 1} &amp; p_{M, 2} &amp; 1
       </tags>
   </entry>
   <entry>
-    <title>利用dill模块保存Python变量对象</title>
+    <title>利用 dill 保存 Python 变量对象</title>
     <url>/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <blockquote>
@@ -3499,7 +3499,7 @@ dill<span class="token punctuation">.</span>load_module<span class="token punctu
       </tags>
   </entry>
   <entry>
-    <title>Python中逻辑运算and和or的短路特性</title>
+    <title>Python 中逻辑运算 and 和 or 的短路特性</title>
     <url>/posts/Short-Circuiting-Property-of-Logical-Operators-in-Python.html</url>
     <content><![CDATA[<h1 id="python中and和or的短路特性"><a class="markdownIt-Anchor" href="#python中and和or的短路特性"></a> <code>Python</code>中<code>and</code>和<code>or</code>的短路特性</h1>
 <p>众所周知，<code>Python</code>中逻辑运算<code>and</code>可用于判断多个条件是否都符合要求，<code>or</code>可用于判断是否存在一个条件满足要求。为了加速运行，<code>Python</code>中的<code>and</code>和<code>or</code>具有短路特性</p>
@@ -3622,7 +3622,7 @@ False函数执行
       </tags>
   </entry>
   <entry>
-    <title>PyCharm Python控制台中文乱码解决</title>
+    <title>PyCharm Python 控制台中文乱码解决</title>
     <url>/posts/Solve-the-Chinese-Messy-Code-Problem-in-PyCharm-Python-Console.html</url>
     <content><![CDATA[<h1 id="解决方案"><a class="markdownIt-Anchor" href="#解决方案"></a> 解决方案</h1>
 <p>2022-08-02</p>
@@ -3655,7 +3655,7 @@ False函数执行
       </tags>
   </entry>
   <entry>
-    <title>Python求解常微分方程</title>
+    <title>Python 求解常微分方程</title>
     <url>/posts/Solving-Ordinary-Differential-Equations-in-Python.html</url>
     <content><![CDATA[<p>JupyterNotebook部分内容译自 Johansson, R. (2019). Ordinary Differential Equations. In: Numerical Python . Apress, Berkeley, CA. <a href="https://doi.org/10.1007/978-1-4842-4246-9_9">https://doi.org/10.1007/978-1-4842-4246-9_9</a></p>
 <span id="more"></span>
@@ -3833,7 +3833,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
       </tags>
   </entry>
   <entry>
-    <title>Git使用</title>
+    <title>Git 使用</title>
     <url>/posts/Some-Usage-of-Git.html</url>
     <content><![CDATA[<h1 id="基础使用"><a class="markdownIt-Anchor" href="#基础使用"></a> 基础使用</h1>
 <p>Git查看分支信息</p>
@@ -3930,7 +3930,7 @@ config.ini
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu基础</title>
+    <title>Ubuntu 基础</title>
     <url>/posts/Ubuntu-Basics.html</url>
     <content><![CDATA[<h1 id="linux-基础"><a class="markdownIt-Anchor" href="#linux-基础"></a> Linux 基础</h1>
 <ul>
@@ -4095,7 +4095,7 @@ config.ini
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu20.04设置静态ip</title>
+    <title>Ubuntu20.04 设置静态 ip</title>
     <url>/posts/Ubuntu20-04-Static-Ip-Configuration.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p>Ubuntu 从 <code>17.10</code> 开始，已放弃在 <code>/etc/network/interfaces</code> 里固定 IP 的配置，<code>interfaces</code> 文件不复存在，即使配置也不会生效，而是改成 <code>netplan</code> 方式 ，配置写在 <code>/etc/netplan/00-installer-config.yaml</code> 或者类似名称的 <code>yaml</code> 文件里。</p>
@@ -4126,7 +4126,7 @@ config.ini
       </tags>
   </entry>
   <entry>
-    <title>Matplotlib的使用2</title>
+    <title>Matplotlib 的使用2</title>
     <url>/posts/Usage-of-Matplotlib-2.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <span id="more"></span>
@@ -4187,7 +4187,7 @@ styles <span class="token operator">=</span> <span class="token punctuation">[</
       </tags>
   </entry>
   <entry>
-    <title>Matplotlib的使用</title>
+    <title>Matplotlib 的使用</title>
     <url>/posts/Usage-of-Matplotlib.html</url>
     <content><![CDATA[<h1 id="matplotlib使用"><a class="markdownIt-Anchor" href="#matplotlib使用"></a> Matplotlib使用</h1>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -4398,7 +4398,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
       </tags>
   </entry>
   <entry>
-    <title>NumPy使用</title>
+    <title>NumPy 使用</title>
     <url>/posts/Usage-of-NumPy.html</url>
     <content><![CDATA[<h2 id="numpy使用"><a class="markdownIt-Anchor" href="#numpy使用"></a> NumPy使用</h2>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -4588,7 +4588,7 @@ array<span class="token punctuation">(</span><span class="token punctuation">[</
       </tags>
   </entry>
   <entry>
-    <title>OpenCV使用</title>
+    <title>OpenCV 使用</title>
     <url>/posts/Usage-of-OpenCV.html</url>
     <content><![CDATA[<p>Python下OpenCV的使用</p>
 <span id="more"></span>
@@ -5016,7 +5016,7 @@ img <span class="token operator">=</span> cv2<span class="token punctuation">.</
       </tags>
   </entry>
   <entry>
-    <title>Pydicom使用</title>
+    <title>Pydicom 使用</title>
     <url>/posts/Usage-of-Pydicom.html</url>
     <content><![CDATA[<h1 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h1>
 <p>Pydicom是一个用于处理<a href="https://www.dicomstandard.org/">DICOM</a>文件的纯Python包。它可以以一种简单的 &quot;pythonic &quot;方式读取、修改和写入DICOM数据。作为一个纯Python包，Pydicom可以在任何Python运行的地方运行，没有任何其他要求，不过要事先安装<a href="http://www.numpy.org/">NumPy</a>。</p>
@@ -5129,7 +5129,7 @@ img<span class="token punctuation">[</span>img <span class="token operator">&lt;
       </tags>
   </entry>
   <entry>
-    <title>使用WinSW设置任意程序开机自启动</title>
+    <title>使用 WinSW 设置任意程序开机自启动</title>
     <url>/posts/Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Windows-Boot.html</url>
     <content><![CDATA[<h1 id="背景"><a class="markdownIt-Anchor" href="#背景"></a> 背景</h1>
 <p>在使用Windows系统时，会遇到希望有些软件（比如软件A）能够在开机后自动运行的情况，往往可惜的是软件A并不具备配置开机自启的功能。</p>
@@ -5200,7 +5200,7 @@ img<span class="token punctuation">[</span>img <span class="token operator">&lt;
       </tags>
   </entry>
   <entry>
-    <title>Windows下使用Conda管理Python环境</title>
+    <title>Windows 下使用 Conda 管理 Python 环境</title>
     <url>/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p>按照固有思维，Windows 下应该使用<code>PowerShell</code>或<code>CMD</code>来执行<code>Conda</code>相关命令来管理<code>Python</code>环境。</p>
@@ -5343,7 +5343,7 @@ conda info <span class="token parameter variable">-e</span><span aria-hidden="tr
       </tags>
   </entry>
   <entry>
-    <title>FFmpeg转码 GPU加速 简单示例</title>
+    <title>使用 GPU 加速 FFmpeg 转码的简单示例</title>
     <url>/posts/Using-FFmpeg-with-GPU-Hardware-Acceleration.html</url>
     <content><![CDATA[<h1 id="ffmpeg转码-gpu加速-简单示例"><a class="markdownIt-Anchor" href="#ffmpeg转码-gpu加速-简单示例"></a> FFmpeg转码 GPU加速 简单示例</h1>
 <blockquote>
@@ -5467,7 +5467,7 @@ conda info <span class="token parameter variable">-e</span><span aria-hidden="tr
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">ipconfig <span class="token operator">/</span>flushdns<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="重置-winsock-目录"><a class="markdownIt-Anchor" href="#重置-winsock-目录"></a> 重置 Winsock 目录</h2>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">netsh winsock reset<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h1 id="重置-tcpip-网络协议栈的配置"><a class="markdownIt-Anchor" href="#重置-tcpip-网络协议栈的配置"></a> 重置 TCP/IP 网络协议栈的配置</h1>
+<h2 id="重置-tcpip-网络协议栈的配置"><a class="markdownIt-Anchor" href="#重置-tcpip-网络协议栈的配置"></a> 重置 TCP/IP 网络协议栈的配置</h2>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">netsh int ip reset<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 ]]></content>
       <categories>
@@ -5478,7 +5478,7 @@ conda info <span class="token parameter variable">-e</span><span aria-hidden="tr
       </tags>
   </entry>
   <entry>
-    <title>Windows Server 2008添加远程登录用户</title>
+    <title>Windows Server 2008 添加远程登录用户</title>
     <url>/posts/Windows-Server-2008-Add-Remote-Desktop-User.html</url>
     <content><![CDATA[<p>在Windows Server 添加新远程登录用户</p>
 <span id="more"></span>
@@ -5509,7 +5509,7 @@ conda info <span class="token parameter variable">-e</span><span aria-hidden="tr
       </tags>
   </entry>
   <entry>
-    <title>Windows终端代理设置</title>
+    <title>Windows 终端代理设置</title>
     <url>/posts/Windows-Terminal-Proxy-Configuration.html</url>
     <content><![CDATA[<h1 id="powershell"><a class="markdownIt-Anchor" href="#powershell"></a> PowerShell</h1>
 <blockquote>
