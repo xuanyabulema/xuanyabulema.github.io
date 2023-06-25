@@ -71,11 +71,11 @@ hidden:
 ./winsw.exe install
 ```
 
-![任务管理器——服务——frp服务](use-winsw-to-set-any-program-to-automatically-start-on-boot/image-20221001150729071.png)
+![任务管理器——服务——frp服务](Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Windows-Boot/image-20221001150729071.png)
 
 然后重启电脑，该服务就会自行启动，也可以按照后面的命令手动启动该服务
 
-![任务管理器——服务——frp服务](use-winsw-to-set-any-program-to-automatically-start-on-boot/image-20221001151119711.png)
+![任务管理器——服务——frp服务](Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Windows-Boot/image-20221001151119711.png)
 
 ### 其他常用命令
 

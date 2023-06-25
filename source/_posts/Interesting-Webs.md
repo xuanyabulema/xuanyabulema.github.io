@@ -8,6 +8,7 @@ categories:
   - interesting
 date: 2022-10-09 00:56:53
 hidden:
+
 ---
 
 # 一些有趣的网站的记录
@@ -26,7 +27,7 @@ GitHub仓库：未知
 
 复制网站：[中国传统颜色 | 中国色](http://xyblm2022.xyz:280/)
 
-![中国传统颜色 | 中国色](Interesting-Websites\image-20221009012948738.png)
+![中国传统颜色 | 中国色](Interesting-Webs/image-20221009012948738.png)
 
 
 
@@ -40,7 +41,7 @@ GitHub仓库：https://github.com/BlueSky-07/Shuang
 
 复制网站：[双拼练习 @ BlueSky](http://xyblm2022.xyz:180/)
 
-![双拼练习 @ BlueSky](Interesting-Websites\image-20221009011543018.png)
+![双拼练习 @ BlueSky](Interesting-Webs/image-20221009011543018.png)
 
 
 
@@ -54,4 +55,4 @@ GitHub仓库：https://github.com/itorr/vaporwave
 
 复制网站：无
 
-![蒸 気 機 - 蒸汽波 - 蒸汽波图片生成器 - 虚拟信号风格化影像后期工具](Interesting-Websites\image-20221009014749345.png)
+![蒸 気 機 - 蒸汽波 - 蒸汽波图片生成器 - 虚拟信号风格化影像后期工具](Interesting-Webs/image-20221009014749345.png)
