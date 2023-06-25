@@ -1378,15 +1378,15 @@ categories<span class="token punctuation">:</span></span>
 <h2 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h2>
 <p>默认开启弹幕</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-NYhnrSlFLHRWahIP" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-NYhnrSlFLHRWahIP").style.height=document.getElementById("mmedia-NYhnrSlFLHRWahIP").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-fgCdIvEeduhasUoR" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-fgCdIvEeduhasUoR").style.height=document.getElementById("mmedia-fgCdIvEeduhasUoR").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-NYhnrSlFLHRWahIP").style.height=document.getElementById("mmedia-NYhnrSlFLHRWahIP").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-fgCdIvEeduhasUoR").style.height=document.getElementById("mmedia-fgCdIvEeduhasUoR").scrollWidth*0.76+"px";
     }; </script>
 <p><s>关闭弹幕</s>失败</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" "danmaku:false" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-kKNxXGhzsNSFRXOX" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-kKNxXGhzsNSFRXOX").style.height=document.getElementById("mmedia-kKNxXGhzsNSFRXOX").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-XeFnpgJvZBEJoBiI" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-XeFnpgJvZBEJoBiI").style.height=document.getElementById("mmedia-XeFnpgJvZBEJoBiI").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-kKNxXGhzsNSFRXOX").style.height=document.getElementById("mmedia-kKNxXGhzsNSFRXOX").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-XeFnpgJvZBEJoBiI").style.height=document.getElementById("mmedia-XeFnpgJvZBEJoBiI").scrollWidth*0.76+"px";
     }; </script>
 ]]></content>
       <categories>
@@ -1475,7 +1475,7 @@ categories<span class="token punctuation">:</span></span>
   </entry>
   <entry>
     <title>一些有趣的网站</title>
-    <url>/posts/Interesting-Websites.html</url>
+    <url>/posts/Interesting-Webs.html</url>
     <content><![CDATA[<h1 id="一些有趣的网站的记录"><a class="markdownIt-Anchor" href="#一些有趣的网站的记录"></a> 一些有趣的网站的记录</h1>
 <p>一些有趣的网站记录，对其进行简单介绍，并将部分网站进行复制到了我的服务器上（如果侵犯你的利益，烦请联系我删除）。</p>
 <span id="more"></span>
@@ -1484,19 +1484,19 @@ categories<span class="token punctuation">:</span></span>
 <p>原网站：<a href="http://www.2kil.com/">中国传统颜色 | 中国色</a></p>
 <p>GitHub仓库：未知</p>
 <p>复制网站：<a href="http://xyblm2022.xyz:280/">中国传统颜色 | 中国色</a></p>
-<p><img src="Interesting-Websites%5Cimage-20221009012948738.png" alt="中国传统颜色 | 中国色"></p>
+<p><img src="Interesting-Webs/image-20221009012948738.png" alt="中国传统颜色 | 中国色"></p>
 <h1 id="双拼练习-bluesky"><a class="markdownIt-Anchor" href="#双拼练习-bluesky"></a> 双拼练习 @ BlueSky</h1>
 <p>是一个练习双拼输入法打字的网站</p>
 <p>原网站：<a href="https://api.ihint.me/shuang/">双拼练习 @ BlueSky</a></p>
 <p>GitHub仓库：<a href="https://github.com/BlueSky-07/Shuang">https://github.com/BlueSky-07/Shuang</a></p>
 <p>复制网站：<a href="http://xyblm2022.xyz:180/">双拼练习 @ BlueSky</a></p>
-<p><img src="Interesting-Websites%5Cimage-20221009011543018.png" alt="双拼练习 @ BlueSky"></p>
+<p><img src="Interesting-Webs/image-20221009011543018.png" alt="双拼练习 @ BlueSky"></p>
 <h1 id="蒸-気-機-蒸汽波-蒸汽波图片生成器-虚拟信号风格化影像后期工具"><a class="markdownIt-Anchor" href="#蒸-気-機-蒸汽波-蒸汽波图片生成器-虚拟信号风格化影像后期工具"></a> 蒸 気 機 - 蒸汽波 - 蒸汽波图片生成器 - 虚拟信号风格化影像后期工具</h1>
 <p>是一个将图片添加蒸汽波效果的网站，有多种预设，还有个人提交的公共预设</p>
 <p>原网站：<a href="https://magiconch.com/vaporwave/?from=home">蒸 気 機 - 蒸汽波 - 蒸汽波图片生成器 - 虚拟信号风格化影像后期工具</a></p>
 <p>GitHub仓库：<a href="https://github.com/itorr/vaporwave">https://github.com/itorr/vaporwave</a></p>
 <p>复制网站：无</p>
-<p><img src="Interesting-Websites%5Cimage-20221009014749345.png" alt="蒸 気 機 - 蒸汽波 - 蒸汽波图片生成器 - 虚拟信号风格化影像后期工具"></p>
+<p><img src="Interesting-Webs/image-20221009014749345.png" alt="蒸 気 機 - 蒸汽波 - 蒸汽波图片生成器 - 虚拟信号风格化影像后期工具"></p>
 ]]></content>
       <categories>
         <category>Web</category>
@@ -5130,7 +5130,7 @@ img<span class="token punctuation">[</span>img <span class="token operator">&lt;
   </entry>
   <entry>
     <title>使用WinSW设置任意程序开机自启动</title>
-    <url>/posts/Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Boot.html</url>
+    <url>/posts/Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Windows-Boot.html</url>
     <content><![CDATA[<h1 id="背景"><a class="markdownIt-Anchor" href="#背景"></a> 背景</h1>
 <p>在使用Windows系统时，会遇到希望有些软件（比如软件A）能够在开机后自动运行的情况，往往可惜的是软件A并不具备配置开机自启的功能。</p>
 <span id="more"></span>
@@ -5166,9 +5166,9 @@ img<span class="token punctuation">[</span>img <span class="token operator">&lt;
 <h2 id="注册为服务"><a class="markdownIt-Anchor" href="#注册为服务"></a> 注册为服务</h2>
 <p>先将需要开机启动的软件、<code>winsw.exe</code>和<code>winsw.xml</code>文件放在一个文件目录下，然后在目录处打开<code>Windows PowerShell</code>运行如下命令进行安装</p>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token punctuation">.</span><span class="token operator">/</span>winsw<span class="token punctuation">.</span>exe install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="use-winsw-to-set-any-program-to-automatically-start-on-boot/image-20221001150729071.png" alt="任务管理器——服务——frp服务"></p>
+<p><img src="Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Windows-Boot/image-20221001150729071.png" alt="任务管理器——服务——frp服务"></p>
 <p>然后重启电脑，该服务就会自行启动，也可以按照后面的命令手动启动该服务</p>
-<p><img src="use-winsw-to-set-any-program-to-automatically-start-on-boot/image-20221001151119711.png" alt="任务管理器——服务——frp服务"></p>
+<p><img src="Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Windows-Boot/image-20221001151119711.png" alt="任务管理器——服务——frp服务"></p>
 <h3 id="其他常用命令"><a class="markdownIt-Anchor" href="#其他常用命令"></a> 其他常用命令</h3>
 <p>立即启动</p>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token punctuation">.</span><span class="token operator">/</span>winsw<span class="token punctuation">.</span>exe <span class="token function">start</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -5201,7 +5201,7 @@ img<span class="token punctuation">[</span>img <span class="token operator">&lt;
   </entry>
   <entry>
     <title>Windows下使用Conda管理Python环境</title>
-    <url>/posts/Using-Conda-to-Manage-Python-Environments-on-Windows.html</url>
+    <url>/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p>按照固有思维，Windows 下应该使用<code>PowerShell</code>或<code>CMD</code>来执行<code>Conda</code>相关命令来管理<code>Python</code>环境。</p>
 <ul>
@@ -5215,7 +5215,7 @@ img<span class="token punctuation">[</span>img <span class="token operator">&lt;
 <ul>
 <li>
 <p>确保可运行</p>
-<p><img src="Using-Conda-to-Manage-Python-Environments-on-Windows/image-20230419133127930.png" alt="修改执行策略"></p>
+<p><img src="Using-Conda-to-Manage-Python-Packages-on-Windows/image-20230419133127930.png" alt="修改执行策略"></p>
 <p>可能出现如上情况，该情况出现的原因是 Windows 上 <code>.ps1</code> 默认执行策略为 <code>Restricted</code>，用管理器权限运行<code>PowerShell</code>执行如下命令：</p>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">set-executionpolicy</span> remotesigned<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>执行后，执行策略修改为为<code>remotesigned</code></p>
@@ -5256,7 +5256,7 @@ img<span class="token punctuation">[</span>img <span class="token operator">&lt;
 <li>
 <p>示例：安装<code>numpy</code>和指定<code>3.4.3</code>版本的<code>matplotlib </code>, <code>conda</code>会自动从远程搜索相关信息和依赖项目</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda <span class="token function">install</span> numpy <span class="token assign-left variable">matplotlib</span><span class="token operator">=</span><span class="token number">3.4</span>.3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="Using-Conda-to-Manage-Python-Environments-on-Windows/image-20221214160239444.png" alt="conda install numpy matplotlib=3.4.3"></p>
+<p><img src="Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214160239444.png" alt="conda install numpy matplotlib=3.4.3"></p>
 </li>
 </ul>
 <h2 id="删除指定库"><a class="markdownIt-Anchor" href="#删除指定库"></a> 删除指定库</h2>
@@ -5272,7 +5272,7 @@ img<span class="token punctuation">[</span>img <span class="token operator">&lt;
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda <span class="token function">env</span> list
 <span class="token comment"># 或</span>
 conda info <span class="token parameter variable">-e</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="Using-Conda-to-Manage-Python-Environments-on-Windows/image-20221214155735469.png" alt="查看虚拟环境"></p>
+<p><img src="Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214155735469.png" alt="查看虚拟环境"></p>
 <h2 id="创建新环境"><a class="markdownIt-Anchor" href="#创建新环境"></a> 创建新环境</h2>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda create <span class="token parameter variable">-n</span> your_env_name <span class="token assign-left variable">python</span><span class="token operator">=</span>x.x<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
@@ -5287,7 +5287,7 @@ conda info <span class="token parameter variable">-e</span><span aria-hidden="tr
 <li>
 <p>示例</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda activate test_env<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="Using-Conda-to-Manage-Python-Environments-on-Windows/image-20221214155922958.png" alt="激活（切换）环境"></p>
+<p><img src="Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214155922958.png" alt="激活（切换）环境"></p>
 </li>
 </ul>
 <h2 id="关闭虚拟环境回主环境"><a class="markdownIt-Anchor" href="#关闭虚拟环境回主环境"></a> 关闭虚拟环境（回主环境）</h2>

@@ -24,29 +24,29 @@
     <meta name="description" content="前言 按照固有思维，Windows 下应该使用PowerShell或CMD来执行Conda相关命令来管理Python环境。   注意：在使用PowerShell前应先检查Anaconda3&#x2F;Scripts&#x2F;已经添加到了系统环境变量下，然后执行 conda init powershell 否则会出现无法激活切换conda环境，参考">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows下使用Conda管理Python环境">
-<meta property="og:url" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Environments-on-Windows.html">
+<meta property="og:url" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html">
 <meta property="og:site_name" content="悬崖不勒马的小站">
 <meta property="og:description" content="前言 按照固有思维，Windows 下应该使用PowerShell或CMD来执行Conda相关命令来管理Python环境。   注意：在使用PowerShell前应先检查Anaconda3&#x2F;Scripts&#x2F;已经添加到了系统环境变量下，然后执行 conda init powershell 否则会出现无法激活切换conda环境，参考">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Environments-on-Windows/image-20230419133127930.png">
-<meta property="og:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Environments-on-Windows/image-20221214160239444.png">
-<meta property="og:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Environments-on-Windows/image-20221214155735469.png">
-<meta property="og:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Environments-on-Windows/image-20221214155922958.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows/image-20230419133127930.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214160239444.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214155735469.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214155922958.png">
 <meta property="article:published_time" content="2022-12-14T06:35:13.000Z">
-<meta property="article:modified_time" content="2023-06-25T11:23:03.714Z">
+<meta property="article:modified_time" content="2023-06-25T11:34:03.065Z">
 <meta property="article:author" content="悬崖不勒马">
 <meta property="article:tag" content="Conda">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Environments-on-Windows/image-20230419133127930.png">
+<meta name="twitter:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows/image-20230419133127930.png">
 
 
-<link rel="canonical" href="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Environments-on-Windows.html">
+<link rel="canonical" href="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Environments-on-Windows.html","path":"posts/Using-Conda-to-Manage-Python-Environments-on-Windows.html","title":"Windows下使用Conda管理Python环境"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html","path":"posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html","title":"Windows下使用Conda管理Python环境"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Windows下使用Conda管理Python环境 | 悬崖不勒马的小站</title>
@@ -233,7 +233,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Environments-on-Windows.html">
+    <link itemprop="mainEntityOfPage" href="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -269,7 +269,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-06-25 19:23:03" itemprop="dateModified" datetime="2023-06-25T19:23:03+08:00">2023-06-25</time>
+      <time title="修改时间：2023-06-25 19:34:03" itemprop="dateModified" datetime="2023-06-25T19:34:03+08:00">2023-06-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -301,8 +301,8 @@
     </span>
     <span class="post-meta-item-text">Waline：</span>
   
-    <a title="waline" href="/posts/Using-Conda-to-Manage-Python-Environments-on-Windows.html#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/posts/Using-Conda-to-Manage-Python-Environments-on-Windows.html" itemprop="commentCount"></span>
+    <a title="waline" href="/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -336,7 +336,7 @@
 <ul>
 <li>
 <p>确保可运行</p>
-<p><img src="Using-Conda-to-Manage-Python-Environments-on-Windows/image-20230419133127930.png" alt="修改执行策略"></p>
+<p><img src="Using-Conda-to-Manage-Python-Packages-on-Windows/image-20230419133127930.png" alt="修改执行策略"></p>
 <p>可能出现如上情况，该情况出现的原因是 Windows 上 <code>.ps1</code> 默认执行策略为 <code>Restricted</code>，用管理器权限运行<code>PowerShell</code>执行如下命令：</p>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">set-executionpolicy</span> remotesigned<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>执行后，执行策略修改为为<code>remotesigned</code></p>
@@ -377,7 +377,7 @@
 <li>
 <p>示例：安装<code>numpy</code>和指定<code>3.4.3</code>版本的<code>matplotlib </code>, <code>conda</code>会自动从远程搜索相关信息和依赖项目</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda <span class="token function">install</span> numpy <span class="token assign-left variable">matplotlib</span><span class="token operator">=</span><span class="token number">3.4</span>.3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="Using-Conda-to-Manage-Python-Environments-on-Windows/image-20221214160239444.png" alt="conda install numpy matplotlib=3.4.3"></p>
+<p><img src="Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214160239444.png" alt="conda install numpy matplotlib=3.4.3"></p>
 </li>
 </ul>
 <h2 id="删除指定库"><a class="markdownIt-Anchor" href="#删除指定库"></a> 删除指定库</h2>
@@ -393,7 +393,7 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda <span class="token function">env</span> list
 <span class="token comment"># 或</span>
 conda info <span class="token parameter variable">-e</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="Using-Conda-to-Manage-Python-Environments-on-Windows/image-20221214155735469.png" alt="查看虚拟环境"></p>
+<p><img src="Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214155735469.png" alt="查看虚拟环境"></p>
 <h2 id="创建新环境"><a class="markdownIt-Anchor" href="#创建新环境"></a> 创建新环境</h2>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda create <span class="token parameter variable">-n</span> your_env_name <span class="token assign-left variable">python</span><span class="token operator">=</span>x.x<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
@@ -408,7 +408,7 @@ conda info <span class="token parameter variable">-e</span><span aria-hidden="tr
 <li>
 <p>示例</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda activate test_env<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="Using-Conda-to-Manage-Python-Environments-on-Windows/image-20221214155922958.png" alt="激活（切换）环境"></p>
+<p><img src="Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214155922958.png" alt="激活（切换）环境"></p>
 </li>
 </ul>
 <h2 id="关闭虚拟环境回主环境"><a class="markdownIt-Anchor" href="#关闭虚拟环境回主环境"></a> 关闭虚拟环境（回主环境）</h2>
@@ -487,7 +487,7 @@ conda info <span class="token parameter variable">-e</span><span aria-hidden="tr
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Environments-on-Windows.html" title="Windows下使用Conda管理Python环境">https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Environments-on-Windows.html</a>
+      <a href="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html" title="Windows下使用Conda管理Python环境">https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -608,7 +608,7 @@ conda info <span class="token parameter variable">-e</span><span aria-hidden="tr
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
-<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-test-beta.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/posts/Using-Conda-to-Manage-Python-Environments-on-Windows.html"}</script>
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-test-beta.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html"}</script>
 <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
 <script>
 document.addEventListener('page:loaded', () => {
