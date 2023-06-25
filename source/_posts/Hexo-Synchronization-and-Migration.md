@@ -121,6 +121,12 @@ ssh-keygen -t rsa -C "xuanyabulema@qq.com"
 git clone -b Hexo git@github.com:xuanyabulema/xuanyabulema.github.io.git ./blog
 ```
 
+后来改为了一个单独的私有仓库，使用如下命令
+
+```shell
+git clone git@github.com:xuanyabulema/Hexo.git ./blog
+```
+
 变更后同步到Github
 
 ```shell
