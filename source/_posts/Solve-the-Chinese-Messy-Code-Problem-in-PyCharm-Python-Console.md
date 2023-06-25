@@ -6,7 +6,6 @@ tags:
 categories:
   - Python
   - PyCharm
-abbrlink: 492e4b11
 date: 2022-08-02 16:09:37
 hidden:
 ---

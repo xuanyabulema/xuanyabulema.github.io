@@ -6,7 +6,6 @@ tags:
 categories:
   - Windows
   - Terminal
-abbrlink: 99ac490b
 date: 2022-11-27 13:45:48
 hidden:
 ---

@@ -6,7 +6,6 @@ tags:
 categories:
   - Python
   - OpenCV
-abbrlink: c2665980
 date: 2022-09-11 16:15:34
 hidden:
 ---

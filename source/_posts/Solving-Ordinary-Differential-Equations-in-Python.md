@@ -6,7 +6,6 @@ tags:
   - ODE
 categories:
   - Python
-abbrlink: 31dab94e
 date: 2023-02-14 23:01:43
 hidden:
 ---

@@ -4,7 +4,6 @@ tags:
   - VM
 categories:
   - VM
-abbrlink: ef4b0f78
 date: 2023-02-19 15:57:36
 hidden:
 ---

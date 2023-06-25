@@ -4,7 +4,6 @@ tags:
   - Ubuntu
 categories:
   - Ubuntu
-abbrlink: 5427ec25
 date: 2022-06-17 20:47:34
 hidden:
 ---

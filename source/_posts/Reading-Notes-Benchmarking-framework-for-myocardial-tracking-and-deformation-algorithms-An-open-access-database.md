@@ -6,7 +6,6 @@ tags:
   - Notes
 categories:
   - Notes
-abbrlink: b3e22ec2
 date: 2022-10-15 21:52:54
 hidden:
 ---

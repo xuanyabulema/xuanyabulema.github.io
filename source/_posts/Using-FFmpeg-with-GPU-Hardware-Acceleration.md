@@ -2,7 +2,6 @@
 title: FFmpeg转码 GPU加速 简单示例
 tags: FFmpeg
 categories: FFmpeg
-abbrlink: 2b824c29
 date: 2022-05-25 20:38:43
 hidden:
 ---

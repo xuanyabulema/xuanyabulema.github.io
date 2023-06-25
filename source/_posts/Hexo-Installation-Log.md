@@ -7,7 +7,6 @@ tags:
   - Ubuntu
   - GitHub
   - NexT
-abbrlink: 5d64f657
 date: 2021-11-26 07:39:29
 hidden:
 ---
