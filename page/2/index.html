@@ -89,7 +89,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">30</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">24</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">45</span></a></li><li class="menu-item menu-item-阅读"><a href="/book/" rel="section"><i class="fa fa-book fa-fw"></i>阅读</a></li><li class="menu-item menu-item-折腾"><a href="/microchip/" rel="section"><i class="fas fa-microchip fa-fw"></i>折腾</a></li><li class="menu-item menu-item-冲浪"><a href="/surfing/" rel="section"><i class="fab fa-internet-explorer fa-fw"></i>冲浪</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">25</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">46</span></a></li><li class="menu-item menu-item-阅读"><a href="/book/" rel="section"><i class="fa fa-book fa-fw"></i>阅读</a></li><li class="menu-item menu-item-折腾"><a href="/microchip/" rel="section"><i class="fas fa-microchip fa-fw"></i>折腾</a></li><li class="menu-item menu-item-冲浪"><a href="/surfing/" rel="section"><i class="fab fa-internet-explorer fa-fw"></i>冲浪</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -160,18 +160,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">46</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -212,6 +212,135 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://xuanyabulema.github.io/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="悬崖不勒马">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悬崖不勒马的小站">
+      <meta itemprop="description" content="The time you enjoy wasting is not wasted time!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 悬崖不勒马的小站">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html" class="post-title-link" itemprop="url">利用 dill 保存 Python 变量对象</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-12-08 14:40:10" itemprop="dateCreated datePublished" datetime="2022-12-08T14:40:10+08:00">2022-12-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-06-25 22:36:18" itemprop="dateModified" datetime="2023-06-25T22:36:18+08:00">2023-06-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/dill/" itemprop="url" rel="index"><span itemprop="name">dill</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<blockquote>
+<p>内容参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/feffery/p/16703398.html">（数据科学学习手札142）dill：Python中增强版的pickle</a></p>
+</blockquote>
+<p><code>Python</code>自带<code>pickle</code>库可以保存程序运行过程中的变量对象信息至文件，但用起来遇到一个问题，</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">_pickle<span class="token punctuation">.</span>PicklingError<span class="token punctuation">:</span> Can<span class="token string">'t pickle &lt;class '</span>TPS_torch<span class="token punctuation">.</span>TPS<span class="token string">'>: it'</span>s <span class="token keyword">not</span> the same <span class="token builtin">object</span> <span class="token keyword">as</span> TPS_torch<span class="token punctuation">.</span>TPS<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在网上寻找解决办法，尝试无果后，发现了<code>dill</code>，于是改用<code>dill</code>模块，不再出现上述问题。</p>
+<p><code>dill</code>可以认为是增强版的<code>pickle</code>，不仅包括<code>pickle</code>的功能，而且基础使用一致，而且dill包括一些pickle不具备的功能，如</p>
+<ul>
+<li>保存解释器状态（state of an interpreter session），即可保存运行后整个内存中所有对象信息</li>
+<li>保存lambda函数</li>
+<li>保存源码</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1302,120 +1431,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/Reading-Notes-Benchmarking-framework-for-myocardial-tracking-and-deformation-algorithms-An-open-access-database.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://xuanyabulema.github.io/posts/Add-Timeliness-Alerts-for-Hexo.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="悬崖不勒马">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="悬崖不勒马的小站">
-      <meta itemprop="description" content="The time you enjoy wasting is not wasted time!">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 悬崖不勒马的小站">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/Add-Timeliness-Alerts-for-Hexo.html" class="post-title-link" itemprop="url">为 Hexo 文章添加时效性提醒</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-10-15 20:31:12" itemprop="dateCreated datePublished" datetime="2022-10-15T20:31:12+08:00">2022-10-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-06-25 22:36:18" itemprop="dateModified" datetime="2023-06-25T22:36:18+08:00">2023-06-25</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/posts/Add-Timeliness-Alerts-for-Hexo.html#waline" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" data-path="/posts/Add-Timeliness-Alerts-for-Hexo.html" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
-<p>随着时间的推移，很多程序都会更新，网上很多关于对程序记录的内容往往会过时，出现不能在复现的问题。因此根据文章发布时间设置时效性提醒，有助于读者辨别信息的可靠性。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/Add-Timeliness-Alerts-for-Hexo.html#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

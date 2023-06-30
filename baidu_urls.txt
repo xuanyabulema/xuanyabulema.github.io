@@ -1,3 +1,4 @@
+https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html
 https://xuanyabulema.github.io/posts/Windows-Network-Reset.html
 https://xuanyabulema.github.io/posts/Word-Thesis-Formatting.html
 https://xuanyabulema.github.io/posts/Usage-of-Matplotlib-2.html
