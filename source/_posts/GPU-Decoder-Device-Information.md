@@ -1,5 +1,5 @@
 ---
-title: GPU Decoder Device Information
+title: 常见显卡视频硬解能力
 date: 2023-06-30 18:27:59
 tags:
 - GPU
