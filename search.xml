@@ -455,7 +455,7 @@ file_list <span class="token operator">=</span> GetFile<span class="token punctu
       </tags>
   </entry>
   <entry>
-    <title>GPU Decoder Device Information</title>
+    <title>常见显卡视频硬解能力</title>
     <url>/posts/GPU-Decoder-Device-Information.html</url>
     <content><![CDATA[<h1 id="常见显卡视频硬解能力"><a class="markdownIt-Anchor" href="#常见显卡视频硬解能力"></a> 常见显卡视频硬解能力</h1>
 <p>数据来源（2023-06-30）</p>
@@ -5698,15 +5698,15 @@ categories<span class="token punctuation">:</span></span>
 <h2 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h2>
 <p>默认开启弹幕</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-aHARAyPIKIDmAtwm" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-aHARAyPIKIDmAtwm").style.height=document.getElementById("mmedia-aHARAyPIKIDmAtwm").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-dhjlLwBaZqutTDvW" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-dhjlLwBaZqutTDvW").style.height=document.getElementById("mmedia-dhjlLwBaZqutTDvW").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-aHARAyPIKIDmAtwm").style.height=document.getElementById("mmedia-aHARAyPIKIDmAtwm").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-dhjlLwBaZqutTDvW").style.height=document.getElementById("mmedia-dhjlLwBaZqutTDvW").scrollWidth*0.76+"px";
     }; </script>
 <p><s>关闭弹幕</s>失败</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" "danmaku:false" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-VCPRUifuJyWbPTxH" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-VCPRUifuJyWbPTxH").style.height=document.getElementById("mmedia-VCPRUifuJyWbPTxH").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-lfnoFZsYVATIVVJQ" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-lfnoFZsYVATIVVJQ").style.height=document.getElementById("mmedia-lfnoFZsYVATIVVJQ").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-VCPRUifuJyWbPTxH").style.height=document.getElementById("mmedia-VCPRUifuJyWbPTxH").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-lfnoFZsYVATIVVJQ").style.height=document.getElementById("mmedia-lfnoFZsYVATIVVJQ").scrollWidth*0.76+"px";
     }; </script>
 ]]></content>
       <categories>
