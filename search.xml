@@ -315,6 +315,138 @@ pip <span class="token function">install</span> opencv-contrib-python<span aria-
       </tags>
   </entry>
   <entry>
+    <title>一些常用英文单词及其缩写</title>
+    <url>/posts/Commonly-Used-English-Words-and-Their-Abbreviations.html</url>
+    <content><![CDATA[<h1 id="一些常用英文单词及其缩写"><a class="markdownIt-Anchor" href="#一些常用英文单词及其缩写"></a> 一些常用英文单词及其缩写</h1>
+<span id="more"></span>
+<h2 id="月份"><a class="markdownIt-Anchor" href="#月份"></a> 月份</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">月份</th>
+<th style="text-align:center">英文</th>
+<th style="text-align:center">缩写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">一月</td>
+<td style="text-align:center">January</td>
+<td style="text-align:center">Jan.</td>
+</tr>
+<tr>
+<td style="text-align:center">二月</td>
+<td style="text-align:center">February</td>
+<td style="text-align:center">Feb.</td>
+</tr>
+<tr>
+<td style="text-align:center">三月</td>
+<td style="text-align:center">March</td>
+<td style="text-align:center">Mar.</td>
+</tr>
+<tr>
+<td style="text-align:center">四月</td>
+<td style="text-align:center">April</td>
+<td style="text-align:center">Apr.</td>
+</tr>
+<tr>
+<td style="text-align:center">五月</td>
+<td style="text-align:center">May</td>
+<td style="text-align:center">May</td>
+</tr>
+<tr>
+<td style="text-align:center">六月</td>
+<td style="text-align:center">June</td>
+<td style="text-align:center">Jun.</td>
+</tr>
+<tr>
+<td style="text-align:center">七月</td>
+<td style="text-align:center">July</td>
+<td style="text-align:center">Jul.</td>
+</tr>
+<tr>
+<td style="text-align:center">八月</td>
+<td style="text-align:center">August</td>
+<td style="text-align:center">Aug.</td>
+</tr>
+<tr>
+<td style="text-align:center">九月</td>
+<td style="text-align:center">September</td>
+<td style="text-align:center">Sep. or <span style="color: #cc0000;">Sept.</span></td>
+</tr>
+<tr>
+<td style="text-align:center">十月</td>
+<td style="text-align:center">October</td>
+<td style="text-align:center">Oct.</td>
+</tr>
+<tr>
+<td style="text-align:center">十一月</td>
+<td style="text-align:center">November</td>
+<td style="text-align:center">Nov.</td>
+</tr>
+<tr>
+<td style="text-align:center">十二月</td>
+<td style="text-align:center">December</td>
+<td style="text-align:center">Dec.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="星期"><a class="markdownIt-Anchor" href="#星期"></a> 星期</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">星期</th>
+<th style="text-align:center">英文</th>
+<th style="text-align:center">缩写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">星期日</td>
+<td style="text-align:center">Sunday</td>
+<td style="text-align:center">Sun.</td>
+</tr>
+<tr>
+<td style="text-align:center">星期一</td>
+<td style="text-align:center">Monday</td>
+<td style="text-align:center">Mon.</td>
+</tr>
+<tr>
+<td style="text-align:center">星期二</td>
+<td style="text-align:center">Tuesday</td>
+<td style="text-align:center">Tu., Tue. or <span style="color: #cc0000;"> Tues.</span></td>
+</tr>
+<tr>
+<td style="text-align:center">星期三</td>
+<td style="text-align:center">Wednesday</td>
+<td style="text-align:center">Wed.</td>
+</tr>
+<tr>
+<td style="text-align:center">星期四</td>
+<td style="text-align:center">Thursday</td>
+<td style="text-align:center">Th., Thu., Thur. or <span style="color: #cc0000;">Thurs.</span></td>
+</tr>
+<tr>
+<td style="text-align:center">星期五</td>
+<td style="text-align:center">Friday</td>
+<td style="text-align:center">Fri.</td>
+</tr>
+<tr>
+<td style="text-align:center">星期六</td>
+<td style="text-align:center">Saturday</td>
+<td style="text-align:center">Sat.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><a href="https://www.aresearchguide.com/monthdayabb.html#days">参考</a></p>
+</blockquote>
+<h2 id="日期缩写"><a class="markdownIt-Anchor" href="#日期缩写"></a> 日期缩写</h2>
+<p>1st，2nd，3rd，4th，5th，6th，7th，8th，9th，10th，11th，12th，13th，14th，15th，16th，17th，18th，19th，20th，21st，22nd，23rd，24th，25th，26th，27th，28th，29th，30th，31st。</p>
+<h2 id="其他时间相关缩写"><a class="markdownIt-Anchor" href="#其他时间相关缩写"></a> 其他时间相关缩写</h2>
+]]></content>
+  </entry>
+  <entry>
     <title>Windows 优秀 UWP 软件</title>
     <url>/posts/Excellent-UWP-Apps-for-Windows.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
@@ -5698,15 +5830,15 @@ categories<span class="token punctuation">:</span></span>
 <h2 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h2>
 <p>默认开启弹幕</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-dhjlLwBaZqutTDvW" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-dhjlLwBaZqutTDvW").style.height=document.getElementById("mmedia-dhjlLwBaZqutTDvW").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-NHApgtqhMFmRlOkS" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-NHApgtqhMFmRlOkS").style.height=document.getElementById("mmedia-NHApgtqhMFmRlOkS").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-dhjlLwBaZqutTDvW").style.height=document.getElementById("mmedia-dhjlLwBaZqutTDvW").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-NHApgtqhMFmRlOkS").style.height=document.getElementById("mmedia-NHApgtqhMFmRlOkS").scrollWidth*0.76+"px";
     }; </script>
 <p><s>关闭弹幕</s>失败</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" "danmaku:false" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-lfnoFZsYVATIVVJQ" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-lfnoFZsYVATIVVJQ").style.height=document.getElementById("mmedia-lfnoFZsYVATIVVJQ").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-YIbaSpXzAdGlVWFV" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-YIbaSpXzAdGlVWFV").style.height=document.getElementById("mmedia-YIbaSpXzAdGlVWFV").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-lfnoFZsYVATIVVJQ").style.height=document.getElementById("mmedia-lfnoFZsYVATIVVJQ").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-YIbaSpXzAdGlVWFV").style.height=document.getElementById("mmedia-YIbaSpXzAdGlVWFV").scrollWidth*0.76+"px";
     }; </script>
 ]]></content>
       <categories>

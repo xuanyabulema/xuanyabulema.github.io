@@ -1,3 +1,4 @@
+https://xuanyabulema.github.io/posts/Commonly-Used-English-Words-and-Their-Abbreviations.html
 https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html
 https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme.html
 https://xuanyabulema.github.io/posts/Add-Timeliness-Alerts-for-Hexo.html
