@@ -47,8 +47,8 @@ https://xuanyabulema.github.io/posts/VMware-Workstation-Pro-Official-Download-Li
 https://xuanyabulema.github.io/posts/Word-Thesis-Formatting.html
 https://xuanyabulema.github.io/tags/index.html
 https://xuanyabulema.github.io/surfing/index.html
-https://xuanyabulema.github.io/about/index.html
 https://xuanyabulema.github.io/book/index.html
 https://xuanyabulema.github.io/categories/index.html
+https://xuanyabulema.github.io/about/index.html
 https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html
 https://xuanyabulema.github.io/
