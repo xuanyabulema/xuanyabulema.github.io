@@ -1,3 +1,5 @@
+https://xuanyabulema.github.io/book/index.html
+https://xuanyabulema.github.io/microchip/index.html
 https://xuanyabulema.github.io/posts/Commonly-Used-English-Words-and-Their-Abbreviations.html
 https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html
 https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme.html
@@ -34,7 +36,6 @@ https://xuanyabulema.github.io/posts/Using-FFmpeg-with-GPU-Hardware-Acceleration
 https://xuanyabulema.github.io/posts/Windows-Network-Reset.html
 https://xuanyabulema.github.io/posts/Windows-Server-2008-Add-Remote-Desktop-User.html
 https://xuanyabulema.github.io/posts/Windows-Terminal-Proxy-Configuration.html
-https://xuanyabulema.github.io/microchip/index.html
 https://xuanyabulema.github.io/posts/Interesting-Webs.html
 https://xuanyabulema.github.io/posts/Find-All-Files-With-the-Specified-Extension-in-the-Specified-Folder-in-Python.html
 https://xuanyabulema.github.io/posts/Fix-Custom-Resolutio-is-Not-Supported-on-Internal-Displays.html
@@ -48,7 +49,6 @@ https://xuanyabulema.github.io/posts/Word-Thesis-Formatting.html
 https://xuanyabulema.github.io/tags/index.html
 https://xuanyabulema.github.io/surfing/index.html
 https://xuanyabulema.github.io/about/index.html
-https://xuanyabulema.github.io/book/index.html
 https://xuanyabulema.github.io/categories/index.html
 https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html
 https://xuanyabulema.github.io/
