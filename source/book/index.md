@@ -5,9 +5,9 @@ type: "book"
 
 ---
 
-句子记录
+# 句子记录
 
-# LOL
+## LOL
 
 *Of all weapons, the past cuts deepest.* 
 天下万般兵刃，唯有过往伤人最深。
@@ -17,11 +17,17 @@ type: "book"
 
 *I'm not big on sermons - broken bones teach better lessons.*
 
-说教无益,折断的骨头是最好的课本
+说教无益,折断的骨头是最好的课本。
+
+## Other
+
+ *I'd rather have people follow me for who I am than to follow me for who I am not.*
+
+巅峰产生虚伪的拥护，黄昏见证真正的使徒。
 
 # WeChat Official Account
 
-#### caoz的梦呓
+## caoz的梦呓
 
 [那些愚蠢的算计和挣扎](https://mp.weixin.qq.com/s/LmjVpwHp6CHlTGsmzS8ucA)
 
