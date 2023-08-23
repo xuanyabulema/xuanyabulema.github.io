@@ -447,6 +447,47 @@ pip <span class="token function">install</span> opencv-contrib-python<span aria-
 ]]></content>
   </entry>
   <entry>
+    <title>配置 VScode 连接远程服务器进行开发</title>
+    <url>/posts/Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development.html</url>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>配置 VScode 连接远程服务器进行开发</p>
+<span id="more"></span>
+<h1 id="准备工作"><a class="markdownIt-Anchor" href="#准备工作"></a> 准备工作</h1>
+<h2 id="ssh-功能确认"><a class="markdownIt-Anchor" href="#ssh-功能确认"></a> SSH 功能确认</h2>
+<p>Windows 通常自带 OpenSSH 不需要安装，Windows 下检查是否已经安装 OpenSSH 的方法：<br>
+启动 <code>Windows PowerShell（管理员）</code>，输入以下指令：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Get-WindowsCapability</span> <span class="token operator">-</span>Online <span class="token punctuation">|</span> ? Name <span class="token operator">-like</span> <span class="token string">'OpenSSH*'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>
+<p>如果电脑未安装 OpenSSH，则 <code>State</code> 会显示 <code>NotPresent</code>：</p>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell">则输入以下指令进行安装</a>：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Add-WindowsCapability</span> <span class="token operator">-</span>Online <span class="token operator">-</span>Name OpenSSH<span class="token punctuation">.</span>Client~~~~0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li>
+<p>若已安装或在安装完成后，输入 <code>ssh</code> 将会返回以下内容：</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823134152358.png" alt="输入 ssh 返回内容"></p>
+</li>
+</ul>
+<h2 id="vscode-安装-remote-ssh"><a class="markdownIt-Anchor" href="#vscode-安装-remote-ssh"></a> VScode 安装 Remote-SSH</h2>
+<p>VScode 搜索并安装 Remote-SSH</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823134651519.png" alt="VScode 搜索并安装 Remote-SSH"></p>
+<h1 id="配置-remote-ssh"><a class="markdownIt-Anchor" href="#配置-remote-ssh"></a> 配置 Remote-SSH</h1>
+<p>从如下图所示，打开并配置 config 配置文件，</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823135148650.png" alt="Remote-SSH config 配置文件打开路径"></p>
+<p>配置如下：</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823135927329.png" alt="Remote-SSH config 配置示例"></p>
+<h1 id="连接远程服务器"><a class="markdownIt-Anchor" href="#连接远程服务器"></a> 连接远程服务器</h1>
+<p>在配置上述过程之后，可点击“→”按钮即可进行连接，连接过程中将会需要输入密码。</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823140134644.png" alt="连接远程服务器"></p>
+]]></content>
+      <categories>
+        <category>VScode</category>
+      </categories>
+      <tags>
+        <tag>VScode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows 优秀 UWP 软件</title>
     <url>/posts/Excellent-UWP-Apps-for-Windows.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
@@ -5830,15 +5871,15 @@ categories<span class="token punctuation">:</span></span>
 <h2 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h2>
 <p>默认开启弹幕</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-fgzXhgwYklQrsADM" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-fgzXhgwYklQrsADM").style.height=document.getElementById("mmedia-fgzXhgwYklQrsADM").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-ufqPsboySeoxkQUS" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-ufqPsboySeoxkQUS").style.height=document.getElementById("mmedia-ufqPsboySeoxkQUS").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-fgzXhgwYklQrsADM").style.height=document.getElementById("mmedia-fgzXhgwYklQrsADM").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-ufqPsboySeoxkQUS").style.height=document.getElementById("mmedia-ufqPsboySeoxkQUS").scrollWidth*0.76+"px";
     }; </script>
 <p><s>关闭弹幕</s>失败</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" "danmaku:false" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-VdyMIKTrUdUwFFsI" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-VdyMIKTrUdUwFFsI").style.height=document.getElementById("mmedia-VdyMIKTrUdUwFFsI").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-iJbCNTMzbEChILfH" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-iJbCNTMzbEChILfH").style.height=document.getElementById("mmedia-iJbCNTMzbEChILfH").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-VdyMIKTrUdUwFFsI").style.height=document.getElementById("mmedia-VdyMIKTrUdUwFFsI").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-iJbCNTMzbEChILfH").style.height=document.getElementById("mmedia-iJbCNTMzbEChILfH").scrollWidth*0.76+"px";
     }; </script>
 ]]></content>
       <categories>
@@ -9899,6 +9940,82 @@ conda info <span class="token parameter variable">-e</span><span aria-hidden="tr
       </categories>
       <tags>
         <tag>VM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VScode 配置 Python 代码模板</title>
+    <url>/posts/VScode-Python-Snippets.html</url>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>在 VScode 配置 Python 代码模板</p>
+<span id="more"></span>
+<h2 id="配置方式"><a class="markdownIt-Anchor" href="#配置方式"></a> 配置方式</h2>
+<p>文件——首选项——配置用户代码片段——选择 python，会生成并打开 python.json</p>
+<img src="./VScode-Python-Snippets/image-20230823094803638.png" alt="文件——首选项——配置用户代码片段" style="width:80%;">
+<p>修改为如下示例</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+	<span class="token comment">// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and </span>
+	<span class="token comment">// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:</span>
+	<span class="token comment">// $1, $2 for tab stops, $0 for the final cursor position, and $&#123;1:label&#125;, $&#123;2:another&#125; for placeholders. Placeholders with the </span>
+	<span class="token comment">// same ids are connected.</span>
+	<span class="token comment">// Example:</span>
+	<span class="token comment">// "Print to console": &#123;</span>
+	<span class="token comment">// 	"prefix": "log",</span>
+	<span class="token comment">// 	"body": [</span>
+	<span class="token comment">// 		"console.log('$1');",</span>
+	<span class="token comment">// 		"$2"</span>
+	<span class="token comment">// 	],</span>
+	<span class="token comment">// 	"description": "Log output to console"</span>
+	<span class="token comment">// &#125;</span>
+	<span class="token property">"HEADER"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+		<span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"header"</span><span class="token punctuation">,</span>
+		<span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+			<span class="token string">"# -*- coding: utf-8 -*-"</span><span class="token punctuation">,</span>
+			<span class="token string">"\"\"\""</span><span class="token punctuation">,</span>
+			<span class="token string">"@File    :   $TM_FILENAME"</span><span class="token punctuation">,</span>
+			<span class="token string">"@Time    :   $CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND"</span><span class="token punctuation">,</span>
+			<span class="token string">"@Author  :   xuanyabulema@qq.com"</span><span class="token punctuation">,</span>
+			<span class="token string">"@Version :   "</span><span class="token punctuation">,</span>
+			<span class="token string">"@Desc    :   "</span><span class="token punctuation">,</span>
+			<span class="token string">"\"\"\""</span><span class="token punctuation">,</span>
+			<span class="token string">""</span><span class="token punctuation">,</span>
+			<span class="token string">"$0"</span>
+		<span class="token punctuation">]</span><span class="token punctuation">,</span>
+		<span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Python file header"</span><span class="token punctuation">,</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	<span class="token property">"main function"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+		<span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"main"</span><span class="token punctuation">,</span>
+		<span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+			<span class="token string">"def main():"</span><span class="token punctuation">,</span>
+			<span class="token string">"    pass"</span><span class="token punctuation">,</span>
+			<span class="token string">""</span><span class="token punctuation">,</span>
+			<span class="token string">""</span><span class="token punctuation">,</span>
+			<span class="token string">"if __name__ == \"__main__\":"</span><span class="token punctuation">,</span>
+			<span class="token string">"    main()"</span>
+		<span class="token punctuation">]</span><span class="token punctuation">,</span>
+		<span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"create python main function"</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+	<span class="token property">"for loop"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+		<span class="token property">"prefix"</span><span class="token operator">:</span> <span class="token string">"for"</span><span class="token punctuation">,</span>
+		<span class="token property">"body"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+			<span class="token string">"for $1 in $2:"</span><span class="token punctuation">,</span>
+			<span class="token string">"    $0"</span>
+		<span class="token punctuation">]</span><span class="token punctuation">,</span>
+		<span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"python for loop"</span>
+	<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="使用方式"><a class="markdownIt-Anchor" href="#使用方式"></a> 使用方式</h2>
+<p>在 Python 文件中输入 &quot;prefix&quot; 对应的内容，如：&quot;header&quot;，则会出现如下效果，</p>
+<p><img src="./VScode-Python-Snippets/image-20230823095831421.png" alt="使用示例：输入"></p>
+<p>再按 Tab，即可输出对应的模板内容。</p>
+<p><img src="./VScode-Python-Snippets/image-20230823095849437.png" alt="使用示例：结果"></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+        <category>VScode</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>VScode</tag>
       </tags>
   </entry>
   <entry>
