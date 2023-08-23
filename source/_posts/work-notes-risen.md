@@ -18,6 +18,10 @@ hidden: true
 
 根据**电池芯片两面是否均能发电**，晶硅组件可进一步分为**单面组件**和**双面组件**，双面组件的电池芯片两侧均能够发电，电池芯片背面（即面向地面的 一侧）主要吸收地面反射光进行发电，根据背板材质和土地材质不同，双面组件的发电效率比单面组件高5%-19%。[参考](https://zhuanlan.zhihu.com/p/309990573)
 
+<font color='red'>单瓦发电量？</font>
+
+<font color='red'>一体膜？预交联？预交联度？</font>
+
 
 
 ## 光伏电池分类
@@ -40,29 +44,32 @@ PERC (Passivated Emitter and Rear Cell) ，意思是"钝化发射器和后部接
 
 # 常见英文缩写
 
-|  缩写  |                        英文                        |                 含义                  |
-| :----: | :------------------------------------------------: | :-----------------------------------: |
-| TOPCon |          Tunnel Oxide Passivated Contact           |          隧穿氧化层钝化接触           |
-|  PERC  |          Passivated Emitter And Rear Cell          |          钝化发射极背面电池           |
-|  HJT   |      Heterojunction with Intrinsic Thin Layer      |            本征薄膜异质结             |
-|  IBC   |            Interdigitated Back Contact             |            交叉指式背接触             |
-|  HBC   |            Heterojunction Back Contact             |             异质结背接触              |
-|        |                                                    |                                       |
-|   EL   |                 Electroluminescent                 |               电致发光                |
-|  MQT   |                Module Quality Test                 |             组件质量测试              |
-|  MST   |                 Module Safety Test                 |             组件安全测试              |
-|   TC   |                Thermal cycling test                |         热循环测试（MQT 11）          |
-|   HF   |                Humidity-freeze test                |          湿冻试验（MQT 12）           |
-|   DH   |                   Damp heat test                   |          湿热测试（MQT 13）           |
-|  PID   |           Potential Induced Degradation            |        电位诱导衰减（MQT 21）         |
-|  LID   |             Light-Induced Degradation              |               光致衰减                |
-| LeTID  | Light And Elevated Temperature Induced Degradation |    光照及高温过程中引起的功率衰减     |
-|   UV   |                    Ultraviolet                     | 紫外  <font color='red'>待补充</font> |
-|   MC   |          <font color='red'>待补充</font>           |    <font color='red'>待补充</font>    |
-|        |                                                    |                                       |
-|  EPE   |               ExpandablePolyethylene               |       可发性聚乙烯，又称珍珠棉        |
-|        |                                                    |                                       |
-|        |                                                    |                                       |
+|  缩写  |                        英文                        |                             含义                             |
+| :----: | :------------------------------------------------: | :----------------------------------------------------------: |
+| TOPCon |          Tunnel Oxide Passivated Contact           |                      隧穿氧化层钝化接触                      |
+|  PERC  |          Passivated Emitter And Rear Cell          |                      钝化发射极背面电池                      |
+|  HJT   |      Heterojunction with Intrinsic Thin Layer      |                        本征薄膜异质结                        |
+|  IBC   |            Interdigitated Back Contact             |                        交叉指式背接触                        |
+|  HBC   |            Heterojunction Back Contact             |                         异质结背接触                         |
+|        |                                                    |                                                              |
+|   PL   |                 Photoluminescence                  |                           光致发光                           |
+|   EL   |                 Electroluminescent                 |                           电致发光                           |
+|  MQT   |                Module Quality Test                 |                         组件质量测试                         |
+|  MST   |                 Module Safety Test                 |                         组件安全测试                         |
+|   TC   |                Thermal cycling test                |                     热循环测试（MQT 11）                     |
+|   HF   |                Humidity-freeze test                |                      湿冻试验（MQT 12）                      |
+|   DH   |                   Damp heat test                   |                      湿热测试（MQT 13）                      |
+|  PID   |           Potential Induced Degradation            |                    电位诱导衰减（MQT 21）                    |
+|  LID   |             Light-Induced Degradation              |                           光致衰减                           |
+| LeTID  | Light And Elevated Temperature Induced Degradation |                光照及高温过程中引起的功率衰减                |
+|   UV   |                    Ultraviolet                     |            紫外  <font color='red'>待补充</font>             |
+|   MC   |          <font color='red'>待补充</font>           |               <font color='red'>待补充</font>                |
+|        |                                                    |                                                              |
+|  EPE   |               ExpandablePolyethylene               |                   可发性聚乙烯，又称珍珠棉                   |
+|  EVA   |               Ethylene Vinyl Acetate               | 乙烯-醋酸乙烯共聚物<br />（也称之为乙烯-乙酸乙烯共聚物）<br />是由乙烯（E）和乙酸乙烯（VA）共聚而制得 |
+|        |                                                    |                                                              |
+|  DOE   |                Design of Experiment                |                           试验设计                           |
+|        |                                                    |                                                              |
 
 ## LID vs LeTID
 
