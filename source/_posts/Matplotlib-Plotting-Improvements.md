@@ -53,7 +53,7 @@ FONT_NAMES = {
 
 def test_chinese():
     for font_name, desc in FONT_NAMES.items():
-        use_font(font_name)
+        use_font(font_name)  # 使用use_font设置
         fig = plt.figure(figsize=(4, 1))
         
         ax = plt.Axes(fig, [0., 0., 1., 1.]) 
@@ -70,5 +70,5 @@ test_chinese()
 
 
 
-# 借助 [SciencePlots ](https://github.com/garrettj403/SciencePlots) 进行优美的科研绘图
+# 借助 [SciencePlots](https://github.com/garrettj403/SciencePlots) 进行优美的科研绘图
 
