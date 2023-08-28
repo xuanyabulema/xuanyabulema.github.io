@@ -1,3 +1,4 @@
+https://xuanyabulema.github.io/posts/Matplotlib-Plotting-Improvements.html
 https://xuanyabulema.github.io/posts/Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development.html
 https://xuanyabulema.github.io/posts/VScode-Python-Snippets.html
 https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html
