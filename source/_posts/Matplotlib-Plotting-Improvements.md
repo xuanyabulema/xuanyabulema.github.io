@@ -22,6 +22,10 @@ hidden:
 
 # 借助 [mplfonts](http://clarmy.net/2022/04/10/how-to-solve-tofu-in-matplotlib/) 优雅解决中文显示问题
 
+> 在线jupyter-notebook
+>
+> <iframe src="https://nbviewer.org/github/xuanyabulema/JupyterNotebook-OfflineWebArchives/blob/main/mplfonts/mplfonts_example.ipynb" width="100%" height="600"></iframe>
+
 ## 安装
 
 ```sh
@@ -71,4 +75,12 @@ test_chinese()
 
 
 # 借助 [SciencePlots](https://github.com/garrettj403/SciencePlots) 进行优美的科研绘图
+
+> 在线jupyter-notebook
+>
+> <iframe src="https://nbviewer.org/github/xuanyabulema/JupyterNotebook-OfflineWebArchives/blob/main/scienceplots/scienceplots_example.ipynb" width="100%" height="600"></iframe>
+>
+> 莫名的`-`显示不正常。。。。有空再说。
+
+
 
