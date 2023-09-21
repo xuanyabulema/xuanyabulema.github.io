@@ -10,9 +10,11 @@ type: "book"
 ## LOL
 
 *Of all weapons, the past cuts deepest.* 
+
 天下万般兵刃，唯有过往伤人最深。
 
 *It's not lies that cut but the sharpness of the truth.*
+
 谎言不会伤人，真相才是快刀。
 
 *I'm not big on sermons - broken bones teach better lessons.*
