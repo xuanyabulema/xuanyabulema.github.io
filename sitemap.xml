@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xuanyabulema.github.io/posts/Alternative-Fuel-Vehicle.html</loc>
+    
+    <lastmod>2023-11-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Site-Configuration-Supplement.html</loc>
+    
+    <lastmod>2023-11-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/about/index.html</loc>
+    
+    <lastmod>2023-11-11</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanyabulema.github.io/book/index.html</loc>
     
     <lastmod>2023-09-25</lastmod>
@@ -147,15 +174,6 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/posts/Hexo-SEO-Optimization.html</loc>
-    
-    <lastmod>2023-06-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Site-Configuration-Supplement.html</loc>
     
     <lastmod>2023-06-25</lastmod>
     
@@ -479,15 +497,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/about/index.html</loc>
-    
-    <lastmod>2023-06-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/categories/index.html</loc>
     
     <lastmod>2023-06-25</lastmod>
@@ -508,7 +517,7 @@
 
   <url>
     <loc>https://xuanyabulema.github.io/</loc>
-    <lastmod>2023-10-17</lastmod>
+    <lastmod>2023-11-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

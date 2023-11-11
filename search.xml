@@ -182,6 +182,62 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
       </tags>
   </entry>
   <entry>
+    <title>新能源汽车</title>
+    <url>/posts/Alternative-Fuel-Vehicle.html</url>
+    <content><![CDATA[<h1 id="新能源汽车分类"><a class="markdownIt-Anchor" href="#新能源汽车分类"></a> 新能源汽车分类</h1>
+<p><a href="https://www.bilibili.com/video/BV17g411X7ec/?share_source=copy_web&amp;vd_source=e5feada740c11e6ddf6a41600af318eb">参考：2022-06-21【插混、油混、增程式，选哪个更香？】</a></p>
+<span id="more"></span>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">插混</th>
+<th style="text-align:center">油混</th>
+<th style="text-align:center">增程</th>
+<th style="text-align:center">纯电</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">加油</td>
+<td style="text-align:center">✔️<br>纯油使用油耗高</td>
+<td style="text-align:center">✔️<br>油耗低<br>（电机弥补发动机）</td>
+<td style="text-align:center">✔️<br>用油发电</td>
+<td style="text-align:center">✖️</td>
+</tr>
+<tr>
+<td style="text-align:center">充电</td>
+<td style="text-align:center">✔️<br>动力电池不大</td>
+<td style="text-align:center">✖️</td>
+<td style="text-align:center">✔️</td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td style="text-align:center">绿牌</td>
+<td style="text-align:center">✔️<br>大部分城市</td>
+<td style="text-align:center">✖️</td>
+<td style="text-align:center">✖️</td>
+<td style="text-align:center">✔️</td>
+</tr>
+<tr>
+<td style="text-align:center">其他</td>
+<td style="text-align:center">保值率不高（三年腰斩）</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">保值率不高（三年腰斩）</td>
+</tr>
+</tbody>
+</table>
+<p>插混、油混结合：本田e+、比亚迪DM-i</p>
+]]></content>
+      <categories>
+        <category>Car</category>
+      </categories>
+      <tags>
+        <tag>Car</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Anaconda 源设置 | pip 源设置 | 常用 Python 库安装</title>
     <url>/posts/Anaconda-Mirror-Configuration-Pip-Mirror-Configuration-Frequently-Used-Python-Libraries.html</url>
     <content><![CDATA[<h1 id="anaconda配置源"><a class="markdownIt-Anchor" href="#anaconda配置源"></a> Anaconda配置源</h1>
@@ -315,79 +371,6 @@ pip <span class="token function">install</span> opencv-contrib-python<span aria-
       </tags>
   </entry>
   <entry>
-    <title>配置 VScode 连接远程服务器进行开发</title>
-    <url>/posts/Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development.html</url>
-    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
-<p>配置 VScode 连接远程服务器进行开发</p>
-<span id="more"></span>
-<h1 id="准备工作"><a class="markdownIt-Anchor" href="#准备工作"></a> 准备工作</h1>
-<h2 id="ssh-功能确认"><a class="markdownIt-Anchor" href="#ssh-功能确认"></a> SSH 功能确认</h2>
-<p>Windows 通常自带 OpenSSH 不需要安装，Windows 下检查是否已经安装 OpenSSH 的方法：<br>
-启动 <code>Windows PowerShell（管理员）</code>，输入以下指令：</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Get-WindowsCapability</span> <span class="token operator">-</span>Online <span class="token punctuation">|</span> ? Name <span class="token operator">-like</span> <span class="token string">'OpenSSH*'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>
-<p>如果电脑未安装 OpenSSH，则 <code>State</code> 会显示 <code>NotPresent</code>：</p>
-<p><a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell">则输入以下指令进行安装</a>：</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Add-WindowsCapability</span> <span class="token operator">-</span>Online <span class="token operator">-</span>Name OpenSSH<span class="token punctuation">.</span>Client~~~~0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li>
-<p>若已安装或在安装完成后，输入 <code>ssh</code> 将会返回以下内容：</p>
-<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823134152358.png" alt="输入 ssh 返回内容"></p>
-</li>
-</ul>
-<h2 id="vscode-安装-remote-ssh"><a class="markdownIt-Anchor" href="#vscode-安装-remote-ssh"></a> VScode 安装 Remote-SSH</h2>
-<p>VScode 搜索并安装 Remote-SSH</p>
-<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823134651519.png" alt="VScode 搜索并安装 Remote-SSH"></p>
-<h1 id="配置-remote-ssh"><a class="markdownIt-Anchor" href="#配置-remote-ssh"></a> 配置 Remote-SSH</h1>
-<p>从如下图所示，打开并配置 config 配置文件，</p>
-<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823135148650.png" alt="Remote-SSH config 配置文件打开路径"></p>
-<p>配置如下：</p>
-<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823135927329.png" alt="Remote-SSH config 配置示例"></p>
-<h1 id="连接远程服务器"><a class="markdownIt-Anchor" href="#连接远程服务器"></a> 连接远程服务器</h1>
-<p>在配置上述过程之后，可点击“→”按钮即可进行连接，连接过程中将会需要输入密码。</p>
-<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823140134644.png" alt="连接远程服务器"></p>
-]]></content>
-      <categories>
-        <category>VScode</category>
-      </categories>
-      <tags>
-        <tag>VScode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 优秀 UWP 软件</title>
-    <url>/posts/Excellent-UWP-Apps-for-Windows.html</url>
-    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
-<p>Windows 虽然很强大，但是有些功能设计并不是很优秀，如音量调节，屏幕亮度调节等。幸好出现了优秀的开发者，做出了优秀的软件程序用于改善 Windows 的使用体验。</p>
-<span id="more"></span>
-<h1 id="eartrumpet"><a class="markdownIt-Anchor" href="#eartrumpet"></a> EarTrumpet</h1>
-<p><a href="https://eartrumpet.app/">官网链接</a></p>
-<p><a href="https://apps.microsoft.com/store/detail/eartrumpet/9NBLGGH516XP?cid=eartrumpet.landing">EarTrumpet - Microsoft Store 应用程序</a></p>
-<p>EarTrumpet 是一款功能强大的 Windows 音量控制应用</p>
-<img src="Excellent-UWP-Apps-for-Windows/image-20230227213408578.png" alt="EarTrumpet" style="width:50%;">
-<h1 id="twinkle-tray-brightness-slider"><a class="markdownIt-Anchor" href="#twinkle-tray-brightness-slider"></a> Twinkle Tray: Brightness Slider</h1>
-<p><a href="https://twinkletray.com/">官网链接</a></p>
-<p><a href="https://apps.microsoft.com/store/detail/twinkle-tray-brightness-slider/9PLJWWSV01LK?hl=en-us&amp;gl=us">Twinkle Tray: Brightness Slider - Microsoft Store Apps</a></p>
-<p>Twinkle Tray让你轻松管理多个显示器的亮度水平。即使Windows 10和11能够调整大多数显示器的背光，它通常不支持外部显示器。Windows也缺乏管理多个显示器亮度的任何能力。这个应用程序在你的系统托盘中插入了一个新的图标，你可以点击它来即时访问所有兼容显示器的亮度水平。Twinkle Tray使用DDC/CI和WMI与你的显示器通信。请确保你的显示器上启用了适当的选项，以便它能与Twinkle Tray一起工作。</p>
-<p>Twinkle Tray lets you easily manage the brightness levels of multiple monitors. Even though Windows 10 &amp; 11 are capable of adjusting the backlight on most monitors, it typically doesn't support external monitors. Windows also lacks any ability to manage the brightness of multiple monitors. This app inserts a new icon into your system tray, where you can click to have instant access to the brightness levels of all compatible monitors. Twinkle Tray uses DDC/CI and WMI to communicate with your monitors. Make sure you have the appropriate option(s) enabled on your monitor so that it can work with Twinkle Tray.</p>
-<img src="Excellent-UWP-Apps-for-Windows/image-20230227214701753.png" alt="Twinkle Tray: Brightness Slider" style="width:50%;">
-<h1 id="动态主题dynamic-theme"><a class="markdownIt-Anchor" href="#动态主题dynamic-theme"></a> 动态主题（Dynamic theme）</h1>
-<p><a href="https://apps.microsoft.com/store/detail/dynamic-theme/9NBLGGH1ZBKW?hl=en-us&amp;gl=us">Dynamic Theme - Microsoft Store Apps</a></p>
-<p>动态背景和/或锁屏图片，有每日必应或Windows Spotlight图片，一张必应或Windows Spotlight图片或个人图片。</p>
-<p>Dynamic background and/or lock screen picture with daily Bing or Windows Spotlight pictures, one Bing or Windows Spotlight picture or personal pictures.</p>
-<img src="Excellent-UWP-Apps-for-Windows/image-20230227214915188.png" alt="Dynamic theme" style="width:90%;">
-]]></content>
-      <categories>
-        <category>Windows</category>
-        <category>UWP</category>
-      </categories>
-      <tags>
-        <tag>Windows</tag>
-        <tag>UWP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一些常用英文单词及其缩写</title>
     <url>/posts/Commonly-Used-English-Words-and-Their-Abbreviations.html</url>
     <content><![CDATA[<h1 id="一些常用英文单词及其缩写"><a class="markdownIt-Anchor" href="#一些常用英文单词及其缩写"></a> 一些常用英文单词及其缩写</h1>
@@ -518,6 +501,79 @@ pip <span class="token function">install</span> opencv-contrib-python<span aria-
 <p>1st，2nd，3rd，4th，5th，6th，7th，8th，9th，10th，11th，12th，13th，14th，15th，16th，17th，18th，19th，20th，21st，22nd，23rd，24th，25th，26th，27th，28th，29th，30th，31st。</p>
 <h2 id="其他时间相关缩写"><a class="markdownIt-Anchor" href="#其他时间相关缩写"></a> 其他时间相关缩写</h2>
 ]]></content>
+  </entry>
+  <entry>
+    <title>配置 VScode 连接远程服务器进行开发</title>
+    <url>/posts/Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development.html</url>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>配置 VScode 连接远程服务器进行开发</p>
+<span id="more"></span>
+<h1 id="准备工作"><a class="markdownIt-Anchor" href="#准备工作"></a> 准备工作</h1>
+<h2 id="ssh-功能确认"><a class="markdownIt-Anchor" href="#ssh-功能确认"></a> SSH 功能确认</h2>
+<p>Windows 通常自带 OpenSSH 不需要安装，Windows 下检查是否已经安装 OpenSSH 的方法：<br>
+启动 <code>Windows PowerShell（管理员）</code>，输入以下指令：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Get-WindowsCapability</span> <span class="token operator">-</span>Online <span class="token punctuation">|</span> ? Name <span class="token operator">-like</span> <span class="token string">'OpenSSH*'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>
+<p>如果电脑未安装 OpenSSH，则 <code>State</code> 会显示 <code>NotPresent</code>：</p>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell">则输入以下指令进行安装</a>：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Add-WindowsCapability</span> <span class="token operator">-</span>Online <span class="token operator">-</span>Name OpenSSH<span class="token punctuation">.</span>Client~~~~0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li>
+<p>若已安装或在安装完成后，输入 <code>ssh</code> 将会返回以下内容：</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823134152358.png" alt="输入 ssh 返回内容"></p>
+</li>
+</ul>
+<h2 id="vscode-安装-remote-ssh"><a class="markdownIt-Anchor" href="#vscode-安装-remote-ssh"></a> VScode 安装 Remote-SSH</h2>
+<p>VScode 搜索并安装 Remote-SSH</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823134651519.png" alt="VScode 搜索并安装 Remote-SSH"></p>
+<h1 id="配置-remote-ssh"><a class="markdownIt-Anchor" href="#配置-remote-ssh"></a> 配置 Remote-SSH</h1>
+<p>从如下图所示，打开并配置 config 配置文件，</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823135148650.png" alt="Remote-SSH config 配置文件打开路径"></p>
+<p>配置如下：</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823135927329.png" alt="Remote-SSH config 配置示例"></p>
+<h1 id="连接远程服务器"><a class="markdownIt-Anchor" href="#连接远程服务器"></a> 连接远程服务器</h1>
+<p>在配置上述过程之后，可点击“→”按钮即可进行连接，连接过程中将会需要输入密码。</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823140134644.png" alt="连接远程服务器"></p>
+]]></content>
+      <categories>
+        <category>VScode</category>
+      </categories>
+      <tags>
+        <tag>VScode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 优秀 UWP 软件</title>
+    <url>/posts/Excellent-UWP-Apps-for-Windows.html</url>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>Windows 虽然很强大，但是有些功能设计并不是很优秀，如音量调节，屏幕亮度调节等。幸好出现了优秀的开发者，做出了优秀的软件程序用于改善 Windows 的使用体验。</p>
+<span id="more"></span>
+<h1 id="eartrumpet"><a class="markdownIt-Anchor" href="#eartrumpet"></a> EarTrumpet</h1>
+<p><a href="https://eartrumpet.app/">官网链接</a></p>
+<p><a href="https://apps.microsoft.com/store/detail/eartrumpet/9NBLGGH516XP?cid=eartrumpet.landing">EarTrumpet - Microsoft Store 应用程序</a></p>
+<p>EarTrumpet 是一款功能强大的 Windows 音量控制应用</p>
+<img src="Excellent-UWP-Apps-for-Windows/image-20230227213408578.png" alt="EarTrumpet" style="width:50%;">
+<h1 id="twinkle-tray-brightness-slider"><a class="markdownIt-Anchor" href="#twinkle-tray-brightness-slider"></a> Twinkle Tray: Brightness Slider</h1>
+<p><a href="https://twinkletray.com/">官网链接</a></p>
+<p><a href="https://apps.microsoft.com/store/detail/twinkle-tray-brightness-slider/9PLJWWSV01LK?hl=en-us&amp;gl=us">Twinkle Tray: Brightness Slider - Microsoft Store Apps</a></p>
+<p>Twinkle Tray让你轻松管理多个显示器的亮度水平。即使Windows 10和11能够调整大多数显示器的背光，它通常不支持外部显示器。Windows也缺乏管理多个显示器亮度的任何能力。这个应用程序在你的系统托盘中插入了一个新的图标，你可以点击它来即时访问所有兼容显示器的亮度水平。Twinkle Tray使用DDC/CI和WMI与你的显示器通信。请确保你的显示器上启用了适当的选项，以便它能与Twinkle Tray一起工作。</p>
+<p>Twinkle Tray lets you easily manage the brightness levels of multiple monitors. Even though Windows 10 &amp; 11 are capable of adjusting the backlight on most monitors, it typically doesn't support external monitors. Windows also lacks any ability to manage the brightness of multiple monitors. This app inserts a new icon into your system tray, where you can click to have instant access to the brightness levels of all compatible monitors. Twinkle Tray uses DDC/CI and WMI to communicate with your monitors. Make sure you have the appropriate option(s) enabled on your monitor so that it can work with Twinkle Tray.</p>
+<img src="Excellent-UWP-Apps-for-Windows/image-20230227214701753.png" alt="Twinkle Tray: Brightness Slider" style="width:50%;">
+<h1 id="动态主题dynamic-theme"><a class="markdownIt-Anchor" href="#动态主题dynamic-theme"></a> 动态主题（Dynamic theme）</h1>
+<p><a href="https://apps.microsoft.com/store/detail/dynamic-theme/9NBLGGH1ZBKW?hl=en-us&amp;gl=us">Dynamic Theme - Microsoft Store Apps</a></p>
+<p>动态背景和/或锁屏图片，有每日必应或Windows Spotlight图片，一张必应或Windows Spotlight图片或个人图片。</p>
+<p>Dynamic background and/or lock screen picture with daily Bing or Windows Spotlight pictures, one Bing or Windows Spotlight picture or personal pictures.</p>
+<img src="Excellent-UWP-Apps-for-Windows/image-20230227214915188.png" alt="Dynamic theme" style="width:90%;">
+]]></content>
+      <categories>
+        <category>Windows</category>
+        <category>UWP</category>
+      </categories>
+      <tags>
+        <tag>Windows</tag>
+        <tag>UWP</tag>
+      </tags>
   </entry>
   <entry>
     <title>寻找指定文件夹下所有指定类型的文件（Python）</title>
@@ -5796,7 +5852,7 @@ categories<span class="token punctuation">:</span></span>
 <p>使用： <code>hexo new page &quot;XXX&quot;</code> 新建一个自定义页面，例如</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new page <span class="token string">"book"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>编辑<code>\source\book\index.md</code></p>
-<p><img src="Hexo-Site-Configuration-Supplement%5Cimage-20221015213916997.png" alt="ourceookndex.md"></p>
+<p><img src="Hexo-Site-Configuration-Supplement%5Cimage-20221015213916997.png" alt="index.md 界面"></p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
 <span class="token front-matter yaml language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> 阅读
 <span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2022-10-15 20:54:19</span>
@@ -5871,15 +5927,15 @@ categories<span class="token punctuation">:</span></span>
 <h2 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h2>
 <p>默认开启弹幕</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-MZWbttynhcuwIuVB" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-MZWbttynhcuwIuVB").style.height=document.getElementById("mmedia-MZWbttynhcuwIuVB").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-tQomNTnrFuinMtEO" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-tQomNTnrFuinMtEO").style.height=document.getElementById("mmedia-tQomNTnrFuinMtEO").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-MZWbttynhcuwIuVB").style.height=document.getElementById("mmedia-MZWbttynhcuwIuVB").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-tQomNTnrFuinMtEO").style.height=document.getElementById("mmedia-tQomNTnrFuinMtEO").scrollWidth*0.76+"px";
     }; </script>
 <p><s>关闭弹幕</s>失败</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" "danmaku:false" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-JzdrTnaiNpDPKCwI" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-JzdrTnaiNpDPKCwI").style.height=document.getElementById("mmedia-JzdrTnaiNpDPKCwI").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-paGASfylFrIkGiky" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-paGASfylFrIkGiky").style.height=document.getElementById("mmedia-paGASfylFrIkGiky").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-JzdrTnaiNpDPKCwI").style.height=document.getElementById("mmedia-JzdrTnaiNpDPKCwI").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-paGASfylFrIkGiky").style.height=document.getElementById("mmedia-paGASfylFrIkGiky").scrollWidth*0.76+"px";
     }; </script>
 ]]></content>
       <categories>

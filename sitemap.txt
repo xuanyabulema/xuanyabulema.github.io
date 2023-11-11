@@ -1,3 +1,6 @@
+https://xuanyabulema.github.io/posts/Alternative-Fuel-Vehicle.html
+https://xuanyabulema.github.io/posts/Hexo-Site-Configuration-Supplement.html
+https://xuanyabulema.github.io/about/index.html
 https://xuanyabulema.github.io/book/index.html
 https://xuanyabulema.github.io/posts/Matplotlib-Plotting-Improvements.html
 https://xuanyabulema.github.io/posts/Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development.html
@@ -15,7 +18,6 @@ https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html
 https://xuanyabulema.github.io/posts/Hexo-Posts-Links.html
 https://xuanyabulema.github.io/posts/Hexo-Render-Math-Equations.html
 https://xuanyabulema.github.io/posts/Hexo-SEO-Optimization.html
-https://xuanyabulema.github.io/posts/Hexo-Site-Configuration-Supplement.html
 https://xuanyabulema.github.io/posts/Hexo-Synchronization-and-Migration.html
 https://xuanyabulema.github.io/posts/NexT-Theme-Configuration-Supplement.html
 https://xuanyabulema.github.io/posts/Notes-Before-Writing-Blog-With-Hexo.html
@@ -51,7 +53,6 @@ https://xuanyabulema.github.io/posts/VMware-Workstation-Pro-Official-Download-Li
 https://xuanyabulema.github.io/posts/Word-Thesis-Formatting.html
 https://xuanyabulema.github.io/tags/index.html
 https://xuanyabulema.github.io/surfing/index.html
-https://xuanyabulema.github.io/about/index.html
 https://xuanyabulema.github.io/categories/index.html
 https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html
 https://xuanyabulema.github.io/

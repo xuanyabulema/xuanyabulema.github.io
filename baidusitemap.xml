@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://xuanyabulema.github.io/posts/Alternative-Fuel-Vehicle.html</loc>
+    <lastmod>2023-11-11</lastmod>
+  </url>
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Site-Configuration-Supplement.html</loc>
+    <lastmod>2023-11-11</lastmod>
+  </url>
+  <url>
     <loc>https://xuanyabulema.github.io/posts/Matplotlib-Plotting-Improvements.html</loc>
     <lastmod>2023-08-30</lastmod>
   </url>
@@ -58,10 +66,6 @@
   </url>
   <url>
     <loc>https://xuanyabulema.github.io/posts/Hexo-SEO-Optimization.html</loc>
-    <lastmod>2023-06-25</lastmod>
-  </url>
-  <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Site-Configuration-Supplement.html</loc>
     <lastmod>2023-06-25</lastmod>
   </url>
   <url>
