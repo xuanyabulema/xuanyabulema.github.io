@@ -67,6 +67,10 @@ PERC (Passivated Emitter and Rear Cell) ，意思是"钝化发射器和后部接
 |        |                                                    |                                                              |
 |  EPE   |               ExpandablePolyethylene               |                   可发性聚乙烯，又称珍珠棉                   |
 |  EVA   |               Ethylene Vinyl Acetate               | 乙烯-醋酸乙烯共聚物<br />（也称之为乙烯-乙酸乙烯共聚物）<br />是由乙烯（E）和乙酸乙烯（VA）共聚而制得 |
+|  EEA   |              Ethylene Ethyl Acrylate               |                       乙烯-丙烯酸乙酯                        |
+|   PA   |                     Polyamide                      |                            聚酰胺                            |
+|  TPT   |                 Tedlar/PET/Tedlar                  |                        聚氟乙烯复合膜                        |
+|  PET   |             Polyethylene terephthalate             |                      聚对苯二甲酸乙二酯                      |
 |        |                                                    |                                                              |
 |  DOE   |                Design of Experiment                |                           试验设计                           |
 |        |                                                    |                                                              |
