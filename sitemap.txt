@@ -23,8 +23,8 @@ https://xuanyabulema.github.io/posts/NexT-Theme-Configuration-Supplement.html
 https://xuanyabulema.github.io/posts/Notes-Before-Writing-Blog-With-Hexo.html
 https://xuanyabulema.github.io/posts/Problems-Encountered-During-the-Use-of-Hexo.html
 https://xuanyabulema.github.io/posts/Python3-Basics.html
-https://xuanyabulema.github.io/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html
 https://xuanyabulema.github.io/posts/Short-Circuiting-Property-of-Logical-Operators-in-Python.html
+https://xuanyabulema.github.io/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html
 https://xuanyabulema.github.io/posts/Solve-the-Chinese-Messy-Code-Problem-in-PyCharm-Python-Console.html
 https://xuanyabulema.github.io/posts/Solving-Ordinary-Differential-Equations-in-Python.html
 https://xuanyabulema.github.io/posts/Some-Usage-of-Git.html

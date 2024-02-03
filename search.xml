@@ -5927,15 +5927,15 @@ categories<span class="token punctuation">:</span></span>
 <h2 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h2>
 <p>默认开启弹幕</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-WCROvrncHiyHOqhZ" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-WCROvrncHiyHOqhZ").style.height=document.getElementById("mmedia-WCROvrncHiyHOqhZ").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-YDOduPouMNQseDRH" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-YDOduPouMNQseDRH").style.height=document.getElementById("mmedia-YDOduPouMNQseDRH").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-WCROvrncHiyHOqhZ").style.height=document.getElementById("mmedia-WCROvrncHiyHOqhZ").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-YDOduPouMNQseDRH").style.height=document.getElementById("mmedia-YDOduPouMNQseDRH").scrollWidth*0.76+"px";
     }; </script>
 <p><s>关闭弹幕</s>失败</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" "danmaku:false" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-OQYPWPstTdtOXLyu" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-OQYPWPstTdtOXLyu").style.height=document.getElementById("mmedia-OQYPWPstTdtOXLyu").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-HZFOsjNysFGVlynW" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-HZFOsjNysFGVlynW").style.height=document.getElementById("mmedia-HZFOsjNysFGVlynW").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-OQYPWPstTdtOXLyu").style.height=document.getElementById("mmedia-OQYPWPstTdtOXLyu").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-HZFOsjNysFGVlynW").style.height=document.getElementById("mmedia-HZFOsjNysFGVlynW").scrollWidth*0.76+"px";
     }; </script>
 ]]></content>
       <categories>
@@ -8034,81 +8034,6 @@ p_{M, 1} &amp; p_{M, 2} &amp; 1
       </tags>
   </entry>
   <entry>
-    <title>利用 dill 保存 Python 变量对象</title>
-    <url>/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html</url>
-    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
-<blockquote>
-<p>内容参考：<a href="https://www.cnblogs.com/feffery/p/16703398.html">（数据科学学习手札142）dill：Python中增强版的pickle</a></p>
-</blockquote>
-<p><code>Python</code>自带<code>pickle</code>库可以保存程序运行过程中的变量对象信息至文件，但用起来遇到一个问题，</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">_pickle<span class="token punctuation">.</span>PicklingError<span class="token punctuation">:</span> Can<span class="token string">'t pickle &lt;class '</span>TPS_torch<span class="token punctuation">.</span>TPS<span class="token string">'>: it'</span>s <span class="token keyword">not</span> the same <span class="token builtin">object</span> <span class="token keyword">as</span> TPS_torch<span class="token punctuation">.</span>TPS<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>在网上寻找解决办法，尝试无果后，发现了<code>dill</code>，于是改用<code>dill</code>模块，不再出现上述问题。</p>
-<p><code>dill</code>可以认为是增强版的<code>pickle</code>，不仅包括<code>pickle</code>的功能，而且基础使用一致，而且dill包括一些pickle不具备的功能，如</p>
-<ul>
-<li>保存解释器状态（state of an interpreter session），即可保存运行后整个内存中所有对象信息</li>
-<li>保存lambda函数</li>
-<li>保存源码</li>
-</ul>
-<span id="more"></span>
-<h1 id="基础使用"><a class="markdownIt-Anchor" href="#基础使用"></a> 基础使用</h1>
-<p>备用代码</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> dill
-<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-
-
-<span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"class A init"</span><span class="token punctuation">)</span>
-        self<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">66666666</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="保存变量对象至文件"><a class="markdownIt-Anchor" href="#保存变量对象至文件"></a> 保存变量对象至文件</h2>
-<p>使用方式</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">dill<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token builtin">file</span><span class="token punctuation">)</span>
-<span class="token comment"># obj 要保存的变量对象</span>
-<span class="token comment"># file 要保存至的文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>示例</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> A<span class="token punctuation">(</span><span class="token punctuation">)</span>
-b <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./pickle/dill_test.pkl'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    dill<span class="token punctuation">.</span>dump<span class="token punctuation">(</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">]</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span> <span class="token comment"># dill.dump(obj, file)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="从文件中读取变量对象"><a class="markdownIt-Anchor" href="#从文件中读取变量对象"></a> 从文件中读取变量对象</h2>
-<p>使用方式</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">obj <span class="token operator">=</span> dill<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>示例</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./pickle/dill_test.pkl'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    a<span class="token punctuation">,</span> b <span class="token operator">=</span> dill<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>  <span class="token comment"># obj = dill.load(file)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h1 id="保存和加载解释器状态"><a class="markdownIt-Anchor" href="#保存和加载解释器状态"></a> 保存和加载解释器状态</h1>
-<p><code>dill.dump_module()</code>（旧为<code>dill.dump_session()</code>）可以将解释器状态保存至文件，即可保存运行后整个内存中所有对象信息</p>
-<p><code>dill.load_module()</code>（旧为<code>dill.load_session()</code>）可以从文件中加载保存的解释器状态</p>
-<p>示例</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> A<span class="token punctuation">(</span><span class="token punctuation">)</span>
-b <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-dill<span class="token punctuation">.</span>dump_module<span class="token punctuation">(</span><span class="token string">'./pickle/state.pkl'</span><span class="token punctuation">)</span>
-
-<span class="token keyword">del</span> a<span class="token punctuation">,</span> b  <span class="token comment"># 删除内存中的变量</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'a'</span> <span class="token keyword">in</span> <span class="token builtin">dir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 判断 a 是否存在</span>
-dill<span class="token punctuation">.</span>load_module<span class="token punctuation">(</span><span class="token string">'./pickle/state.pkl'</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'a'</span> <span class="token keyword">in</span> <span class="token builtin">dir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 判断 a 是否存在</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>运行结果</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">A</span> init
-<span class="token boolean">False</span>
-<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h1 id="保存lambda函数"><a class="markdownIt-Anchor" href="#保存lambda函数"></a> 保存lambda函数</h1>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h1 id="保存源码"><a class="markdownIt-Anchor" href="#保存源码"></a> 保存源码</h1>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Python</category>
-        <category>dill</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>dill</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python 中逻辑运算 and 和 or 的短路特性</title>
     <url>/posts/Short-Circuiting-Property-of-Logical-Operators-in-Python.html</url>
     <content><![CDATA[<h1 id="python中and和or的短路特性"><a class="markdownIt-Anchor" href="#python中and和or的短路特性"></a> <code>Python</code>中<code>and</code>和<code>or</code>的短路特性</h1>
@@ -8229,6 +8154,81 @@ False函数执行
       </categories>
       <tags>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用 dill 保存 Python 变量对象</title>
+    <url>/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html</url>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<blockquote>
+<p>内容参考：<a href="https://www.cnblogs.com/feffery/p/16703398.html">（数据科学学习手札142）dill：Python中增强版的pickle</a></p>
+</blockquote>
+<p><code>Python</code>自带<code>pickle</code>库可以保存程序运行过程中的变量对象信息至文件，但用起来遇到一个问题，</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">_pickle<span class="token punctuation">.</span>PicklingError<span class="token punctuation">:</span> Can<span class="token string">'t pickle &lt;class '</span>TPS_torch<span class="token punctuation">.</span>TPS<span class="token string">'>: it'</span>s <span class="token keyword">not</span> the same <span class="token builtin">object</span> <span class="token keyword">as</span> TPS_torch<span class="token punctuation">.</span>TPS<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在网上寻找解决办法，尝试无果后，发现了<code>dill</code>，于是改用<code>dill</code>模块，不再出现上述问题。</p>
+<p><code>dill</code>可以认为是增强版的<code>pickle</code>，不仅包括<code>pickle</code>的功能，而且基础使用一致，而且dill包括一些pickle不具备的功能，如</p>
+<ul>
+<li>保存解释器状态（state of an interpreter session），即可保存运行后整个内存中所有对象信息</li>
+<li>保存lambda函数</li>
+<li>保存源码</li>
+</ul>
+<span id="more"></span>
+<h1 id="基础使用"><a class="markdownIt-Anchor" href="#基础使用"></a> 基础使用</h1>
+<p>备用代码</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> dill
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+
+<span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"class A init"</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">66666666</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="保存变量对象至文件"><a class="markdownIt-Anchor" href="#保存变量对象至文件"></a> 保存变量对象至文件</h2>
+<p>使用方式</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">dill<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token builtin">file</span><span class="token punctuation">)</span>
+<span class="token comment"># obj 要保存的变量对象</span>
+<span class="token comment"># file 要保存至的文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>示例</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> A<span class="token punctuation">(</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./pickle/dill_test.pkl'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    dill<span class="token punctuation">.</span>dump<span class="token punctuation">(</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">]</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span> <span class="token comment"># dill.dump(obj, file)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="从文件中读取变量对象"><a class="markdownIt-Anchor" href="#从文件中读取变量对象"></a> 从文件中读取变量对象</h2>
+<p>使用方式</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">obj <span class="token operator">=</span> dill<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>示例</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./pickle/dill_test.pkl'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    a<span class="token punctuation">,</span> b <span class="token operator">=</span> dill<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>  <span class="token comment"># obj = dill.load(file)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h1 id="保存和加载解释器状态"><a class="markdownIt-Anchor" href="#保存和加载解释器状态"></a> 保存和加载解释器状态</h1>
+<p><code>dill.dump_module()</code>（旧为<code>dill.dump_session()</code>）可以将解释器状态保存至文件，即可保存运行后整个内存中所有对象信息</p>
+<p><code>dill.load_module()</code>（旧为<code>dill.load_session()</code>）可以从文件中加载保存的解释器状态</p>
+<p>示例</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> A<span class="token punctuation">(</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+dill<span class="token punctuation">.</span>dump_module<span class="token punctuation">(</span><span class="token string">'./pickle/state.pkl'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">del</span> a<span class="token punctuation">,</span> b  <span class="token comment"># 删除内存中的变量</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'a'</span> <span class="token keyword">in</span> <span class="token builtin">dir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 判断 a 是否存在</span>
+dill<span class="token punctuation">.</span>load_module<span class="token punctuation">(</span><span class="token string">'./pickle/state.pkl'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'a'</span> <span class="token keyword">in</span> <span class="token builtin">dir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 判断 a 是否存在</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">A</span> init
+<span class="token boolean">False</span>
+<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h1 id="保存lambda函数"><a class="markdownIt-Anchor" href="#保存lambda函数"></a> 保存lambda函数</h1>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 id="保存源码"><a class="markdownIt-Anchor" href="#保存源码"></a> 保存源码</h1>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Python</category>
+        <category>dill</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>dill</tag>
       </tags>
   </entry>
   <entry>
