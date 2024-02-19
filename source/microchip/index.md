@@ -12,7 +12,7 @@ type: "microchip"
 
 ```mermaid
 gantt
-    title 个人设备使用史（更新于2023-08-20)
+    title 个人设备使用史（更新于2024-02-19)
     dateFormat  YYYY-MM-DD
     axisFormat  %Y-%m
     
@@ -26,9 +26,9 @@ gantt
     Surface Book 2                              :milestone, 2021-02-12, 0d
     i7-8650u  16G ram  GTX1060 6G               :done, 2021-02-12, 2022-08-18
     机械革命 蛟龙16                               :milestone, 2022-06-17, 0d
-    r7-6800h  16G ram    RTX3060 6G             :active, 2022-06-17, 2023-02-26
+    r7-6800h  16G ram    RTX3060 6G             :done, 2022-06-17, 2023-02-26
     机械革命 蛟龙16  ram -> 32G                   :milestone, 2023-02-26, 0d
-    r7-6800h  32G ram    RTX3060 6G             :active, 2023-02-26, 2023-08-20
+    r7-6800h  32G ram    RTX3060 6G             :done, 2023-02-26, 2023-11-11
     
     
     section 台式1
@@ -36,17 +36,18 @@ gantt
     Ryzen™ 5 2600                               :done, 2019-02-22, 2021-03-01
     Athlon™ 200GE                               :done, 2021-03-01, 2021-05-04
     QNCT(Core™ i7-8750H ES)                     :done, 2021-05-04, 2022-09-26
-    Ryzen™ 5 5500                               :active, 2022-09-26, 2023-08-20
+    Ryzen™ 5 5500                               :active, 2022-09-26, 2024-02-19
     
     Discrete Graphics                           :milestone, 2019-02-22, 0d
     GeForce GTX1060 6G                          :done, 2019-02-22, 2019-11-10
     Radeon™ RX 570 4G                           :done, 2019-11-10, 2021-03-01
-    GeForce GTX960 4G                           :active, 2022-08-25, 2023-08-20
+    GeForce GTX960 4G                           :done, 2022-08-25, 2023-04-23
+    Radeon™ RX 560 XT 4G                        :active, 2023-04-23, 2024-02-19
     
     RAM                                         :milestone, 2019-02-22, 0d
     8G ddr4 2666                                :done, 2019-02-22, 2019-08-02
     16G ddr4 2666                               :done, 2019-08-02, 2022-09-22
-    64G ddr4 3200                               :active, 2022-09-22, 2023-08-20
+    64G ddr4 3200                               :active, 2022-09-22, 2024-02-19
     
     
     section 台式2
@@ -59,7 +60,9 @@ gantt
     Redmi K20 Pro                               :milestone, 2019-10-19, 0d
     Snapdragon 855  8G + 128G                   :done, 2019-10-19, 2022-03-18
     Redmi K30S Ultra                            :milestone, 2022-03-18, 0d
-    Snapdragon 865  8G + 128G                   :active, 2022-03-18, 2023-08-20
+    Snapdragon 865  8G + 128G                   :done, 2022-03-18, 2023-08-19
+    Redmi Note 12 Turbo                         :milestone, 2023-08-19, 0d
+    Snapdragon 865  8G + 128G                   :active, 2023-08-19, 2024-02-19
 ```
 
 # DDR4内存条价格的变迁
