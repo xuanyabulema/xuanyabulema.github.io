@@ -1,3 +1,5 @@
+https://xuanyabulema.github.io/posts/Description-of-Mingw-Version-Parameters.html
+https://xuanyabulema.github.io/microchip/index.html
 https://xuanyabulema.github.io/posts/Alternative-Fuel-Vehicle.html
 https://xuanyabulema.github.io/posts/Hexo-Site-Configuration-Supplement.html
 https://xuanyabulema.github.io/about/index.html
@@ -5,7 +7,6 @@ https://xuanyabulema.github.io/book/index.html
 https://xuanyabulema.github.io/posts/Matplotlib-Plotting-Improvements.html
 https://xuanyabulema.github.io/posts/Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development.html
 https://xuanyabulema.github.io/posts/VScode-Python-Snippets.html
-https://xuanyabulema.github.io/microchip/index.html
 https://xuanyabulema.github.io/posts/Commonly-Used-English-Words-and-Their-Abbreviations.html
 https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html
 https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme.html
@@ -23,8 +24,8 @@ https://xuanyabulema.github.io/posts/NexT-Theme-Configuration-Supplement.html
 https://xuanyabulema.github.io/posts/Notes-Before-Writing-Blog-With-Hexo.html
 https://xuanyabulema.github.io/posts/Problems-Encountered-During-the-Use-of-Hexo.html
 https://xuanyabulema.github.io/posts/Python3-Basics.html
-https://xuanyabulema.github.io/posts/Short-Circuiting-Property-of-Logical-Operators-in-Python.html
 https://xuanyabulema.github.io/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html
+https://xuanyabulema.github.io/posts/Short-Circuiting-Property-of-Logical-Operators-in-Python.html
 https://xuanyabulema.github.io/posts/Solve-the-Chinese-Messy-Code-Problem-in-PyCharm-Python-Console.html
 https://xuanyabulema.github.io/posts/Solving-Ordinary-Differential-Equations-in-Python.html
 https://xuanyabulema.github.io/posts/Some-Usage-of-Git.html

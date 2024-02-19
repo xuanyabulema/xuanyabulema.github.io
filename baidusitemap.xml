@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://xuanyabulema.github.io/posts/Description-of-Mingw-Version-Parameters.html</loc>
+    <lastmod>2024-02-19</lastmod>
+  </url>
+  <url>
     <loc>https://xuanyabulema.github.io/posts/Alternative-Fuel-Vehicle.html</loc>
     <lastmod>2023-11-11</lastmod>
   </url>
@@ -89,11 +93,11 @@
     <lastmod>2023-06-25</lastmod>
   </url>
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Short-Circuiting-Property-of-Logical-Operators-in-Python.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html</loc>
     <lastmod>2023-06-25</lastmod>
   </url>
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Short-Circuiting-Property-of-Logical-Operators-in-Python.html</loc>
     <lastmod>2023-06-25</lastmod>
   </url>
   <url>
