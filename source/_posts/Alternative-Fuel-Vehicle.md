@@ -27,4 +27,4 @@ hidden:
 
 
 
-![beed94b39935fb4b280e72dd38dd3c39](Alternative-Fuel-Vehicle/beed94b39935fb4b280e72dd38dd3c39.jpg)
+<img src="Alternative-Fuel-Vehicle/beed94b39935fb4b280e72dd38dd3c39.jpg" alt="对比区别" style="width:50%;" />
