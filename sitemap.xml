@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Description-of-Mingw-Version-Parameters.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Alternative-Fuel-Vehicle.html</loc>
     
-    <lastmod>2024-02-19</lastmod>
+    <lastmod>2024-10-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,16 +13,16 @@
   <url>
     <loc>https://xuanyabulema.github.io/microchip/index.html</loc>
     
-    <lastmod>2024-02-19</lastmod>
+    <lastmod>2024-10-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Alternative-Fuel-Vehicle.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Description-of-Mingw-Version-Parameters.html</loc>
     
-    <lastmod>2023-11-11</lastmod>
+    <lastmod>2024-02-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -526,7 +526,7 @@
 
   <url>
     <loc>https://xuanyabulema.github.io/</loc>
-    <lastmod>2024-02-19</lastmod>
+    <lastmod>2024-10-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

@@ -216,7 +216,7 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
 <td style="text-align:center">绿牌</td>
 <td style="text-align:center">✔️<br>大部分城市</td>
 <td style="text-align:center">✖️</td>
-<td style="text-align:center">✖️</td>
+<td style="text-align:center">✔️</td>
 <td style="text-align:center">✔️</td>
 </tr>
 <tr>
@@ -229,6 +229,7 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
 </tbody>
 </table>
 <p>插混、油混结合：本田e+、比亚迪DM-i</p>
+<p><img src="Alternative-Fuel-Vehicle/beed94b39935fb4b280e72dd38dd3c39.jpg" alt="beed94b39935fb4b280e72dd38dd3c39"></p>
 ]]></content>
       <categories>
         <category>Car</category>
@@ -5978,15 +5979,15 @@ categories<span class="token punctuation">:</span></span>
 <h2 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h2>
 <p>默认开启弹幕</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-dxnrODKoibAXNAba" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-dxnrODKoibAXNAba").style.height=document.getElementById("mmedia-dxnrODKoibAXNAba").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-BITRolhzGRZqaUog" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-BITRolhzGRZqaUog").style.height=document.getElementById("mmedia-BITRolhzGRZqaUog").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-dxnrODKoibAXNAba").style.height=document.getElementById("mmedia-dxnrODKoibAXNAba").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-BITRolhzGRZqaUog").style.height=document.getElementById("mmedia-BITRolhzGRZqaUog").scrollWidth*0.76+"px";
     }; </script>
 <p><s>关闭弹幕</s>失败</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" "danmaku:false" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-tBrEgedVFprgayWQ" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-tBrEgedVFprgayWQ").style.height=document.getElementById("mmedia-tBrEgedVFprgayWQ").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-ZFjYIQgiPzmyiudE" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-ZFjYIQgiPzmyiudE").style.height=document.getElementById("mmedia-ZFjYIQgiPzmyiudE").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-tBrEgedVFprgayWQ").style.height=document.getElementById("mmedia-tBrEgedVFprgayWQ").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-ZFjYIQgiPzmyiudE").style.height=document.getElementById("mmedia-ZFjYIQgiPzmyiudE").scrollWidth*0.76+"px";
     }; </script>
 ]]></content>
       <categories>
