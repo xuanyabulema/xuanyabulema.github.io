@@ -1,3 +1,4 @@
+https://xuanyabulema.github.io/posts/Usage-of-Pandas-DataFrames.html
 https://xuanyabulema.github.io/posts/Description-of-Mingw-Version-Parameters.html
 https://xuanyabulema.github.io/posts/Alternative-Fuel-Vehicle.html
 https://xuanyabulema.github.io/posts/Matplotlib-Plotting-Improvements.html
