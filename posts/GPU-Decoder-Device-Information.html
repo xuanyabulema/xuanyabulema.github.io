@@ -1,0 +1,4792 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-tvmKCk5xu9">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xuanyabulema.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="常见显卡视频硬解能力 数据来源（2023-06-30）  https:&#x2F;&#x2F;bluesky-soft.com&#x2F;en&#x2F;DXVAChecker.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见显卡视频硬解能力">
+<meta property="og:url" content="https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html">
+<meta property="og:site_name" content="悬崖不勒马的小站">
+<meta property="og:description" content="常见显卡视频硬解能力 数据来源（2023-06-30）  https:&#x2F;&#x2F;bluesky-soft.com&#x2F;en&#x2F;DXVAChecker.html">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-30T10:27:59.000Z">
+<meta property="article:modified_time" content="2025-03-25T05:22:05.524Z">
+<meta property="article:author" content="悬崖不勒马">
+<meta property="article:tag" content="GPU">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html","path":"posts/GPU-Decoder-Device-Information.html","title":"常见显卡视频硬解能力"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>常见显卡视频硬解能力 | 悬崖不勒马的小站</title>
+  
+
+
+
+
+
+<link rel="dns-prefetch" href="waline-test-beta.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">悬崖不勒马的小站</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">36</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">31</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li><li class="menu-item menu-item-阅读"><a href="/book/" rel="section"><i class="fa fa-book fa-fw"></i>阅读</a></li><li class="menu-item menu-item-折腾"><a href="/microchip/" rel="section"><i class="fas fa-microchip fa-fw"></i>折腾</a></li><li class="menu-item menu-item-冲浪"><a href="/surfing/" rel="section"><i class="fab fa-internet-explorer fa-fw"></i>冲浪</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 常见显卡视频硬解能力</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> </span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> </span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> </span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="悬崖不勒马"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">悬崖不勒马</p>
+  <div class="site-description" itemprop="description">The time you enjoy wasting is not wasted time!</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xuanyabulema" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xuanyabulema" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xuanyabulema@qq.com" title="E-Mail → mailto:xuanyabulema@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/45045474/" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;45045474&#x2F;" rel="noopener" target="_blank"><i class="fab custom fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="悬崖不勒马">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悬崖不勒马的小站">
+      <meta itemprop="description" content="The time you enjoy wasting is not wasted time!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="常见显卡视频硬解能力 | 悬崖不勒马的小站">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          常见显卡视频硬解能力
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-06-30 18:27:59" itemprop="dateCreated datePublished" datetime="2023-06-30T18:27:59+08:00">2023-06-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-03-25 13:22:05" itemprop="dateModified" datetime="2025-03-25T13:22:05+08:00">2025-03-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/GPU/" itemprop="url" rel="index"><span itemprop="name">GPU</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/GPU-Decoder-Device-Information.html#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/posts/GPU-Decoder-Device-Information.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>11 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1><span id="常见显卡视频硬解能力"> 常见显卡视频硬解能力</span></h1>
+<p>数据来源（2023-06-30）</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://bluesky-soft.com/en/DXVAChecker.html">https://bluesky-soft.com/en/DXVAChecker.html</a></p>
+</blockquote>
+<span id="more"></span>
+<h1><span id="amd-gpu"> </span></h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">GPU</th>
+<th style="text-align:center">MPEG2</th>
+<th style="text-align:center">H.264</th>
+<th style="text-align:center">HEVC</th>
+<th style="text-align:center">HEVC 10bit</th>
+<th style="text-align:center">VP9 Profile0</th>
+<th style="text-align:center">VP9 10bit Profile2</th>
+<th style="text-align:center">AV1 Profile0</th>
+<th style="text-align:center">AV1 12bit Profile2 420</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">RADEON XPRESS 200M Series</td>
+<td style="text-align:center">SD (IDCT)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">RADEON XPRESS 200 Series</td>
+<td style="text-align:center">SD (IDCT)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">RADEON XPRESS 1100 Series</td>
+<td style="text-align:center">SD (IDCT)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">FirePro M6100</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">FirePro V4900 (FireGL V) Graphics Adapter</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">FirePro W2100</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon 3000 Graphics</td>
+<td style="text-align:center">SD (IDCT)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">RADEON 9800 PRO</td>
+<td style="text-align:center">8K (IDCT)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 2600 XT</td>
+<td style="text-align:center">SD (IDCT)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 3200 Graphics</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 3300 Graphics</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 4200</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Mobility Radeon HD 4200 Series</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 4250</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 4300/4500 Series</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Mobility Radeon HD 4300 Series</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Mobility Radeon HD 4500/5100 Series</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Mobility Radeon HD 4500 Series</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 4550</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 4600 Series</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Mobility Radeon HD 4650</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 4800 Series</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Mobility Radeon HD 5000 Series</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 5450</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 5570</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 5700 Series</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 5800 Series</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6250 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6290 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6300M Series</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6310 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6320 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6380G</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6450</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6480G</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6500M/5600/5700 Series</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6530D</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6550D</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6570</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6670</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6700 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6800 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 6900 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7310 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7340 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7500/7600 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7500M/7600M Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7570M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7600M Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7610M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7640G</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7660D</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7660G</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7670M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7700 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7700M Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7800 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7900 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 7970M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 8210</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 8400</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 8400 / R3 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 8490</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 8510G</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 8570D</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 8600/8700M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 8650G + HD 7600M Dual Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon HD 8750M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon Pro 5300</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon Pro Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon Pro Vega 48</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon Pro WX 2100</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon Pro WX 3200 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon Pro WX 4100</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R2 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R3 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R3 Graphics (Stoney Ridge)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R4 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R5 200 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R5 430</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R5 Graphics (Bristol Ridge)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R5 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R6 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R7 200 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R7 240</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R7 250 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R7 350X</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R7 360 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R7 M365X</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R7 370 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R7 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R7 Graphics (Carrizo/Bristol Ridge)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R9 200 / HD 7900 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R9 M200X Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R9 200 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R9 280 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R9 360</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R9 M360</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R9 380 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R9 380X Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R9 390X Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R9 390 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon R9 Fury X Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 460 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 470 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 480 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon 540</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon 550 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 550 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 560 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 570 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 580 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 590 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX Vega</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX Vega 10 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX Vega 11 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX Vega 64 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX Vega M GL Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon Vega 3 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon Vega 8 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon Vega 11 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon Graphics (Renoir/Lucienne/Cezanne)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon Graphics (Rembrandt/Raphael)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon Vega Frontier Edition</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon VII</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 5500 XT</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 5600 XT</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 5700</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 5700 XT</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 6400</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 6500 XT</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 6600</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 6600 XT</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 6650M Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 6700</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 6700 XT</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 6750 XT</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 6800M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 6800</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 6800 XT</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 6900 XT</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 6950 XT Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 7900 XT</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+</tr>
+<tr>
+<td style="text-align:center">Radeon RX 7900 XTX</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+</tr>
+</tbody>
+</table>
+<p>Italic Text: Non standard device</p>
+<h1><span id="intel-gpu"> </span></h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">GPU</th>
+<th style="text-align:center">MPEG2</th>
+<th style="text-align:center">H.264</th>
+<th style="text-align:center">HEVC</th>
+<th style="text-align:center">HEVC 10bit</th>
+<th style="text-align:center">VP9 Profile0</th>
+<th style="text-align:center">VP9 10bit Profile2</th>
+<th style="text-align:center">AV1 Profile0</th>
+<th style="text-align:center">AV1 12bit Profile2 420</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">945 Express Chipset Family</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">965 Express Chipset Family</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">G33/G31 Express Chipset Family</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">G41 Express Chipset</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center"><em>FHD (IDCT)</em></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">G45/G43 Express Chipset</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center"><em>FHD</em></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Q33 Express Chipset Family</td>
+<td style="text-align:center">FHD (MoComp)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Q35 Express Chipset Family</td>
+<td style="text-align:center">FHD (MoComp)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Graphics Media Accelerator 3150</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Graphics Media Accelerator 3600 Series</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 3000</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 4000</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 4400</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 4600</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 5000</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 5300</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 5500</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 5600</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 6000</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics Family (Sandy Bridge)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics Family (Haswell)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics P530</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics (Arrandale)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center"><em>FHD</em></td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics (Sandy Bridge)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics (Ivy Bridge)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics (Haswell)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics (Bay Trail)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics (Cherry Trail)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics (Braswell)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics (Apollo Lake)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 500</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 510</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 515</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 520</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 530</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 610</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 615</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 620</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 630</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">HD Graphics 630</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Iris Graphics 540</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Iris Graphics 6100</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Iris Plus Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Iris Plus Graphics 640</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Iris Plus Graphics 655</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Iris Pro Graphics 580</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Iris Pro Graphics P6300</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Iris Xe Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">UHD Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">UHD Graphics (Tiger Lake/Alder Lake)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">UHD Graphics 600</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">UHD Graphics 605</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">UHD Graphics 610</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">UHD Graphics 617</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">UHD Graphics 620</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">UHD Graphics 630</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">UHD Graphics 730</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">UHD Graphics 750</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">UHD Graphics 770</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">UHD Graphics P630</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Arc A750 Graphics</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<p>Italic Text: Non standard device</p>
+<h1><span id="nvidia-gpu"> </span></h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">GPU</th>
+<th style="text-align:center">MPEG2</th>
+<th style="text-align:center">H.264</th>
+<th style="text-align:center">HEVC</th>
+<th style="text-align:center">HEVC 10bit</th>
+<th style="text-align:center">VP9 Profile0</th>
+<th style="text-align:center">VP9 10bit Profile2</th>
+<th style="text-align:center">AV1 Profile0</th>
+<th style="text-align:center">AV1 12bit Profile2 420</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">GeForce 6600 GT</td>
+<td style="text-align:center">4K (IDCT)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 7100 GS</td>
+<td style="text-align:center">4K (IDCT)</td>
+<td style="text-align:center">HD (MoComp)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 7300 LE</td>
+<td style="text-align:center">4K (IDCT)</td>
+<td style="text-align:center">4K (MoComp)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 7300 SE/7200 GS</td>
+<td style="text-align:center">4K (IDCT)</td>
+<td style="text-align:center">4K (MoComp)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 7600 GS</td>
+<td style="text-align:center">4K (IDCT)</td>
+<td style="text-align:center">4K (MoComp)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce Go 7600</td>
+<td style="text-align:center">4K (IDCT)</td>
+<td style="text-align:center">4K (MoComp)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 7800 GTX</td>
+<td style="text-align:center">4K (IDCT)</td>
+<td style="text-align:center">4K (MoComp)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 8400GS</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 8600 GT</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 8600 GTS</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 8600M GS</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 8800 GTS</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD (MoComp)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 9200M GS</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 9300M GS</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 9400 GT</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 9500 GT</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 9600 GT</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 9600M GT</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 9800 GT</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce G 105M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 210</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce G210M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 220</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 240</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTS 250</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 260</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 260M</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 310</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 310M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 315</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 420</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 430</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 440</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTS 450</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 460</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 470</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 520</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 525M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 540M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 550 Ti</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 555M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 560 Ti</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 580</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 605</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 610M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 610</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 620</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 630</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 630M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 635</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 635M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 640</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 640M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 645M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 645</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 650M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 650</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 650 Ti</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 660</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 660 Ti</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 670</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 675MX</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 680</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 710</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 710M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 720</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 730</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 735M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 740</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 740M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 745M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 745</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 750M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 750</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 750 Ti</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 755M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 760</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 760M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 765M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 770</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 780</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 780 Ti</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce 820M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 850M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 860M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 950</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 950M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 960</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 960M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 965M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 970</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 980</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 980 Ti</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 980M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GT 1030</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1050</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1050 Ti</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1060</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1060 with Max-Q Design</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1070</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1070 Ti (SubSysId=0x1B8210DE)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1070 Ti</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1070 with Max-Q Design (SubSysId=0x16531458)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1070 with Max-Q Design</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1080</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1080 Ti</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1650</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1650 SUPER</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1650 with Max-Q Design</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1660</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1660 SUPER</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX 1660 Ti</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 2060</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 2060 SUPER</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 2060 with Max-Q Design</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 2070</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 2070 SUPER</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 2070 with Max-Q Design</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 2080</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 2080 SUPER</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 2080 Super with Max-Q Design</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 2080 Ti</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 3050</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 3050 Laptop GPU</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 3050 Ti Laptop GPU</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 3060</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 3060 Laptop GPU</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 3060 Ti</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 3070</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 3070 Laptop GPU</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 3070 Ti</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 3080</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 3080 Ti</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 3090</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 4070</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 4070 Ti</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 4080</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce RTX 4090</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">GeForce GTX TITAN X</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">NVS 310</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">NVS 510</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">NVS 3100M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">NVS 5200M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">NVS 5400M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro NVS 135M</td>
+<td style="text-align:center">8K (IDCT)</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro NVS 140M</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro 410</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro 1000M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro 2000</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro RTX 4000</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro RTX 5000</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro FX 1500M</td>
+<td style="text-align:center">4K (IDCT)</td>
+<td style="text-align:center">HD (MoComp)</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro FX 1700</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro FX 1800</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro FX 360M</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro FX 570M</td>
+<td style="text-align:center">FHD (IDCT)</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro FX 880M</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro K1100M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro K2000</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro K2000M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro K3100M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro K600</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">FHD</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro K620</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro M1000M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro M1200</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro M4000</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro M4000M</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro P1000</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro P2200</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro P3000</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro P400</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro P5000</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Quadro T1000</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">T1000</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">T400</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Tesla M40 24GB</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Tesla K80</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Tesla M40</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">Tesla P4</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">TITAN RTX</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+<tr>
+<td style="text-align:center">TITAN Xp COLLECTORS EDITION</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">4K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">8K</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<p>Italic Text: Non standard device</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>赏杯可乐🥤</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="悬崖不勒马 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="悬崖不勒马 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>悬崖不勒马
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html" title="常见显卡视频硬解能力">https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/GPU/" rel="tag"># GPU</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/Windows-Network-Reset.html" rel="prev" title="Windows 网络重置">
+                  <i class="fa fa-chevron-left"></i> Windows 网络重置
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/VScode-Python-Snippets.html" rel="next" title="VScode 配置 Python 代码模板">
+                  VScode 配置 Python 代码模板 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81NzM4My8zMzg0Nw=="></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">悬崖不勒马</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"forest","dark":"forest"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.1.7/mermaid.min.js","integrity":"sha256-G58AID1YoX5YaEtWfXSI0VLrZ6N4kvNvwg0BI8zUFxE="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-test-beta.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/posts/GPU-Decoder-Device-Information.html"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+<script src="/js/third-party/comments/livere.js"></script>
+
+<!-- hexo injector body_end start --><script src="/js/outdate.js"></script><!-- hexo injector body_end end --></body>
+</html>

@@ -1,0 +1,19 @@
+# 允许所有用户代理的浏览器爬虫进行访问（爬起数据）
+User-agent: *
+
+# 允许访问的内容
+Allow: /
+Allow: /about/
+Allow: /archives/
+Allow: /book/
+Allow: /categories/
+Allow: /microchip/
+Allow: /page/
+Allow: /posts/
+Allow: /surfing/
+Allow: /tags/
+
+# 网站地图Sitemap
+Sitemap: https://xuanyabulema.github.io/sitemap.xml
+Sitemap: https://xuanyabulema.github.io/baidusitemap.xml
+Sitemap: https://xuanyabulema.github.io/sitemap.txt

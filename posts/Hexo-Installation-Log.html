@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-tvmKCk5xu9">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xuanyabulema.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在 Ubuntu server 20.04 LTS 上安装 Hexo  建议先用su切换为管理员账户，或用root账户登录 这样子后续需要sudo的地方就不需要在打了，而且全程su能避免不必要的错误。 启用root用户登录  Hexo简介 Hexo 是一个快速、简洁且高效的框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  Hexo中文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 安装日志">
+<meta property="og:url" content="https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html">
+<meta property="og:site_name" content="悬崖不勒马的小站">
+<meta property="og:description" content="在 Ubuntu server 20.04 LTS 上安装 Hexo  建议先用su切换为管理员账户，或用root账户登录 这样子后续需要sudo的地方就不需要在打了，而且全程su能避免不必要的错误。 启用root用户登录  Hexo简介 Hexo 是一个快速、简洁且高效的框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。  Hexo中文">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Hexo-Installation-Log/image-20211126143949809.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Hexo-Installation-Log/image-20211126144204257.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Hexo-Installation-Log/image-20211126124826456.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Hexo-Installation-Log/image-20211126125502218.png">
+<meta property="article:published_time" content="2021-11-25T23:39:29.000Z">
+<meta property="article:modified_time" content="2025-03-25T05:22:05.524Z">
+<meta property="article:author" content="悬崖不勒马">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="NexT">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="GitHub">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xuanyabulema.github.io/posts/Hexo-Installation-Log/image-20211126143949809.png">
+
+
+<link rel="canonical" href="https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html","path":"posts/Hexo-Installation-Log.html","title":"Hexo 安装日志"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hexo 安装日志 | 悬崖不勒马的小站</title>
+  
+
+
+
+
+
+<link rel="dns-prefetch" href="waline-test-beta.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">悬崖不勒马的小站</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">36</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">31</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li><li class="menu-item menu-item-阅读"><a href="/book/" rel="section"><i class="fa fa-book fa-fw"></i>阅读</a></li><li class="menu-item menu-item-折腾"><a href="/microchip/" rel="section"><i class="fas fa-microchip fa-fw"></i>折腾</a></li><li class="menu-item menu-item-冲浪"><a href="/surfing/" rel="section"><i class="fab fa-internet-explorer fa-fw"></i>冲浪</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 在 Ubuntu server 20.04 LTS 上安装 Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 建议先用su切换为管理员账户，或用root账户登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> Hexo简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> Hexo安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 安装前提一：安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 安装前提二：安装Nodejs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 正式安装Hexo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 新建一个Blog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 创建Blog存放目录并进行初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 启动并预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 新建一片文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 添加文章后清除缓存文件并重新生成静态文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> Hexo配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> Hexo基础配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 作者、语言、时区等设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 修改并配置Hexo主题——NexT主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 替换主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 设置头像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 设置网站的图标Favicon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 添加分类界面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text"> 新建分类界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text"> 修改主题配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text"> 给文章添加分类信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 添加标签界面</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text"> 新建标签界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text"> 修改主题配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text"> 给文章添加标签信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 添加关于页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 配置Markdown与Typora搭配添加图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 浏览页面显示当前浏览进度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> Local Search本地搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 增加文章字数统计及阅读时常功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 添加阅读全文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 加上妹子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 设置文章模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 添加备案号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 让Google搜索到GitHub上的个人博客</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 部署Hexo到GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 生成ssh key以配置和使用GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 安装插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 新建一个GitHub仓库来保存网页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 修改_config.yml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 推送到GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 一个坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> err: Error: Spawn failed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> </span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 参考链接</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="悬崖不勒马"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">悬崖不勒马</p>
+  <div class="site-description" itemprop="description">The time you enjoy wasting is not wasted time!</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xuanyabulema" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xuanyabulema" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xuanyabulema@qq.com" title="E-Mail → mailto:xuanyabulema@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/45045474/" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;45045474&#x2F;" rel="noopener" target="_blank"><i class="fab custom fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="悬崖不勒马">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悬崖不勒马的小站">
+      <meta itemprop="description" content="The time you enjoy wasting is not wasted time!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Hexo 安装日志 | 悬崖不勒马的小站">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo 安装日志
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-26 07:39:29" itemprop="dateCreated datePublished" datetime="2021-11-26T07:39:29+08:00">2021-11-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-03-25 13:22:05" itemprop="dateModified" datetime="2025-03-25T13:22:05+08:00">2025-03-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/Hexo-Installation-Log.html#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/posts/Hexo-Installation-Log.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1><span id="在-ubuntu-server-2004-lts-上安装-hexo"> 在 Ubuntu server 20.04 LTS 上安装 Hexo</span></h1>
+<h2><span id="建议先用su切换为管理员账户或用root账户登录"> 建议先用<code>su</code>切换为管理员账户，或用root账户登录</span></h2>
+<p>这样子后续需要<code>sudo</code>的地方就不需要在打了，而且全程<code>su</code>能避免不必要的错误。</p>
+<p><a href="#启用root用户登录">启用root用户登录</a></p>
+<h2><span id="hexo简介"> Hexo简介</span></h2>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> 是一个快速、简洁且高效的框架。Hexo 使用 <a target="_blank" rel="noopener" href="https://www.zhihu.com/topic/19590742/hot">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></p>
+</blockquote>
+<span id="more"></span>
+<h2><span id="hexo安装"> Hexo安装</span></h2>
+<h3><span id="安装前提一安装git"> 安装前提一：安装git</span></h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> git-core<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3><span id="安装前提二安装nodejs"> 安装前提二：安装Nodejs</span></h3>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions#deb">安装Nodejs</a></p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Using Ubuntu</span>
+<span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://deb.nodesource.com/setup_lts.x <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token parameter variable">-E</span> <span class="token function">bash</span> -
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token parameter variable">-y</span> nodejs<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>验证安装结果：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">node</span> <span class="token parameter variable">-v</span> 
+<span class="token function">npm</span> <span class="token parameter variable">-v</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><strong>可安装cnpm替代npm，从而使用国内的淘宝源（可选）</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> cnpm <span class="token parameter variable">--registry</span><span class="token operator">=</span>https://registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>此安装方式，npm和cnpm不冲突，都可使用。</p>
+<h3><span id="正式安装hexo"> 正式安装Hexo</span></h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> hexo-cli <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>可使用<code>cnpm</code>代替安装<code>sudo cnpm install -g hexo-cli </code>。</p>
+<p>验证安装结果：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo <span class="token parameter variable">-v</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2><span id="新建一个blog"> 新建一个Blog</span></h2>
+<h3><span id="创建blog存放目录并进行初始化"> 创建Blog存放目录并进行初始化</span></h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">mkdir</span> blog <span class="token comment"># 新建一个目录，来保存blog文件，出问题删除该文件夹即可进行重建</span>
+<span class="token builtin class-name">cd</span> blog 
+<span class="token function">sudo</span> hexo init <span class="token comment"># 初始化</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3><span id="启动并预览"> 启动并预览</span></h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在浏览器输入<code>ip:4000</code>即可查看</p>
+<p><code>ip</code>为你搭建Hexo的系统的ip地址，以我为例，即我的Ubuntu系统ip</p>
+<h3><span id="新建一片文章"> 新建一片文章</span></h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> hexo n <span class="token string">"新的文章"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>会在你建立的<code>your_blog_directory</code>路径下的<code>/source/_posts/</code>里创建<code>新的文章.md</code>，便可用<a target="_blank" rel="noopener" href="https://daringfireball.net/projects/markdown/syntax">Markdown</a>写文章了</p>
+<p>以我为例<code>新的文章.md</code>在目录<code>blog/source/_posts/</code>下</p>
+<h3><span id="添加文章后清除缓存文件并重新生成静态文件"> 添加文章后清除缓存文件并重新生成静态文件</span></h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> hexo clean <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1><span id="hexo配置"> Hexo配置</span></h1>
+<p>在 Hexo 中有两份主要的配置文件，其名称都是<code> _config.yml</code>。 其中，一份位于站点根目录下，主要包含 Hexo 本身的站点配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;hexo&#x2F;_config.yml
+&#x2F;hexo&#x2F;themes&#x2F;next&#x2F;_config.yml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/as480133937/article/details/100138838">Hexo-Next 主题个性化配置超详细，超全面(两万字)</a></p>
+</blockquote>
+<h2><span id="hexo基础配置"> Hexo基础配置</span></h2>
+<h3><span id="作者-语言-时区等设置"> 作者、语言、时区等设置</span></h3>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Site</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> 悬崖不勒马的小站
+<span class="token key atrule">subtitle</span><span class="token punctuation">:</span> <span class="token string">''</span>
+<span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">''</span>
+<span class="token key atrule">keywords</span><span class="token punctuation">:</span>
+<span class="token key atrule">author</span><span class="token punctuation">:</span> 悬崖不勒马
+<span class="token key atrule">language</span><span class="token punctuation">:</span> zh<span class="token punctuation">-</span>CN
+<span class="token key atrule">timezone</span><span class="token punctuation">:</span> Asia/Shanghai
+
+<span class="token comment"># URL</span>
+<span class="token comment">## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'</span>
+<span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//xuanyabulema.github.io<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="修改并配置hexo主题next主题"> 修改并配置Hexo主题——NexT主题</span></h2>
+<h3><span id="替换主题"> 替换主题</span></h3>
+<p>以我安装<a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">NexT</a>主题为例</p>
+<h3><span id="版本"> 版本</span></h3>
+<p>在 <a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next/issues/4">【必读】更新说明及常见问题</a> 中有相关说明，NexT 一共有三个不同的仓库：</p>
+<table>
+<thead>
+<tr>
+<th>版本</th>
+<th>年份</th>
+<th>仓库</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v5.1.4 或更低</td>
+<td>2014 ~ 2017</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">https://github.com/iissnan/hexo-theme-next</a></td>
+</tr>
+<tr>
+<td>v6.0.0 ~ v7.8.0</td>
+<td>2018 ~ 2019</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></td>
+</tr>
+<tr>
+<td>v8.0.0 或更高</td>
+<td>2020</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">https://github.com/next-theme/hexo-theme-next</a></td>
+</tr>
+</tbody>
+</table>
+<p>旧的仓库基本上已经不再更新，因此推荐选择最新的 <a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next%E4%BB%93%E5%BA%93%E7%9A%84">https://github.com/next-theme/hexo-theme-next仓库的</a> NexT 主题</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> blog
+<span class="token function">git</span> clone https://github.com/theme-next/hexo-theme-next themes/next <span class="token comment"># next 7</span>
+<span class="token function">git</span> clone https://github.com/next-theme/hexo-theme-next themes/next <span class="token comment"># next 8</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>更改主题，修改站点配置文件<code>_config.yml</code>，找到如下代码：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment">## Themes: https://hexo.io/themes/</span>
+<span class="token key atrule">theme</span><span class="token punctuation">:</span> landscape<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>将<code>theme: landscape</code>改为</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">theme</span><span class="token punctuation">:</span> next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3><span id="设置头像"> 设置头像</span></h3>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/getting-started.html#avatar-setting">https://theme-next.iissnan.com/getting-started.html#avatar-setting</a></p>
+</blockquote>
+<p>编辑 <strong>主题配置文件</strong></p>
+<p>修改字段 <code>avatar</code>， 值设置成头像的链接地址。其中，头像的链接地址可以是：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">地址</th>
+<th style="text-align:left">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">完整的互联网 URI</td>
+<td style="text-align:left"><code>http://example.com/avatar.png</code></td>
+</tr>
+<tr>
+<td style="text-align:left">站点内的地址</td>
+<td style="text-align:left">将头像放置主题目录下的 source/uploads/ （新建 uploads 目录若不存在）<br>配置为：avatar: /uploads/avatar.png<br>或者 放置在 source/images/ 目录下<br>配置为：avatar: /images/avatar.png</td>
+</tr>
+</tbody>
+</table>
+<h3><span id="设置网站的图标favicon"> 设置网站的图标Favicon</span></h3>
+<p>把图标放在<code>/themes/next/source/images</code>里，并且修改主题配置文件_config.yml：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">favicon</span><span class="token punctuation">:</span>
+  <span class="token key atrule">small</span><span class="token punctuation">:</span> /images/favicon_16x16.ico
+  <span class="token key atrule">medium</span><span class="token punctuation">:</span> /images/favicon_32x32.ico
+  <span class="token comment">#apple_touch_icon: /images/apple-touch-icon-next.png</span>
+  <span class="token comment">#safari_pinned_tab: /images/logo.svg</span>
+  <span class="token comment">#android_manifest: /images/manifest.json</span>
+  <span class="token comment">#ms_browserconfig: /images/browserconfig.xml</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="添加分类界面"> 添加分类界面</span></h3>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://tohugo.com/2021/01/26/%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE/Hexo%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE%EF%BC%88%E5%9C%A8Next%E4%B8%BB%E9%A2%98%E4%B8%8B%EF%BC%89/">Hexo添加分类及标签（在Next主题下）</a></p>
+</blockquote>
+<h4><span id="新建分类界面"> 新建分类界面</span></h4>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new page categories<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>成功后会提示：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">INFO  Created: ~/blog/source/categories/index.md<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这样就创建了分类页面，但是这个时候主题还不会识别这个页面为分类页，需要编辑这个新建的页面，让主题识别这个页面，并自动为这个页面显示分类。</p>
+<p>修改<code>index.md</code>为：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
+title: 文章分类
+date: <span class="token number">2021</span>-01-25 <span class="token number">22</span>:37:25
+type: <span class="token string">"categories"</span>
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4><span id="修改主题配置文件"> 修改主题配置文件</span></h4>
+<p>在<code>themes/next/_config.yml</code>，找到如下代码：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">menu</span><span class="token punctuation">:</span>
+  <span class="token key atrule">home</span><span class="token punctuation">:</span> / <span class="token punctuation">|</span><span class="token punctuation">|</span> home
+  <span class="token comment">#about: /about/ || user</span>
+  <span class="token comment">#tags: /tags/ || tags</span>
+  <span class="token comment">#categories: /categories/ || th</span>
+  <span class="token key atrule">archives</span><span class="token punctuation">:</span> /archives/ <span class="token punctuation">|</span><span class="token punctuation">|</span> archive
+  <span class="token comment">#schedule: /schedule/ || calendar</span>
+  <span class="token comment">#sitemap: /sitemap.xml || sitemap</span>
+  <span class="token comment">#commonweal: /404/ || heartbeat</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>把 categories 前面的 # 删除，因为默认页面是没有标签界面与分类界面，所以需要我们手动创建添加。</p>
+<h4><span id="给文章添加分类信息"> 给文章添加分类信息</span></h4>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> Hexo安装日志
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2021-11-26 07:39:29</span>
+<span class="token key atrule">categories</span><span class="token punctuation">:</span> 
+<span class="token punctuation">-</span> 折腾
+<span class="token punctuation">-</span> Hexo
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>Hexo<span class="token punctuation">,</span>ubuntu<span class="token punctuation">]</span></span>
+<span class="token punctuation">---</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如上设置二级分类则该篇文章为 折腾分类下的 Hexo分类下。</p>
+<h3><span id="添加标签界面"> 添加标签界面</span></h3>
+<p>同分类界面，类似的</p>
+<h4><span id="新建标签界面"> 新建标签界面</span></h4>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new page tags<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>修改<code>index.md</code>为：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">---
+title: 标签
+date: <span class="token number">2021</span>-01-25 <span class="token number">22</span>:37:25
+type: <span class="token string">"tags"</span>
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4><span id="修改主题配置文件"> 修改主题配置文件</span></h4>
+<p>在<code>themes/next/_config.yml</code>，找到如下代码：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">menu</span><span class="token punctuation">:</span>
+  <span class="token key atrule">home</span><span class="token punctuation">:</span> / <span class="token punctuation">|</span><span class="token punctuation">|</span> home
+  <span class="token comment">#about: /about/ || user</span>
+  <span class="token comment">#tags: /tags/ || tags</span>
+  <span class="token comment">#categories: /categories/ || th</span>
+  <span class="token key atrule">archives</span><span class="token punctuation">:</span> /archives/ <span class="token punctuation">|</span><span class="token punctuation">|</span> archive
+  <span class="token comment">#schedule: /schedule/ || calendar</span>
+  <span class="token comment">#sitemap: /sitemap.xml || sitemap</span>
+  <span class="token comment">#commonweal: /404/ || heartbeat</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>把 tags 前面的 # 删除</p>
+<h4><span id="给文章添加标签信息"> 给文章添加标签信息</span></h4>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> Hexo安装日志
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2021-11-26 07:39:29</span>
+<span class="token key atrule">categories</span><span class="token punctuation">:</span> 
+<span class="token punctuation">-</span> 折腾
+<span class="token punctuation">-</span> Hexo
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>Hexo<span class="token punctuation">,</span>ubuntu<span class="token punctuation">]</span></span>
+<span class="token punctuation">---</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>则标签为&quot;Hexo&quot;和&quot;ubuntu&quot;</p>
+<h3><span id="添加关于页面"> 添加关于页面</span></h3>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new page <span class="token string">"about"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在<code>themes/next/_config.yml</code>，找到如下代码：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">menu</span><span class="token punctuation">:</span>
+  <span class="token key atrule">home</span><span class="token punctuation">:</span> / <span class="token punctuation">|</span><span class="token punctuation">|</span> home
+  <span class="token comment">#about: /about/ || user</span>
+  <span class="token comment">#tags: /tags/ || tags</span>
+  <span class="token comment">#categories: /categories/ || th</span>
+  <span class="token key atrule">archives</span><span class="token punctuation">:</span> /archives/ <span class="token punctuation">|</span><span class="token punctuation">|</span> archive
+  <span class="token comment">#schedule: /schedule/ || calendar</span>
+  <span class="token comment">#sitemap: /sitemap.xml || sitemap</span>
+  <span class="token comment">#commonweal: /404/ || heartbeat</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>把about前面的 # 删除</p>
+<p>编辑<code>source/about/</code>目录中的<code>index.md</code>文件即可</p>
+<h2><span id="配置markdown与typora搭配添加图片"> 配置Markdown与Typora搭配添加图片</span></h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6882619951857811469">hexo中如何插入图片</a></p>
+</blockquote>
+<p>安装插件：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">npm</span> <span class="token function">install</span> hexo-renderer-marked<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>修改<code>_config.yaml</code>站点配置文件：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">post_asset_folder</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">marked</span><span class="token punctuation">:</span>
+  <span class="token key atrule">prependRoot</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">postAsset</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当该配置被应用后，使用<code>hexo new</code>命令创建新文章时，会生成相同名字的文件夹，也就是文章资源文件夹。</p>
+<p>修改Typora配置</p>
+<p><img src="Hexo-Installation-Log/image-20211126143949809.png" alt="Typora设置——图像"></p>
+<p>如复制网络路径的图片<code>https://...../image.jpg</code>粘贴到Typora中叫<code>文章名</code>的文章后，图片会自动变为<code>![](文章名/image.jpg)</code>。</p>
+<p>但我们知道部署后，文件路径是不同的，所以当我们插入完所有的图片后，我们还需要删除每个图片路径中的<code>文件名/</code>。不慌，也很简单。</p>
+<p>在Typora编辑器中，使用<code>&lt;C-f&gt;</code>快捷键，将所有的<code>文章名/</code>替换为空即可删除。</p>
+<p><img src="Hexo-Installation-Log/image-20211126144204257.png" alt="Typora替换"></p>
+<h2><span id="浏览页面显示当前浏览进度"> 浏览页面显示当前浏览进度</span></h2>
+<p>打开 <code>themes/next/_config.yml</code>，搜索关键字 <code>scrollpercent</code>，把 <code>false</code> 改为 <code>true</code>。</p>
+<h2><span id="local-search本地搜索"> Local Search本地搜索</span></h2>
+<p>安装插件<code>hexo-generator-searchdb</code></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-searchdb <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>修改<code>_config.yml</code>站点配置文件，新增以下内容到任意位置：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">search</span><span class="token punctuation">:</span>
+<span class="token key atrule">path</span><span class="token punctuation">:</span> search.xml
+<span class="token key atrule">field</span><span class="token punctuation">:</span> post
+<span class="token key atrule">format</span><span class="token punctuation">:</span> html
+<span class="token key atrule">limit</span><span class="token punctuation">:</span> <span class="token number">10000</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>编辑  <code>themes/next/_config.yml</code>，启用本地搜索功能：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Local search</span>
+<span class="token key atrule">local_search</span><span class="token punctuation">:</span>
+<span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2><span id="增加文章字数统计及阅读时常功能"> 增加文章字数统计及阅读时常功能</span></h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-symbols-count-time">https://github.com/theme-next/hexo-symbols-count-time</a></p>
+</blockquote>
+<p>安装插件<code>hexo-symbols-count-time</code>,执行以下命令:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-symbols-count-time<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>修改<code>_config.yml</code>站点配置文件</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">symbols_count_time</span><span class="token punctuation">:</span>
+  <span class="token key atrule">symbols</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">time</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">total_symbols</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">total_time</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">exclude_codeblock</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">awl</span><span class="token punctuation">:</span> <span class="token number">4</span>
+  <span class="token key atrule">wpm</span><span class="token punctuation">:</span> <span class="token number">275</span>
+  <span class="token key atrule">suffix</span><span class="token punctuation">:</span> <span class="token string">"mins."</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>字数统计严重不对，感觉统计的是字符数</p>
+<h2><span id="添加阅读全文"> 添加阅读全文</span></h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/faqs.html#read-more">https://theme-next.iissnan.com/faqs.html#read-more</a></p>
+</blockquote>
+<p>将下述内容添加到项添加的范围即可</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!-- more --&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2><span id="加上妹子"> 加上妹子</span></h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/as480133937/article/details/100138838#t26">https://blog.csdn.net/as480133937/article/details/100138838#t26</a></p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-save</span> hexo-helper-live2d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后在<code>_config.yml</code>中添加参数</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">live2d</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">scriptFrom</span><span class="token punctuation">:</span> local
+  <span class="token key atrule">pluginRootPath</span><span class="token punctuation">:</span> live2dw/
+  <span class="token key atrule">pluginJsPath</span><span class="token punctuation">:</span> lib/
+  <span class="token key atrule">pluginModelPath</span><span class="token punctuation">:</span> assets/
+  <span class="token key atrule">tagMode</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">log</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">model</span><span class="token punctuation">:</span>
+    <span class="token key atrule">use</span><span class="token punctuation">:</span> live2d<span class="token punctuation">-</span>widget<span class="token punctuation">-</span>model<span class="token punctuation">-</span>&lt;你喜欢的模型名字<span class="token punctuation">></span>
+  <span class="token key atrule">display</span><span class="token punctuation">:</span>
+    <span class="token key atrule">position</span><span class="token punctuation">:</span> right
+    <span class="token key atrule">width</span><span class="token punctuation">:</span> <span class="token number">150</span>
+    <span class="token key atrule">height</span><span class="token punctuation">:</span> <span class="token number">300</span>
+  <span class="token key atrule">mobile</span><span class="token punctuation">:</span>
+    <span class="token key atrule">show</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在站点目录下建文件夹<code>live2d_models</code>，</p>
+<p>再在<code>live2d_models</code>下建文件夹<code>&lt;你喜欢的模型名字&gt;</code>,</p>
+<p>再在<code>&lt;你喜欢的模型名字&gt;</code>下建<code>json</code>文件：<code>&lt;你喜欢的模型名字&gt;.model.json</code></p>
+<p>最后安装</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">--save</span> live2d-widget-model-<span class="token operator">&lt;</span>你喜欢的模型名字<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2><span id="设置文章模板"> 设置文章模板</span></h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://shmilybaozi.github.io/2018/11/05/hexo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE/">hexo文章模板设置</a></p>
+</blockquote>
+<p>模板文件信息位于<code>./scaffold </code>文件夹下的 <code>post.md</code> 和 <code>draft.md</code></p>
+<p>对应就是 <code>hexo new [layout] &lt;title&gt;</code> 中的 <code>layout</code> , 默认为 <code>post</code>, 草稿为 <code>draft</code>, 如果标题包含空格的话，请使用引号括起来。</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> title <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> date <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+categories<span class="token punctuation">:</span></span>
+<span class="token punctuation">---</span></span>
+
+点击阅读前文前, 首页能看到的文章的简短描述
+
+<span class="token comment">&lt;!-- more --></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="添加备案号"> 添加备案号</span></h2>
+<p>修改主题配置文件<code>_config.yml</code></p>
+<p>参考修改如下</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn</span>
+  <span class="token key atrule">beian</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">icp</span><span class="token punctuation">:</span> 浙ICP备2022000215号<span class="token punctuation">-</span><span class="token number">1</span>
+    <span class="token comment"># The digit in the num of gongan beian.</span>
+    <span class="token key atrule">gongan_id</span><span class="token punctuation">:</span> 
+    <span class="token comment"># The full num of gongan beian.</span>
+    <span class="token key atrule">gongan_num</span><span class="token punctuation">:</span> 
+    <span class="token comment"># The icon for gongan beian. See: http://www.beian.gov.cn/portal/download</span>
+    <span class="token key atrule">gongan_icon_url</span><span class="token punctuation">:</span> /images/beian_logo.png<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="让google搜索到github上的个人博客"> 让Google搜索到GitHub上的个人博客</span></h2>
+<p>安装扩展</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>配置站点<code>_config.yml</code>文件</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># 自动生成sitemap</span>
+<span class="token key atrule">sitemap</span><span class="token punctuation">:</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> sitemap.xml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h1><span id="部署hexo到github"> 部署Hexo到GitHub</span></h1>
+<h2><span id="生成ssh-key以配置和使用github"> 生成ssh key以配置和使用GitHub</span></h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-C</span> <span class="token string">"XXXX@email.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>以我的为例</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-C</span> <span class="token string">"xuanyabulema@qq.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><a target="_blank" rel="noopener" href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">查看秘钥并添加至GitHub</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> .ssh/id_rsa.qub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后将<code>cat</code>获取到的结果存至GitHub</p>
+<p>验证是否连接成功</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token parameter variable">-T</span> git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="Hexo-Installation-Log/image-20211126124826456.png" alt="shell"></p>
+<h2><span id="安装插件"> 安装插件</span></h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">--save</span> hexo-deployer-git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2><span id="新建一个github仓库来保存网页"> 新建一个GitHub仓库来保存网页</span></h2>
+<p>格式为<code>&lt;你的 GitHub 用户名&gt;.github.io</code></p>
+<p><img src="Hexo-Installation-Log/image-20211126125502218.png" alt="GitHub仓库保存网页"></p>
+<h2><span id="修改_configyml"> 修改<code>_config.yml</code></span></h2>
+<p>修改末尾为</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> 创建的仓库地址
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> 创建的仓库地址的默认分支<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以我的为例子</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> git@github.com<span class="token punctuation">:</span>xuanyabulema/xuanyabulema.github.io.git
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2><span id="推送到github"> 推送到GitHub</span></h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> hexo clean <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>浏览器输入<code>&lt;你的 GitHub 用户名&gt;.github.io</code>，即可访问</p>
+<p>欢迎访问我的<code>xuanyabulema.github.io</code></p>
+<h2><span id="一个坑"> 一个坑</span></h2>
+<h3><span id="err-error-spawn-failed"> <code>err: Error: Spawn failed</code></span></h3>
+<p>如果用非root用户<code>ssh-keygen -t rsa -C &quot;XXXX@email.com&quot;</code>，创建将会可以连接的上GitHub，但是在<code>hexo d</code>部署到GitHub时总是失败。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Please <span class="token function">make</span> sure you have the correct access rights
+and the repository exists.
+FATAL <span class="token punctuation">&#123;</span>
+  err: Error: Spawn failed
+      at ChildProcess.<span class="token operator">&lt;</span>anonymous<span class="token operator">></span> <span class="token punctuation">(</span>/home/zekuan/blog/node_modules/hexo-util/lib/spawn.js:51:21<span class="token punctuation">)</span>
+      at ChildProcess.emit <span class="token punctuation">(</span>node:events:390:28<span class="token punctuation">)</span>
+      at Process.ChildProcess._handle.onexit <span class="token punctuation">(</span>node:internal/child_process:290:12<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    code: <span class="token number">128</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span> Something's wrong. Maybe you can <span class="token function">find</span> the solution here: %s https://hexo.io/docs/troubleshooting.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3><span id="解决方式"> </span></h3>
+<p>删除当前已有的<code>.ssh/</code>下的文件</p>
+<p>使用</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-C</span> <span class="token string">"XXXX@email.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后将<code>/root/.ssh/id_rsa.pub</code>下的秘钥添加至GitHub，并进行重新推送<code>sudo hexo clean &amp;&amp; sudo hexo d</code></p>
+<h1><span id="参考链接"> 参考链接</span></h1>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo中文文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions#deb">安装Nodejs</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6882619951857811469">hexo中如何插入图片</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/as480133937/article/details/100138838">Hexo-Next 主题个性化配置超详细，超全面(两万字)</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>赏杯可乐🥤</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="悬崖不勒马 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="悬崖不勒马 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>悬崖不勒马
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html" title="Hexo 安装日志">https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/NexT/" rel="tag"># NexT</a>
+              <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+              <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/Hexo-Synchronization-and-Migration.html" rel="next" title="Hexo 多端同步|迁移">
+                  Hexo 多端同步|迁移 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81NzM4My8zMzg0Nw=="></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">悬崖不勒马</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"forest","dark":"forest"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.1.7/mermaid.min.js","integrity":"sha256-G58AID1YoX5YaEtWfXSI0VLrZ6N4kvNvwg0BI8zUFxE="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-test-beta.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/posts/Hexo-Installation-Log.html"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+<script src="/js/third-party/comments/livere.js"></script>
+
+<!-- hexo injector body_end start --><script src="/js/outdate.js"></script><!-- hexo injector body_end end --></body>
+</html>

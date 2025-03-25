@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-tvmKCk5xu9">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xuanyabulema.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="前言 为自己的Blog添加一个评论系统不仅有趣，也有利于交流。 Hexo支持多个评论系统同时启用，NexT主题默认支持disqus | disqusjs | changyan | livere | gitalk | utterances等评论系统 # Available values: disqus | disqusjs | changyan | livere | gitalk | uttera">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo NexT 主题添加评论系统">
+<meta property="og:url" content="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme.html">
+<meta property="og:site_name" content="悬崖不勒马的小站">
+<meta property="og:description" content="前言 为自己的Blog添加一个评论系统不仅有趣，也有利于交流。 Hexo支持多个评论系统同时启用，NexT主题默认支持disqus | disqusjs | changyan | livere | gitalk | utterances等评论系统 # Available values: disqus | disqusjs | changyan | livere | gitalk | uttera">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme/livere-get-code.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme/image-20221006015901073.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme/leancloud-1.f7a36b20.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme/leancloud-2.4cc69975.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme/vercel-1.4e9dd7aa.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme/vercel-3.0918fcee.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme/vercel-4.f7f4c12b.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme/vercel-5.3a5de7f0.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme/vercel-6.c1af01b1.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme/vercel-7.2478902b.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme/image-20221006015839546.png">
+<meta property="article:published_time" content="2022-10-05T17:26:21.000Z">
+<meta property="article:modified_time" content="2025-03-25T05:22:05.488Z">
+<meta property="article:author" content="悬崖不勒马">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="NexT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme/livere-get-code.png">
+
+
+<link rel="canonical" href="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme.html","path":"posts/Add-Comment-System-in-Hexo-NexT-Theme.html","title":"Hexo NexT 主题添加评论系统"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hexo NexT 主题添加评论系统 | 悬崖不勒马的小站</title>
+  
+
+
+
+
+
+<link rel="dns-prefetch" href="waline-test-beta.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">悬崖不勒马的小站</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">36</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">31</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li><li class="menu-item menu-item-阅读"><a href="/book/" rel="section"><i class="fa fa-book fa-fw"></i>阅读</a></li><li class="menu-item menu-item-折腾"><a href="/microchip/" rel="section"><i class="fas fa-microchip fa-fw"></i>折腾</a></li><li class="menu-item menu-item-冲浪"><a href="/surfing/" rel="section"><i class="fab fa-internet-explorer fa-fw"></i>冲浪</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> LiveRe配置教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 注册 LiveRe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 配置 LiveRe</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> Waline配置教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> LeanCloud 设置 (数据库)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> Vercel 部署 (服务端)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 在Hexo Next主题中配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 登录服务端</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="悬崖不勒马"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">悬崖不勒马</p>
+  <div class="site-description" itemprop="description">The time you enjoy wasting is not wasted time!</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xuanyabulema" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xuanyabulema" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xuanyabulema@qq.com" title="E-Mail → mailto:xuanyabulema@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/45045474/" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;45045474&#x2F;" rel="noopener" target="_blank"><i class="fab custom fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="悬崖不勒马">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悬崖不勒马的小站">
+      <meta itemprop="description" content="The time you enjoy wasting is not wasted time!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Hexo NexT 主题添加评论系统 | 悬崖不勒马的小站">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo NexT 主题添加评论系统
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-10-06 01:26:21" itemprop="dateCreated datePublished" datetime="2022-10-06T01:26:21+08:00">2022-10-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-03-25 13:22:05" itemprop="dateModified" datetime="2025-03-25T13:22:05+08:00">2025-03-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/NexT/" itemprop="url" rel="index"><span itemprop="name">NexT</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/Add-Comment-System-in-Hexo-NexT-Theme.html#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/posts/Add-Comment-System-in-Hexo-NexT-Theme.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1><span id="前言"> 前言</span></h1>
+<p>为自己的Blog添加一个评论系统不仅有趣，也有利于交流。</p>
+<p>Hexo支持多个评论系统同时启用，NexT主题默认支持<code>disqus | disqusjs | changyan | livere | gitalk | utterances</code>等评论系统</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Available values: disqus | disqusjs | changyan | livere | gitalk | utterances</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<span id="more"></span>
+<h1><span id="livere配置教程"> LiveRe配置教程</span></h1>
+<p>最新版 <a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">hexo-theme-next</a> 已经包含 LiveRe 插件，下载最新版本，配置 <code>livere_uid</code> 即可使用。</p>
+<h2><span id="注册-livere"> 注册 LiveRe</span></h2>
+<p>进入 <a target="_blank" rel="noopener" href="https://livere.com/">LiveRe</a>，注册账号。</p>
+<p>LiveRe 有两个版本：</p>
+<ol>
+<li>City 版：是一款适合所有人使用的免费版本；</li>
+<li>Premium 版：是一款能够帮助企业实现自动化管理的多功能收费版本。</li>
+</ol>
+<p>安装，获取 <code>uid</code>：</p>
+<p><img src="Add-Comment-System-in-Hexo-NexT-Theme/livere-get-code.png" alt="LiveRe City 版"></p>
+<p>填写（都可以随便填写）完成后，进入到 <code>管理页面 -&gt; 代码管理 -&gt; 一般网站</code> 代码中，<code>data-uid</code> 即为所需 <code>uid</code>。</p>
+<h2><span id="配置-livere"> 配置 LiveRe</span></h2>
+<p>找到NexT主题配置文件，在其中填写<code>uid</code>即可</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># LiveRe comments system</span>
+<span class="token comment"># You can get your uid from https://livere.com/insight/myCode (General web site)</span>
+<span class="token key atrule">livere_uid</span><span class="token punctuation">:</span> <span class="token comment"># &lt;your_uid></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="Add-Comment-System-in-Hexo-NexT-Theme/image-20221006015901073.png" alt="livere评论效果"></p>
+<h1><span id="waline配置教程"> Waline配置教程</span></h1>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://waline.js.org/guide/get-started.html">Waline快速上手</a></p>
+</blockquote>
+<h2><span id="leancloud-设置-数据库"> LeanCloud 设置 (数据库)</span></h2>
+<ol>
+<li>
+<p><a target="_blank" rel="noopener" href="https://console.leancloud.app/login">登录</a> 或 <a target="_blank" rel="noopener" href="https://console.leancloud.app/register">注册</a> <code>LeanCloud 国际版</code> 并进入 <a target="_blank" rel="noopener" href="https://console.leancloud.app/apps">控制台</a></p>
+</li>
+<li>
+<p>点击左上角 <a target="_blank" rel="noopener" href="https://console.leancloud.app/apps">创建应用</a> 并起一个你喜欢的名字 (请选择免费的开发版):</p>
+<p><img src="Add-Comment-System-in-Hexo-NexT-Theme/leancloud-1.f7a36b20.png" alt="创建应用"></p>
+</li>
+<li>
+<p>进入应用，选择左下角的 <code>设置</code> &gt; <code>应用 Key</code>。你可以看到你的 <code>APP ID</code>,<code>APP Key</code> 和 <code>Master Key</code>。请记录它们，以便后续使用。</p>
+<p><img src="Add-Comment-System-in-Hexo-NexT-Theme/leancloud-2.4cc69975.png" alt="ID 和 Key"></p>
+</li>
+</ol>
+<h2><span id="vercel-部署-服务端"> Vercel 部署 (服务端)</span></h2>
+<p><a target="_blank" rel="noopener" href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwalinejs%2Fwaline%2Ftree%2Fmain%2Fexample">Dyploy</a></p>
+<ol>
+<li>
+<p>点击上方，跳转至 Vercel 进行 Server 端部署。</p>
+<blockquote>
+<p>注</p>
+<p>如果你未登录的话，Vercel 会让你注册或登录，请使用 GitHub 账户进行快捷登录。</p>
+</blockquote>
+</li>
+<li>
+<p>输入一个你喜欢的 Vercel 项目名称并点击 <code>Create</code> 继续:</p>
+<p><img src="Add-Comment-System-in-Hexo-NexT-Theme/vercel-1.4e9dd7aa.png" alt="创建项目"></p>
+</li>
+<li>
+<p>此时 Vercel 会基于 Waline 模板帮助你新建并初始化仓库，仓库名为你之前输入的项目名。</p>
+<p><img src="Add-Comment-System-in-Hexo-NexT-Theme/vercel-3.0918fcee.png" alt="deploy"></p>
+<p>一两分钟后，满屏的烟花会庆祝你部署成功。此时点击 <code>Go to Dashboard</code> 可以跳转到应用的控制台。</p>
+<p><img src="Add-Comment-System-in-Hexo-NexT-Theme/vercel-4.f7f4c12b.png" alt="deploy"></p>
+</li>
+<li>
+<p>点击顶部的 <code>Settings</code> - <code>Environment Variables</code> 进入环境变量配置页，并配置三个环境变量 <code>LEAN_ID</code>, <code>LEAN_KEY</code> 和 <code>LEAN_MASTER_KEY</code> 。它们的值分别对应上一步在 LeanCloud 中获得的 <code>APP ID</code>, <code>APP KEY</code>, <code>Master Key</code>。</p>
+<p><img src="Add-Comment-System-in-Hexo-NexT-Theme/vercel-5.3a5de7f0.png" alt="设置环境变量"></p>
+<blockquote>
+<p>注</p>
+<p>如果你使用 LeanCloud 国内版，请额外配置 <code>LEAN_SERVER</code> 环境变量，值为你绑定好的域名。</p>
+</blockquote>
+</li>
+<li>
+<p>环境变量配置完成之后点击顶部的 <code>Deployments</code> 点击顶部最新的一次部署右侧的 <code>Redeploy</code> 按钮进行重新部署。该步骤是为了让刚才设置的环境变量生效。</p>
+<p><img src="Add-Comment-System-in-Hexo-NexT-Theme/vercel-6.c1af01b1.png" alt="redeploy"></p>
+</li>
+<li>
+<p>此时会跳转到 <code>Overview</code> 界面开始部署，等待片刻后 <code>STATUS</code> 会变成 <code>Ready</code>。此时请点击 <code>Visit</code> ，即可跳转到部署好的网站地址，此地址即为你的服务端地址。</p>
+<p><img src="Add-Comment-System-in-Hexo-NexT-Theme/vercel-7.2478902b.png" alt="redeploy success"></p>
+</li>
+</ol>
+<h2><span id="在hexo-next主题中配置"> 在Hexo Next主题中配置</span></h2>
+<p>由于 Next 主题中并不自带 <code>Waline</code> 的评论配置，我们需要安装官方提供的插件。在 <code>Hexo</code> 根目录执行：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> @waline/hexo-next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>找到 Next 的主题配置文件，在最后加上</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Waline</span>
+<span class="token comment"># For more information: https://waline.js.org, https://github.com/walinejs/waline</span>
+<span class="token key atrule">waline</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment">#是否开启</span>
+  <span class="token key atrule">serverURL</span><span class="token punctuation">:</span> waline<span class="token punctuation">-</span>server<span class="token punctuation">-</span>pearl.vercel.app <span class="token comment"># Waline #服务端地址，我们这里就是上面部署的 Vercel 地址</span>
+  <span class="token key atrule">placeholder</span><span class="token punctuation">:</span> 请文明评论呀 <span class="token comment"># #评论框的默认文字</span>
+  <span class="token key atrule">avatar</span><span class="token punctuation">:</span> mm <span class="token comment"># 头像风格</span>
+  <span class="token key atrule">meta</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>nick<span class="token punctuation">,</span> mail<span class="token punctuation">,</span> link<span class="token punctuation">]</span> <span class="token comment"># 自定义评论框上面的三个输入框的内容</span>
+  <span class="token key atrule">pageSize</span><span class="token punctuation">:</span> <span class="token number">10</span> <span class="token comment"># 评论数量多少时显示分页</span>
+  <span class="token key atrule">lang</span><span class="token punctuation">:</span> zh<span class="token punctuation">-</span>cn <span class="token comment"># 语言, 可选值: en, zh-cn</span>
+  <span class="token comment"># Warning: 不要同时启用 `waline.visitor` 以及 `leancloud_visitors`.</span>
+  <span class="token key atrule">visitor</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 文章阅读统计</span>
+  <span class="token key atrule">comment_count</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 如果为 false , 评论数量只会在当前评论页面显示, 主页则不显示</span>
+  <span class="token key atrule">requiredFields</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment"># 设置用户评论时必填的信息，[nick,mail]: [nick] | [nick, mail]</span>
+  <span class="token key atrule">libUrl</span><span class="token punctuation">:</span> <span class="token comment"># Set custom library cdn url</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>重新部署 <code>Hexo</code> ，就可以看到结果了。</p>
+<blockquote>
+<p>据反馈，Hexo 似乎在 8.x 的版本使用 waline 比较稳定，如果出现 <code>hexo g</code> 出错，可尝试升级 hexo 版本。</p>
+</blockquote>
+<h2><span id="登录服务端"> 登录服务端</span></h2>
+<p>由于 <code>Waline</code> 有服务端，支持评论管理。我们需要注册一个账号作为管理员。</p>
+<p>找到评论框，点击 <code>登录</code> 按钮，会弹出一个窗口，找到用户注册，默认第一个注册的用户为管理员，所以部署好一定要记得及时注册。</p>
+<p><img src="Add-Comment-System-in-Hexo-NexT-Theme/image-20221006015839546.png" alt="Waline评论系统"></p>
+<p>注册好，登录之后即可进入评论管理的后台，可以对评论进行管理。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>赏杯可乐🥤</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="悬崖不勒马 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="悬崖不勒马 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>悬崖不勒马
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme.html" title="Hexo NexT 主题添加评论系统">https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/NexT/" rel="tag"># NexT</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/Problems-Encountered-During-the-Use-of-Hexo.html" rel="prev" title="Hexo 使用过程遇到的问题">
+                  <i class="fa fa-chevron-left"></i> Hexo 使用过程遇到的问题
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/Hexo-Posts-Links.html" rel="next" title="Hexo 文章跳转（链接）">
+                  Hexo 文章跳转（链接） <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81NzM4My8zMzg0Nw=="></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">悬崖不勒马</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"forest","dark":"forest"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.1.7/mermaid.min.js","integrity":"sha256-G58AID1YoX5YaEtWfXSI0VLrZ6N4kvNvwg0BI8zUFxE="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-test-beta.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/posts/Add-Comment-System-in-Hexo-NexT-Theme.html"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+<script src="/js/third-party/comments/livere.js"></script>
+
+<!-- hexo injector body_end start --><script src="/js/outdate.js"></script><!-- hexo injector body_end end --></body>
+</html>
