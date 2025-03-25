@@ -11,8 +11,8 @@ echo "将要执行：hexo clean && hexo g && hexo d"
 sleep 1
 hexo clean && hexo g && hexo d
 
-echo "将要执行：docker restart blog_nginx"
-echo "将要执行：docker restart blog_nginx"
-echo "将要执行：docker restart blog_nginx"
-sleep 1
-docker restart blog_nginx
+# echo "将要执行：docker restart blog_nginx"
+# echo "将要执行：docker restart blog_nginx"
+# echo "将要执行：docker restart blog_nginx"
+# sleep 1
+# docker restart blog_nginx

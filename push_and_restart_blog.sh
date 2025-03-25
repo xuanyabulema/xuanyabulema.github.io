@@ -17,8 +17,8 @@ echo "将要执行：git add --all && git commit -m $str && git push"
 sleep 2
 git add --all && git commit -m "$str" && git push
 
-echo "将要执行：docker restart blog_nginx"
-echo "将要执行：docker restart blog_nginx"
-echo "将要执行：docker restart blog_nginx"
-sleep 1
-docker restart blog_nginx
+# echo "将要执行：docker restart blog_nginx"
+# echo "将要执行：docker restart blog_nginx"
+# echo "将要执行：docker restart blog_nginx"
+# sleep 1
+# docker restart blog_nginx
