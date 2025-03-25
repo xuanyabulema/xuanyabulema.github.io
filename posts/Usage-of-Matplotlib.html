@@ -158,7 +158,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> Matplotlib使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> matplotlib.pyplot基础使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> Figure  AxesImage  AxesSubplot 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> pyplot.rcParams属性设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 散点图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 连线图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 直方图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 箱线图 matplotlib.pyplot.boxplot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 向量图（箭头图） matplotlib.pyplot.quiver</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#matplotlib%E4%BD%BF%E7%94%A8"><span class="nav-text"> Matplotlib使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#matplotlibpyplot%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="nav-text"> matplotlib.pyplot基础使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#figure-axesimage-axessubplot-%E5%8C%BA%E5%88%AB"><span class="nav-text"> Figure  AxesImage  AxesSubplot 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pyplotrcparams%E5%B1%9E%E6%80%A7%E8%AE%BE%E7%BD%AE"><span class="nav-text"> pyplot.rcParams属性设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B"><span class="nav-text"> 示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%A3%E7%82%B9%E5%9B%BE"><span class="nav-text"> 散点图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9E%E7%BA%BF%E5%9B%BE"><span class="nav-text"> 连线图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="nav-text"> 直方图</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%B1%E7%BA%BF%E5%9B%BE-matplotlibpyplotboxplot"><span class="nav-text"> 箱线图 matplotlib.pyplot.boxplot</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%9B%BE%E7%AE%AD%E5%A4%B4%E5%9B%BE-matplotlibpyplotquiver"><span class="nav-text"> 向量图（箭头图） matplotlib.pyplot.quiver</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -325,12 +325,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1><span id="matplotlib使用"> Matplotlib使用</span></h1>
+        <h1 id="matplotlib使用"><a class="markdownIt-Anchor" href="#matplotlib使用"></a> Matplotlib使用</h1>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <span id="more"></span>
-<h1><span id="matplotlibpyplot基础使用"> matplotlib.pyplot基础使用</span></h1>
+<h1 id="matplotlibpyplot基础使用"><a class="markdownIt-Anchor" href="#matplotlibpyplot基础使用"></a> matplotlib.pyplot基础使用</h1>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="figure-axesimage-axessubplot-区别"> Figure  AxesImage  AxesSubplot 区别</span></h2>
+<h2 id="figure-axesimage-axessubplot-区别"><a class="markdownIt-Anchor" href="#figure-axesimage-axessubplot-区别"></a> Figure  AxesImage  AxesSubplot 区别</h2>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 
@@ -343,7 +343,7 @@ ax <span class="token operator">=</span> plt<span class="token punctuation">.</s
 <span class="token keyword">print</span><span class="token punctuation">(</span>fig<span class="token punctuation">,</span> im<span class="token punctuation">,</span> ax<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>输出</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">Figure<span class="token punctuation">(</span>1280x960<span class="token punctuation">)</span> AxesImage<span class="token punctuation">(</span><span class="token number">160</span><span class="token punctuation">,</span><span class="token number">105.6</span><span class="token punctuation">;</span>992x739<span class="token punctuation">.</span><span class="token number">2</span><span class="token punctuation">)</span> AxesSubplot<span class="token punctuation">(</span><span class="token number">0.125</span><span class="token punctuation">,</span><span class="token number">0.11</span><span class="token punctuation">;</span><span class="token number">0</span><span class="token punctuation">.</span>775x0<span class="token punctuation">.</span><span class="token number">77</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="pyplotrcparams属性设置"> pyplot.rcParams属性设置</span></h2>
+<h2 id="pyplotrcparams属性设置"><a class="markdownIt-Anchor" href="#pyplotrcparams属性设置"></a> pyplot.rcParams属性设置</h2>
 <p>查看属性</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
 
@@ -358,7 +358,7 @@ plt<span class="token punctuation">.</span>rcParams<span class="token punctuatio
     <span class="token string">'figure.dpi'</span><span class="token punctuation">:</span> <span class="token number">200</span><span class="token punctuation">,</span>
     <span class="token comment"># 'mathtext.fontset': 'stix'</span>
 <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2><span id="示例"> 示例</span></h2>
+<h2 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h2>
 <p>示例一</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
 
@@ -408,7 +408,7 @@ plt<span class="token punctuation">.</span>subplots<span class="token punctuatio
 <span class="token comment"># and clears it if it already exists.</span>
 fig<span class="token punctuation">,</span> ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>num<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> clear<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3><span id="散点图"> 散点图</span></h3>
+<h3 id="散点图"><a class="markdownIt-Anchor" href="#散点图"></a> 散点图</h3>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
 
 <span class="token comment"># 分别存放所有点的横坐标和纵坐标，一一对应</span>
@@ -425,7 +425,7 @@ ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuati
 ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>x_list<span class="token punctuation">,</span> y_list<span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> s<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <img src="Usage-of-Matplotlib/image-20221108230249302.png" alt="散点图" style="zoom: 40%;">
-<h3><span id="连线图"> 连线图</span></h3>
+<h3 id="连线图"><a class="markdownIt-Anchor" href="#连线图"></a> 连线图</h3>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
 
 <span class="token comment">#分别存放所有点的横坐标和纵坐标，一一对应</span>
@@ -442,7 +442,7 @@ ax<span class="token punctuation">.</span>set_ylabel<span class="token punctuati
 ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>x_list<span class="token punctuation">,</span> y_list<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> linewidth<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.6</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <img src="Usage-of-Matplotlib/image-20221108230326796.png" alt="连线图" style="zoom: 40%;">
-<h3><span id="直方图"> 直方图</span></h3>
+<h3 id="直方图"><a class="markdownIt-Anchor" href="#直方图"></a> 直方图</h3>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
 <span class="token comment">#数据</span>
@@ -467,7 +467,7 @@ ax<span class="token punctuation">.</span>set_xticklabels<span class="token punc
 ax<span class="token punctuation">.</span>set_xlim<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token builtin">len</span><span class="token punctuation">(</span>xticks<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <img src="Usage-of-Matplotlib/image-20210706201916373.png" alt="直方图" style="zoom: 40%;">
-<h1><span id="箱线图-matplotlibpyplotboxplot"> 箱线图 matplotlib.pyplot.boxplot</span></h1>
+<h1 id="箱线图-matplotlibpyplotboxplot"><a class="markdownIt-Anchor" href="#箱线图-matplotlibpyplotboxplot"></a> 箱线图 matplotlib.pyplot.boxplot</h1>
 <ul>
 <li>matplotlib.pyplot.<strong>boxplot</strong>(<em>x</em>, <em>notch=None</em>, <em>sym=None</em>, <em>vert=None</em>, <em>whis=None</em>, <em>positions=None</em>, <em>widths=None</em>, <em>patch_artist=None</em>, <em>bootstrap=None</em>, <em>usermedians=None</em>, <em>conf_intervals=None</em>, <em>meanline=None</em>, <em>showmeans=None</em>, <em>showcaps=None</em>, <em>showbox=None</em>, <em>showfliers=None</em>, <em>boxprops=None</em>, <em>labels=None</em>, <em>flierprops=None</em>, <em>medianprops=None</em>, <em>meanprops=None</em>, <em>capprops=None</em>, <em>whiskerprops=None</em>, <em>manage_ticks=True</em>, <em>autorange=False</em>, <em>zorder=None</em>, <em>capwidths=None</em>, *, <em>data=None</em>) <a target="_blank" rel="noopener" href="https://github.com/matplotlib/matplotlib/blob/v3.6.2/lib/matplotlib/pyplot.py#L2401-L2422">[source]</a></li>
 </ul>
@@ -479,7 +479,7 @@ x <span class="token operator">=</span> np<span class="token punctuation">.</spa
 plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>dpi<span class="token operator">=</span><span class="token number">200</span><span class="token punctuation">)</span>
 plt<span class="token punctuation">.</span>boxplot<span class="token punctuation">(</span>x<span class="token punctuation">,</span> showmeans<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <img src="Usage-of-Matplotlib/image-20221109151114921.png" alt="箱线图" style="zoom:40%;">
-<h1><span id="向量图箭头图-matplotlibpyplotquiver"> 向量图（箭头图） matplotlib.pyplot.quiver</span></h1>
+<h1 id="向量图箭头图-matplotlibpyplotquiver"><a class="markdownIt-Anchor" href="#向量图箭头图-matplotlibpyplotquiver"></a> 向量图（箭头图） matplotlib.pyplot.quiver</h1>
 <p>*matplotlib.pyplot.quiver(<em>args, data=None, **kwargs)</em>[<a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.quiver.html">source]</a></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">plt<span class="token punctuation">.</span>quiver<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> u<span class="token punctuation">,</span> v<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> angles<span class="token operator">=</span><span class="token string">'xy'</span><span class="token punctuation">,</span> scale_units<span class="token operator">=</span><span class="token string">'xy'</span><span class="token punctuation">,</span> scale<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
 <span class="token triple-quoted-string string">'''

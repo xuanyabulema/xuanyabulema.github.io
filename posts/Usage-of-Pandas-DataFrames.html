@@ -151,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> pandas 的一些使用案例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> DataFrame 删除指定列中的包含 nan 数据所在行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> DataFrame 保留某列符合特定条件的数据所在行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 实现1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text"> 实现2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 筛选指定列&#39;A&#39;中的整数行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 包含多个DataFrame的list拼接成一个 DataFrame</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas-%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B"><span class="nav-text"> pandas 的一些使用案例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dataframe-%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%88%97%E4%B8%AD%E7%9A%84%E5%8C%85%E5%90%AB-nan-%E6%95%B0%E6%8D%AE%E6%89%80%E5%9C%A8%E8%A1%8C"><span class="nav-text"> DataFrame 删除指定列中的包含 nan 数据所在行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dataframe-%E4%BF%9D%E7%95%99%E6%9F%90%E5%88%97%E7%AC%A6%E5%90%88%E7%89%B9%E5%AE%9A%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%95%B0%E6%8D%AE%E6%89%80%E5%9C%A8%E8%A1%8C"><span class="nav-text"> DataFrame 保留某列符合特定条件的数据所在行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B01"><span class="nav-text"> 实现1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B02"><span class="nav-text"> 实现2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%9B%E9%80%89%E6%8C%87%E5%AE%9A%E5%88%97a%E4%B8%AD%E7%9A%84%E6%95%B4%E6%95%B0%E8%A1%8C"><span class="nav-text"> 筛选指定列&#39;A&#39;中的整数行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%AB%E5%A4%9A%E4%B8%AAdataframe%E7%9A%84list%E6%8B%BC%E6%8E%A5%E6%88%90%E4%B8%80%E4%B8%AA-dataframe"><span class="nav-text"> 包含多个DataFrame的list拼接成一个 DataFrame</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -322,9 +322,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2><span id="pandas-的一些使用案例"> pandas 的一些使用案例</span></h2>
+        <h2 id="pandas-的一些使用案例"><a class="markdownIt-Anchor" href="#pandas-的一些使用案例"></a> pandas 的一些使用案例</h2>
 <span id="more"></span>
-<h2><span id="dataframe-删除指定列中的包含-nan-数据所在行"> DataFrame 删除指定列中的包含 nan 数据所在行</span></h2>
+<h2 id="dataframe-删除指定列中的包含-nan-数据所在行"><a class="markdownIt-Anchor" href="#dataframe-删除指定列中的包含-nan-数据所在行"></a> DataFrame 删除指定列中的包含 nan 数据所在行</h2>
 <p>在Python的Pandas库中，如果你想要删除DataFrame中包含<code>NaN</code>值的行，可以使用<code>dropna()</code>方法。如果你只想删除指定列中包含<code>NaN</code>值的行，可以设置<code>subset</code>参数。下面是一个例子：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
@@ -345,8 +345,8 @@ df_cleaned <span class="token operator">=</span> df<span class="token punctuatio
 <p>如果你想要在原DataFrame上直接进行修改，而不是创建一个新的DataFrame，可以使用<code>inplace=True</code>参数：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">df<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span>subset<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'A'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这样就会直接在<code>df</code>上删除列<code>A</code>中包含<code>NaN</code>的行，而不会返回一个新的DataFrame。</p>
-<h2><span id="dataframe-保留某列符合特定条件的数据所在行"> DataFrame 保留某列符合特定条件的数据所在行</span></h2>
-<h3><span id="实现1"> 实现1</span></h3>
+<h2 id="dataframe-保留某列符合特定条件的数据所在行"><a class="markdownIt-Anchor" href="#dataframe-保留某列符合特定条件的数据所在行"></a> DataFrame 保留某列符合特定条件的数据所在行</h2>
+<h3 id="实现1"><a class="markdownIt-Anchor" href="#实现1"></a> 实现1</h3>
 <p>在Python的Pandas库中，你可以使用布尔索引来保留DataFrame中某列符合特定条件的数据所在行。下面是一个简单的例子，假设我们有一个DataFrame <code>df</code> 和一个列 <code>column_name</code>，我们想要保留这个列中值大于2且小于等于4的行：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 
@@ -363,7 +363,7 @@ filtered_df <span class="token operator">=</span> df<span class="token punctuati
 <span class="token keyword">print</span><span class="token punctuation">(</span>filtered_df<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在这个例子中，<code>df['column_name'] &gt; 2</code> 和 <code>df['column_name'] &lt;= 4</code> 分别创建了两个布尔序列，然后使用 <code>&amp;</code> 运算符将这两个条件结合起来，最终得到一个同时满足这两个条件的布尔序列。这个布尔序列被用作索引，来选择原始DataFrame中满足条件的行。</p>
 <p>执行上述代码后，<code>filtered_df</code> 将只包含 <code>column_name</code> 列中值大于2且小于等于4的行。</p>
-<h3><span id="实现2"> 实现2</span></h3>
+<h3 id="实现2"><a class="markdownIt-Anchor" href="#实现2"></a> 实现2</h3>
 <p>或者使用<code>query</code>方法，这在处理复杂的条件时非常有用：</p>
 <p>以下是如何使用<code>query</code>方法来实现你的需求，即保留某列（假设列名为<code>column_name</code>）中值大于2且小于等于4的行：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
@@ -381,7 +381,7 @@ filtered_df <span class="token operator">=</span> df<span class="token punctuati
 <span class="token keyword">print</span><span class="token punctuation">(</span>filtered_df<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在这个例子中，<code>query</code>方法接受一个字符串参数<code>'column_name &gt; 2 &amp; column_name &lt;= 4'</code>，这个字符串包含了筛选条件。<code>query</code>方法会解析这个字符串，并返回一个新的DataFrame，其中只包含满足这个条件的行。</p>
 <p>使用<code>query</code>方法的好处是代码更简洁，易于阅读和编写，尤其是在处理复杂的查询条件时。不过，需要注意的是，<code>query</code>方法中的字符串表达式需要遵循Python的表达式语法，并且不能包含Python的关键字，如<code>in</code>、<code>and</code>、<code>or</code>等，而应该使用<code>&amp;</code>、<code>|</code>（分别对应逻辑与和逻辑或）以及<code>~</code>（表示逻辑非）。</p>
-<h2><span id="筛选指定列a中的整数行"> 筛选指定列'A'中的整数行</span></h2>
+<h2 id="筛选指定列a中的整数行"><a class="markdownIt-Anchor" href="#筛选指定列a中的整数行"></a> 筛选指定列'A'中的整数行</h2>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 
 <span class="token comment"># 假设df是你的DataFrame</span>
@@ -400,7 +400,7 @@ filtered_df <span class="token operator">=</span> df<span class="token punctuati
 <ul>
 <li><code>x.is_integer()</code>：这是一个Python内置的方法，用于检查一个浮点数<code>x</code>是否为整数。如果<code>x</code>是一个整数（即没有小数部分），那么<code>x.is_integer()</code>返回<code>True</code>；否则返回<code>False</code>。</li>
 </ul>
-<h2><span id="包含多个dataframe的list拼接成一个-dataframe"> 包含多个DataFrame的list拼接成一个 DataFrame</span></h2>
+<h2 id="包含多个dataframe的list拼接成一个-dataframe"><a class="markdownIt-Anchor" href="#包含多个dataframe的list拼接成一个-dataframe"></a> 包含多个DataFrame的list拼接成一个 DataFrame</h2>
 <p>在Python中，如果你有一个包含多个Pandas DataFrame的列表，并想要将它们拼接在一起，可以使用Pandas库中的<code>pd.concat()</code>函数。这个函数可以将多个DataFrame沿着一个轴拼接起来。</p>
 <p>以下是一个示例，展示了如何将一个包含多个DataFrame的列表拼接成一个大的DataFrame：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd

@@ -151,7 +151,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 配置robots.txt</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> URL优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 方案一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 方案二</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AErobotstxt"><span class="nav-text"> 配置robots.txt</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#url%E4%BC%98%E5%8C%96"><span class="nav-text"> URL优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E4%B8%80"><span class="nav-text"> 方案一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%A1%88%E4%BA%8C"><span class="nav-text"> 方案二</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -314,7 +314,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1><span id="前言"> 前言</span></h1>
+        <h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p>谷歌搜索提示“已发现 - 尚未编入索引”，进行优化</p>
 <span id="more"></span>
 <p><img src="Hexo-SEO-Optimization/image-20221211134956046.png" alt="已发现 - 尚未编入索引"></p>
@@ -323,7 +323,7 @@
 <p><a target="_blank" rel="noopener" href="https://www.zhidaow.com/post/google-discovered-but-currently-not-indexed">GOOGLE 提示 &quot;已发现 - 尚未编入索引&quot; 怎么办</a></p>
 <p><a target="_blank" rel="noopener" href="https://mikolaje.github.io/2019/hexo_seo.html#comments">Hexo博客SEO优化，添加robots.txt</a></p>
 </blockquote>
-<h1><span id="配置robotstxt"> 配置<code>robots.txt</code></span></h1>
+<h1 id="配置robotstxt"><a class="markdownIt-Anchor" href="#配置robotstxt"></a> 配置<code>robots.txt</code></h1>
 <p>在<code>hexo</code>根目录下的 <code>source</code> 目录下新建一个<code>robots.txt</code>文件，内容如下：</p>
 <pre class="line-numbers language-none"><code class="language-none"># 允许所有用户代理的浏览器爬虫进行访问（爬起数据）
 User-agent: *
@@ -344,17 +344,17 @@ Allow: &#x2F;tags&#x2F;
 Sitemap: https:&#x2F;&#x2F;xuanyabulema.github.io&#x2F;sitemap.xml
 Sitemap: https:&#x2F;&#x2F;xuanyabulema.github.io&#x2F;baidusitemap.xml
 Sitemap: https:&#x2F;&#x2F;xuanyabulema.github.io&#x2F;sitemap.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1><span id="url优化"> URL优化</span></h1>
+<h1 id="url优化"><a class="markdownIt-Anchor" href="#url优化"></a> URL优化</h1>
 <blockquote>
 <p>一般来说，网站的最佳结构是 <strong>用户从首页点击三次就可以到达任何一个页面</strong>，但是<code>Hexo</code>编译的是：<code>域名/年/月/日/文章标题</code> 这样五层的结构。这样的结构很不利于<code>SEO</code>，爬虫会经常爬不到我们的文章，所以我们需要优化一下URL。</p>
 </blockquote>
-<h2><span id="方案一"> 方案一</span></h2>
+<h2 id="方案一"><a class="markdownIt-Anchor" href="#方案一"></a> 方案一</h2>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//xuanyabulema.github.io
 <span class="token comment"># permalink: :year/:month/:day/:title/</span>
 <span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token punctuation">:</span>title.html    <span class="token comment"># 修改  两层结构</span>
 <span class="token key atrule">permalink</span><span class="token punctuation">:</span> posts/<span class="token punctuation">:</span>title.html    <span class="token comment"># 修改  三层结构  于 posts/ 下</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>但若文章标题是中文，网址会被转义成一堆特别长的数字符号。</p>
-<h2><span id="方案二"> 方案二</span></h2>
+<h2 id="方案二"><a class="markdownIt-Anchor" href="#方案二"></a> 方案二</h2>
 <p>安装插件 <code>npm install hexo-abbrlink --save</code>, 使得网站结构变 <code>域名/posts/xxx.html</code></p>
 <p>修改站点配置文件：</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">permalink</span><span class="token punctuation">:</span> posts/<span class="token punctuation">:</span>abbrlink.html    <span class="token comment"># 修改</span>

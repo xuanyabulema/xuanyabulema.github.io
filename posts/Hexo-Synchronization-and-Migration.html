@@ -153,7 +153,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 新建GitHub分支以保存Hexo源文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 将本地Hexo目录与GitHub的Hexo分支关联上</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 新环境配置与同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> Ubuntu下配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> Windows下配置git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 将Github上的Hexo源Blog文件同步到本地.&#x2F;blog目录下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 安装Hexo环境</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E5%BB%BAgithub%E5%88%86%E6%94%AF%E4%BB%A5%E4%BF%9D%E5%AD%98hexo%E6%BA%90%E6%96%87%E4%BB%B6"><span class="nav-text"> 新建GitHub分支以保存Hexo源文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%86%E6%9C%AC%E5%9C%B0hexo%E7%9B%AE%E5%BD%95%E4%B8%8Egithub%E7%9A%84hexo%E5%88%86%E6%94%AF%E5%85%B3%E8%81%94%E4%B8%8A"><span class="nav-text"> 将本地Hexo目录与GitHub的Hexo分支关联上</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%90%8C%E6%AD%A5"><span class="nav-text"> 新环境配置与同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ubuntu%E4%B8%8B%E9%85%8D%E7%BD%AE"><span class="nav-text"> Ubuntu下配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#windows%E4%B8%8B%E9%85%8D%E7%BD%AEgit"><span class="nav-text"> Windows下配置git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%86github%E4%B8%8A%E7%9A%84hexo%E6%BA%90blog%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5%E5%88%B0%E6%9C%AC%E5%9C%B0blog%E7%9B%AE%E5%BD%95%E4%B8%8B"><span class="nav-text"> 将Github上的Hexo源Blog文件同步到本地.&#x2F;blog目录下</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85hexo%E7%8E%AF%E5%A2%83"><span class="nav-text"> 安装Hexo环境</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -316,10 +316,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1><span id="新建github分支以保存hexo源文件"> 新建GitHub分支以保存Hexo源文件</span></h1>
+        <h1 id="新建github分支以保存hexo源文件"><a class="markdownIt-Anchor" href="#新建github分支以保存hexo源文件"></a> 新建GitHub分支以保存Hexo源文件</h1>
 <span id="more"></span>
 <p><img src="Hexo-Synchronization-and-Migration/image-20211205170753314.png" alt="新建Hexo分支"></p>
-<h1><span id="将本地hexo目录与github的hexo分支关联上"> 将本地Hexo目录与GitHub的Hexo分支关联上</span></h1>
+<h1 id="将本地hexo目录与github的hexo分支关联上"><a class="markdownIt-Anchor" href="#将本地hexo目录与github的hexo分支关联上"></a> 将本地Hexo目录与GitHub的Hexo分支关联上</h1>
 <blockquote>
 <p>2022-10-17更新</p>
 <p>建议新建一个私有仓库保存，防止token等泄露</p>
@@ -349,8 +349,8 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span> 
 <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Hexo源文件同步"</span>
 <span class="token function">git</span> push origin <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h1><span id="新环境配置与同步"> 新环境配置与同步</span></h1>
-<h2><span id="ubuntu下配置"> Ubuntu下配置</span></h2>
+<h1 id="新环境配置与同步"><a class="markdownIt-Anchor" href="#新环境配置与同步"></a> 新环境配置与同步</h1>
+<h2 id="ubuntu下配置"><a class="markdownIt-Anchor" href="#ubuntu下配置"></a> Ubuntu下配置</h2>
 <p>生成ssh key</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-C</span> <span class="token string">"XXXX@email.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>以我的为例</p>
@@ -360,9 +360,9 @@
 <p>然后将<code>cat</code>获取到的结果存至GitHub</p>
 <p>验证是否连接成功</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token parameter variable">-T</span> git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="windows下配置git"> Windows下配置git</span></h2>
+<h2 id="windows下配置git"><a class="markdownIt-Anchor" href="#windows下配置git"></a> Windows下配置git</h2>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">ssh-keygen <span class="token operator">-</span>t rsa <span class="token operator">-</span>C <span class="token string">"xuanyabulema@qq.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="将github上的hexo源blog文件同步到本地blog目录下"> 将Github上的Hexo源Blog文件同步到本地<code>./blog</code>目录下</span></h2>
+<h2 id="将github上的hexo源blog文件同步到本地blog目录下"><a class="markdownIt-Anchor" href="#将github上的hexo源blog文件同步到本地blog目录下"></a> 将Github上的Hexo源Blog文件同步到本地<code>./blog</code>目录下</h2>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone <span class="token parameter variable">-b</span> Hexo git@github.com:xuanyabulema/xuanyabulema.github.io.git ./blog<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>后来改为了一个单独的私有仓库，使用如下命令</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone git@github.com:xuanyabulema/Hexo.git ./blog<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -370,7 +370,7 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> <span class="token function">add</span> <span class="token parameter variable">-A</span> <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"Hexo源文件同步"</span> <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> push origin <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>其他端变更后同步到本地</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> pull<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="安装hexo环境"> 安装Hexo环境</span></h2>
+<h2 id="安装hexo环境"><a class="markdownIt-Anchor" href="#安装hexo环境"></a> 安装Hexo环境</h2>
 <p><a href="#Hexo安装">之前写过</a></p>
 <p>安装Nodejs</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Using Ubuntu</span>

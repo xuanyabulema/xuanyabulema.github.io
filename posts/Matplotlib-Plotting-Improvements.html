@@ -150,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 借助  优雅解决中文显示问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 快速设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 使用示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 借助  进行优美的科研绘图</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%80%9F%E5%8A%A9-mplfonts-%E4%BC%98%E9%9B%85%E8%A7%A3%E5%86%B3%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98"><span class="nav-text"> 借助 mplfonts 优雅解决中文显示问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E8%AE%BE%E7%BD%AE"><span class="nav-text"> 快速设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="nav-text"> 使用示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%80%9F%E5%8A%A9-scienceplots-%E8%BF%9B%E8%A1%8C%E4%BC%98%E7%BE%8E%E7%9A%84%E7%A7%91%E7%A0%94%E7%BB%98%E5%9B%BE"><span class="nav-text"> 借助 SciencePlots 进行优美的科研绘图</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -317,21 +317,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1><span id="前言"> 前言</span></h1>
+        <h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p>众所周知 Matplotlib 是个优秀的可视化工具，同时在 Matplotlib 中慢慢调细节也是件耗费精力的事。例如，中文的正常显示（而不是方块）、样式的细致调节等。</p>
 <p>针对上述问题，包 <a target="_blank" rel="noopener" href="http://clarmy.net/2022/04/10/how-to-solve-tofu-in-matplotlib/">mplfonts</a> 优雅的解决了中文显示问题，包 <a target="_blank" rel="noopener" href="https://github.com/garrettj403/SciencePlots">SciencePlots </a> 提供了优美的科研绘图样式。</p>
 <span id="more"></span>
-<h1><span id="借助-mplfonts-优雅解决中文显示问题"> 借助  优雅解决中文显示问题</span></h1>
+<h1 id="借助-mplfonts-优雅解决中文显示问题"><a class="markdownIt-Anchor" href="#借助-mplfonts-优雅解决中文显示问题"></a> 借助 <a target="_blank" rel="noopener" href="http://clarmy.net/2022/04/10/how-to-solve-tofu-in-matplotlib/">mplfonts</a> 优雅解决中文显示问题</h1>
 <blockquote>
 <p>在线jupyter-notebook</p>
 <iframe src="https://nbviewer.org/github/xuanyabulema/JupyterNotebook-OfflineWebArchives/blob/main/mplfonts/mplfonts_example.ipynb" width="100%" height="600"></iframe>
 </blockquote>
-<h2><span id="安装"> 安装</span></h2>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> mplfonts<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="快速设置"> 快速设置</span></h2>
+<h2 id="快速设置"><a class="markdownIt-Anchor" href="#快速设置"></a> 快速设置</h2>
 <p>安装完成之后，你只需要执行一条简单的命令就可以快速解决中文渲染出现“豆腐块”的问题：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">mplfonts init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="使用示例"> 使用示例</span></h2>
+<h2 id="使用示例"><a class="markdownIt-Anchor" href="#使用示例"></a> 使用示例</h2>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
 <span class="token keyword">from</span> mplfonts <span class="token keyword">import</span> use_font
 
@@ -359,7 +359,7 @@ FONT_NAMES <span class="token operator">=</span> <span class="token punctuation"
         plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 test_chinese<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1><span id="借助-scienceplots-进行优美的科研绘图"> 借助  进行优美的科研绘图</span></h1>
+<h1 id="借助-scienceplots-进行优美的科研绘图"><a class="markdownIt-Anchor" href="#借助-scienceplots-进行优美的科研绘图"></a> 借助 <a target="_blank" rel="noopener" href="https://github.com/garrettj403/SciencePlots">SciencePlots</a> 进行优美的科研绘图</h1>
 <blockquote>
 <p>在线jupyter-notebook</p>
 <iframe src="https://nbviewer.org/github/xuanyabulema/JupyterNotebook-OfflineWebArchives/blob/main/scienceplots/scienceplots_example.ipynb" width="100%" height="600"></iframe>

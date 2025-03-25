@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/about/index.html</loc>
+    <loc>https://xuanyabulema.github.io/book/index.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/book/index.html</loc>
+    <loc>https://xuanyabulema.github.io/about/index.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -56,15 +56,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Word-Thesis-Formatting.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Windows-Terminal-Proxy-Configuration.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -74,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/VScode-Python-Snippets.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Word-Thesis-Formatting.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -92,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Windows-Network-Reset.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/VScode-Python-Snippets.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -110,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Windows-Boot.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Windows-Network-Reset.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -120,6 +111,15 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/posts/Usage-of-Pydicom.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Windows-Boot.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Ubuntu-Basics.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Some-Usage-of-Git.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Some-Usage-of-Git.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Ubuntu-Basics.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Short-Circuiting-Property-of-Logical-Operators-in-Python.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -236,7 +236,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Short-Circuiting-Property-of-Logical-Operators-in-Python.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -299,15 +299,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Paper-Excerpt.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -326,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Matplotlib-Plotting-Improvements.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Paper-Excerpt.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -336,6 +327,15 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/posts/NexT-Theme-Configuration-Supplement.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Matplotlib-Plotting-Improvements.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -362,7 +362,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-SEO-Optimization.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Render-Math-Equations.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -371,7 +371,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Render-Math-Equations.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-SEO-Optimization.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -389,7 +389,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Synchronization-and-Migration.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Interesting-Webs.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -398,7 +398,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Interesting-Webs.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Synchronization-and-Migration.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -416,7 +416,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Frequently-Used-Commands.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -425,7 +425,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Frequently-Used-Commands.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -443,15 +443,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Description-of-Mingw-Version-Parameters.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Excellent-UWP-Apps-for-Windows.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -461,7 +452,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Fix-Custom-Resolutio-is-Not-Supported-on-Internal-Displays.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Description-of-Mingw-Version-Parameters.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -471,6 +462,15 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/posts/Find-All-Files-With-the-Specified-Extension-in-the-Specified-Folder-in-Python.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Fix-Custom-Resolutio-is-Not-Supported-on-Internal-Displays.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     

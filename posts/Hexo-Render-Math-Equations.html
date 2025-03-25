@@ -149,7 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 安装过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 卸载已有渲染器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 安装新渲染器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 配置成功后公式示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 安装完成后所有npm包</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B"><span class="nav-text"> 安装过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B8%E8%BD%BD%E5%B7%B2%E6%9C%89%E6%B8%B2%E6%9F%93%E5%99%A8"><span class="nav-text"> 卸载已有渲染器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%96%B0%E6%B8%B2%E6%9F%93%E5%99%A8"><span class="nav-text"> 安装新渲染器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%88%90%E5%8A%9F%E5%90%8E%E5%85%AC%E5%BC%8F%E7%A4%BA%E4%BE%8B"><span class="nav-text"> 配置成功后公式示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E5%90%8E%E6%89%80%E6%9C%89npm%E5%8C%85"><span class="nav-text"> 安装完成后所有npm包</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -312,7 +312,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1><span id="前言"> 前言</span></h1>
+        <h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p><code>Hexo</code>默认的<code>Markdown</code>渲染器是<code>hexo-renderer-marked</code>，并不支持<code>Mathjax</code>，不支持<code>emoji</code>表情，之前为了<a href="#让hexo博客支持emoji显示">让网页显示emoji</a>, 将渲染器更换为<code>hexo-renderer-markdown-it</code>, 最近发现该渲染器也不支持<code>Mathjax</code>，为了让网页显示数学公式，再次更换渲染器。</p>
 <p><code>Hexo</code>常见的<code>Markdown</code>渲染器有：<code>hexo-renderer-marked</code>，<code>hexo-renderer-kramed</code>，<code>hexo-renderer-pandoc</code>，<code>hexo-renderer-markdown-it</code>，<code>hexo-renderer-markdown-it-plus</code>，其简单对比如下（参考于：<a target="_blank" rel="noopener" href="https://bugwz.com/2019/09/17/hexo-markdown-renderer/">Hexo的多种Markdown渲染器对比分析</a>），</p>
 <table>
@@ -358,12 +358,12 @@
 </tbody>
 </table>
 <span id="more"></span>
-<h1><span id="安装过程"> 安装过程</span></h1>
-<h2><span id="卸载已有渲染器"> 卸载已有渲染器</span></h2>
+<h1 id="安装过程"><a class="markdownIt-Anchor" href="#安装过程"></a> 安装过程</h1>
+<h2 id="卸载已有渲染器"><a class="markdownIt-Anchor" href="#卸载已有渲染器"></a> 卸载已有渲染器</h2>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> un 渲染器名称 <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>以我的为例</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> un hexo-renderer-markdown-it <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="安装新渲染器"> 安装新渲染器</span></h2>
+<h2 id="安装新渲染器"><a class="markdownIt-Anchor" href="#安装新渲染器"></a> 安装新渲染器</h2>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i hexo-renderer-markdown-it-plus <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>配置站点文件<code>_config.yml</code>, 添加如下内容</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">markdown_it_plus</span><span class="token punctuation">:</span>
@@ -394,7 +394,7 @@
     <span class="token key atrule">copy_tex</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>安装自动部署MathJax的<a target="_blank" rel="noopener" href="http://catx.me/2014/03/09/hexo-mathjax-plugin/">hexo插件</a></p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-math <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="配置成功后公式示例"> 配置成功后公式示例</span></h2>
+<h2 id="配置成功后公式示例"><a class="markdownIt-Anchor" href="#配置成功后公式示例"></a> 配置成功后公式示例</h2>
 <p>单行公式</p>
 <pre class="line-numbers language-latex" data-language="latex"><code class="language-latex"><span class="token equation string">$$
 <span class="token equation-command regex">\nabla</span><span class="token equation-command regex">\cdot</span><span class="token equation-command regex">\vec</span>&#123;E&#125; = <span class="token equation-command regex">\frac</span>&#123;<span class="token equation-command regex">\rho</span>&#125;&#123;<span class="token equation-command regex">\epsilon</span>_0&#125;
@@ -424,7 +424,7 @@ $$</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span><
 \nabla\times\vec{B} &amp;= \mu_0\left(\vec{J}+\epsilon_0\frac{\partial E}{\partial t} \right)
 \end{align}
 </p>
-<h2><span id="安装完成后所有npm包"> 安装完成后所有npm包</span></h2>
+<h2 id="安装完成后所有npm包"><a class="markdownIt-Anchor" href="#安装完成后所有npm包"></a> 安装完成后所有npm包</h2>
 <p>查看命令</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> list <span class="token parameter variable">--depth</span><span class="token operator">=</span><span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>输出结果</p>

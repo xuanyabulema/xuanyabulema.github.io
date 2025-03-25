@@ -153,7 +153,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 添加注入器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 添加静态代码片段</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%B3%A8%E5%85%A5%E5%99%A8"><span class="nav-text"> 添加注入器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5"><span class="nav-text"> 添加静态代码片段</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -316,7 +316,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1><span id="前言"> 前言</span></h1>
+        <h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p>随着时间的推移，很多程序都会更新，网上很多关于对程序记录的内容往往会过时，出现不能在复现的问题。因此根据文章发布时间设置时效性提醒，有助于读者辨别信息的可靠性。</p>
 <span id="more"></span>
 <blockquote>
@@ -324,7 +324,7 @@
 </blockquote>
 <p>效果图如下</p>
 <p><img src="Add-Timeliness-Alerts-for-Hexo/image-20221015203829818.png" alt="文章时效性提示"></p>
-<h1><span id="添加注入器"> 添加注入器</span></h1>
+<h1 id="添加注入器"><a class="markdownIt-Anchor" href="#添加注入器"></a> 添加注入器</h1>
 <p><code>Hexo</code>提供了 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/api/injector">注入器（Injector）</a>，可以<strong>将指定的静态代码片段注入到生成的静态页面中</strong>。</p>
 <p>在主题的 <code>scripts</code> 目录（没有则新建一个）下新建一个名为 <code>injector.js</code> 的文件，</p>
 <p><img src="Add-Timeliness-Alerts-for-Hexo/image-20221015204435886.png" alt="新建injector.js"></p>
@@ -336,7 +336,7 @@ hexo<span class="token punctuation">.</span>extend<span class="token punctuation
 <li>由于注入的代码有点长，我们就用一个 <code>Javascript</code> 文件单独处理，作为注入的代码片段引入</li>
 <li><code>post</code> 代表只注入到文章详情页面中。</li>
 </ul>
-<h1><span id="添加静态代码片段"> 添加静态代码片段</span></h1>
+<h1 id="添加静态代码片段"><a class="markdownIt-Anchor" href="#添加静态代码片段"></a> 添加静态代码片段</h1>
 <p>在主题的 <code>source</code> 目录下新建 <code>js</code> 文件夹，新建一个名为 <code>outdate.js</code> 的文件，</p>
 <p><img src="Add-Timeliness-Alerts-for-Hexo/image-20221015204541482.png" alt="新建outdate.js"></p>
 <p>添加以下代码：</p>

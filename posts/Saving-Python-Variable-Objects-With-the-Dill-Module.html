@@ -150,7 +150,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 基础使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 保存变量对象至文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 从文件中读取变量对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 保存和加载解释器状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 保存lambda函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 保存源码</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8"><span class="nav-text"> 基础使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1%E8%87%B3%E6%96%87%E4%BB%B6"><span class="nav-text"> 保存变量对象至文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E6%96%87%E4%BB%B6%E4%B8%AD%E8%AF%BB%E5%8F%96%E5%8F%98%E9%87%8F%E5%AF%B9%E8%B1%A1"><span class="nav-text"> 从文件中读取变量对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98%E5%92%8C%E5%8A%A0%E8%BD%BD%E8%A7%A3%E9%87%8A%E5%99%A8%E7%8A%B6%E6%80%81"><span class="nav-text"> 保存和加载解释器状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98lambda%E5%87%BD%E6%95%B0"><span class="nav-text"> 保存lambda函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98%E6%BA%90%E7%A0%81"><span class="nav-text"> 保存源码</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -317,7 +317,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1><span id="前言"> 前言</span></h1>
+        <h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <blockquote>
 <p>内容参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/feffery/p/16703398.html">（数据科学学习手札142）dill：Python中增强版的pickle</a></p>
 </blockquote>
@@ -331,7 +331,7 @@
 <li>保存源码</li>
 </ul>
 <span id="more"></span>
-<h1><span id="基础使用"> 基础使用</span></h1>
+<h1 id="基础使用"><a class="markdownIt-Anchor" href="#基础使用"></a> 基础使用</h1>
 <p>备用代码</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> dill
 <span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
@@ -341,7 +341,7 @@
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"class A init"</span><span class="token punctuation">)</span>
         self<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">66666666</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2><span id="保存变量对象至文件"> 保存变量对象至文件</span></h2>
+<h2 id="保存变量对象至文件"><a class="markdownIt-Anchor" href="#保存变量对象至文件"></a> 保存变量对象至文件</h2>
 <p>使用方式</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">dill<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token builtin">file</span><span class="token punctuation">)</span>
 <span class="token comment"># obj 要保存的变量对象</span>
@@ -352,13 +352,13 @@ b <span class="token operator">=</span> np<span class="token punctuation">.</spa
 
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./pickle/dill_test.pkl'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     dill<span class="token punctuation">.</span>dump<span class="token punctuation">(</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">]</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span> <span class="token comment"># dill.dump(obj, file)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2><span id="从文件中读取变量对象"> 从文件中读取变量对象</span></h2>
+<h2 id="从文件中读取变量对象"><a class="markdownIt-Anchor" href="#从文件中读取变量对象"></a> 从文件中读取变量对象</h2>
 <p>使用方式</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">obj <span class="token operator">=</span> dill<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>示例</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./pickle/dill_test.pkl'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     a<span class="token punctuation">,</span> b <span class="token operator">=</span> dill<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>  <span class="token comment"># obj = dill.load(file)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h1><span id="保存和加载解释器状态"> 保存和加载解释器状态</span></h1>
+<h1 id="保存和加载解释器状态"><a class="markdownIt-Anchor" href="#保存和加载解释器状态"></a> 保存和加载解释器状态</h1>
 <p><code>dill.dump_module()</code>（旧为<code>dill.dump_session()</code>）可以将解释器状态保存至文件，即可保存运行后整个内存中所有对象信息</p>
 <p><code>dill.load_module()</code>（旧为<code>dill.load_session()</code>）可以从文件中加载保存的解释器状态</p>
 <p>示例</p>
@@ -375,9 +375,9 @@ dill<span class="token punctuation">.</span>load_module<span class="token punctu
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">A</span> init
 <span class="token boolean">False</span>
 <span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h1><span id="保存lambda函数"> 保存lambda函数</span></h1>
+<h1 id="保存lambda函数"><a class="markdownIt-Anchor" href="#保存lambda函数"></a> 保存lambda函数</h1>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h1><span id="保存源码"> 保存源码</span></h1>
+<h1 id="保存源码"><a class="markdownIt-Anchor" href="#保存源码"></a> 保存源码</h1>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
     </div>

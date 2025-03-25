@@ -153,7 +153,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> FFmpeg转码 GPU加速 简单示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> Nvidia GPU加速转码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> Intel GPU加速转码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 下载 FFmpeg</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ffmpeg%E8%BD%AC%E7%A0%81-gpu%E5%8A%A0%E9%80%9F-%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B"><span class="nav-text"> FFmpeg转码 GPU加速 简单示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nvidia-gpu%E5%8A%A0%E9%80%9F%E8%BD%AC%E7%A0%81"><span class="nav-text"> Nvidia GPU加速转码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intel-gpu%E5%8A%A0%E9%80%9F%E8%BD%AC%E7%A0%81"><span class="nav-text"> Intel GPU加速转码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD-ffmpeg"><span class="nav-text"> 下载 FFmpeg</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -316,12 +316,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1><span id="ffmpeg转码-gpu加速-简单示例"> FFmpeg转码 GPU加速 简单示例</span></h1>
+        <h1 id="ffmpeg转码-gpu加速-简单示例"><a class="markdownIt-Anchor" href="#ffmpeg转码-gpu加速-简单示例"></a> FFmpeg转码 GPU加速 简单示例</h1>
 <blockquote>
 <p>常见的h264, hevc(h265)格式视频为例</p>
 </blockquote>
 <span id="more"></span>
-<h2><span id="nvidia-gpu加速转码"> Nvidia GPU加速转码</span></h2>
+<h2 id="nvidia-gpu加速转码"><a class="markdownIt-Anchor" href="#nvidia-gpu加速转码"></a> Nvidia GPU加速转码</h2>
 <p>通过 <code>h264_cuvid</code>、 <code>hevc_cuvid</code>和 <code>h264_nvenc</code>、 <code>hevc_nvenc</code>参数来加速<code>h264</code>和<code>hevc</code>解码和编码。</p>
 <p>一、不指定原视频解码加速方式</p>
 <p><code>-c:v hevc_nvenc</code>加速<code>hevc</code>格式编码</p>
@@ -333,11 +333,11 @@
 <p><code>hevc</code>编码格式转<code>h264</code>编码格式示例</p>
 <p><code>-c:v hevc_cuvid</code>指定加速<code>hevc</code>格式视频解码，<code>-c:v h264_nvenc</code>加速<code>h264</code>格式编码</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ffmpeg <span class="token parameter variable">-c:v</span> hevc_cuvid <span class="token parameter variable">-i</span> input.mp4 <span class="token parameter variable">-c:v</span> h264_nvenc <span class="token parameter variable">-b:v</span> 2048k output_264_gpu.mp4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2><span id="intel-gpu加速转码"> Intel GPU加速转码</span></h2>
+<h2 id="intel-gpu加速转码"><a class="markdownIt-Anchor" href="#intel-gpu加速转码"></a> Intel GPU加速转码</h2>
 <p>通过 <code>h264_qsv</code>、 <code>hevc_qsv</code>来加速<code>h264</code>和<code>hevc</code>解码和编码。</p>
 <p>不同于Nvidia GPU加速参数，Intel GPU加速解码与编码参数一样。</p>
 <p>替换上述Nvidia GPU参数即可实现Intel GPU加速转码。</p>
-<h1><span id="下载-ffmpeg"> 下载 FFmpeg</span></h1>
+<h1 id="下载-ffmpeg"><a class="markdownIt-Anchor" href="#下载-ffmpeg"></a> 下载 FFmpeg</h1>
 <p><a target="_blank" rel="noopener" href="https://ffmpeg.org/download.html#build-windows">https://ffmpeg.org/download.html#build-windows</a></p>
 <img src="Using-FFmpeg-with-GPU-Hardware-Acceleration/image-20230512190748060.png" alt="Windows版下载选择界面" style="width: 60%;">
 <p>有两种编译好的版本，个人喜欢下载 gyan.dev 编译的版本。</p>

@@ -162,7 +162,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> LiveRe配置教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 注册 LiveRe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 配置 LiveRe</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> Waline配置教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> LeanCloud 设置 (数据库)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> Vercel 部署 (服务端)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 在Hexo Next主题中配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 登录服务端</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#livere%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B"><span class="nav-text"> LiveRe配置教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C-livere"><span class="nav-text"> 注册 LiveRe</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-livere"><span class="nav-text"> 配置 LiveRe</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#waline%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B"><span class="nav-text"> Waline配置教程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#leancloud-%E8%AE%BE%E7%BD%AE-%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-text"> LeanCloud 设置 (数据库)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vercel-%E9%83%A8%E7%BD%B2-%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="nav-text"> Vercel 部署 (服务端)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8hexo-next%E4%B8%BB%E9%A2%98%E4%B8%AD%E9%85%8D%E7%BD%AE"><span class="nav-text"> 在Hexo Next主题中配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="nav-text"> 登录服务端</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -329,14 +329,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1><span id="前言"> 前言</span></h1>
+        <h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
 <p>为自己的Blog添加一个评论系统不仅有趣，也有利于交流。</p>
 <p>Hexo支持多个评论系统同时启用，NexT主题默认支持<code>disqus | disqusjs | changyan | livere | gitalk | utterances</code>等评论系统</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Available values: disqus | disqusjs | changyan | livere | gitalk | utterances</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <span id="more"></span>
-<h1><span id="livere配置教程"> LiveRe配置教程</span></h1>
+<h1 id="livere配置教程"><a class="markdownIt-Anchor" href="#livere配置教程"></a> LiveRe配置教程</h1>
 <p>最新版 <a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-theme-next">hexo-theme-next</a> 已经包含 LiveRe 插件，下载最新版本，配置 <code>livere_uid</code> 即可使用。</p>
-<h2><span id="注册-livere"> 注册 LiveRe</span></h2>
+<h2 id="注册-livere"><a class="markdownIt-Anchor" href="#注册-livere"></a> 注册 LiveRe</h2>
 <p>进入 <a target="_blank" rel="noopener" href="https://livere.com/">LiveRe</a>，注册账号。</p>
 <p>LiveRe 有两个版本：</p>
 <ol>
@@ -346,17 +346,17 @@
 <p>安装，获取 <code>uid</code>：</p>
 <p><img src="Add-Comment-System-in-Hexo-NexT-Theme/livere-get-code.png" alt="LiveRe City 版"></p>
 <p>填写（都可以随便填写）完成后，进入到 <code>管理页面 -&gt; 代码管理 -&gt; 一般网站</code> 代码中，<code>data-uid</code> 即为所需 <code>uid</code>。</p>
-<h2><span id="配置-livere"> 配置 LiveRe</span></h2>
+<h2 id="配置-livere"><a class="markdownIt-Anchor" href="#配置-livere"></a> 配置 LiveRe</h2>
 <p>找到NexT主题配置文件，在其中填写<code>uid</code>即可</p>
 <pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># LiveRe comments system</span>
 <span class="token comment"># You can get your uid from https://livere.com/insight/myCode (General web site)</span>
 <span class="token key atrule">livere_uid</span><span class="token punctuation">:</span> <span class="token comment"># &lt;your_uid></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><img src="Add-Comment-System-in-Hexo-NexT-Theme/image-20221006015901073.png" alt="livere评论效果"></p>
-<h1><span id="waline配置教程"> Waline配置教程</span></h1>
+<h1 id="waline配置教程"><a class="markdownIt-Anchor" href="#waline配置教程"></a> Waline配置教程</h1>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://waline.js.org/guide/get-started.html">Waline快速上手</a></p>
 </blockquote>
-<h2><span id="leancloud-设置-数据库"> LeanCloud 设置 (数据库)</span></h2>
+<h2 id="leancloud-设置-数据库"><a class="markdownIt-Anchor" href="#leancloud-设置-数据库"></a> LeanCloud 设置 (数据库)</h2>
 <ol>
 <li>
 <p><a target="_blank" rel="noopener" href="https://console.leancloud.app/login">登录</a> 或 <a target="_blank" rel="noopener" href="https://console.leancloud.app/register">注册</a> <code>LeanCloud 国际版</code> 并进入 <a target="_blank" rel="noopener" href="https://console.leancloud.app/apps">控制台</a></p>
@@ -370,7 +370,7 @@
 <p><img src="Add-Comment-System-in-Hexo-NexT-Theme/leancloud-2.4cc69975.png" alt="ID 和 Key"></p>
 </li>
 </ol>
-<h2><span id="vercel-部署-服务端"> Vercel 部署 (服务端)</span></h2>
+<h2 id="vercel-部署-服务端"><a class="markdownIt-Anchor" href="#vercel-部署-服务端"></a> Vercel 部署 (服务端)</h2>
 <p><a target="_blank" rel="noopener" href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwalinejs%2Fwaline%2Ftree%2Fmain%2Fexample">Dyploy</a></p>
 <ol>
 <li>
@@ -407,7 +407,7 @@
 <p><img src="Add-Comment-System-in-Hexo-NexT-Theme/vercel-7.2478902b.png" alt="redeploy success"></p>
 </li>
 </ol>
-<h2><span id="在hexo-next主题中配置"> 在Hexo Next主题中配置</span></h2>
+<h2 id="在hexo-next主题中配置"><a class="markdownIt-Anchor" href="#在hexo-next主题中配置"></a> 在Hexo Next主题中配置</h2>
 <p>由于 Next 主题中并不自带 <code>Waline</code> 的评论配置，我们需要安装官方提供的插件。在 <code>Hexo</code> 根目录执行：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> @waline/hexo-next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>找到 Next 的主题配置文件，在最后加上</p>
@@ -430,7 +430,7 @@
 <blockquote>
 <p>据反馈，Hexo 似乎在 8.x 的版本使用 waline 比较稳定，如果出现 <code>hexo g</code> 出错，可尝试升级 hexo 版本。</p>
 </blockquote>
-<h2><span id="登录服务端"> 登录服务端</span></h2>
+<h2 id="登录服务端"><a class="markdownIt-Anchor" href="#登录服务端"></a> 登录服务端</h2>
 <p>由于 <code>Waline</code> 有服务端，支持评论管理。我们需要注册一个账号作为管理员。</p>
 <p>找到评论框，点击 <code>登录</code> 按钮，会弹出一个窗口，找到用户注册，默认第一个注册的用户为管理员，所以部署好一定要记得及时注册。</p>
 <p><img src="Add-Comment-System-in-Hexo-NexT-Theme/image-20221006015839546.png" alt="Waline评论系统"></p>
