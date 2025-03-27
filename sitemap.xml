@@ -110,15 +110,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Windows-Boot.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Usage-of-Pydicom.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -129,6 +120,15 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Windows-Boot.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -182,15 +182,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Ubuntu-Basics.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Some-Usage-of-Git.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -200,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Ubuntu20-04-Static-Ip-Configuration.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Usage-of-Matplotlib-2.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -209,7 +200,16 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Usage-of-Matplotlib-2.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Ubuntu-Basics.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Ubuntu20-04-Static-Ip-Configuration.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -272,7 +272,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Quantile-and-Boxplots-in-Python.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Reading-Notes-Benchmarking-framework-for-myocardial-tracking-and-deformation-algorithms-An-open-access-database.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -290,7 +290,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Reading-Notes-Benchmarking-framework-for-myocardial-tracking-and-deformation-algorithms-An-open-access-database.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Quantile-and-Boxplots-in-Python.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -308,15 +308,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Problems-Encountered-During-the-Use-of-Hexo.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -326,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Matplotlib-Plotting-Improvements.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Problems-Encountered-During-the-Use-of-Hexo.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -353,6 +344,15 @@
   </url>
   
   <url>
+    <loc>https://xuanyabulema.github.io/posts/Matplotlib-Plotting-Improvements.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanyabulema.github.io/posts/Hexo-Render-Math-Equations.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -371,6 +371,15 @@
   </url>
   
   <url>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Posts-Links.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanyabulema.github.io/posts/Hexo-Site-Configuration-Supplement.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -381,15 +390,6 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/posts/Hexo-Synchronization-and-Migration.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Posts-Links.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -425,6 +425,15 @@
   </url>
   
   <url>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -434,7 +443,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Description-of-Mingw-Version-Parameters.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -461,15 +470,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Description-of-Mingw-Version-Parameters.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Fix-Custom-Resolutio-is-Not-Supported-on-Internal-Displays.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -488,7 +488,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Commonly-Used-English-Words-and-Their-Abbreviations.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Alternative-Fuel-Vehicle.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -506,7 +506,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Alternative-Fuel-Vehicle.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Commonly-Used-English-Words-and-Their-Abbreviations.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
