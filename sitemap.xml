@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/book/index.html</loc>
+    <loc>https://xuanyabulema.github.io/about/index.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/about/index.html</loc>
+    <loc>https://xuanyabulema.github.io/book/index.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -92,15 +92,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Windows-Server-2008-Add-Remote-Desktop-User.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Windows-Network-Reset.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -110,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Usage-of-Pydicom.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Windows-Server-2008-Add-Remote-Desktop-User.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -120,6 +111,15 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/posts/Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Windows-Boot.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Usage-of-Pydicom.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Some-Usage-of-Git.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Ubuntu-Basics.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Ubuntu-Basics.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Some-Usage-of-Git.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -272,7 +272,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Python3-Basics.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Quantile-and-Boxplots-in-Python.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -281,7 +281,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Quantile-and-Boxplots-in-Python.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Python3-Basics.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -299,7 +299,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Paper-Excerpt.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -317,16 +317,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Paper-Excerpt.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/posts/NexT-Theme-Configuration-Supplement.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -344,7 +335,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Notes-Before-Writing-Blog-With-Hexo.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/NexT-Theme-Configuration-Supplement.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -353,7 +344,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Posts-Links.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Notes-Before-Writing-Blog-With-Hexo.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -389,15 +380,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Interesting-Webs.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Hexo-Synchronization-and-Migration.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -407,7 +389,16 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Fix-ms-resource-AppListName-in-Windows-10-Start-Menu.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Posts-Links.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Interesting-Webs.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -425,7 +416,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Fix-ms-resource-AppListName-in-Windows-10-Start-Menu.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -443,6 +434,15 @@
   </url>
   
   <url>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanyabulema.github.io/posts/Excellent-UWP-Apps-for-Windows.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -452,7 +452,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Description-of-Mingw-Version-Parameters.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Find-All-Files-With-the-Specified-Extension-in-the-Specified-Folder-in-Python.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -461,7 +461,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Find-All-Files-With-the-Specified-Extension-in-the-Specified-Folder-in-Python.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Description-of-Mingw-Version-Parameters.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -488,7 +488,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Alternative-Fuel-Vehicle.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Commonly-Used-English-Words-and-Their-Abbreviations.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -506,7 +506,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Commonly-Used-English-Words-and-Their-Abbreviations.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Alternative-Fuel-Vehicle.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -535,7 +535,7 @@
 
   <url>
     <loc>https://xuanyabulema.github.io/</loc>
-    <lastmod>2025-03-25</lastmod>
+    <lastmod>2025-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
