@@ -140,7 +140,7 @@ git pull
 
 ## 安装Hexo环境
 
-<a href="{% post_path 'Hexo安装日志' %}#Hexo安装">之前写过</a>
+<a href="{% post_path Hexo-Installation-Log %}#hexo安装">之前写过Hexo安装</a>
 
 安装Nodejs
 
