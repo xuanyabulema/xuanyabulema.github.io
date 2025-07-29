@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html</loc>
+    
+    <lastmod>2025-07-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Windows-displays-the-Conda-environment-name-and-the-conda-init-powershell-command.html</loc>
+    
+    <lastmod>2025-07-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanyabulema.github.io/posts/Hexo-Synchronization-and-Migration.html</loc>
     
     <lastmod>2025-03-27</lastmod>
@@ -83,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/VScode-Python-Snippets.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/VMware-Workstation-Pro-Official-Download-Links.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -92,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/VMware-Workstation-Pro-Official-Download-Links.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/VScode-Python-Snippets.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -111,24 +129,6 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/posts/Windows-Server-2008-Add-Remote-Desktop-User.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/posts/Usage-of-Pydicom.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -156,6 +156,24 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/posts/VMware-Workstation-Pro-17-for-Windows-Virtual-Machine-Automatic-Start-Configuration.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Usage-of-Pydicom.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -200,15 +218,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Ubuntu-Basics.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Ubuntu20-04-Static-Ip-Configuration.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -218,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Usage-of-Matplotlib.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Usage-of-Matplotlib-2.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -227,7 +236,16 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Usage-of-Matplotlib-2.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Ubuntu-Basics.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Usage-of-Matplotlib.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -308,7 +326,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Problems-Encountered-During-the-Use-of-Hexo.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -317,7 +335,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Problems-Encountered-During-the-Use-of-Hexo.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -362,6 +380,15 @@
   </url>
   
   <url>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-SEO-Optimization.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanyabulema.github.io/posts/Hexo-Posts-Links.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -371,7 +398,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-SEO-Optimization.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Interesting-Webs.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -398,15 +425,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Interesting-Webs.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Fix-ms-resource-AppListName-in-Windows-10-Start-Menu.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -417,15 +435,6 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/posts/Hexo-Frequently-Used-Commands.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -535,7 +544,7 @@
 
   <url>
     <loc>https://xuanyabulema.github.io/</loc>
-    <lastmod>2025-04-10</lastmod>
+    <lastmod>2025-07-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
