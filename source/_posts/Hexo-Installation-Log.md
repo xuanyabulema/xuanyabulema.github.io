@@ -96,7 +96,7 @@ sudo hexo s
 
 `ip`为你搭建Hexo的系统的ip地址，以我为例，即我的Ubuntu系统ip
 
-### 新建一片文章
+### 新建一篇文章
 
 ```shell
 sudo hexo n "新的文章"
