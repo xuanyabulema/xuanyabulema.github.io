@@ -116,11 +116,7 @@ ssh-keygen -t rsa -C "xuanyabulema@qq.com"
 
 ## 将Github上的Hexo源Blog文件同步到本地`./blog`目录下
 
-```shell
-git clone -b Hexo git@github.com:xuanyabulema/xuanyabulema.github.io.git ./blog
-```
-
-后来改为了一个单独的私有仓库，使用如下命令
+个人使用的仓库同步命令
 
 ```shell
 git clone git@github.com:xuanyabulema/Hexo.git ./blog
