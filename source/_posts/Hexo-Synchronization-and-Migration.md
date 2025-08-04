@@ -159,3 +159,24 @@ cd blog
 npm install
 ```
 
+修复一下 Hexo一级标题不跳转问题 hexo toc 插件问题
+
+<a href="{% post_path Problems-Encountered-During-the-Use-of-Hexo %}#hexo一级标题不跳转问题解决">之前写过，点击跳转查看，下面内容相同</a>
+
+> > 解决方法参考：[hexo文章目录点击不跳转，html没有生成href](https://blog.csdn.net/weixin_45149481/article/details/116794535)
+>
+> 确保`node_modules`目录下有`hexo-toc`，否则使用以下命令生成该目录
+>
+> ```shell
+> npm install hexo-toc
+> ```
+>
+> 然后修改该目录下的`node_modules\hexo-toc\lib\filter.js`的“28-31行”为如下
+>
+> ```js
+> $title.attr('id', id);
+> // $title.children('a').remove();
+> // $title.html( '<span id="' + id + '">' + $title.html() + '</span>' );
+> // $title.removeAttr('id');
+> ```
+>
