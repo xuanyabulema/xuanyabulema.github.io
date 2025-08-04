@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-tvmKCk5xu9">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xuanyabulema.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="前言 按照固有思维，Windows 下应该使用PowerShell或CMD来执行Conda相关命令来管理Python环境。   注意：在使用PowerShell前应先检查Anaconda3&#x2F;Scripts&#x2F;已经添加到了系统环境变量下，然后执行 conda init powershell 否则会出现无法激活切换conda环境，参考">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows 下使用 Conda 管理 Python 环境">
+<meta property="og:url" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html">
+<meta property="og:site_name" content="悬崖不勒马的小站">
+<meta property="og:description" content="前言 按照固有思维，Windows 下应该使用PowerShell或CMD来执行Conda相关命令来管理Python环境。   注意：在使用PowerShell前应先检查Anaconda3&#x2F;Scripts&#x2F;已经添加到了系统环境变量下，然后执行 conda init powershell 否则会出现无法激活切换conda环境，参考">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows/image-20230419133127930.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214160239444.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214155735469.png">
+<meta property="og:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214155922958.png">
+<meta property="article:published_time" content="2022-12-14T06:35:13.000Z">
+<meta property="article:modified_time" content="2025-08-04T06:19:52.291Z">
+<meta property="article:author" content="悬崖不勒马">
+<meta property="article:tag" content="Conda">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Windows">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows/image-20230419133127930.png">
+
+
+<link rel="canonical" href="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html","path":"posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html","title":"Windows 下使用 Conda 管理 Python 环境"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Windows 下使用 Conda 管理 Python 环境 | 悬崖不勒马的小站</title>
+  
+
+
+
+
+
+<link rel="dns-prefetch" href="waline-test-beta.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">悬崖不勒马的小站</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">36</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">32</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">54</span></a></li><li class="menu-item menu-item-阅读"><a href="/book/" rel="section"><i class="fa fa-book fa-fw"></i>阅读</a></li><li class="menu-item menu-item-折腾"><a href="/microchip/" rel="section"><i class="fas fa-microchip fa-fw"></i>折腾</a></li><li class="menu-item menu-item-冲浪"><a href="/surfing/" rel="section"><i class="fab fa-internet-explorer fa-fw"></i>冲浪</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E9%85%8D%E7%BD%AE"><span class="nav-text"> 源配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90-condarc-%E6%96%87%E4%BB%B6"><span class="nav-text"> 生成 .condarc  文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-condarc-%E6%96%87%E4%BB%B6"><span class="nav-text"> 修改 .condarc 文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#conda%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text"> Conda常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%B2%E5%AE%89%E8%A3%85%E7%9A%84%E5%BA%93"><span class="nav-text"> 查看已安装的库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8C%87%E5%AE%9A%E5%BA%93"><span class="nav-text"> 安装指定库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%BA%93"><span class="nav-text"> 删除指定库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E5%BA%93"><span class="nav-text"> 搜索库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E6%9B%B4%E6%96%B0%E5%BD%93%E5%89%8Dconda"><span class="nav-text"> 检查更新当前conda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E5%B9%B6%E6%9B%B4%E6%96%B0%E6%89%80%E6%9C%89%E5%86%85%E5%AE%B9"><span class="nav-text"> 检查并更新所有内容</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#conda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86"><span class="nav-text"> Conda虚拟环境管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%B2%E6%9C%89%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="nav-text"> 查看已有虚拟环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83"><span class="nav-text"> 创建新环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BF%80%E6%B4%BB%E5%88%87%E6%8D%A2%E7%8E%AF%E5%A2%83"><span class="nav-text"> 激活（切换）环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E5%9B%9E%E4%B8%BB%E7%8E%AF%E5%A2%83"><span class="nav-text"> 关闭虚拟环境（回主环境）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="nav-text"> 删除虚拟环境</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#conda%E7%8E%AF%E5%A2%83%E5%A4%8D%E5%88%B6%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%81%E7%A7%BB"><span class="nav-text"> Conda环境复制（备份）与迁移</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E5%88%B6%E6%9C%AC%E5%9C%B0%E5%A4%87%E4%BB%BD"><span class="nav-text"> 复制（本地备份）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%81%E7%A7%BB%E4%B8%8D%E5%90%8C%E7%94%B5%E8%84%91"><span class="nav-text"> 迁移（不同电脑）</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="悬崖不勒马"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">悬崖不勒马</p>
+  <div class="site-description" itemprop="description">The time you enjoy wasting is not wasted time!</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xuanyabulema" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xuanyabulema" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xuanyabulema@qq.com" title="E-Mail → mailto:xuanyabulema@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/45045474/" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;45045474&#x2F;" rel="noopener" target="_blank"><i class="fab custom fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="悬崖不勒马">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悬崖不勒马的小站">
+      <meta itemprop="description" content="The time you enjoy wasting is not wasted time!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Windows 下使用 Conda 管理 Python 环境 | 悬崖不勒马的小站">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Windows 下使用 Conda 管理 Python 环境
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-12-14 14:35:13" itemprop="dateCreated datePublished" datetime="2022-12-14T14:35:13+08:00">2022-12-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-08-04 14:19:52" itemprop="dateModified" datetime="2025-08-04T14:19:52+08:00">2025-08-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/Conda/" itemprop="url" rel="index"><span itemprop="name">Conda</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>按照固有思维，Windows 下应该使用<code>PowerShell</code>或<code>CMD</code>来执行<code>Conda</code>相关命令来管理<code>Python</code>环境。</p>
+<ul>
+<li>
+<p><span style="color:rgb(255, 0, 0);font-weight:bold;">注意</span>：在使用<code>PowerShell</code>前应先检查<code>Anaconda3/Scripts/</code>已经添加到了系统环境变量下，然后执行</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">conda init powershell<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>否则会出现无法激活切换<code>conda</code>环境，<a target="_blank" rel="noopener" href="https://stackoverflow.com/a/54811138">参考</a></p>
+</li>
+</ul>
+<span id="more"></span>
+<ul>
+<li>
+<p>确保可运行</p>
+<p><img src="Using-Conda-to-Manage-Python-Packages-on-Windows/image-20230419133127930.png" alt="修改执行策略"></p>
+<p>可能出现如上情况，该情况出现的原因是 Windows 上 <code>.ps1</code> 默认执行策略为 <code>Restricted</code>，用管理器权限运行<code>PowerShell</code>执行如下命令：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">set-executionpolicy</span> remotesigned<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>执行后，执行策略修改为为<code>remotesigned</code></p>
+</li>
+</ul>
+<h1 id="源配置"><a class="markdownIt-Anchor" href="#源配置"></a> 源配置</h1>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://mirrors.bfsu.edu.cn/help/anaconda/">Anaconda 镜像 北外源</a></p>
+</blockquote>
+<h2 id="生成-condarc-文件"><a class="markdownIt-Anchor" href="#生成-condarc-文件"></a> 生成 <code>.condarc</code>  文件</h2>
+<p>各系统都可以通过修改用户目录下的 <code>.condarc</code> 文件来更改镜像源。Windows 用户无法直接创建名为 <code>.condarc</code> 的文件，可先执行如下命令：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">conda config <span class="token operator">--</span><span class="token function">set</span> show_channel_urls yes<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>生成该文件之后再修改。</p>
+<h2 id="修改-condarc-文件"><a class="markdownIt-Anchor" href="#修改-condarc-文件"></a> 修改 <code>.condarc</code> 文件</h2>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">channels</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> defaults
+<span class="token key atrule">show_channel_urls</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">default_channels</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> https<span class="token punctuation">:</span>//mirrors.bfsu.edu.cn/anaconda/pkgs/main
+  <span class="token punctuation">-</span> https<span class="token punctuation">:</span>//mirrors.bfsu.edu.cn/anaconda/pkgs/r
+  <span class="token punctuation">-</span> https<span class="token punctuation">:</span>//mirrors.bfsu.edu.cn/anaconda/pkgs/msys2
+<span class="token key atrule">custom_channels</span><span class="token punctuation">:</span>
+  <span class="token key atrule">conda-forge</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//mirrors.bfsu.edu.cn/anaconda/cloud
+  <span class="token key atrule">msys2</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//mirrors.bfsu.edu.cn/anaconda/cloud
+  <span class="token key atrule">bioconda</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//mirrors.bfsu.edu.cn/anaconda/cloud
+  <span class="token key atrule">menpo</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//mirrors.bfsu.edu.cn/anaconda/cloud
+  <span class="token key atrule">pytorch</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//mirrors.bfsu.edu.cn/anaconda/cloud
+  <span class="token key atrule">pytorch-lts</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//mirrors.bfsu.edu.cn/anaconda/cloud
+  <span class="token key atrule">simpleitk</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//mirrors.bfsu.edu.cn/anaconda/cloud<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>即可添加 Anaconda Python 免费仓库。</p>
+<p>运行 <code>conda clean -i</code> 清除索引缓存，保证用的是镜像站提供的索引。</p>
+<h1 id="conda常用命令"><a class="markdownIt-Anchor" href="#conda常用命令"></a> Conda常用命令</h1>
+<h2 id="查看已安装的库"><a class="markdownIt-Anchor" href="#查看已安装的库"></a> 查看已安装的库</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="安装指定库"><a class="markdownIt-Anchor" href="#安装指定库"></a> 安装指定库</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda <span class="token function">install</span> xxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>
+<p>示例：安装<code>numpy</code>和指定<code>3.4.3</code>版本的<code>matplotlib </code>, <code>conda</code>会自动从远程搜索相关信息和依赖项目</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda <span class="token function">install</span> numpy <span class="token assign-left variable">matplotlib</span><span class="token operator">=</span><span class="token number">3.4</span>.3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214160239444.png" alt="conda install numpy matplotlib=3.4.3"></p>
+</li>
+</ul>
+<h2 id="删除指定库"><a class="markdownIt-Anchor" href="#删除指定库"></a> 删除指定库</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda uninstall xxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="搜索库"><a class="markdownIt-Anchor" href="#搜索库"></a> 搜索库</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda search xxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="检查更新当前conda"><a class="markdownIt-Anchor" href="#检查更新当前conda"></a> 检查更新当前conda</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda update conda<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="检查并更新所有内容"><a class="markdownIt-Anchor" href="#检查并更新所有内容"></a> 检查并更新所有内容</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda update <span class="token parameter variable">--all</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 id="conda虚拟环境管理"><a class="markdownIt-Anchor" href="#conda虚拟环境管理"></a> Conda虚拟环境管理</h1>
+<h2 id="查看已有虚拟环境"><a class="markdownIt-Anchor" href="#查看已有虚拟环境"></a> 查看已有虚拟环境</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda <span class="token function">env</span> list
+<span class="token comment"># 或</span>
+conda info <span class="token parameter variable">-e</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p><img src="Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214155735469.png" alt="查看虚拟环境"></p>
+<h2 id="创建新环境"><a class="markdownIt-Anchor" href="#创建新环境"></a> 创建新环境</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda create <span class="token parameter variable">-n</span> your_env_name <span class="token assign-left variable">python</span><span class="token operator">=</span>x.x<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>
+<p>示例</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda create <span class="token parameter variable">-n</span> test_env <span class="token assign-left variable">python</span><span class="token operator">=</span><span class="token number">3.7</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<h2 id="激活切换环境"><a class="markdownIt-Anchor" href="#激活切换环境"></a> 激活（切换）环境</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda activate your_env_name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>
+<p>示例</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda activate test_env<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="Using-Conda-to-Manage-Python-Packages-on-Windows/image-20221214155922958.png" alt="激活（切换）环境"></p>
+</li>
+</ul>
+<h2 id="关闭虚拟环境回主环境"><a class="markdownIt-Anchor" href="#关闭虚拟环境回主环境"></a> 关闭虚拟环境（回主环境）</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda deactivate your_env_name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>
+<p>示例</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda deactivate test_env<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<h2 id="删除虚拟环境"><a class="markdownIt-Anchor" href="#删除虚拟环境"></a> 删除虚拟环境</h2>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">conda remove -n your_env_name --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>
+<p>示例</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda remove <span class="token parameter variable">-n</span> test_env <span class="token parameter variable">--all</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<h1 id="conda环境复制备份与迁移"><a class="markdownIt-Anchor" href="#conda环境复制备份与迁移"></a> Conda环境复制（备份）与迁移</h1>
+<h2 id="复制本地备份"><a class="markdownIt-Anchor" href="#复制本地备份"></a> 复制（本地备份）</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda create <span class="token parameter variable">--name</span> myclone <span class="token parameter variable">--clone</span> myenv<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>myclone</code> 复制（备份）产生的新环境的名称</p>
+<p><code>myenv</code> 想复制的现有环境的名称</p>
+<h2 id="迁移不同电脑"><a class="markdownIt-Anchor" href="#迁移不同电脑"></a> 迁移（不同电脑）</h2>
+<p>在新电脑上安装旧电脑的环境步骤如下</p>
+<ol>
+<li>
+<p>切换到想要迁移的环境</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda activate env_name<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li>
+<p>导出为<code>.yaml</code>文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda <span class="token function">env</span> <span class="token builtin class-name">export</span> <span class="token operator">></span> environment.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>会在当前命令执行目录下生成一个<code>environment.yaml</code>文件，</p>
+</li>
+<li>
+<p>将其复制到新电脑上后执行导入环境操作</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">conda <span class="token function">env</span> create <span class="token parameter variable">-f</span> environment.yaml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><span style="color:rgb(255, 0, 0);font-weight:bold;">注意</span>：若导出base环境，则在目标机上会提示已存在（而且base环境无法删除）</p>
+<p>若希望迁移到base环境应该使用如下命令</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">conda env update <span class="token operator">-</span>n base <span class="token operator">-</span><span class="token operator">-</span><span class="token builtin">file</span> environment<span class="token punctuation">.</span>yaml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>赏杯可乐🥤</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="悬崖不勒马 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="悬崖不勒马 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>悬崖不勒马
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html" title="Windows 下使用 Conda 管理 Python 环境">https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Conda/" rel="tag"># Conda</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/Windows/" rel="tag"># Windows</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/Hexo-SEO-Optimization.html" rel="prev" title="Hexo SEO 优化">
+                  <i class="fa fa-chevron-left"></i> Hexo SEO 优化
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/Solving-Ordinary-Differential-Equations-in-Python.html" rel="next" title="Python 求解常微分方程">
+                  Python 求解常微分方程 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81NzM4My8zMzg0Nw=="></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">悬崖不勒马</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"forest","dark":"forest"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.1.7/mermaid.min.js","integrity":"sha256-G58AID1YoX5YaEtWfXSI0VLrZ6N4kvNvwg0BI8zUFxE="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-test-beta.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+<script src="/js/third-party/comments/livere.js"></script>
+
+<!-- hexo injector body_end start --><script src="/js/outdate.js"></script><!-- hexo injector body_end end --></body>
+</html>
