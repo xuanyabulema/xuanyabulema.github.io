@@ -81,27 +81,31 @@ If (Test-Path "C:\Users\你的用户名\miniforge3\Scripts\conda.exe") {
 
 
 
-# 让 Windows 显示 Manba 环境名称
+# 建议使用 Conda 管理，Manba用于安装库
 
-> Mamba 是一个**快速、轻量级的包管理和环境管理工具**，完全兼容 Conda。它的诞生主要是为了解决 Conda 在依赖解析时速度较慢的问题。
+
+
+# ~~让 Windows 显示 Manba 环境名称~~
+
+> ~~Mamba 是一个**快速、轻量级的包管理和环境管理工具**，完全兼容 Conda。它的诞生主要是为了解决 Conda 在依赖解析时速度较慢的问题。~~
 >
-> **核心优势与功能：**
+> ~~**核心优势与功能：**~~
 >
-> - **极快的速度**：Mamba 使用 C++ 编写，并采用了更快的依赖解析器（libsolv）和支持并行下载，在解决环境依赖和包安装速度上通常显著快于 Conda。
-> - **与Conda命令高度兼容**：你基本上可以把 Mamba 视为 Conda 的一个**加速版替代品**。大部分常用的 Conda 命令（例如 `create`, `install`, `remove`）都可以直接将 `conda` 替换为 `mamba` 来使用。
-> - **高效的依赖管理**：能够快速处理复杂的包依赖关系，确保环境稳定性。
-> - **虚拟环境管理**：可以像 Conda 一样轻松创建、激活、管理和切换不同的 Python 虚拟环境，隔离项目依赖。
+> - ~~**极快的速度**：Mamba 使用 C++ 编写，并采用了更快的依赖解析器（libsolv）和支持并行下载，在解决环境依赖和包安装速度上通常显著快于 Conda。~~
+> - ~~**与Conda命令高度兼容**：你基本上可以把 Mamba 视为 Conda 的一个**加速版替代品**。大部分常用的 Conda 命令（例如 `create`, `install`, `remove`）都可以直接将 `conda` 替换为 `mamba` 来使用。~~
+> - ~~**高效的依赖管理**：能够快速处理复杂的包依赖关系，确保环境稳定性。~~
+> - ~~**虚拟环境管理**：可以像 Conda 一样轻松创建、激活、管理和切换不同的 Python 虚拟环境，隔离项目依赖。~~
 
-类似的，可以通过配置让 Windows 显示 Manba 环境名称，否则也可能无法使用 `mamba activate` 功能，如下
+~~类似的，可以通过配置让 Windows 显示 Manba 环境名称，否则也可能无法使用 `mamba activate` 功能，如下~~
 
-<img src="./Windows-displays-the-Conda-environment-name-and-the-conda-init-powershell-command/image-20251112212506504.png" alt="mamba activate 出错" style="zoom:80%;" />
+~~<img src="./Windows-displays-the-Conda-environment-name-and-the-conda-init-powershell-command/image-20251112212506504.png" alt="mamba activate 出错" style="zoom:80%;" />~~
 
-根据上述提示，可以通过命令
+~~根据上述提示，可以通过命令~~
 
 ```powershell
 mamba shell init --shell powershell --root-prefix=~/.local/share/mamba
 ```
 
-解决上述问题
+~~解决上述问题~~
 
-## 注意⚠️ Mamba 创建的虚拟环境无法使用 Conda 管理，Conda 同理（个人测试结果）
+## ~~注意⚠️ Mamba 创建的虚拟环境无法使用 Conda 管理，Conda 同理（个人测试结果）~~
