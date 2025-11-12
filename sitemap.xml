@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Synchronization-and-Migration.html</loc>
     
-    <lastmod>2025-07-29</lastmod>
+    <lastmod>2025-11-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,16 +13,16 @@
   <url>
     <loc>https://xuanyabulema.github.io/posts/Windows-displays-the-Conda-environment-name-and-the-conda-init-powershell-command.html</loc>
     
-    <lastmod>2025-07-29</lastmod>
+    <lastmod>2025-11-12</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Synchronization-and-Migration.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html</loc>
     
-    <lastmod>2025-03-27</lastmod>
+    <lastmod>2025-07-29</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/about/index.html</loc>
+    <loc>https://xuanyabulema.github.io/book/index.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/book/index.html</loc>
+    <loc>https://xuanyabulema.github.io/about/index.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -137,7 +137,25 @@
   </url>
   
   <url>
+    <loc>https://xuanyabulema.github.io/posts/Usage-of-Pydicom.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanyabulema.github.io/posts/Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Windows-Boot.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -164,34 +182,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Usage-of-Pydicom.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Usage-of-Pandas-DataFrames.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/posts/Usage-of-NumPy.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -209,6 +200,15 @@
   </url>
   
   <url>
+    <loc>https://xuanyabulema.github.io/posts/Usage-of-NumPy.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanyabulema.github.io/posts/Some-Usage-of-Git.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -218,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Ubuntu20-04-Static-Ip-Configuration.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Usage-of-Matplotlib-2.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Usage-of-Matplotlib-2.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Ubuntu20-04-Static-Ip-Configuration.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -263,7 +263,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Solve-the-Chinese-Messy-Code-Problem-in-PyCharm-Python-Console.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Short-Circuiting-Property-of-Logical-Operators-in-Python.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -281,7 +281,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Short-Circuiting-Property-of-Logical-Operators-in-Python.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Solve-the-Chinese-Messy-Code-Problem-in-PyCharm-Python-Console.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -380,15 +380,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-SEO-Optimization.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Hexo-Posts-Links.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -398,7 +389,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Interesting-Webs.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Render-Math-Equations.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -407,7 +398,16 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Render-Math-Equations.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-SEO-Optimization.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Interesting-Webs.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -461,7 +461,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Excellent-UWP-Apps-for-Windows.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Find-All-Files-With-the-Specified-Extension-in-the-Specified-Folder-in-Python.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -470,7 +470,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Find-All-Files-With-the-Specified-Extension-in-the-Specified-Folder-in-Python.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Excellent-UWP-Apps-for-Windows.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -488,7 +488,25 @@
   </url>
   
   <url>
+    <loc>https://xuanyabulema.github.io/posts/Alternative-Fuel-Vehicle.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanyabulema.github.io/posts/Add-Timeliness-Alerts-for-Hexo.html</loc>
+    
+    <lastmod>2025-03-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Anaconda-Mirror-Configuration-Pip-Mirror-Configuration-Frequently-Used-Python-Libraries.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -515,24 +533,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Alternative-Fuel-Vehicle.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanyabulema.github.io/posts/Anaconda-Mirror-Configuration-Pip-Mirror-Configuration-Frequently-Used-Python-Libraries.html</loc>
-    
-    <lastmod>2025-03-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Add-Comment-System-in-Hexo-NexT-Theme.html</loc>
     
     <lastmod>2025-03-25</lastmod>
@@ -544,7 +544,7 @@
 
   <url>
     <loc>https://xuanyabulema.github.io/</loc>
-    <lastmod>2025-07-29</lastmod>
+    <lastmod>2025-11-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
