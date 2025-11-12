@@ -8,7 +8,7 @@ categories:
 - Python
 - UV
 hidden:
-- True
+
 ---
 
 
@@ -92,3 +92,5 @@ https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
 ```
 
 ![新建环境变量](./Use-uv-to-manage-Python/image-20251112222454520.png)
+
+# Todo
