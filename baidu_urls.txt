@@ -1,3 +1,4 @@
+https://xuanyabulema.github.io/posts/Use-uv-to-manage-Python.html
 https://xuanyabulema.github.io/posts/Windows-displays-the-Conda-environment-name-and-the-conda-init-powershell-command.html
 https://xuanyabulema.github.io/posts/Usage-of-Pandas-DataFrames.html
 https://xuanyabulema.github.io/posts/Description-of-Mingw-Version-Parameters.html

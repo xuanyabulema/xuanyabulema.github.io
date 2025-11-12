@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Synchronization-and-Migration.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Use-uv-to-manage-Python.html</loc>
     
     <lastmod>2025-11-12</lastmod>
     
@@ -12,6 +12,15 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/posts/Windows-displays-the-Conda-environment-name-and-the-conda-init-powershell-command.html</loc>
+    
+    <lastmod>2025-11-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Synchronization-and-Migration.html</loc>
     
     <lastmod>2025-11-12</lastmod>
     
@@ -65,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/about/index.html</loc>
+    <loc>https://xuanyabulema.github.io/categories/index.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -74,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/categories/index.html</loc>
+    <loc>https://xuanyabulema.github.io/about/index.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -155,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Using-FFmpeg-with-GPU-Hardware-Acceleration.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -164,7 +173,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Using-FFmpeg-with-GPU-Hardware-Acceleration.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Using-Conda-to-Manage-Python-Packages-on-Windows.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -191,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Usage-of-OpenCV.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Usage-of-NumPy.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -200,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Usage-of-NumPy.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Usage-of-OpenCV.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -218,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Usage-of-Matplotlib-2.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Ubuntu-Basics.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -236,7 +245,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Ubuntu-Basics.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Usage-of-Matplotlib-2.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -272,7 +281,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Solving-Ordinary-Differential-Equations-in-Python.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Solve-the-Chinese-Messy-Code-Problem-in-PyCharm-Python-Console.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -281,7 +290,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Solve-the-Chinese-Messy-Code-Problem-in-PyCharm-Python-Console.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Solving-Ordinary-Differential-Equations-in-Python.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -407,7 +416,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Interesting-Webs.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Site-Configuration-Supplement.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -416,7 +425,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Site-Configuration-Supplement.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Interesting-Webs.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -461,7 +470,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Find-All-Files-With-the-Specified-Extension-in-the-Specified-Folder-in-Python.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Excellent-UWP-Apps-for-Windows.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
@@ -470,7 +479,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Excellent-UWP-Apps-for-Windows.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Find-All-Files-With-the-Specified-Extension-in-the-Specified-Folder-in-Python.html</loc>
     
     <lastmod>2025-03-25</lastmod>
     
