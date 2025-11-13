@@ -93,4 +93,57 @@ https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
 
 ![新建环境变量](./Use-uv-to-manage-Python/image-20251112222454520.png)
 
+# 问题
+
+### 1. `uv tool install` 安装在哪里？
+
+`uv tool install` 会将工具安装到 **uv 的工具缓存目录** 中，而不是当前激活的 Conda 环境或系统 Python 环境的 `site-packages` 目录。具体来说：
+
+- 工具安装目录
+
+  （默认）：
+
+  - 在 Windows 上，通常是：
+
+    ```plaintext
+    C:\Users\<你的用户名>\AppData\Roaming\uv\tools\<工具名>\
+    ```
+
+    例如你安装 `labelme`，路径就是：
+
+    ```plaintext
+    C:\Users\<你的用户名>\AppData\Roaming\uv\tools\labelme\
+    ```
+
+  - 在 macOS / Linux 上，通常是：
+
+    ```plaintext
+    ~/.cache/uv/tools/<工具名>/
+    ```
+
+- 依赖存放目录
+
+  - uv 会为每个工具创建一个独立的虚拟环境，其依赖（如 `labelme` 所需的 `PyQt5`、`opencv-python` 等）会安装在该工具目录下的虚拟环境中，例如：
+
+    ```plaintext
+    C:\Users\<你的用户名>\AppData\Roaming\uv\tools\labelme\venv\Lib\site-packages\
+    ```
+
+- 命令行入口：
+
+  - uv 会在其自身的 `Scripts` 目录（例如 `C:\Users\<你的用户名>\AppData\Roaming\uv\Scripts\`）中创建一个 **符号链接（或批处理文件）**，指向工具的可执行文件。这样你可以在命令行直接运行 `labelme`，而无需指定完整路径。
+
+  **简单来说**：`uv tool install` 会把工具及其所有依赖都安装在 uv 自己的独立目录里，和你当前的 Conda 环境是分开的。
+
+### 2. 会与现有 conda 环境冲突吗？
+
+**默认情况下，不会直接冲突**。因为：
+
+- uv 工具安装在独立目录，不会污染 Conda 环境的 `site-packages`。
+- 你在 Conda 环境中用 `pip install labelme` 和用 `uv tool install labelme` 是两套完全独立的安装。
+
+但是，可能存在 **间接冲突**，通常是由以下原因引起的：
+
+
+
 # Todo
