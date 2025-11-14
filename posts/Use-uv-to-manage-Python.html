@@ -19,18 +19,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"xuanyabulema.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xuanyabulema.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="使用 uv 来管理 Python uv 是一款用 Rust 编写的极速 Python 包管理工具，它集成了包管理、虚拟环境管理、依赖解析和 Python 版本控制等多种功能，旨在简化并统一 Python 的开发工作流。">
+    <meta name="description" content="uv 是一款用 Rust 编写的极速 Python 包管理工具，它集成了包管理、虚拟环境管理、依赖解析和 Python 版本控制等多种功能，旨在简化并统一 Python 的开发工作流。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Use uv to manage Python">
+<meta property="og:title" content="使用 uv 来管理 Python">
 <meta property="og:url" content="https://xuanyabulema.github.io/posts/Use-uv-to-manage-Python.html">
 <meta property="og:site_name" content="悬崖不勒马的小站">
-<meta property="og:description" content="使用 uv 来管理 Python uv 是一款用 Rust 编写的极速 Python 包管理工具，它集成了包管理、虚拟环境管理、依赖解析和 Python 版本控制等多种功能，旨在简化并统一 Python 的开发工作流。">
+<meta property="og:description" content="uv 是一款用 Rust 编写的极速 Python 包管理工具，它集成了包管理、虚拟环境管理、依赖解析和 Python 版本控制等多种功能，旨在简化并统一 Python 的开发工作流。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://xuanyabulema.github.io/posts/Use-uv-to-manage-Python/image-20251112222454520.png">
 <meta property="article:published_time" content="2025-11-12T12:59:37.000Z">
-<meta property="article:modified_time" content="2025-11-13T02:51:35.228Z">
+<meta property="article:modified_time" content="2025-11-14T00:58:16.897Z">
 <meta property="article:author" content="悬崖不勒马">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="UV">
@@ -42,10 +42,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xuanyabulema.github.io/posts/Use-uv-to-manage-Python.html","path":"posts/Use-uv-to-manage-Python.html","title":"Use uv to manage Python"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xuanyabulema.github.io/posts/Use-uv-to-manage-Python.html","path":"posts/Use-uv-to-manage-Python.html","title":"使用 uv 来管理 Python"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Use uv to manage Python | 悬崖不勒马的小站</title>
+<title>使用 uv 来管理 Python | 悬崖不勒马的小站</title>
   
 
 
@@ -152,7 +152,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-uv-%E6%9D%A5%E7%AE%A1%E7%90%86-python"><span class="nav-text"> 使用 uv 来管理 Python</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%EF%B8%8F-%E4%BB%8E%E5%AE%89%E8%A3%85%E5%88%B0%E4%B8%8A%E6%89%8B"><span class="nav-text"> 🛠️ 从安装到上手</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-uv"><span class="nav-text"> 安装 uv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-text"> 使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E5%8A%A0%E9%80%9F"><span class="nav-text"> 配置国内加速</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-text"> 问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-uv-tool-install-%E5%AE%89%E8%A3%85%E5%9C%A8%E5%93%AA%E9%87%8C"><span class="nav-text"> 1. uv tool install 安装在哪里？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BC%9A%E4%B8%8E%E7%8E%B0%E6%9C%89-conda-%E7%8E%AF%E5%A2%83%E5%86%B2%E7%AA%81%E5%90%97"><span class="nav-text"> 2. 会与现有 conda 环境冲突吗？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#todo"><span class="nav-text"> Todo</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EF%B8%8F-%E4%BB%8E%E5%AE%89%E8%A3%85%E5%88%B0%E4%B8%8A%E6%89%8B"><span class="nav-text"> 🛠️ 从安装到上手</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-uv"><span class="nav-text"> 安装 uv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-text"> 使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%9B%BD%E5%86%85%E5%8A%A0%E9%80%9F"><span class="nav-text"> 配置国内加速</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-text"> 问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-uv-tool-install-%E5%AE%89%E8%A3%85%E5%9C%A8%E5%93%AA%E9%87%8C"><span class="nav-text"> 1. uv tool install 安装在哪里？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BC%9A%E4%B8%8E%E7%8E%B0%E6%9C%89-conda-%E7%8E%AF%E5%A2%83%E5%86%B2%E7%AA%81%E5%90%97"><span class="nav-text"> 2. 会与现有 conda 环境冲突吗？</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -212,6 +212,7 @@
     <span>0%</span>
   </div>
   <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -242,12 +243,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Use uv to manage Python | 悬崖不勒马的小站">
+      <meta itemprop="name" content="使用 uv 来管理 Python | 悬崖不勒马的小站">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Use uv to manage Python
+          使用 uv 来管理 Python
         </h1>
 
         <div class="post-meta-container">
@@ -265,7 +266,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-11-13 10:51:35" itemprop="dateModified" datetime="2025-11-13T10:51:35+08:00">2025-11-13</time>
+      <time title="修改时间：2025-11-14 08:58:16" itemprop="dateModified" datetime="2025-11-14T08:58:16+08:00">2025-11-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -319,8 +320,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="使用-uv-来管理-python"><a class="markdownIt-Anchor" href="#使用-uv-来管理-python"></a> 使用 uv 来管理 Python</h1>
-<p><code>uv</code> 是一款用 Rust 编写的<strong>极速 Python 包管理工具</strong>，它集成了包管理、虚拟环境管理、依赖解析和 Python 版本控制等多种功能，旨在简化并统一 Python 的开发工作流。</p>
+        <p><a target="_blank" rel="noopener" href="https://docs.astral.sh/uv/">uv</a> 是一款用 Rust 编写的<strong>极速 Python 包管理工具</strong>，它集成了包管理、虚拟环境管理、依赖解析和 Python 版本控制等多种功能，旨在简化并统一 Python 的开发工作流。</p>
 <span id="more"></span>
 <p>下面的表格清晰地总结了 <code>uv</code> 的核心功能以及对应的命令示例，你可以快速了解它能为你做什么。</p>
 <table>
@@ -422,8 +422,6 @@
 <li>uv 工具安装在独立目录，不会污染 Conda 环境的 <code>site-packages</code>。</li>
 <li>你在 Conda 环境中用 <code>pip install labelme</code> 和用 <code>uv tool install labelme</code> 是两套完全独立的安装。</li>
 </ul>
-<p>但是，可能存在 <strong>间接冲突</strong>，通常是由以下原因引起的：</p>
-<h1 id="todo"><a class="markdownIt-Anchor" href="#todo"></a> Todo</h1>
 
     </div>
 
@@ -459,7 +457,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://xuanyabulema.github.io/posts/Use-uv-to-manage-Python.html" title="Use uv to manage Python">https://xuanyabulema.github.io/posts/Use-uv-to-manage-Python.html</a>
+      <a href="https://xuanyabulema.github.io/posts/Use-uv-to-manage-Python.html" title="使用 uv 来管理 Python">https://xuanyabulema.github.io/posts/Use-uv-to-manage-Python.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -549,7 +547,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
 
   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
