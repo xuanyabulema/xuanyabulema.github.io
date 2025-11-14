@@ -1,5 +1,5 @@
 ---
-title: Use uv to manage Python
+title: 使用 uv 来管理 Python
 date: 2025-11-12 20:59:37
 tags:
 - Python
@@ -13,9 +13,9 @@ hidden:
 
 
 
-# 使用 uv 来管理 Python
 
-`uv` 是一款用 Rust 编写的**极速 Python 包管理工具**，它集成了包管理、虚拟环境管理、依赖解析和 Python 版本控制等多种功能，旨在简化并统一 Python 的开发工作流。
+
+[uv](https://docs.astral.sh/uv/) 是一款用 Rust 编写的**极速 Python 包管理工具**，它集成了包管理、虚拟环境管理、依赖解析和 Python 版本控制等多种功能，旨在简化并统一 Python 的开发工作流。
 
 
 
@@ -142,8 +142,9 @@ https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/
 - uv 工具安装在独立目录，不会污染 Conda 环境的 `site-packages`。
 - 你在 Conda 环境中用 `pip install labelme` 和用 `uv tool install labelme` 是两套完全独立的安装。
 
-但是，可能存在 **间接冲突**，通常是由以下原因引起的：
 
 
 
-# Todo
+
+
+

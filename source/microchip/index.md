@@ -12,7 +12,7 @@ type: "microchip"
 
 ```mermaid
 gantt
-    title 个人设备使用史（更新于2025-03-25)
+    title 个人设备使用史（更新于2025-11-14)
     dateFormat  YYYY-MM-DD
     axisFormat  %Y-%m
     
@@ -36,18 +36,18 @@ gantt
     Ryzen™ 5 2600                               :done, 2019-02-22, 2021-03-01
     Athlon™ 200GE                               :done, 2021-03-01, 2021-05-04
     QNCT(Core™ i7-8750H ES)                     :done, 2021-05-04, 2022-09-26
-    Ryzen™ 5 5500                               :active, 2022-09-26, 2025-03-25
+    Ryzen™ 5 5500                               :active, 2022-09-26, 2025-11-14
     
     Discrete Graphics                           :milestone, 2019-02-22, 0d
     GeForce GTX1060 6G                          :done, 2019-02-22, 2019-11-10
     Radeon™ RX 570 4G                           :done, 2019-11-10, 2021-03-01
     GeForce GTX960 4G                           :done, 2022-08-25, 2023-04-23
-    Radeon™ RX 560 XT 4G                        :active, 2023-04-23, 2025-03-25
+    Radeon™ RX 560 XT 4G                        :active, 2023-04-23, 2025-11-14
     
     RAM                                         :milestone, 2019-02-22, 0d
     8G ddr4 2666                                :done, 2019-02-22, 2019-08-02
     16G ddr4 2666                               :done, 2019-08-02, 2022-09-22
-    64G ddr4 3200                               :active, 2022-09-22, 2025-03-25
+    64G ddr4 3200                               :active, 2022-09-22, 2025-11-14
     
     
     section 台式2
@@ -64,7 +64,7 @@ gantt
     Redmi Note 12 Turbo                         :milestone, 2023-08-19, 0d
     Snapdragon 7+ Gen 2  16G + 1024G            :done, 2023-08-19, 2024-09-18
     MUAWEI Mate 40                              :milestone, 2024-09-18, 0d
-    Kirin 9000E    12G + 256G                   :active, 2024-09-18, 2025-03-25
+    Kirin 9000E    12G + 256G                   :active, 2024-09-18, 2025-11-14
 ```
 
 # DDR4内存条价格的变迁

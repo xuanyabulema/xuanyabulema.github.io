@@ -17,8 +17,6 @@ type: "surfing"
 
 GitHub仓库：未知
 
-复制网站：[中国传统颜色 | 中国色](http://1.116.109.207:280/)
-
 ![中国传统颜色 | 中国色](index/image-20221009012948738.png)
 
 
@@ -31,8 +29,6 @@ GitHub仓库：未知
 
 GitHub仓库：https://github.com/BlueSky-07/Shuang
 
-复制网站：[双拼练习 @ BlueSky](http://1.116.109.207:180/)
-
 ![双拼练习 @ BlueSky](index/image-20221009011543018.png)
 
 
@@ -44,7 +40,5 @@ GitHub仓库：https://github.com/BlueSky-07/Shuang
 原网站：[蒸 気 機 - 蒸汽波 - 蒸汽波图片生成器 - 虚拟信号风格化影像后期工具](https://magiconch.com/vaporwave/?from=home)
 
 GitHub仓库：https://github.com/itorr/vaporwave
-
-复制网站：无
 
 ![蒸 気 機 - 蒸汽波 - 蒸汽波图片生成器 - 虚拟信号风格化影像后期工具](index/image-20221009014749345.png)
