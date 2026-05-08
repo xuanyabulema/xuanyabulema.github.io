@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>为 Hexo 文章添加时效性提醒</title>
+    <url>/posts/Add-Timeliness-Alerts-for-Hexo.html</url>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>随着时间的推移，很多程序都会更新，网上很多关于对程序记录的内容往往会过时，出现不能在复现的问题。因此根据文章发布时间设置时效性提醒，有助于读者辨别信息的可靠性。</p>
+<span id="more"></span>
+<blockquote>
+<p>参考：<a href="https://qianfanguojin.top/2022/09/07/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BA-Next-%E4%B8%BB%E9%A2%98%E7%9A%84-Hexo-%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E8%BF%87%E6%9C%9F-%E6%97%B6%E6%95%88%E6%8F%90%E7%A4%BA/">Hexo博客进阶：为 Next 主题的 Hexo 博客内容添加文章过期/时效提示</a></p>
+</blockquote>
+<p>效果图如下</p>
+<p><img src="Add-Timeliness-Alerts-for-Hexo/image-20221015203829818.png" alt="文章时效性提示"></p>
+<h1 id="添加注入器"><a class="markdownIt-Anchor" href="#添加注入器"></a> 添加注入器</h1>
+<p><code>Hexo</code>提供了 <a href="https://hexo.io/zh-cn/api/injector">注入器（Injector）</a>，可以<strong>将指定的静态代码片段注入到生成的静态页面中</strong>。</p>
+<p>在主题的 <code>scripts</code> 目录（没有则新建一个）下新建一个名为 <code>injector.js</code> 的文件，</p>
+<p><img src="Add-Timeliness-Alerts-for-Hexo/image-20221015204435886.png" alt="新建injector.js"></p>
+<p>内容如下：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//注入文章过期提示</span>
+hexo<span class="token punctuation">.</span>extend<span class="token punctuation">.</span>injector<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'body_end'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;script src="/js/outdate.js">&lt;/script></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token string">'post'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li><code>body_end</code> 代表注入到文章开头。</li>
+<li>由于注入的代码有点长，我们就用一个 <code>Javascript</code> 文件单独处理，作为注入的代码片段引入</li>
+<li><code>post</code> 代表只注入到文章详情页面中。</li>
+</ul>
+<h1 id="添加静态代码片段"><a class="markdownIt-Anchor" href="#添加静态代码片段"></a> 添加静态代码片段</h1>
+<p>在主题的 <code>source</code> 目录下新建 <code>js</code> 文件夹，新建一个名为 <code>outdate.js</code> 的文件，</p>
+<p><img src="Add-Timeliness-Alerts-for-Hexo/image-20221015204541482.png" alt="新建outdate.js"></p>
+<p>添加以下代码：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//不同的日期显示不同的样式，200 天为黄色提示，400天为红色提示，可以自己定义。</span>
+    <span class="token keyword">let</span> warningDay <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> errorDay <span class="token operator">=</span> <span class="token number">400</span><span class="token punctuation">;</span>
+    <span class="token comment">// 确保能够获取到文章时间以及在文章详情页</span>
+    <span class="token keyword">let</span> times <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'time'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>times<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+    <span class="token keyword">let</span> posts <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">'post-body'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>posts<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">// 获取系统当前的时间</span>
+    <span class="token keyword">let</span> pubTime <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>times<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dateTime<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 文章发布时间戳 */</span>
+    <span class="token keyword">let</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">/* 当前时间戳 */</span>
+    <span class="token keyword">let</span> interval <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>now <span class="token operator">-</span> pubTime<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> days <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>interval <span class="token operator">/</span> <span class="token number">86400000</span><span class="token punctuation">)</span>
+        <span class="token comment">/* 发布时间超过指定时间（毫秒） */</span>
+        <span class="token comment">//note warning 以及 note danger 是 Next 主题的自定义模板语法，如果使用其他主题，请自行更改样式以达到最佳显示效果</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>interval <span class="token operator">></span> warningDay <span class="token operator">*</span> <span class="token number">3600</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">1000</span> <span class="token operator">&amp;&amp;</span> interval <span class="token operator">&lt;</span> errorDay <span class="token operator">*</span> <span class="token number">3600</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        posts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'&lt;div class="note warning">'</span> <span class="token operator">+</span>
+            <span class="token string">'&lt;h5>文章时效性提示&lt;/h5>&lt;p>这是一篇发布于 '</span> <span class="token operator">+</span> days <span class="token operator">+</span> <span class="token string">' 天前的文章，部分信息可能已发生改变，请注意甄别。&lt;/p>'</span> <span class="token operator">+</span>
+            <span class="token string">'&lt;/div>'</span> <span class="token operator">+</span> posts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>interval <span class="token operator">>=</span> errorDay <span class="token operator">*</span> <span class="token number">3600</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        posts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'&lt;div class="note danger">'</span> <span class="token operator">+</span>
+            <span class="token string">'&lt;h5>文章时效性提示&lt;/h5>&lt;p>这是一篇发布于 '</span> <span class="token operator">+</span> days <span class="token operator">+</span> <span class="token string">' 天前的文章，部分信息可能已发生改变，请注意甄别。&lt;/p>'</span> <span class="token operator">+</span>
+            <span class="token string">'&lt;/div>'</span> <span class="token operator">+</span> posts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo NexT 主题添加评论系统</title>
     <url>/posts/Add-Comment-System-in-Hexo-NexT-Theme.html</url>
     <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
@@ -117,68 +179,6 @@
       <tags>
         <tag>Hexo</tag>
         <tag>NexT</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为 Hexo 文章添加时效性提醒</title>
-    <url>/posts/Add-Timeliness-Alerts-for-Hexo.html</url>
-    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
-<p>随着时间的推移，很多程序都会更新，网上很多关于对程序记录的内容往往会过时，出现不能在复现的问题。因此根据文章发布时间设置时效性提醒，有助于读者辨别信息的可靠性。</p>
-<span id="more"></span>
-<blockquote>
-<p>参考：<a href="https://qianfanguojin.top/2022/09/07/Hexo%E5%8D%9A%E5%AE%A2%E8%BF%9B%E9%98%B6%EF%BC%9A%E4%B8%BA-Next-%E4%B8%BB%E9%A2%98%E7%9A%84-Hexo-%E5%8D%9A%E5%AE%A2%E5%86%85%E5%AE%B9%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E8%BF%87%E6%9C%9F-%E6%97%B6%E6%95%88%E6%8F%90%E7%A4%BA/">Hexo博客进阶：为 Next 主题的 Hexo 博客内容添加文章过期/时效提示</a></p>
-</blockquote>
-<p>效果图如下</p>
-<p><img src="Add-Timeliness-Alerts-for-Hexo/image-20221015203829818.png" alt="文章时效性提示"></p>
-<h1 id="添加注入器"><a class="markdownIt-Anchor" href="#添加注入器"></a> 添加注入器</h1>
-<p><code>Hexo</code>提供了 <a href="https://hexo.io/zh-cn/api/injector">注入器（Injector）</a>，可以<strong>将指定的静态代码片段注入到生成的静态页面中</strong>。</p>
-<p>在主题的 <code>scripts</code> 目录（没有则新建一个）下新建一个名为 <code>injector.js</code> 的文件，</p>
-<p><img src="Add-Timeliness-Alerts-for-Hexo/image-20221015204435886.png" alt="新建injector.js"></p>
-<p>内容如下：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//注入文章过期提示</span>
-hexo<span class="token punctuation">.</span>extend<span class="token punctuation">.</span>injector<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'body_end'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;script src="/js/outdate.js">&lt;/script></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token string">'post'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<ul>
-<li><code>body_end</code> 代表注入到文章开头。</li>
-<li>由于注入的代码有点长，我们就用一个 <code>Javascript</code> 文件单独处理，作为注入的代码片段引入</li>
-<li><code>post</code> 代表只注入到文章详情页面中。</li>
-</ul>
-<h1 id="添加静态代码片段"><a class="markdownIt-Anchor" href="#添加静态代码片段"></a> 添加静态代码片段</h1>
-<p>在主题的 <code>source</code> 目录下新建 <code>js</code> 文件夹，新建一个名为 <code>outdate.js</code> 的文件，</p>
-<p><img src="Add-Timeliness-Alerts-for-Hexo/image-20221015204541482.png" alt="新建outdate.js"></p>
-<p>添加以下代码：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token comment">//不同的日期显示不同的样式，200 天为黄色提示，400天为红色提示，可以自己定义。</span>
-    <span class="token keyword">let</span> warningDay <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
-    <span class="token keyword">let</span> errorDay <span class="token operator">=</span> <span class="token number">400</span><span class="token punctuation">;</span>
-    <span class="token comment">// 确保能够获取到文章时间以及在文章详情页</span>
-    <span class="token keyword">let</span> times <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'time'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>times<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
-    <span class="token keyword">let</span> posts <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">'post-body'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>posts<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
-
-    <span class="token comment">// 获取系统当前的时间</span>
-    <span class="token keyword">let</span> pubTime <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>times<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dateTime<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 文章发布时间戳 */</span>
-    <span class="token keyword">let</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">/* 当前时间戳 */</span>
-    <span class="token keyword">let</span> interval <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>now <span class="token operator">-</span> pubTime<span class="token punctuation">)</span>
-    <span class="token keyword">let</span> days <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>interval <span class="token operator">/</span> <span class="token number">86400000</span><span class="token punctuation">)</span>
-        <span class="token comment">/* 发布时间超过指定时间（毫秒） */</span>
-        <span class="token comment">//note warning 以及 note danger 是 Next 主题的自定义模板语法，如果使用其他主题，请自行更改样式以达到最佳显示效果</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>interval <span class="token operator">></span> warningDay <span class="token operator">*</span> <span class="token number">3600</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">1000</span> <span class="token operator">&amp;&amp;</span> interval <span class="token operator">&lt;</span> errorDay <span class="token operator">*</span> <span class="token number">3600</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        posts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'&lt;div class="note warning">'</span> <span class="token operator">+</span>
-            <span class="token string">'&lt;h5>文章时效性提示&lt;/h5>&lt;p>这是一篇发布于 '</span> <span class="token operator">+</span> days <span class="token operator">+</span> <span class="token string">' 天前的文章，部分信息可能已发生改变，请注意甄别。&lt;/p>'</span> <span class="token operator">+</span>
-            <span class="token string">'&lt;/div>'</span> <span class="token operator">+</span> posts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>interval <span class="token operator">>=</span> errorDay <span class="token operator">*</span> <span class="token number">3600</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        posts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'&lt;div class="note danger">'</span> <span class="token operator">+</span>
-            <span class="token string">'&lt;h5>文章时效性提示&lt;/h5>&lt;p>这是一篇发布于 '</span> <span class="token operator">+</span> days <span class="token operator">+</span> <span class="token string">' 天前的文章，部分信息可能已发生改变，请注意甄别。&lt;/p>'</span> <span class="token operator">+</span>
-            <span class="token string">'&lt;/div>'</span> <span class="token operator">+</span> posts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -425,6 +425,47 @@ pip <span class="token function">install</span> opencv-contrib-python<span aria-
       </tags>
   </entry>
   <entry>
+    <title>配置 VScode 连接远程服务器进行开发</title>
+    <url>/posts/Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development.html</url>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>配置 VScode 连接远程服务器进行开发</p>
+<span id="more"></span>
+<h1 id="准备工作"><a class="markdownIt-Anchor" href="#准备工作"></a> 准备工作</h1>
+<h2 id="ssh-功能确认"><a class="markdownIt-Anchor" href="#ssh-功能确认"></a> SSH 功能确认</h2>
+<p>Windows 通常自带 OpenSSH 不需要安装，Windows 下检查是否已经安装 OpenSSH 的方法：<br>
+启动 <code>Windows PowerShell（管理员）</code>，输入以下指令：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Get-WindowsCapability</span> <span class="token operator">-</span>Online <span class="token punctuation">|</span> ? Name <span class="token operator">-like</span> <span class="token string">'OpenSSH*'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>
+<p>如果电脑未安装 OpenSSH，则 <code>State</code> 会显示 <code>NotPresent</code>：</p>
+<p><a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell">则输入以下指令进行安装</a>：</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Add-WindowsCapability</span> <span class="token operator">-</span>Online <span class="token operator">-</span>Name OpenSSH<span class="token punctuation">.</span>Client~~~~0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li>
+<p>若已安装或在安装完成后，输入 <code>ssh</code> 将会返回以下内容：</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823134152358.png" alt="输入 ssh 返回内容"></p>
+</li>
+</ul>
+<h2 id="vscode-安装-remote-ssh"><a class="markdownIt-Anchor" href="#vscode-安装-remote-ssh"></a> VScode 安装 Remote-SSH</h2>
+<p>VScode 搜索并安装 Remote-SSH</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823134651519.png" alt="VScode 搜索并安装 Remote-SSH"></p>
+<h1 id="配置-remote-ssh"><a class="markdownIt-Anchor" href="#配置-remote-ssh"></a> 配置 Remote-SSH</h1>
+<p>从如下图所示，打开并配置 config 配置文件，</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823135148650.png" alt="Remote-SSH config 配置文件打开路径"></p>
+<p>配置如下：</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823135927329.png" alt="Remote-SSH config 配置示例"></p>
+<h1 id="连接远程服务器"><a class="markdownIt-Anchor" href="#连接远程服务器"></a> 连接远程服务器</h1>
+<p>在配置上述过程之后，可点击“→”按钮即可进行连接，连接过程中将会需要输入密码。</p>
+<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823140134644.png" alt="连接远程服务器"></p>
+]]></content>
+      <categories>
+        <category>VScode</category>
+      </categories>
+      <tags>
+        <tag>VScode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一些常用英文单词及其缩写</title>
     <url>/posts/Commonly-Used-English-Words-and-Their-Abbreviations.html</url>
     <content><![CDATA[<h1 id="一些常用英文单词及其缩写"><a class="markdownIt-Anchor" href="#一些常用英文单词及其缩写"></a> 一些常用英文单词及其缩写</h1>
@@ -555,47 +596,6 @@ pip <span class="token function">install</span> opencv-contrib-python<span aria-
 <p>1st，2nd，3rd，4th，5th，6th，7th，8th，9th，10th，11th，12th，13th，14th，15th，16th，17th，18th，19th，20th，21st，22nd，23rd，24th，25th，26th，27th，28th，29th，30th，31st。</p>
 <h2 id="其他时间相关缩写"><a class="markdownIt-Anchor" href="#其他时间相关缩写"></a> 其他时间相关缩写</h2>
 ]]></content>
-  </entry>
-  <entry>
-    <title>配置 VScode 连接远程服务器进行开发</title>
-    <url>/posts/Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development.html</url>
-    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
-<p>配置 VScode 连接远程服务器进行开发</p>
-<span id="more"></span>
-<h1 id="准备工作"><a class="markdownIt-Anchor" href="#准备工作"></a> 准备工作</h1>
-<h2 id="ssh-功能确认"><a class="markdownIt-Anchor" href="#ssh-功能确认"></a> SSH 功能确认</h2>
-<p>Windows 通常自带 OpenSSH 不需要安装，Windows 下检查是否已经安装 OpenSSH 的方法：<br>
-启动 <code>Windows PowerShell（管理员）</code>，输入以下指令：</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Get-WindowsCapability</span> <span class="token operator">-</span>Online <span class="token punctuation">|</span> ? Name <span class="token operator">-like</span> <span class="token string">'OpenSSH*'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li>
-<p>如果电脑未安装 OpenSSH，则 <code>State</code> 会显示 <code>NotPresent</code>：</p>
-<p><a href="https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell">则输入以下指令进行安装</a>：</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">Add-WindowsCapability</span> <span class="token operator">-</span>Online <span class="token operator">-</span>Name OpenSSH<span class="token punctuation">.</span>Client~~~~0<span class="token punctuation">.</span>0<span class="token punctuation">.</span>1<span class="token punctuation">.</span>0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li>
-<p>若已安装或在安装完成后，输入 <code>ssh</code> 将会返回以下内容：</p>
-<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823134152358.png" alt="输入 ssh 返回内容"></p>
-</li>
-</ul>
-<h2 id="vscode-安装-remote-ssh"><a class="markdownIt-Anchor" href="#vscode-安装-remote-ssh"></a> VScode 安装 Remote-SSH</h2>
-<p>VScode 搜索并安装 Remote-SSH</p>
-<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823134651519.png" alt="VScode 搜索并安装 Remote-SSH"></p>
-<h1 id="配置-remote-ssh"><a class="markdownIt-Anchor" href="#配置-remote-ssh"></a> 配置 Remote-SSH</h1>
-<p>从如下图所示，打开并配置 config 配置文件，</p>
-<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823135148650.png" alt="Remote-SSH config 配置文件打开路径"></p>
-<p>配置如下：</p>
-<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823135927329.png" alt="Remote-SSH config 配置示例"></p>
-<h1 id="连接远程服务器"><a class="markdownIt-Anchor" href="#连接远程服务器"></a> 连接远程服务器</h1>
-<p>在配置上述过程之后，可点击“→”按钮即可进行连接，连接过程中将会需要输入密码。</p>
-<p><img src="./Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development/image-20230823140134644.png" alt="连接远程服务器"></p>
-]]></content>
-      <categories>
-        <category>VScode</category>
-      </categories>
-      <tags>
-        <tag>VScode</tag>
-      </tags>
   </entry>
   <entry>
     <title>Windows 优秀 UWP 软件</title>
@@ -6032,15 +6032,15 @@ categories<span class="token punctuation">:</span></span>
 <h2 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h2>
 <p>默认开启弹幕</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-UBwcmRVUwmXCPvWo" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-UBwcmRVUwmXCPvWo").style.height=document.getElementById("mmedia-UBwcmRVUwmXCPvWo").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-reCxrtlEQzdRDCEH" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-reCxrtlEQzdRDCEH").style.height=document.getElementById("mmedia-reCxrtlEQzdRDCEH").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-UBwcmRVUwmXCPvWo").style.height=document.getElementById("mmedia-UBwcmRVUwmXCPvWo").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-reCxrtlEQzdRDCEH").style.height=document.getElementById("mmedia-reCxrtlEQzdRDCEH").scrollWidth*0.76+"px";
     }; </script>
 <p><s>关闭弹幕</s>失败</p>
 <pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% mmedia "bilibili" "bvid:BV1vJ411U7Ji" "danmaku:false" %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-sryRRpBmZNYtRNjt" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-sryRRpBmZNYtRNjt").style.height=document.getElementById("mmedia-sryRRpBmZNYtRNjt").scrollWidth*0.76+"px";
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-hlXbFLqCHbAEZUPh" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=false" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-hlXbFLqCHbAEZUPh").style.height=document.getElementById("mmedia-hlXbFLqCHbAEZUPh").scrollWidth*0.76+"px";
     window.onresize = function(){
-      document.getElementById("mmedia-sryRRpBmZNYtRNjt").style.height=document.getElementById("mmedia-sryRRpBmZNYtRNjt").scrollWidth*0.76+"px";
+      document.getElementById("mmedia-hlXbFLqCHbAEZUPh").style.height=document.getElementById("mmedia-hlXbFLqCHbAEZUPh").scrollWidth*0.76+"px";
     }; </script>
 ]]></content>
       <categories>
@@ -6928,212 +6928,6 @@ importlib<span class="token punctuation">.</span><span class="token builtin">rel
       </tags>
   </entry>
   <entry>
-    <title>个人腾讯云轻量应用服务器基础配置</title>
-    <url>/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html</url>
-    <content><![CDATA[<h1 id="系统ubuntu-20043-lts"><a class="markdownIt-Anchor" href="#系统ubuntu-20043-lts"></a> 系统：Ubuntu 20.04.3 LTS</h1>
-<span id="more"></span>
-<h1 id="启用root用户登录"><a class="markdownIt-Anchor" href="#启用root用户登录"></a> 启用root用户登录</h1>
-<p>1、设置root密码：<code>sudo passwd</code></p>
-<p>2、配置<code>sshd_config</code>文件</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">nano</span> /etc/ssh/sshd_config<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>改为</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">PermitRootLogin <span class="token function">yes</span> <span class="token comment">#（默认为#PermitRootLogin prohibit-password）</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>3、重启服务</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">service</span> <span class="token function">ssh</span> restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>之后便可用root用户登录</p>
-<h1 id="安装docker"><a class="markdownIt-Anchor" href="#安装docker"></a> 安装Docker</h1>
-<blockquote>
-<p><a href="https://docs.docker.com/engine/install/ubuntu/">Install Docker Engine on Ubuntu | Docker Documentation</a></p>
-</blockquote>
-<h2 id="卸载旧版docker"><a class="markdownIt-Anchor" href="#卸载旧版docker"></a> 卸载旧版Docker</h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> remove <span class="token function">docker</span> docker-engine docker.io containerd runc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>不知道有没有装旧版都可以运行一下上面的</p>
-<h2 id="方法一通过腾讯云自带源安装"><a class="markdownIt-Anchor" href="#方法一通过腾讯云自带源安装"></a> 方法一：通过腾讯云自带源安装</h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> <span class="token function">install</span> docker.io<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="方法二通过官方仓库安装网络不好的情况下安装较慢"><a class="markdownIt-Anchor" href="#方法二通过官方仓库安装网络不好的情况下安装较慢"></a> 方法二：通过官方仓库安装（网络不好的情况下，安装较慢）</h2>
-<p>1、更新 apt 包索引和安装包</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token punctuation">\</span>
-    ca-certificates <span class="token punctuation">\</span>
-    <span class="token function">curl</span> <span class="token punctuation">\</span>
-    gnupg <span class="token punctuation">\</span>
-    lsb-release<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>2、添加 Docker 的官方 GPG 密钥</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg <span class="token operator">|</span> <span class="token function">sudo</span> gpg <span class="token parameter variable">--dearmor</span> <span class="token parameter variable">-o</span> /usr/share/keyrings/docker-archive-keyring.gpg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>3、使用以下命令设置稳定的存储库</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"deb [arch=<span class="token variable"><span class="token variable">$(</span>dpkg --print-architecture<span class="token variable">)</span></span> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu <span class="token variable"><span class="token variable">$(</span>lsb_release <span class="token parameter variable">-cs</span><span class="token variable">)</span></span> stable"</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/apt/sources.list.d/docker.list <span class="token operator">></span> /dev/null<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>4、安装Docker</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update
-<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> docker-ce docker-ce-cli containerd.io<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h1 id="安装常用docker"><a class="markdownIt-Anchor" href="#安装常用docker"></a> 安装常用Docker</h1>
-<h2 id="portainer-ce"><a class="markdownIt-Anchor" href="#portainer-ce"></a> Portainer CE</h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
-    <span class="token parameter variable">-p</span> <span class="token number">8000</span>:8000 <span class="token parameter variable">-p</span> <span class="token number">9000</span>:9000 <span class="token punctuation">\</span>
-    <span class="token parameter variable">--name</span><span class="token operator">=</span>portainer <span class="token punctuation">\</span>
-    <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token punctuation">\</span>
-    <span class="token parameter variable">-v</span> /var/run/docker.sock:/var/run/docker.sock <span class="token punctuation">\</span>
-    <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/portainer_data:/data <span class="token punctuation">\</span>
-    portainer/portainer-ce<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="ddnsto"><a class="markdownIt-Anchor" href="#ddnsto"></a> DDNSTO</h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
-    <span class="token parameter variable">--name</span><span class="token operator">=</span><span class="token operator">&lt;</span>container name<span class="token operator">></span> <span class="token punctuation">\</span>
-    <span class="token parameter variable">-e</span> <span class="token assign-left variable">TOKEN</span><span class="token operator">=</span><span class="token operator">&lt;</span>填入你的token<span class="token operator">></span> <span class="token punctuation">\</span>
-    <span class="token parameter variable">-e</span> <span class="token assign-left variable">DEVICE_IDX</span><span class="token operator">=</span><span class="token operator">&lt;</span>默认0，如果设备ID重复则为1-100之间<span class="token operator">></span> <span class="token punctuation">\</span>
-    <span class="token parameter variable">-v</span> /etc/localtime:/etc/localtime:ro <span class="token punctuation">\</span>
-    <span class="token parameter variable">-e</span> <span class="token assign-left variable">PUID</span><span class="token operator">=</span><span class="token operator">&lt;</span>uid <span class="token keyword">for</span> user<span class="token operator">></span> <span class="token punctuation">\</span>
-    <span class="token parameter variable">-e</span> <span class="token assign-left variable">PGID</span><span class="token operator">=</span><span class="token operator">&lt;</span>gid <span class="token keyword">for</span> user<span class="token operator">></span> <span class="token punctuation">\</span>
-    <span class="token parameter variable">--restart</span><span class="token operator">=</span>always  <span class="token punctuation">\</span>
-    linkease/ddnsto
-<span class="token comment"># &lt;填入你的token>: 填写从ddnsto控制台拿到的 token。</span>
-<span class="token comment"># DEVICE_IDX: 默认0，如果设备ID重复则改为1-100之间。</span>
-<span class="token comment"># PUID/PGID：获取方式：终端输入id即可。</span>
-<span class="token comment"># 注意要替换 "&lt;>" 里面的内容，且不能出现 "&lt;>"。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>示例</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
-    <span class="token parameter variable">--name</span><span class="token operator">=</span>ddnsto <span class="token punctuation">\</span>
-    <span class="token parameter variable">-e</span> <span class="token assign-left variable">TOKEN</span><span class="token operator">=</span><span class="token operator">&lt;</span>填入你的token<span class="token operator">></span> <span class="token punctuation">\</span>
-    <span class="token parameter variable">-e</span> <span class="token assign-left variable">DEVICE_IDX</span><span class="token operator">=</span><span class="token number">0</span> <span class="token punctuation">\</span>
-    <span class="token parameter variable">-v</span> /etc/localtime:/etc/localtime:ro <span class="token punctuation">\</span>
-    <span class="token parameter variable">-e</span> <span class="token assign-left variable">PUID</span><span class="token operator">=</span><span class="token number">0</span> <span class="token punctuation">\</span>
-    <span class="token parameter variable">-e</span> <span class="token assign-left variable">PGID</span><span class="token operator">=</span><span class="token number">0</span> <span class="token punctuation">\</span>
-    <span class="token parameter variable">--restart</span><span class="token operator">=</span>always  <span class="token punctuation">\</span>
-    linkease/ddnsto<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="利用nginx并部署一个html静态网站"><a class="markdownIt-Anchor" href="#利用nginx并部署一个html静态网站"></a> 利用Nginx并部署一个HTML静态网站</h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-di</span> <span class="token punctuation">\</span>
-    <span class="token parameter variable">--name</span><span class="token operator">=</span>nginx <span class="token punctuation">\</span>
-    <span class="token parameter variable">-p</span> <span class="token number">90</span>:80 <span class="token punctuation">\</span>
-    <span class="token parameter variable">-v</span> /home/ubuntu/web:/usr/share/nginx/html <span class="token punctuation">\</span>
-    <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token punctuation">\</span>
-    nginx
-<span class="token comment"># -d 后台运行</span>
-<span class="token comment"># -i 交互方式运行</span>
-<span class="token comment"># --name 自定义容器名称</span>
-<span class="token comment"># -p 端口号映射 90 自定义为外部访问端口：80 为nginx容器对外暴露的端口</span>
-<span class="token comment"># -v 目录挂载  冒号前为 外部目录，冒号后为 容器内目录；相当于外部目录中的内容会映射同步到容器内</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="青龙"><a class="markdownIt-Anchor" href="#青龙"></a> 青龙</h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-dit</span> <span class="token punctuation">\</span>
-   <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/ql/config:/ql/config <span class="token punctuation">\</span>
-   <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/ql/log:/ql/log <span class="token punctuation">\</span>
-   <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/ql/db:/ql/db <span class="token punctuation">\</span>
-   <span class="token parameter variable">-p</span> <span class="token number">5700</span>:5700 <span class="token punctuation">\</span>
-   <span class="token parameter variable">--name</span> qinglong <span class="token punctuation">\</span>
-   <span class="token parameter variable">--hostname</span> qinglong <span class="token punctuation">\</span>
-   <span class="token parameter variable">--restart</span> always <span class="token punctuation">\</span>
-   whyour/qinglong:latest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="配置git"><a class="markdownIt-Anchor" href="#配置git"></a> 配置Git</h1>
-<h2 id="配置用户名-邮箱等信息"><a class="markdownIt-Anchor" href="#配置用户名-邮箱等信息"></a> 配置用户名、邮箱等信息</h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"xuanyabulema"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"xuanyabulema@qq.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>使用方式</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</span>
-
-<span class="token comment"># 1.查看git配置信息</span>
-<span class="token function">git</span> config <span class="token parameter variable">--list</span>
-  
-<span class="token comment"># 2.查看git用户名、密码、邮箱的配置</span>
-<span class="token function">git</span> config user.name
-<span class="token function">git</span> config user.password
-<span class="token function">git</span> config user.email
- 
-<span class="token comment"># 3.设置git用户名、密码、邮箱的配置</span>
-<span class="token function">git</span> config user.name <span class="token string">"yourName"</span>
-<span class="token function">git</span> config user.password <span class="token string">"yourPassword"</span>
-<span class="token function">git</span> config user.email <span class="token string">"your@email.com"</span>
-<span class="token comment"># 3.设置git用户名、密码、邮箱的配置（全局配置）</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"yourName"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.password <span class="token string">"yourPassword"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"your@email.com"</span>
- 
-<span class="token comment"># 4.修改git用户名、密码、邮箱的配置（跟设置语法一样，没有用户名就添加，有了用户名就修改）</span>
-<span class="token function">git</span> config user.name <span class="token string">"yourName"</span>
-<span class="token comment"># 4.修改git用户名、密码、邮箱的配置（全局配置）</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"yourName"</span>
- 
-<span class="token comment"># 5.删除git用户名、密码、邮箱的配置</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> user.name <span class="token string">"yourName"</span>
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> user.email <span class="token string">"your@email.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="连接github"><a class="markdownIt-Anchor" href="#连接github"></a> 连接GitHub</h2>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-C</span> <span class="token string">"your@email.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>以我的为例</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-C</span> <span class="token string">"xuanyabulema@qq.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><a href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">查看秘钥并添加至GitHub</a></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> /root/.ssh/id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>然后将<code>cat</code>获取到的结果存至GitHub</p>
-<p>验证是否连接成功</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token parameter variable">-T</span> git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-        <tag>Git</tag>
-        <tag>Docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 使用过程遇到的问题</title>
-    <url>/posts/Problems-Encountered-During-the-Use-of-Hexo.html</url>
-    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
-<p>对在使用Hexo的过程中遇到的问题进行记录</p>
-<span id="more"></span>
-<h1 id="hexo一级标题不跳转问题解决"><a class="markdownIt-Anchor" href="#hexo一级标题不跳转问题解决"></a> Hexo一级标题不跳转问题解决</h1>
-<blockquote>
-<p><a href="https://blog.csdn.net/weixin_45149481/article/details/116794535">hexo文章目录点击不跳转，html没有生成href</a></p>
-</blockquote>
-<p>遇到奇怪的问题，点击一级标题竟然无法跳转。按照上面链接说的操作，发现<code>node_modules</code>目录下竟然没有<code>hexo-toc</code>，于是首先生成该目录</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-toc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<!-- more -->
-<p>然后修改该目录下的<code>node_modules\hexo-toc\lib\filter.js</code>的“28-31行”为如下</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">$title<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">// $title.children('a').remove();</span>
-<span class="token comment">// $title.html( '&lt;span id="' + id + '">' + $title.html() + '&lt;/span>' );</span>
-<span class="token comment">// $title.removeAttr('id');</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="版本信息"><a class="markdownIt-Anchor" href="#版本信息"></a> 版本信息</h2>
-<pre class="line-numbers language-none"><code class="language-none">NexT version 8.13.1
-Documentation: https:&#x2F;&#x2F;theme-next.js.org
-&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-hexo: 6.3.0
-hexo-cli: 4.3.0
-os: linux 5.4.0-126-generic Ubuntu 20.04.5 LTS (Focal Fossa)
-node: 16.17.1
-v8: 9.4.146.26-node.22
-uv: 1.43.0
-zlib: 1.2.11
-brotli: 1.0.9
-ares: 1.18.1
-modules: 93
-nghttp2: 1.47.0
-napi: 8
-llhttp: 6.0.9
-openssl: 1.1.1q+quic
-cldr: 41.0
-icu: 71.1
-tz: 2022a
-unicode: 14.0
-ngtcp2: 0.1.0-DEV
-nghttp3: 0.1.0-DEV<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="powershell无法执行hexo命令"><a class="markdownIt-Anchor" href="#powershell无法执行hexo命令"></a> PowerShell无法执行hexo命令</h1>
-<p>将Hexo环境从GitHub上同步过来后，<code>npm</code>命令可用，用<code>hexo</code>时却报错</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">hexo : 无法将“hexo”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确保路径正确，然后再试一次。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="设置用户策略权限"><a class="markdownIt-Anchor" href="#设置用户策略权限"></a> 设置用户策略权限</h2>
-<p>以管理员权限打开<code>PowerShell</code>运行以下内容</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">set-executionpolicy</span> remotesigned <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="Problems-Encountered-During-the-Use-of-Hexo/image-20221111180832176.png" alt="设置用户策略权限"></p>
-<h2 id="重装hexo-cli"><a class="markdownIt-Anchor" href="#重装hexo-cli"></a> 重装hexo-cli</h2>
-<p>在<code>PowerShell</code>中输入<code>npm install -g hexo-cli # -g为全局安装</code> 再装一遍即可解决</p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-        <category>bug</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>文章片段</title>
     <url>/posts/Paper-Excerpt.html</url>
     <content><![CDATA[<p>一些文章片段的记录</p>
@@ -7362,6 +7156,212 @@ Cardiac motion tracking can also be considered as a 4D intramodality registratio
       </categories>
       <tags>
         <tag>Notes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人腾讯云轻量应用服务器基础配置</title>
+    <url>/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html</url>
+    <content><![CDATA[<h1 id="系统ubuntu-20043-lts"><a class="markdownIt-Anchor" href="#系统ubuntu-20043-lts"></a> 系统：Ubuntu 20.04.3 LTS</h1>
+<span id="more"></span>
+<h1 id="启用root用户登录"><a class="markdownIt-Anchor" href="#启用root用户登录"></a> 启用root用户登录</h1>
+<p>1、设置root密码：<code>sudo passwd</code></p>
+<p>2、配置<code>sshd_config</code>文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">nano</span> /etc/ssh/sshd_config<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>改为</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">PermitRootLogin <span class="token function">yes</span> <span class="token comment">#（默认为#PermitRootLogin prohibit-password）</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>3、重启服务</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">service</span> <span class="token function">ssh</span> restart<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>之后便可用root用户登录</p>
+<h1 id="安装docker"><a class="markdownIt-Anchor" href="#安装docker"></a> 安装Docker</h1>
+<blockquote>
+<p><a href="https://docs.docker.com/engine/install/ubuntu/">Install Docker Engine on Ubuntu | Docker Documentation</a></p>
+</blockquote>
+<h2 id="卸载旧版docker"><a class="markdownIt-Anchor" href="#卸载旧版docker"></a> 卸载旧版Docker</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> remove <span class="token function">docker</span> docker-engine docker.io containerd runc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>不知道有没有装旧版都可以运行一下上面的</p>
+<h2 id="方法一通过腾讯云自带源安装"><a class="markdownIt-Anchor" href="#方法一通过腾讯云自带源安装"></a> 方法一：通过腾讯云自带源安装</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">apt</span> <span class="token function">install</span> docker.io<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="方法二通过官方仓库安装网络不好的情况下安装较慢"><a class="markdownIt-Anchor" href="#方法二通过官方仓库安装网络不好的情况下安装较慢"></a> 方法二：通过官方仓库安装（网络不好的情况下，安装较慢）</h2>
+<p>1、更新 apt 包索引和安装包</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token punctuation">\</span>
+    ca-certificates <span class="token punctuation">\</span>
+    <span class="token function">curl</span> <span class="token punctuation">\</span>
+    gnupg <span class="token punctuation">\</span>
+    lsb-release<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2、添加 Docker 的官方 GPG 密钥</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://download.docker.com/linux/ubuntu/gpg <span class="token operator">|</span> <span class="token function">sudo</span> gpg <span class="token parameter variable">--dearmor</span> <span class="token parameter variable">-o</span> /usr/share/keyrings/docker-archive-keyring.gpg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>3、使用以下命令设置稳定的存储库</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"deb [arch=<span class="token variable"><span class="token variable">$(</span>dpkg --print-architecture<span class="token variable">)</span></span> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu <span class="token variable"><span class="token variable">$(</span>lsb_release <span class="token parameter variable">-cs</span><span class="token variable">)</span></span> stable"</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/apt/sources.list.d/docker.list <span class="token operator">></span> /dev/null<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>4、安装Docker</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> docker-ce docker-ce-cli containerd.io<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h1 id="安装常用docker"><a class="markdownIt-Anchor" href="#安装常用docker"></a> 安装常用Docker</h1>
+<h2 id="portainer-ce"><a class="markdownIt-Anchor" href="#portainer-ce"></a> Portainer CE</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-p</span> <span class="token number">8000</span>:8000 <span class="token parameter variable">-p</span> <span class="token number">9000</span>:9000 <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span><span class="token operator">=</span>portainer <span class="token punctuation">\</span>
+    <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token punctuation">\</span>
+    <span class="token parameter variable">-v</span> /var/run/docker.sock:/var/run/docker.sock <span class="token punctuation">\</span>
+    <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/portainer_data:/data <span class="token punctuation">\</span>
+    portainer/portainer-ce<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="ddnsto"><a class="markdownIt-Anchor" href="#ddnsto"></a> DDNSTO</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span><span class="token operator">=</span><span class="token operator">&lt;</span>container name<span class="token operator">></span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">TOKEN</span><span class="token operator">=</span><span class="token operator">&lt;</span>填入你的token<span class="token operator">></span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">DEVICE_IDX</span><span class="token operator">=</span><span class="token operator">&lt;</span>默认0，如果设备ID重复则为1-100之间<span class="token operator">></span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-v</span> /etc/localtime:/etc/localtime:ro <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">PUID</span><span class="token operator">=</span><span class="token operator">&lt;</span>uid <span class="token keyword">for</span> user<span class="token operator">></span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">PGID</span><span class="token operator">=</span><span class="token operator">&lt;</span>gid <span class="token keyword">for</span> user<span class="token operator">></span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--restart</span><span class="token operator">=</span>always  <span class="token punctuation">\</span>
+    linkease/ddnsto
+<span class="token comment"># &lt;填入你的token>: 填写从ddnsto控制台拿到的 token。</span>
+<span class="token comment"># DEVICE_IDX: 默认0，如果设备ID重复则改为1-100之间。</span>
+<span class="token comment"># PUID/PGID：获取方式：终端输入id即可。</span>
+<span class="token comment"># 注意要替换 "&lt;>" 里面的内容，且不能出现 "&lt;>"。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>示例</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span><span class="token operator">=</span>ddnsto <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">TOKEN</span><span class="token operator">=</span><span class="token operator">&lt;</span>填入你的token<span class="token operator">></span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">DEVICE_IDX</span><span class="token operator">=</span><span class="token number">0</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-v</span> /etc/localtime:/etc/localtime:ro <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">PUID</span><span class="token operator">=</span><span class="token number">0</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-e</span> <span class="token assign-left variable">PGID</span><span class="token operator">=</span><span class="token number">0</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--restart</span><span class="token operator">=</span>always  <span class="token punctuation">\</span>
+    linkease/ddnsto<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="利用nginx并部署一个html静态网站"><a class="markdownIt-Anchor" href="#利用nginx并部署一个html静态网站"></a> 利用Nginx并部署一个HTML静态网站</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-di</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">--name</span><span class="token operator">=</span>nginx <span class="token punctuation">\</span>
+    <span class="token parameter variable">-p</span> <span class="token number">90</span>:80 <span class="token punctuation">\</span>
+    <span class="token parameter variable">-v</span> /home/ubuntu/web:/usr/share/nginx/html <span class="token punctuation">\</span>
+    <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token punctuation">\</span>
+    nginx
+<span class="token comment"># -d 后台运行</span>
+<span class="token comment"># -i 交互方式运行</span>
+<span class="token comment"># --name 自定义容器名称</span>
+<span class="token comment"># -p 端口号映射 90 自定义为外部访问端口：80 为nginx容器对外暴露的端口</span>
+<span class="token comment"># -v 目录挂载  冒号前为 外部目录，冒号后为 容器内目录；相当于外部目录中的内容会映射同步到容器内</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="青龙"><a class="markdownIt-Anchor" href="#青龙"></a> 青龙</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">-dit</span> <span class="token punctuation">\</span>
+   <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/ql/config:/ql/config <span class="token punctuation">\</span>
+   <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/ql/log:/ql/log <span class="token punctuation">\</span>
+   <span class="token parameter variable">-v</span> <span class="token environment constant">$PWD</span>/ql/db:/ql/db <span class="token punctuation">\</span>
+   <span class="token parameter variable">-p</span> <span class="token number">5700</span>:5700 <span class="token punctuation">\</span>
+   <span class="token parameter variable">--name</span> qinglong <span class="token punctuation">\</span>
+   <span class="token parameter variable">--hostname</span> qinglong <span class="token punctuation">\</span>
+   <span class="token parameter variable">--restart</span> always <span class="token punctuation">\</span>
+   whyour/qinglong:latest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="配置git"><a class="markdownIt-Anchor" href="#配置git"></a> 配置Git</h1>
+<h2 id="配置用户名-邮箱等信息"><a class="markdownIt-Anchor" href="#配置用户名-邮箱等信息"></a> 配置用户名、邮箱等信息</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"xuanyabulema"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"xuanyabulema@qq.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>使用方式</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># git config命令的--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</span>
+
+<span class="token comment"># 1.查看git配置信息</span>
+<span class="token function">git</span> config <span class="token parameter variable">--list</span>
+  
+<span class="token comment"># 2.查看git用户名、密码、邮箱的配置</span>
+<span class="token function">git</span> config user.name
+<span class="token function">git</span> config user.password
+<span class="token function">git</span> config user.email
+ 
+<span class="token comment"># 3.设置git用户名、密码、邮箱的配置</span>
+<span class="token function">git</span> config user.name <span class="token string">"yourName"</span>
+<span class="token function">git</span> config user.password <span class="token string">"yourPassword"</span>
+<span class="token function">git</span> config user.email <span class="token string">"your@email.com"</span>
+<span class="token comment"># 3.设置git用户名、密码、邮箱的配置（全局配置）</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"yourName"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.password <span class="token string">"yourPassword"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"your@email.com"</span>
+ 
+<span class="token comment"># 4.修改git用户名、密码、邮箱的配置（跟设置语法一样，没有用户名就添加，有了用户名就修改）</span>
+<span class="token function">git</span> config user.name <span class="token string">"yourName"</span>
+<span class="token comment"># 4.修改git用户名、密码、邮箱的配置（全局配置）</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"yourName"</span>
+ 
+<span class="token comment"># 5.删除git用户名、密码、邮箱的配置</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> user.name <span class="token string">"yourName"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> <span class="token parameter variable">--unset</span> user.email <span class="token string">"your@email.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="连接github"><a class="markdownIt-Anchor" href="#连接github"></a> 连接GitHub</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-C</span> <span class="token string">"your@email.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>以我的为例</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-C</span> <span class="token string">"xuanyabulema@qq.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><a href="https://docs.github.com/cn/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">查看秘钥并添加至GitHub</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> /root/.ssh/id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后将<code>cat</code>获取到的结果存至GitHub</p>
+<p>验证是否连接成功</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token parameter variable">-T</span> git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+        <tag>Git</tag>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 使用过程遇到的问题</title>
+    <url>/posts/Problems-Encountered-During-the-Use-of-Hexo.html</url>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>对在使用Hexo的过程中遇到的问题进行记录</p>
+<span id="more"></span>
+<h1 id="hexo一级标题不跳转问题解决"><a class="markdownIt-Anchor" href="#hexo一级标题不跳转问题解决"></a> Hexo一级标题不跳转问题解决</h1>
+<blockquote>
+<p><a href="https://blog.csdn.net/weixin_45149481/article/details/116794535">hexo文章目录点击不跳转，html没有生成href</a></p>
+</blockquote>
+<p>遇到奇怪的问题，点击一级标题竟然无法跳转。按照上面链接说的操作，发现<code>node_modules</code>目录下竟然没有<code>hexo-toc</code>，于是首先生成该目录</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-toc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<!-- more -->
+<p>然后修改该目录下的<code>node_modules\hexo-toc\lib\filter.js</code>的“28-31行”为如下</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">$title<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// $title.children('a').remove();</span>
+<span class="token comment">// $title.html( '&lt;span id="' + id + '">' + $title.html() + '&lt;/span>' );</span>
+<span class="token comment">// $title.removeAttr('id');</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="版本信息"><a class="markdownIt-Anchor" href="#版本信息"></a> 版本信息</h2>
+<pre class="line-numbers language-none"><code class="language-none">NexT version 8.13.1
+Documentation: https:&#x2F;&#x2F;theme-next.js.org
+&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
+hexo: 6.3.0
+hexo-cli: 4.3.0
+os: linux 5.4.0-126-generic Ubuntu 20.04.5 LTS (Focal Fossa)
+node: 16.17.1
+v8: 9.4.146.26-node.22
+uv: 1.43.0
+zlib: 1.2.11
+brotli: 1.0.9
+ares: 1.18.1
+modules: 93
+nghttp2: 1.47.0
+napi: 8
+llhttp: 6.0.9
+openssl: 1.1.1q+quic
+cldr: 41.0
+icu: 71.1
+tz: 2022a
+unicode: 14.0
+ngtcp2: 0.1.0-DEV
+nghttp3: 0.1.0-DEV<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="powershell无法执行hexo命令"><a class="markdownIt-Anchor" href="#powershell无法执行hexo命令"></a> PowerShell无法执行hexo命令</h1>
+<p>将Hexo环境从GitHub上同步过来后，<code>npm</code>命令可用，用<code>hexo</code>时却报错</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">hexo : 无法将“hexo”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包括路径，请确保路径正确，然后再试一次。<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="设置用户策略权限"><a class="markdownIt-Anchor" href="#设置用户策略权限"></a> 设置用户策略权限</h2>
+<p>以管理员权限打开<code>PowerShell</code>运行以下内容</p>
+<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token function">set-executionpolicy</span> remotesigned <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="Problems-Encountered-During-the-Use-of-Hexo/image-20221111180832176.png" alt="设置用户策略权限"></p>
+<h2 id="重装hexo-cli"><a class="markdownIt-Anchor" href="#重装hexo-cli"></a> 重装hexo-cli</h2>
+<p>在<code>PowerShell</code>中输入<code>npm install -g hexo-cli # -g为全局安装</code> 再装一遍即可解决</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+        <category>bug</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
@@ -8063,81 +8063,6 @@ For the volunteers, excluded lmks are summarized below:</p>
       </tags>
   </entry>
   <entry>
-    <title>利用 dill 保存 Python 变量对象</title>
-    <url>/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html</url>
-    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
-<blockquote>
-<p>内容参考：<a href="https://www.cnblogs.com/feffery/p/16703398.html">（数据科学学习手札142）dill：Python中增强版的pickle</a></p>
-</blockquote>
-<p><code>Python</code>自带<code>pickle</code>库可以保存程序运行过程中的变量对象信息至文件，但用起来遇到一个问题，</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">_pickle<span class="token punctuation">.</span>PicklingError<span class="token punctuation">:</span> Can<span class="token string">'t pickle &lt;class '</span>TPS_torch<span class="token punctuation">.</span>TPS<span class="token string">'>: it'</span>s <span class="token keyword">not</span> the same <span class="token builtin">object</span> <span class="token keyword">as</span> TPS_torch<span class="token punctuation">.</span>TPS<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>在网上寻找解决办法，尝试无果后，发现了<code>dill</code>，于是改用<code>dill</code>模块，不再出现上述问题。</p>
-<p><code>dill</code>可以认为是增强版的<code>pickle</code>，不仅包括<code>pickle</code>的功能，而且基础使用一致，而且dill包括一些pickle不具备的功能，如</p>
-<ul>
-<li>保存解释器状态（state of an interpreter session），即可保存运行后整个内存中所有对象信息</li>
-<li>保存lambda函数</li>
-<li>保存源码</li>
-</ul>
-<span id="more"></span>
-<h1 id="基础使用"><a class="markdownIt-Anchor" href="#基础使用"></a> 基础使用</h1>
-<p>备用代码</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> dill
-<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-
-
-<span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"class A init"</span><span class="token punctuation">)</span>
-        self<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">66666666</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="保存变量对象至文件"><a class="markdownIt-Anchor" href="#保存变量对象至文件"></a> 保存变量对象至文件</h2>
-<p>使用方式</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">dill<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token builtin">file</span><span class="token punctuation">)</span>
-<span class="token comment"># obj 要保存的变量对象</span>
-<span class="token comment"># file 要保存至的文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>示例</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> A<span class="token punctuation">(</span><span class="token punctuation">)</span>
-b <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./pickle/dill_test.pkl'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    dill<span class="token punctuation">.</span>dump<span class="token punctuation">(</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">]</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span> <span class="token comment"># dill.dump(obj, file)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="从文件中读取变量对象"><a class="markdownIt-Anchor" href="#从文件中读取变量对象"></a> 从文件中读取变量对象</h2>
-<p>使用方式</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">obj <span class="token operator">=</span> dill<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>示例</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./pickle/dill_test.pkl'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    a<span class="token punctuation">,</span> b <span class="token operator">=</span> dill<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>  <span class="token comment"># obj = dill.load(file)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h1 id="保存和加载解释器状态"><a class="markdownIt-Anchor" href="#保存和加载解释器状态"></a> 保存和加载解释器状态</h1>
-<p><code>dill.dump_module()</code>（旧为<code>dill.dump_session()</code>）可以将解释器状态保存至文件，即可保存运行后整个内存中所有对象信息</p>
-<p><code>dill.load_module()</code>（旧为<code>dill.load_session()</code>）可以从文件中加载保存的解释器状态</p>
-<p>示例</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> A<span class="token punctuation">(</span><span class="token punctuation">)</span>
-b <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-dill<span class="token punctuation">.</span>dump_module<span class="token punctuation">(</span><span class="token string">'./pickle/state.pkl'</span><span class="token punctuation">)</span>
-
-<span class="token keyword">del</span> a<span class="token punctuation">,</span> b  <span class="token comment"># 删除内存中的变量</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'a'</span> <span class="token keyword">in</span> <span class="token builtin">dir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 判断 a 是否存在</span>
-dill<span class="token punctuation">.</span>load_module<span class="token punctuation">(</span><span class="token string">'./pickle/state.pkl'</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'a'</span> <span class="token keyword">in</span> <span class="token builtin">dir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 判断 a 是否存在</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>运行结果</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">A</span> init
-<span class="token boolean">False</span>
-<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h1 id="保存lambda函数"><a class="markdownIt-Anchor" href="#保存lambda函数"></a> 保存lambda函数</h1>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h1 id="保存源码"><a class="markdownIt-Anchor" href="#保存源码"></a> 保存源码</h1>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Python</category>
-        <category>dill</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>dill</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>阅读记录：Landmark and Intensity-Based, Consistent Thin-Plate Spline Image Registration</title>
     <url>/posts/Reading-Notes-Landmark-and-Intensity-Based-Consistent-Thin-Plate-Spline-Image-Registration.html</url>
     <content><![CDATA[<h1 id="doi"><a class="markdownIt-Anchor" href="#doi"></a> DOI</h1>
@@ -8224,6 +8149,81 @@ p_{M, 1} &amp; p_{M, 2} &amp; 1
       </categories>
       <tags>
         <tag>Notes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用 dill 保存 Python 变量对象</title>
+    <url>/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html</url>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<blockquote>
+<p>内容参考：<a href="https://www.cnblogs.com/feffery/p/16703398.html">（数据科学学习手札142）dill：Python中增强版的pickle</a></p>
+</blockquote>
+<p><code>Python</code>自带<code>pickle</code>库可以保存程序运行过程中的变量对象信息至文件，但用起来遇到一个问题，</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">_pickle<span class="token punctuation">.</span>PicklingError<span class="token punctuation">:</span> Can<span class="token string">'t pickle &lt;class '</span>TPS_torch<span class="token punctuation">.</span>TPS<span class="token string">'>: it'</span>s <span class="token keyword">not</span> the same <span class="token builtin">object</span> <span class="token keyword">as</span> TPS_torch<span class="token punctuation">.</span>TPS<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在网上寻找解决办法，尝试无果后，发现了<code>dill</code>，于是改用<code>dill</code>模块，不再出现上述问题。</p>
+<p><code>dill</code>可以认为是增强版的<code>pickle</code>，不仅包括<code>pickle</code>的功能，而且基础使用一致，而且dill包括一些pickle不具备的功能，如</p>
+<ul>
+<li>保存解释器状态（state of an interpreter session），即可保存运行后整个内存中所有对象信息</li>
+<li>保存lambda函数</li>
+<li>保存源码</li>
+</ul>
+<span id="more"></span>
+<h1 id="基础使用"><a class="markdownIt-Anchor" href="#基础使用"></a> 基础使用</h1>
+<p>备用代码</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> dill
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+
+<span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"class A init"</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">66666666</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="保存变量对象至文件"><a class="markdownIt-Anchor" href="#保存变量对象至文件"></a> 保存变量对象至文件</h2>
+<p>使用方式</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">dill<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token builtin">file</span><span class="token punctuation">)</span>
+<span class="token comment"># obj 要保存的变量对象</span>
+<span class="token comment"># file 要保存至的文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>示例</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> A<span class="token punctuation">(</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./pickle/dill_test.pkl'</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    dill<span class="token punctuation">.</span>dump<span class="token punctuation">(</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span> b<span class="token punctuation">]</span><span class="token punctuation">,</span> f<span class="token punctuation">)</span> <span class="token comment"># dill.dump(obj, file)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="从文件中读取变量对象"><a class="markdownIt-Anchor" href="#从文件中读取变量对象"></a> 从文件中读取变量对象</h2>
+<p>使用方式</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">obj <span class="token operator">=</span> dill<span class="token punctuation">.</span>load<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>示例</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./pickle/dill_test.pkl'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    a<span class="token punctuation">,</span> b <span class="token operator">=</span> dill<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>  <span class="token comment"># obj = dill.load(file)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h1 id="保存和加载解释器状态"><a class="markdownIt-Anchor" href="#保存和加载解释器状态"></a> 保存和加载解释器状态</h1>
+<p><code>dill.dump_module()</code>（旧为<code>dill.dump_session()</code>）可以将解释器状态保存至文件，即可保存运行后整个内存中所有对象信息</p>
+<p><code>dill.load_module()</code>（旧为<code>dill.load_session()</code>）可以从文件中加载保存的解释器状态</p>
+<p>示例</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> A<span class="token punctuation">(</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+dill<span class="token punctuation">.</span>dump_module<span class="token punctuation">(</span><span class="token string">'./pickle/state.pkl'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">del</span> a<span class="token punctuation">,</span> b  <span class="token comment"># 删除内存中的变量</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'a'</span> <span class="token keyword">in</span> <span class="token builtin">dir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 判断 a 是否存在</span>
+dill<span class="token punctuation">.</span>load_module<span class="token punctuation">(</span><span class="token string">'./pickle/state.pkl'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'a'</span> <span class="token keyword">in</span> <span class="token builtin">dir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 判断 a 是否存在</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">A</span> init
+<span class="token boolean">False</span>
+<span class="token boolean">True</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h1 id="保存lambda函数"><a class="markdownIt-Anchor" href="#保存lambda函数"></a> 保存lambda函数</h1>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 id="保存源码"><a class="markdownIt-Anchor" href="#保存源码"></a> 保存源码</h1>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">pass</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Python</category>
+        <category>dill</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>dill</tag>
       </tags>
   </entry>
   <entry>
@@ -8658,37 +8658,6 @@ config.ini
       </tags>
   </entry>
   <entry>
-    <title>Ubuntu20.04 设置静态 ip</title>
-    <url>/posts/Ubuntu20-04-Static-Ip-Configuration.html</url>
-    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
-<p>Ubuntu 从 <code>17.10</code> 开始，已放弃在 <code>/etc/network/interfaces</code> 里固定 IP 的配置，<code>interfaces</code> 文件不复存在，即使配置也不会生效，而是改成 <code>netplan</code> 方式 ，配置写在 <code>/etc/netplan/00-installer-config.yaml</code> 或者类似名称的 <code>yaml</code> 文件里。</p>
-<blockquote>
-<p><a href="https://ld246.com/article/1593929878472">https://ld246.com/article/1593929878472</a></p>
-</blockquote>
-<span id="more"></span>
-<h2 id="配置静态ip"><a class="markdownIt-Anchor" href="#配置静态ip"></a> 配置静态IP</h2>
-<p>修改<code>yaml</code> 文件</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">network</span><span class="token punctuation">:</span>
-  <span class="token key atrule">ethernets</span><span class="token punctuation">:</span>
-    <span class="token key atrule">eth0</span><span class="token punctuation">:</span>   <span class="token comment">#配置的网卡的名称</span>
-      <span class="token key atrule">addresses</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> 192.168.1.4/24  <span class="token comment">#配置的静态ip地址和掩码</span>
-      <span class="token key atrule">gateway4</span><span class="token punctuation">:</span> 192.168.1.1
-      <span class="token key atrule">nameservers</span><span class="token punctuation">:</span>
-        <span class="token key atrule">addresses</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>192.168.1.1<span class="token punctuation">]</span>  <span class="token comment">#DNS服务器地址，多个DNS服务器地址需要用英文逗号分隔开</span>
-        <span class="token key atrule">search</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-  <span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>使得修改生效</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> netplan apply<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Ubuntu</category>
-      </categories>
-      <tags>
-        <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Ubuntu 基础</title>
     <url>/posts/Ubuntu-Basics.html</url>
     <content><![CDATA[<h1 id="linux-基础"><a class="markdownIt-Anchor" href="#linux-基础"></a> Linux 基础</h1>
@@ -8845,6 +8814,37 @@ config.ini
 <p>列出所有已安装的包的版本信息：<strong>apt list --all-versions</strong></p>
 </li>
 </ul>
+]]></content>
+      <categories>
+        <category>Ubuntu</category>
+      </categories>
+      <tags>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Ubuntu20.04 设置静态 ip</title>
+    <url>/posts/Ubuntu20-04-Static-Ip-Configuration.html</url>
+    <content><![CDATA[<h1 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h1>
+<p>Ubuntu 从 <code>17.10</code> 开始，已放弃在 <code>/etc/network/interfaces</code> 里固定 IP 的配置，<code>interfaces</code> 文件不复存在，即使配置也不会生效，而是改成 <code>netplan</code> 方式 ，配置写在 <code>/etc/netplan/00-installer-config.yaml</code> 或者类似名称的 <code>yaml</code> 文件里。</p>
+<blockquote>
+<p><a href="https://ld246.com/article/1593929878472">https://ld246.com/article/1593929878472</a></p>
+</blockquote>
+<span id="more"></span>
+<h2 id="配置静态ip"><a class="markdownIt-Anchor" href="#配置静态ip"></a> 配置静态IP</h2>
+<p>修改<code>yaml</code> 文件</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">network</span><span class="token punctuation">:</span>
+  <span class="token key atrule">ethernets</span><span class="token punctuation">:</span>
+    <span class="token key atrule">eth0</span><span class="token punctuation">:</span>   <span class="token comment">#配置的网卡的名称</span>
+      <span class="token key atrule">addresses</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 192.168.1.4/24  <span class="token comment">#配置的静态ip地址和掩码</span>
+      <span class="token key atrule">gateway4</span><span class="token punctuation">:</span> 192.168.1.1
+      <span class="token key atrule">nameservers</span><span class="token punctuation">:</span>
+        <span class="token key atrule">addresses</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>192.168.1.1<span class="token punctuation">]</span>  <span class="token comment">#DNS服务器地址，多个DNS服务器地址需要用英文逗号分隔开</span>
+        <span class="token key atrule">search</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使得修改生效</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> netplan apply<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 ]]></content>
       <categories>
         <category>Ubuntu</category>
@@ -9103,6 +9103,196 @@ styles <span class="token operator">=</span> <span class="token punctuation">[</
       </tags>
   </entry>
   <entry>
+    <title>NumPy 使用</title>
+    <url>/posts/Usage-of-NumPy.html</url>
+    <content><![CDATA[<h2 id="numpy使用"><a class="markdownIt-Anchor" href="#numpy使用"></a> NumPy使用</h2>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<span id="more"></span>
+<h3 id="数据拷贝"><a class="markdownIt-Anchor" href="#数据拷贝"></a> 数据拷贝</h3>
+<p><code>numpy</code>关于copy有三种情况，完全不复制、视图（view）或者叫浅复制（shallow copy）和深复制（deep copy）。</p>
+<p>而<code> b = a[:]</code> 这种形式就属于第二种，即视图，这本质上是一种切片操作（slicing），所有的切片操作返回的都是视图。具体来说，<code>b = a[:]</code>会创建一个新的对象 b（所以 id(b) 和id(a) 返回的结果是不一样的），但是 b 的数据完全来自于a，和 a 保持完全一致，换句话说，b的数据完全由a保管，他们两个的数据变化是一致的，可以看下面的示例:</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>  <span class="token comment"># array([0, 1, 2, 3])</span>
+b <span class="token operator">=</span> a<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span>  <span class="token comment"># array([0, 1, 2, 3])</span>
+b<span class="token punctuation">.</span>flags<span class="token punctuation">.</span>owndata  <span class="token comment"># 返回 False，b 并不保管数据</span>
+a<span class="token punctuation">.</span>flags<span class="token punctuation">.</span>owndata  <span class="token comment"># 返回 True，数据由 a 保管</span>
+<span class="token comment"># 改变 a 同时也影响到 b</span>
+a<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>  <span class="token comment"># array([0, 1, 2, 10])</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>  <span class="token comment">#  array([0, 1, 2, 10])</span>
+<span class="token comment"># 改变 b 同时也影响到 a</span>
+b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>  <span class="token comment"># array([10, 1, 2, 10])</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment"># array([10, 1, 2, 10])</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>b = a</code> 和 <code>b = a[:]</code> 的差别就在于后者会创建新的对象，前者不会。两种方式都会导致 <code>a</code> 和 <code>b</code> 的数据相互影响。</p>
+<p>要想不让 <code>a</code> 的改动影响到 <code>b</code>，可以使用深复制：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">unique_b <span class="token operator">=</span> a<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="矩阵运算"><a class="markdownIt-Anchor" href="#矩阵运算"></a> 矩阵运算</h3>
+<h4 id="矩阵乘法"><a class="markdownIt-Anchor" href="#矩阵乘法"></a> 矩阵乘法</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">"""
+元素乘法：np.multiply(a,b)   a*b
+矩阵乘法：np.dot(a,b) 或 np.matmul(a,b) 或 a.dot(b) 或直接用 a @ b !
+唯独注意：*，在 np.array 中重载为元素乘法，在 np.matrix 中重载为矩阵乘法!
+"""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="矩阵取逆"><a class="markdownIt-Anchor" href="#矩阵取逆"></a> 矩阵取逆</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 初始化一个非奇异矩阵(数组)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>linalg<span class="token punctuation">.</span>inv<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 对应于MATLAB中 inv() 函数</span>
+
+<span class="token comment"># 矩阵对象可以通过 .I 更方便的求逆</span>
+A <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>A<span class="token punctuation">.</span>I<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="正态分布的随机数数组"><a class="markdownIt-Anchor" href="#正态分布的随机数数组"></a> 正态分布的随机数数组</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># loc - 正态分布的均值</span>
+<span class="token comment"># scale - 正态分布的标准差</span>
+<span class="token comment"># size - 返回数组的形状。</span>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>loc<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> scale<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="从数值范围创建数组"><a class="markdownIt-Anchor" href="#从数值范围创建数组"></a> 从数值范围创建数组</h3>
+<h4 id="numpyarange"><a class="markdownIt-Anchor" href="#numpyarange"></a> numpy.arange</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">numpy<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>start<span class="token punctuation">,</span> stop<span class="token punctuation">,</span> step<span class="token punctuation">,</span> dtype<span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+start	起始值，默认为0
+stop	终止值（不包含）
+step	步长，默认为1
+dtype	返回ndarray的数据类型，如果没有提供，则会使用输入数据的类型。"""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="numpylinspace"><a class="markdownIt-Anchor" href="#numpylinspace"></a> numpy.linspace</h4>
+<p>函数用于创建一个一维数组，数组是一个等差数列构成的，格式如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span>start<span class="token punctuation">,</span> stop<span class="token punctuation">,</span> num<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> endpoint<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> retstep<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+start	序列的起始值
+stop	序列的终止值，如果endpoint为true，该值包含于数列中
+num	要生成的等步长的样本数量，默认为50
+endpoint	该值为 true 时，数列中包含stop值，反之不包含，默认是True。
+retstep	如果为 True 时，生成的数组中会显示间距，反之不显示。
+dtype	ndarray 的数据类型"""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="numpylogspace"><a class="markdownIt-Anchor" href="#numpylogspace"></a> numpy.logspace</h4>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>logspace<span class="token punctuation">(</span>start<span class="token punctuation">,</span> stop<span class="token punctuation">,</span> num<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> endpoint<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> base<span class="token operator">=</span><span class="token number">10.0</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
+<span class="token triple-quoted-string string">"""
+start	序列的起始值为：base ** start
+stop	序列的终止值为：base ** stop。如果endpoint为true，该值包含于数列中
+num	要生成的等步长的样本数量，默认为50
+endpoint	该值为 true 时，数列中中包含stop值，反之不包含，默认是True。
+base	对数 log 的底数。 base 参数意思是取对数的时候 log 的下标。
+dtype	ndarray 的数据类型"""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>示例</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>logspace<span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">,</span>  <span class="token number">2.0</span><span class="token punctuation">,</span> num <span class="token operator">=</span>  <span class="token number">10</span><span class="token punctuation">)</span>  <span class="token comment"># 默认底数是 10</span>
+<span class="token keyword">print</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>输出</p>
+<pre class="line-numbers language-none"><code class="language-none">[ 10.           12.91549665     16.68100537      21.5443469  27.82559402      
+  35.93813664   46.41588834     59.94842503      77.42636827    100.    ]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="更改数据类型"><a class="markdownIt-Anchor" href="#更改数据类型"></a> 更改数据类型</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
+float_arr <span class="token operator">=</span> arr<span class="token punctuation">.</span>astype<span class="token punctuation">(</span>np<span class="token punctuation">.</span>float64<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>float_arr<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="交换行列"><a class="markdownIt-Anchor" href="#交换行列"></a> 交换行（列）</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">test <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span>
+test1 <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span>  <span class="token comment"># 交换行</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test1<span class="token punctuation">)</span>
+test2 <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>  <span class="token comment"># 交换列</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>test2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="添加一行-一列"><a class="markdownIt-Anchor" href="#添加一行-一列"></a> 添加一行、一列</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># -*- coding: UTF-8 -*-</span>
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+
+<span class="token comment"># 创建数组arr</span>
+arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'第1个数组arr：'</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'向arr数组添加元素：'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>append<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'原数组：'</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'沿轴 0(行方向) 添加元素：'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>append<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'沿轴 1(列方向)添加元素：'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>append<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="获取一列-一行"><a class="markdownIt-Anchor" href="#获取一列-一行"></a> 获取一列、一行</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+a<span class="token operator">=</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">#某列</span>
+ptint<span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#某列</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="删除某行某列"><a class="markdownIt-Anchor" href="#删除某行某列"></a> 删除某行，某列</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+x1 <span class="token operator">=</span> np<span class="token punctuation">.</span>delete<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment"># axis=0 删除某行</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x1<span class="token punctuation">)</span>
+x2 <span class="token operator">=</span> np<span class="token punctuation">.</span>delete<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># axis=1 删除多列</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x2<span class="token punctuation">)</span>
+x3 <span class="token operator">=</span> np<span class="token punctuation">.</span>delete<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>  <span class="token comment"># axis = None：表示把数组按一维数组平铺在进行索引删除</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>x3<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="行列拼接"><a class="markdownIt-Anchor" href="#行列拼接"></a> 行列拼接</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+b <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+c1 <span class="token operator">=</span> np<span class="token punctuation">.</span>concatenate<span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment"># 合并行 默认情况下，axis=0可以不写</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>c1<span class="token punctuation">)</span>
+c2 <span class="token operator">=</span> np<span class="token punctuation">.</span>concatenate<span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 合并列</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>c2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="转置"><a class="markdownIt-Anchor" href="#转置"></a> 转置</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>T<span class="token punctuation">)</span>  <span class="token comment"># 方式一</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>transpose<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 方式二</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="空数组"><a class="markdownIt-Anchor" href="#空数组"></a> 空数组</h3>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>empty<span class="token punctuation">(</span>shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+np<span class="token punctuation">.</span>empty<span class="token punctuation">(</span>shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="取整函数"><a class="markdownIt-Anchor" href="#取整函数"></a> 取整函数</h3>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>numpy.ceil(x,)</td>
+<td>向正无穷取整</td>
+</tr>
+<tr>
+<td>numpy.floor(x,)</td>
+<td>向负无穷取整</td>
+</tr>
+<tr>
+<td>numpy.trunc/fix(x,)</td>
+<td>截取整数部分</td>
+</tr>
+<tr>
+<td>numpy.rint(x,)</td>
+<td>四舍五入到最近整数</td>
+</tr>
+<tr>
+<td>numpy.around(x,decimals=0)</td>
+<td>四舍五入到给定的小数位</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ones_like-zeros_like"><a class="markdownIt-Anchor" href="#ones_like-zeros_like"></a> ones_like、zeros_like</h3>
+<p>生成形状、数据类型一样的全一、全零数组</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> x <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> x <span class="token operator">=</span> x<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> x
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>ones_like<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>zeros_like<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">>></span><span class="token operator">></span> y <span class="token operator">=</span> np.arange<span class="token punctuation">(</span><span class="token number">3</span>, <span class="token assign-left variable">dtype</span><span class="token operator">=</span>float<span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> y
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span>., <span class="token number">1</span>., <span class="token number">2</span>.<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> np.ones_like<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span>.,  <span class="token number">1</span>.,  <span class="token number">1</span>.<span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> np.zeros_like<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span>.,  <span class="token number">0</span>.,  <span class="token number">0</span>.<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Python</category>
+        <category>NumPy</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>NumPy</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Matplotlib 的使用</title>
     <url>/posts/Usage-of-Matplotlib.html</url>
     <content><![CDATA[<h1 id="matplotlib使用"><a class="markdownIt-Anchor" href="#matplotlib使用"></a> Matplotlib使用</h1>
@@ -9311,196 +9501,6 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
       <tags>
         <tag>Python</tag>
         <tag>Matplotlib</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NumPy 使用</title>
-    <url>/posts/Usage-of-NumPy.html</url>
-    <content><![CDATA[<h2 id="numpy使用"><a class="markdownIt-Anchor" href="#numpy使用"></a> NumPy使用</h2>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<span id="more"></span>
-<h3 id="数据拷贝"><a class="markdownIt-Anchor" href="#数据拷贝"></a> 数据拷贝</h3>
-<p><code>numpy</code>关于copy有三种情况，完全不复制、视图（view）或者叫浅复制（shallow copy）和深复制（deep copy）。</p>
-<p>而<code> b = a[:]</code> 这种形式就属于第二种，即视图，这本质上是一种切片操作（slicing），所有的切片操作返回的都是视图。具体来说，<code>b = a[:]</code>会创建一个新的对象 b（所以 id(b) 和id(a) 返回的结果是不一样的），但是 b 的数据完全来自于a，和 a 保持完全一致，换句话说，b的数据完全由a保管，他们两个的数据变化是一致的，可以看下面的示例:</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>  <span class="token comment"># array([0, 1, 2, 3])</span>
-b <span class="token operator">=</span> a<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">]</span>  <span class="token comment"># array([0, 1, 2, 3])</span>
-b<span class="token punctuation">.</span>flags<span class="token punctuation">.</span>owndata  <span class="token comment"># 返回 False，b 并不保管数据</span>
-a<span class="token punctuation">.</span>flags<span class="token punctuation">.</span>owndata  <span class="token comment"># 返回 True，数据由 a 保管</span>
-<span class="token comment"># 改变 a 同时也影响到 b</span>
-a<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>  <span class="token comment"># array([0, 1, 2, 10])</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>  <span class="token comment">#  array([0, 1, 2, 10])</span>
-<span class="token comment"># 改变 b 同时也影响到 a</span>
-b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">10</span>  <span class="token comment"># array([10, 1, 2, 10])</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment"># array([10, 1, 2, 10])</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><code>b = a</code> 和 <code>b = a[:]</code> 的差别就在于后者会创建新的对象，前者不会。两种方式都会导致 <code>a</code> 和 <code>b</code> 的数据相互影响。</p>
-<p>要想不让 <code>a</code> 的改动影响到 <code>b</code>，可以使用深复制：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">unique_b <span class="token operator">=</span> a<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="矩阵运算"><a class="markdownIt-Anchor" href="#矩阵运算"></a> 矩阵运算</h3>
-<h4 id="矩阵乘法"><a class="markdownIt-Anchor" href="#矩阵乘法"></a> 矩阵乘法</h4>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">"""
-元素乘法：np.multiply(a,b)   a*b
-矩阵乘法：np.dot(a,b) 或 np.matmul(a,b) 或 a.dot(b) 或直接用 a @ b !
-唯独注意：*，在 np.array 中重载为元素乘法，在 np.matrix 中重载为矩阵乘法!
-"""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="矩阵取逆"><a class="markdownIt-Anchor" href="#矩阵取逆"></a> 矩阵取逆</h4>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment"># 初始化一个非奇异矩阵(数组)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>linalg<span class="token punctuation">.</span>inv<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 对应于MATLAB中 inv() 函数</span>
-
-<span class="token comment"># 矩阵对象可以通过 .I 更方便的求逆</span>
-A <span class="token operator">=</span> np<span class="token punctuation">.</span>matrix<span class="token punctuation">(</span>a<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>A<span class="token punctuation">.</span>I<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="正态分布的随机数数组"><a class="markdownIt-Anchor" href="#正态分布的随机数数组"></a> 正态分布的随机数数组</h3>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># loc - 正态分布的均值</span>
-<span class="token comment"># scale - 正态分布的标准差</span>
-<span class="token comment"># size - 返回数组的形状。</span>
-x <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>normal<span class="token punctuation">(</span>loc<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> scale<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> size<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="从数值范围创建数组"><a class="markdownIt-Anchor" href="#从数值范围创建数组"></a> 从数值范围创建数组</h3>
-<h4 id="numpyarange"><a class="markdownIt-Anchor" href="#numpyarange"></a> numpy.arange</h4>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">numpy<span class="token punctuation">.</span>arange<span class="token punctuation">(</span>start<span class="token punctuation">,</span> stop<span class="token punctuation">,</span> step<span class="token punctuation">,</span> dtype<span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">"""
-start	起始值，默认为0
-stop	终止值（不包含）
-step	步长，默认为1
-dtype	返回ndarray的数据类型，如果没有提供，则会使用输入数据的类型。"""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="numpylinspace"><a class="markdownIt-Anchor" href="#numpylinspace"></a> numpy.linspace</h4>
-<p>函数用于创建一个一维数组，数组是一个等差数列构成的，格式如下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span>start<span class="token punctuation">,</span> stop<span class="token punctuation">,</span> num<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> endpoint<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> retstep<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">"""
-start	序列的起始值
-stop	序列的终止值，如果endpoint为true，该值包含于数列中
-num	要生成的等步长的样本数量，默认为50
-endpoint	该值为 true 时，数列中包含stop值，反之不包含，默认是True。
-retstep	如果为 True 时，生成的数组中会显示间距，反之不显示。
-dtype	ndarray 的数据类型"""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="numpylogspace"><a class="markdownIt-Anchor" href="#numpylogspace"></a> numpy.logspace</h4>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>logspace<span class="token punctuation">(</span>start<span class="token punctuation">,</span> stop<span class="token punctuation">,</span> num<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> endpoint<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> base<span class="token operator">=</span><span class="token number">10.0</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>
-<span class="token triple-quoted-string string">"""
-start	序列的起始值为：base ** start
-stop	序列的终止值为：base ** stop。如果endpoint为true，该值包含于数列中
-num	要生成的等步长的样本数量，默认为50
-endpoint	该值为 true 时，数列中中包含stop值，反之不包含，默认是True。
-base	对数 log 的底数。 base 参数意思是取对数的时候 log 的下标。
-dtype	ndarray 的数据类型"""</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>示例</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>logspace<span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">,</span>  <span class="token number">2.0</span><span class="token punctuation">,</span> num <span class="token operator">=</span>  <span class="token number">10</span><span class="token punctuation">)</span>  <span class="token comment"># 默认底数是 10</span>
-<span class="token keyword">print</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>输出</p>
-<pre class="line-numbers language-none"><code class="language-none">[ 10.           12.91549665     16.68100537      21.5443469  27.82559402      
-  35.93813664   46.41588834     59.94842503      77.42636827    100.    ]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="更改数据类型"><a class="markdownIt-Anchor" href="#更改数据类型"></a> 更改数据类型</h3>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span>
-float_arr <span class="token operator">=</span> arr<span class="token punctuation">.</span>astype<span class="token punctuation">(</span>np<span class="token punctuation">.</span>float64<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>float_arr<span class="token punctuation">.</span>dtype<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="交换行列"><a class="markdownIt-Anchor" href="#交换行列"></a> 交换行（列）</h3>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">test <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span>
-test1 <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span>  <span class="token comment"># 交换行</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>test1<span class="token punctuation">)</span>
-test2 <span class="token operator">=</span> test<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>  <span class="token comment"># 交换列</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>test2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="添加一行-一列"><a class="markdownIt-Anchor" href="#添加一行-一列"></a> 添加一行、一列</h3>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># -*- coding: UTF-8 -*-</span>
-<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-
-<span class="token comment"># 创建数组arr</span>
-arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'第1个数组arr：'</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'向arr数组添加元素：'</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>append<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'原数组：'</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'沿轴 0(行方向) 添加元素：'</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>append<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'沿轴 1(列方向)添加元素：'</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>append<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="获取一列-一行"><a class="markdownIt-Anchor" href="#获取一列-一行"></a> 获取一列、一行</h3>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-a<span class="token operator">=</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  <span class="token comment">#某列</span>
-ptint<span class="token punctuation">(</span>a<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">#某列</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="删除某行某列"><a class="markdownIt-Anchor" href="#删除某行某列"></a> 删除某行，某列</h3>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-x1 <span class="token operator">=</span> np<span class="token punctuation">.</span>delete<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment"># axis=0 删除某行</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>x1<span class="token punctuation">)</span>
-x2 <span class="token operator">=</span> np<span class="token punctuation">.</span>delete<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># axis=1 删除多列</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>x2<span class="token punctuation">)</span>
-x3 <span class="token operator">=</span> np<span class="token punctuation">.</span>delete<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span>  <span class="token comment"># axis = None：表示把数组按一维数组平铺在进行索引删除</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>x3<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="行列拼接"><a class="markdownIt-Anchor" href="#行列拼接"></a> 行列拼接</h3>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">a <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-b <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">21</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-c1 <span class="token operator">=</span> np<span class="token punctuation">.</span>concatenate<span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>  <span class="token comment"># 合并行 默认情况下，axis=0可以不写</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>c1<span class="token punctuation">)</span>
-c2 <span class="token operator">=</span> np<span class="token punctuation">.</span>concatenate<span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 合并列</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>c2<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="转置"><a class="markdownIt-Anchor" href="#转置"></a> 转置</h3>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">arr <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>T<span class="token punctuation">)</span>  <span class="token comment"># 方式一</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>np<span class="token punctuation">.</span>transpose<span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment"># 方式二</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="空数组"><a class="markdownIt-Anchor" href="#空数组"></a> 空数组</h3>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">np<span class="token punctuation">.</span>empty<span class="token punctuation">(</span>shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-np<span class="token punctuation">.</span>empty<span class="token punctuation">(</span>shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="取整函数"><a class="markdownIt-Anchor" href="#取整函数"></a> 取整函数</h3>
-<table>
-<thead>
-<tr>
-<th>函数名</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>numpy.ceil(x,)</td>
-<td>向正无穷取整</td>
-</tr>
-<tr>
-<td>numpy.floor(x,)</td>
-<td>向负无穷取整</td>
-</tr>
-<tr>
-<td>numpy.trunc/fix(x,)</td>
-<td>截取整数部分</td>
-</tr>
-<tr>
-<td>numpy.rint(x,)</td>
-<td>四舍五入到最近整数</td>
-</tr>
-<tr>
-<td>numpy.around(x,decimals=0)</td>
-<td>四舍五入到给定的小数位</td>
-</tr>
-</tbody>
-</table>
-<h3 id="ones_like-zeros_like"><a class="markdownIt-Anchor" href="#ones_like-zeros_like"></a> ones_like、zeros_like</h3>
-<p>生成形状、数据类型一样的全一、全零数组</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> x <span class="token operator">=</span> np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span> x <span class="token operator">=</span> x<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span> x
-array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-       <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>ones_like<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-       <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span> np<span class="token punctuation">.</span>zeros_like<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
-array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-       <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">>></span><span class="token operator">></span> y <span class="token operator">=</span> np.arange<span class="token punctuation">(</span><span class="token number">3</span>, <span class="token assign-left variable">dtype</span><span class="token operator">=</span>float<span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span> y
-array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span>., <span class="token number">1</span>., <span class="token number">2</span>.<span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span> np.ones_like<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
-array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span>.,  <span class="token number">1</span>.,  <span class="token number">1</span>.<span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token operator">>></span><span class="token operator">></span> np.zeros_like<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
-array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span>.,  <span class="token number">0</span>.,  <span class="token number">0</span>.<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Python</category>
-        <category>NumPy</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>NumPy</tag>
       </tags>
   </entry>
   <entry>
