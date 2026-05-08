@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://xuanyabulema.github.io/posts/Usage-Instructions-and-Examples-for-the-merge-Function-in-the-pandas-Library.html</loc>
+    <lastmod>2026-05-08</lastmod>
+  </url>
+  <url>
     <loc>https://xuanyabulema.github.io/posts/Word-Thesis-Formatting.html</loc>
     <lastmod>2026-05-08</lastmod>
   </url>
@@ -89,15 +93,15 @@
     <lastmod>2026-05-08</lastmod>
   </url>
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html</loc>
-    <lastmod>2026-05-08</lastmod>
-  </url>
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Short-Circuiting-Property-of-Logical-Operators-in-Python.html</loc>
     <lastmod>2026-05-08</lastmod>
   </url>
   <url>
     <loc>https://xuanyabulema.github.io/posts/Solve-the-Chinese-Messy-Code-Problem-in-PyCharm-Python-Console.html</loc>
+    <lastmod>2026-05-08</lastmod>
+  </url>
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html</loc>
     <lastmod>2026-05-08</lastmod>
   </url>
   <url>
@@ -125,19 +129,19 @@
     <lastmod>2026-05-08</lastmod>
   </url>
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html</loc>
-    <lastmod>2026-05-08</lastmod>
-  </url>
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Paper-Excerpt.html</loc>
     <lastmod>2026-05-08</lastmod>
   </url>
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Matplotlib-Plotting-Improvements.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html</loc>
     <lastmod>2026-05-08</lastmod>
   </url>
   <url>
     <loc>https://xuanyabulema.github.io/posts/NexT-Theme-Configuration-Supplement.html</loc>
+    <lastmod>2026-05-08</lastmod>
+  </url>
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Matplotlib-Plotting-Improvements.html</loc>
     <lastmod>2026-05-08</lastmod>
   </url>
   <url>
@@ -177,11 +181,11 @@
     <lastmod>2026-05-08</lastmod>
   </url>
   <url>
-    <loc>https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html</loc>
     <lastmod>2026-05-08</lastmod>
   </url>
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Installation-Log.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html</loc>
     <lastmod>2026-05-08</lastmod>
   </url>
   <url>
