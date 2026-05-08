@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"xuanyabulema.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xuanyabulema.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="让 Windows 显示 Conda 环境名称 Windows 下安装完成 Conda 后，打开PowerShell，并不能像 Linux 下那样显示当前的 Conda 环境名称（安装后默认是base）。">
 <meta property="og:type" content="article">
@@ -157,7 +157,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 让 Windows 显示 Conda 环境名称</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 实现方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 必要性⚠️</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 注意事项⚠️</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 实现原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 配置文件示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 建议使用 Conda 管理，Manba用于安装库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"> 让 Windows 显示 Manba 环境名称</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text"> 注意⚠️ Mamba 创建的虚拟环境无法使用 Conda 管理，Conda 同理（个人测试结果）</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A9-windows-%E6%98%BE%E7%A4%BA-conda-%E7%8E%AF%E5%A2%83%E5%90%8D%E7%A7%B0"><span class="nav-text"> 让 Windows 显示 Conda 环境名称</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="nav-text"> 实现方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%85%E8%A6%81%E6%80%A7%EF%B8%8F"><span class="nav-text"> 必要性⚠️</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%B8%8F"><span class="nav-text"> 注意事项⚠️</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="nav-text"> 实现原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%A4%BA%E4%BE%8B"><span class="nav-text"> 配置文件示例</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BB%BA%E8%AE%AE%E4%BD%BF%E7%94%A8-conda-%E7%AE%A1%E7%90%86manba%E7%94%A8%E4%BA%8E%E5%AE%89%E8%A3%85%E5%BA%93"><span class="nav-text"> 建议使用 Conda 管理，Manba用于安装库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A9-windows-%E6%98%BE%E7%A4%BA-manba-%E7%8E%AF%E5%A2%83%E5%90%8D%E7%A7%B0"><span class="nav-text"> 让 Windows 显示 Manba 环境名称</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%EF%B8%8F-mamba-%E5%88%9B%E5%BB%BA%E7%9A%84%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8-conda-%E7%AE%A1%E7%90%86conda-%E5%90%8C%E7%90%86%E4%B8%AA%E4%BA%BA%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="nav-text"> 注意⚠️ Mamba 创建的虚拟环境无法使用 Conda 管理，Conda 同理（个人测试结果）</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -217,7 +217,6 @@
     <span>0%</span>
   </div>
   <div class="reading-progress-bar"></div>
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -325,19 +324,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1><span id="让-windows-显示-conda-环境名称"> 让 Windows 显示 Conda 环境名称</span></h1>
+        <h1 id="让-windows-显示-conda-环境名称"><a class="markdownIt-Anchor" href="#让-windows-显示-conda-环境名称"></a> 让 Windows 显示 Conda 环境名称</h1>
 <p>Windows 下安装完成 Conda 后，打开<code>PowerShell</code>，并不能像 Linux 下那样显示当前的 Conda 环境名称（安装后默认是<code>base</code>）。</p>
 <span id="more"></span>
 <p><img src="./Windows-displays-the-Conda-environment-name-and-the-conda-init-powershell-command/image-20250729150148704.png" alt="Windows 默认情况"></p>
-<h2><span id="实现方式"> 实现方式</span></h2>
+<h2 id="实现方式"><a class="markdownIt-Anchor" href="#实现方式"></a> 实现方式</h2>
 <p>为了实现显示当前环境的效果，在 Windows 的终端上需要执行：</p>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">conda init powershell<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>执行后，重新打开PowerShell，就能像 Linux 下那样显示当前的 Conda 环境名称。</p>
 <p><img src="./Windows-displays-the-Conda-environment-name-and-the-conda-init-powershell-command/image-20250729205000629.png" alt="执行 conda init powershell 后，重新打开PowerShell"></p>
-<h2><span id="必要性️"> 必要性⚠️</span></h2>
+<h2 id="必要性️"><a class="markdownIt-Anchor" href="#必要性️"></a> 必要性⚠️</h2>
 <p>若未执行上述命令，使用 <code>conda activate</code> 命令后可能无法激活环境，如下，未能显示成功激活的 <code>*</code> 标识</p>
 <img src="./Windows-displays-the-Conda-environment-name-and-the-conda-init-powershell-command/image-20251112212202065.png" alt="conda activate 失败" style="zoom: 80%;">
-<h2><span id="注意事项️"> 注意事项⚠️</span></h2>
+<h2 id="注意事项️"><a class="markdownIt-Anchor" href="#注意事项️"></a> 注意事项⚠️</h2>
 <ul>
 <li>
 <p>确保可执行 Conda 命令，即你的 Conda 程序路径已添加到 Windows 环境变量。</p>
@@ -353,14 +352,14 @@
 </li>
 </ul>
 <p><img src="./Windows-displays-the-Conda-environment-name-and-the-conda-init-powershell-command/image-20250729211547257.png" alt="修改执行策略"></p>
-<h1><span id="实现原理"> 实现原理</span></h1>
+<h1 id="实现原理"><a class="markdownIt-Anchor" href="#实现原理"></a> 实现原理</h1>
 <p>执行 <code>conda init powershell</code> 时，Conda 会进行以下操作：</p>
 <ol>
 <li><strong>配置文件的修改</strong>：Conda 会在 PowerShell 的配置文件（一般是 <code>$PROFILE</code>）里添加一段初始化代码。你可以通过在 PowerShell 中输入 <code>$PROFILE</code> 来查看该文件的路径。</li>
 <li><strong>钩子函数的注册</strong>：添加的初始化代码主要包含一个钩子函数，其作用是在 PowerShell 启动时，自动设置 Conda 的运行环境。</li>
 <li><strong>环境变量的动态设置</strong>：当你激活或者退出某个环境时，钩子函数会动态地修改系统的环境变量，确保各种命令能够正确运行。</li>
 </ol>
-<h2><span id="配置文件示例"> 配置文件示例</span></h2>
+<h2 id="配置文件示例"><a class="markdownIt-Anchor" href="#配置文件示例"></a> 配置文件示例</h2>
 <p>执行 <code>conda init powershell</code> 后，PowerShell 配置文件中会新增类似下面的代码：</p>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment">#region conda initialize</span>
 <span class="token comment"># !! Contents within this block are managed by 'conda init' !!</span>
@@ -369,8 +368,8 @@
 <span class="token punctuation">&#125;</span>
 <span class="token comment">#endregion</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这段代码的作用是在 PowerShell 启动时，调用 Conda 的钩子函数，从而完成环境的初始化工作。</p>
-<h1><span id="建议使用-conda-管理manba用于安装库"> 建议使用 Conda 管理，Manba用于安装库</span></h1>
-<h1><span id="让-windows-显示-manba-环境名称"> <s>让 Windows 显示 Manba 环境名称</s></span></h1>
+<h1 id="建议使用-conda-管理manba用于安装库"><a class="markdownIt-Anchor" href="#建议使用-conda-管理manba用于安装库"></a> 建议使用 Conda 管理，Manba用于安装库</h1>
+<h1 id="让-windows-显示-manba-环境名称"><a class="markdownIt-Anchor" href="#让-windows-显示-manba-环境名称"></a> <s>让 Windows 显示 Manba 环境名称</s></h1>
 <blockquote>
 <p><s>Mamba 是一个<strong>快速、轻量级的包管理和环境管理工具</strong>，完全兼容 Conda。它的诞生主要是为了解决 Conda 在依赖解析时速度较慢的问题。</s></p>
 <p><s><strong>核心优势与功能：</strong></s></p>
@@ -386,7 +385,7 @@
 <p><s>根据上述提示，可以通过命令</s></p>
 <pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">mamba shell init <span class="token operator">--</span>shell powershell <span class="token operator">--</span>root-prefix=~<span class="token operator">/</span><span class="token punctuation">.</span>local/share/mamba<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><s>解决上述问题</s></p>
-<h2><span id="注意️-mamba-创建的虚拟环境无法使用-conda-管理conda-同理个人测试结果"> <s>注意⚠️ Mamba 创建的虚拟环境无法使用 Conda 管理，Conda 同理（个人测试结果）</s></span></h2>
+<h2 id="注意️-mamba-创建的虚拟环境无法使用-conda-管理conda-同理个人测试结果"><a class="markdownIt-Anchor" href="#注意️-mamba-创建的虚拟环境无法使用-conda-管理conda-同理个人测试结果"></a> <s>注意⚠️ Mamba 创建的虚拟环境无法使用 Conda 管理，Conda 同理（个人测试结果）</s></h2>
 
     </div>
 
@@ -515,7 +514,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
 
   
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>

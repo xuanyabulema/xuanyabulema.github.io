@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/book/index.html</loc>
+    <loc>https://xuanyabulema.github.io/about/index.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/about/index.html</loc>
+    <loc>https://xuanyabulema.github.io/book/index.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -254,15 +254,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Short-Circuiting-Property-of-Logical-Operators-in-Python.html</loc>
-    
-    <lastmod>2026-05-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Saving-Python-Variable-Objects-With-the-Dill-Module.html</loc>
     
     <lastmod>2026-05-08</lastmod>
@@ -273,6 +264,15 @@
   
   <url>
     <loc>https://xuanyabulema.github.io/posts/Solve-the-Chinese-Messy-Code-Problem-in-PyCharm-Python-Console.html</loc>
+    
+    <lastmod>2026-05-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Short-Circuiting-Property-of-Logical-Operators-in-Python.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -308,7 +308,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Python3-Basics.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Quantile-and-Boxplots-in-Python.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -317,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Quantile-and-Boxplots-in-Python.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Python3-Basics.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -335,7 +335,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Paper-Excerpt.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -344,7 +344,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Paper-Excerpt.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -407,7 +407,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Site-Configuration-Supplement.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-SEO-Optimization.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -416,7 +416,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-SEO-Optimization.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Site-Configuration-Supplement.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
