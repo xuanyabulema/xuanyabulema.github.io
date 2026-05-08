@@ -12,7 +12,7 @@
     "version": "6.3.0"
   },
   "dependencies": {
-    "@types/error-stack-parser": "^2.0.0",
+    "@types/error-stack-parser": "^2.0.2",
     "@waline/hexo-next": "^3.0.1",
     "hexo": "^6.3.0",
     "hexo-baidu-url-submit": "^0.0.6",
