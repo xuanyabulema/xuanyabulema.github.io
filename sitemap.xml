@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/about/index.html</loc>
+    <loc>https://xuanyabulema.github.io/categories/index.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/categories/index.html</loc>
+    <loc>https://xuanyabulema.github.io/about/index.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -155,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Windows-Boot.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Usage-of-Pydicom.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -164,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Usage-of-Pydicom.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Use-WinSW-to-Set-Any-Program-to-Automatically-Start-on-Windows-Boot.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -344,7 +344,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Paper-Excerpt.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -353,7 +353,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Personal-Tencent-Cloud-Lightweight-Application-Server-Basic-Configuration.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Paper-Excerpt.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -452,7 +452,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Hexo-Frequently-Used-Commands.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -461,7 +461,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/GPU-Decoder-Device-Information.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Hexo-Frequently-Used-Commands.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -506,15 +506,6 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Building-an-EasyTier-server-in-TXT-format-by-using-Lucky-s-domain-name-resolution-and-STUN-NAT-traversal-features.html</loc>
-    
-    <lastmod>2026-05-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanyabulema.github.io/posts/Configuring-VScode-to-Connect-to-the-Remote-Server-for-Development.html</loc>
     
     <lastmod>2026-05-08</lastmod>
@@ -524,7 +515,7 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Commonly-Used-English-Words-and-Their-Abbreviations.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Description-of-Mingw-Version-Parameters.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -533,7 +524,16 @@
   </url>
   
   <url>
-    <loc>https://xuanyabulema.github.io/posts/Description-of-Mingw-Version-Parameters.html</loc>
+    <loc>https://xuanyabulema.github.io/posts/Building-an-EasyTier-server-in-TXT-format-by-using-Lucky-s-domain-name-resolution-and-STUN-NAT-traversal-features.html</loc>
+    
+    <lastmod>2026-05-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanyabulema.github.io/posts/Commonly-Used-English-Words-and-Their-Abbreviations.html</loc>
     
     <lastmod>2026-05-08</lastmod>
     
@@ -580,7 +580,7 @@
 
   <url>
     <loc>https://xuanyabulema.github.io/</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
