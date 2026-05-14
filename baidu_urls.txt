@@ -1,3 +1,5 @@
+https://xuanyabulema.github.io/posts/NAT-and-STUN.html
+https://xuanyabulema.github.io/posts/Undo-a-Pushed-Git-Commit.html
 https://xuanyabulema.github.io/posts/Dear-You.html
 https://xuanyabulema.github.io/posts/Usage-Instructions-and-Examples-for-the-merge-Function-in-the-pandas-Library.html
 https://xuanyabulema.github.io/posts/Building-an-EasyTier-server-in-TXT-format-by-using-Lucky-s-domain-name-resolution-and-STUN-NAT-traversal-features.html

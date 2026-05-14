@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-tvmKCk5xu9">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xuanyabulema.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.13.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"default"},"bookmark":{"enable":false,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="缩写 全称     NAT Network Address Translation   STUN Session Traversal Utilities for NAT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NAT 和 STUN">
+<meta property="og:url" content="https://xuanyabulema.github.io/posts/NAT-and-STUN.html">
+<meta property="og:site_name" content="悬崖不勒马的小站">
+<meta property="og:description" content="缩写 全称     NAT Network Address Translation   STUN Session Traversal Utilities for NAT">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-05-14T15:01:09.000Z">
+<meta property="article:modified_time" content="2026-05-14T15:09:12.462Z">
+<meta property="article:author" content="悬崖不勒马">
+<meta property="article:tag" content="STUN">
+<meta property="article:tag" content="NAT">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://xuanyabulema.github.io/posts/NAT-and-STUN.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xuanyabulema.github.io/posts/NAT-and-STUN.html","path":"posts/NAT-and-STUN.html","title":"NAT 和 STUN"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>NAT 和 STUN | 悬崖不勒马的小站</title>
+  
+
+
+
+
+
+<link rel="dns-prefetch" href="waline-test-beta.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">悬崖不勒马的小站</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">42</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">39</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">61</span></a></li><li class="menu-item menu-item-阅读"><a href="/book/" rel="section"><i class="fa fa-book fa-fw"></i>阅读</a></li><li class="menu-item menu-item-折腾"><a href="/microchip/" rel="section"><i class="fas fa-microchip fa-fw"></i>折腾</a></li><li class="menu-item menu-item-冲浪"><a href="/surfing/" rel="section"><i class="fab fa-internet-explorer fa-fw"></i>冲浪</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80-nat1~nat4-%E9%80%9A%E4%BF%97%E8%A7%A3%E9%87%8A"><span class="nav-text"> 一、NAT1～NAT4 通俗解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-nat1%E5%AE%8C%E5%85%A8%E5%9C%86%E9%94%A5%E5%BD%A2-full-cone-nat"><span class="nav-text"> 1. NAT1（完全圆锥形 &#x2F; Full Cone NAT）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-nat2%E5%8F%97%E9%99%90%E5%9C%86%E9%94%A5%E5%BD%A2-restricted-cone-nat"><span class="nav-text"> 2. NAT2（受限圆锥形 &#x2F; Restricted Cone NAT）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-nat3%E7%AB%AF%E5%8F%A3%E5%8F%97%E9%99%90%E5%9C%86%E9%94%A5%E5%BD%A2-port-restricted-cone-nat"><span class="nav-text"> 3. NAT3（端口受限圆锥形 &#x2F; Port Restricted Cone NAT）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-nat4%E5%AF%B9%E7%A7%B0%E5%9E%8B-symmetric-nat"><span class="nav-text"> 4. NAT4（对称型 &#x2F; Symmetric NAT）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C-stun-%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%88%B0%E5%BA%95%E5%9C%A8%E5%B9%B2%E4%BB%80%E4%B9%88"><span class="nav-text"> 二、STUN 内网穿透到底在干什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B%E9%85%8D%E5%90%88%E5%AE%9E%E9%99%85-ip%E7%AB%AF%E5%8F%A3"><span class="nav-text"> 1. 基本流程（配合实际 IP&#x2F;端口）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89-%E9%92%88%E5%AF%B9-nat1~nat4stun-%E6%89%93%E6%B4%9E%E7%9A%84%E7%BB%93%E6%9E%9C%E5%A6%82%E4%BD%95"><span class="nav-text"> 三、针对 NAT1～NAT4，STUN 打洞的结果如何？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nat1%E5%AE%8C%E5%85%A8%E5%9C%86%E9%94%A5%E5%9E%8B"><span class="nav-text"> ✅ NAT1（完全圆锥型）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nat2%E5%8F%97%E9%99%90%E5%9C%86%E9%94%A5%E5%9E%8B"><span class="nav-text"> ✅ NAT2（受限圆锥型）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nat3%E7%AB%AF%E5%8F%A3%E5%8F%97%E9%99%90%E5%9C%86%E9%94%A5%E5%9E%8B"><span class="nav-text"> ✅ NAT3（端口受限圆锥型）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nat4%E5%AF%B9%E7%A7%B0%E5%9E%8B"><span class="nav-text"> ❌ NAT4（对称型）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B-%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%80%BB%E7%BB%93"><span class="nav-text"> 四、一句话总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="悬崖不勒马"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">悬崖不勒马</p>
+  <div class="site-description" itemprop="description">The time you enjoy wasting is not wasted time!</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xuanyabulema" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xuanyabulema" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xuanyabulema@qq.com" title="E-Mail → mailto:xuanyabulema@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/45045474/" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;45045474&#x2F;" rel="noopener" target="_blank"><i class="fab custom fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xuanyabulema.github.io/posts/NAT-and-STUN.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="悬崖不勒马">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悬崖不勒马的小站">
+      <meta itemprop="description" content="The time you enjoy wasting is not wasted time!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="NAT 和 STUN | 悬崖不勒马的小站">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NAT 和 STUN
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-05-14 23:01:09 / 修改时间：23:09:12" itemprop="dateCreated datePublished" datetime="2026-05-14T23:01:09+08:00">2026-05-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/NAT/" itemprop="url" rel="index"><span itemprop="name">NAT</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/NAT/STUN/" itemprop="url" rel="index"><span itemprop="name">STUN</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/posts/NAT-and-STUN.html#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/posts/NAT-and-STUN.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <table>
+<thead>
+<tr>
+<th style="text-align:center">缩写</th>
+<th style="text-align:center">全称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">NAT</td>
+<td style="text-align:center">Network Address Translation</td>
+</tr>
+<tr>
+<td style="text-align:center">STUN</td>
+<td style="text-align:center">Session Traversal Utilities for NAT</td>
+</tr>
+</tbody>
+</table>
+<span id="more"></span>
+<h2 id="一-nat1~nat4-通俗解释"><a class="markdownIt-Anchor" href="#一-nat1~nat4-通俗解释"></a> 一、NAT1～NAT4 通俗解释</h2>
+<p>先设定一个相同的场景方便对比：</p>
+<ul>
+<li><strong>你家内网电脑 A</strong>：IP <code>192.168.1.10</code>，用 UDP 端口 <code>4000</code> 对外通信。</li>
+<li><strong>你家路由器公网 IP</strong>：<code>1.2.3.4</code>。</li>
+<li>路由器给这个内网会话分配的公网端口，假设第一次是 <code>8000</code>。</li>
+</ul>
+<p>下面的“外部主机”，我随便起名叫 B，IP 为 <code>5.6.7.8</code>。</p>
+<hr>
+<h3 id="1-nat1完全圆锥形-full-cone-nat"><a class="markdownIt-Anchor" href="#1-nat1完全圆锥形-full-cone-nat"></a> 1. NAT1（完全圆锥形 / Full Cone NAT）</h3>
+<p><strong>一句话：只要开了门，全世界的任何人都可以进来。</strong></p>
+<ul>
+<li>建立映射：<br>
+电脑 A <code>192.168.1.10:4000</code> → 经过路由器，映射为公网 <code>1.2.3.4:8000</code>。</li>
+<li>规则：<br>
+现在，<strong>任何</strong>外部主机，只要是往 <code>1.2.3.4:8000</code> 发数据包，路由器都会原样转给内网 A。
+<ul>
+<li>外部主机 B <code>5.6.7.8:9999</code> 可以直接发数据给 <code>1.2.3.4:8000</code>，A 能收到。</li>
+<li>另一台主机 C <code>9.9.9.9:12345</code> 也直接发过来，A 一样能收到。</li>
+<li>A 自己有没有先给 B、C 发过数据，都无所谓。</li>
+</ul>
+</li>
+</ul>
+<p><strong>比喻</strong>：<br>
+你告诉了全世界一个公共信箱号 <code>1.2.3.4:8000</code>，任何人把信扔进去，都会直接送到你手里。</p>
+<hr>
+<h3 id="2-nat2受限圆锥形-restricted-cone-nat"><a class="markdownIt-Anchor" href="#2-nat2受限圆锥形-restricted-cone-nat"></a> 2. NAT2（受限圆锥形 / Restricted Cone NAT）</h3>
+<p><strong>一句话：我只接收我主动联系过的人的回信，具体是谁我无所谓，只要是那个人所在的公司就行。</strong></p>
+<ul>
+<li>建立映射：<br>
+同样映射 <code>1.2.3.4:8000</code>。</li>
+<li>规则：<br>
+只有当内网 A <strong>先主动向某个外部 IP 发送过数据</strong>，这个外部 IP 的所有端口才能回包给 <code>1.2.3.4:8000</code>。</li>
+</ul>
+<p>举例：</p>
+<ul>
+<li>A 从 <code>4000</code> 主动发给外部主机 B <code>5.6.7.8:53</code> 一个数据包。</li>
+<li>此时，B 的 IP <code>5.6.7.8</code> 被允许回信。
+<ul>
+<li>B 从 <code>53</code> 端口回包 → 通过。</li>
+<li>B 从 <code>8080</code> 端口回包 → <strong>也能通过</strong>（只要 IP 是 <code>5.6.7.8</code> 就行）。</li>
+</ul>
+</li>
+<li>但如果主机 C <code>9.9.9.9:7777</code> 直接往 <code>1.2.3.4:8000</code> 发数据，因为 A 从未主动给 <code>9.9.9.9</code> 发过东西，所以<strong>数据被路由器丢弃</strong>。</li>
+</ul>
+<p><strong>比喻</strong>：<br>
+你主动给“B 公司”打了个电话，之后只要来电显示是 B 公司的总机号码（IP 相同），无论他们用哪个分机（端口）打回来，你都会接。但陌生人打来的一律不接。</p>
+<hr>
+<h3 id="3-nat3端口受限圆锥形-port-restricted-cone-nat"><a class="markdownIt-Anchor" href="#3-nat3端口受限圆锥形-port-restricted-cone-nat"></a> 3. NAT3（端口受限圆锥形 / Port Restricted Cone NAT）</h3>
+<p><strong>一句话：我只接收我主动联系过的那个人、用那个特定的分机打回来的电话。</strong></p>
+<ul>
+<li>建立映射：<br>
+映射 <code>1.2.3.4:8000</code>。</li>
+<li>规则：<br>
+只有当内网 A <strong>先主动向某个外部 IP:端口</strong> 发送过数据，这个<strong>固定的 IP 和端口</strong> 才能回包。</li>
+</ul>
+<p>举例：</p>
+<ul>
+<li>A 主动发给 B <code>5.6.7.8:53</code>。</li>
+<li>此时，<strong>只有</strong> <code>5.6.7.8:53</code> 回包到 <code>1.2.3.4:8000</code> 才能被 A 收到。
+<ul>
+<li><code>5.6.7.8:8080</code> 回包 → <strong>被丢弃</strong>（端口不对）。</li>
+<li>其他 IP 发来的更不用想。</li>
+</ul>
+</li>
+<li>A 如果想收 <code>5.6.7.8:8080</code> 的数据，必须先主动给 <code>5.6.7.8:8080</code> 发个包。</li>
+</ul>
+<p><strong>比喻</strong>：<br>
+你打给 B 公司的张三（分机 53），之后就只接张三用他座机（端口 53）打回来的电话。李四用分机 8080 打过来，你不认识，不接。</p>
+<hr>
+<h3 id="4-nat4对称型-symmetric-nat"><a class="markdownIt-Anchor" href="#4-nat4对称型-symmetric-nat"></a> 4. NAT4（对称型 / Symmetric NAT）</h3>
+<p><strong>一句话：每次给不同的人打电话，前台就给你换一个陌生的外线号码。别人只能打回那个特定的外线号码才能找到你。</strong></p>
+<ul>
+<li>映射特点：<br>
+同一个内网 <code>192.168.1.10:4000</code>，<strong>给不同的目标发数据，路由器分配的对外端口都不一样</strong>。</li>
+</ul>
+<p>举例：</p>
+<ul>
+<li>A 发给主机 B <code>5.6.7.8:53</code>，路由器分配映射 <code>1.2.3.4:8000</code>，<strong>且只有</strong> <code>5.6.7.8:53</code> 回复到 <code>8000</code> 才有效。</li>
+<li>A 又发给主机 C <code>9.9.9.9:1234</code>，路由器会<strong>另开一个新端口</strong>，比如 <code>1.2.3.4:8001</code>。<br>
+这时 C 必须回复到 <code>8001</code> 才能被 A 收到；B 如果错发到 <code>8001</code>，会被丢弃；C 发到 <code>8000</code> 也是丢弃。</li>
+</ul>
+<p><strong>比喻</strong>：<br>
+这就像一个极其严格的电话总机：<br>
+你给张三打电话，总机显示的来电号码是 <code>8000</code>；<br>
+你给李四打电话，总机换了个号码显示成 <code>8001</code>。<br>
+张三只能用 <code>8000</code> 回拨，李四只能用 <code>8001</code> 回拨，两个人用错号码都找不着你。</p>
+<hr>
+<h2 id="二-stun-内网穿透到底在干什么"><a class="markdownIt-Anchor" href="#二-stun-内网穿透到底在干什么"></a> 二、STUN 内网穿透到底在干什么？</h2>
+<p><strong>STUN 就是“公网镜子”</strong>，帮你查出：你在互联网上看起来长什么样（公网 IP + 端口），以及你的 NAT 是什么脾气。</p>
+<h3 id="1-基本流程配合实际-ip端口"><a class="markdownIt-Anchor" href="#1-基本流程配合实际-ip端口"></a> 1. 基本流程（配合实际 IP/端口）</h3>
+<p>设定：</p>
+<ul>
+<li>STUN 服务器：<code>3.3.3.3:3478</code></li>
+<li>内网电脑 A：家里，通过路由器，公网 IP <code>1.2.3.4</code></li>
+<li>内网电脑 B：另一个地方，公网 IP <code>5.6.7.8</code></li>
+</ul>
+<p><strong>第 1 步：照镜子</strong><br>
+A 向 <code>3.3.3.3:3478</code> 发一个查询包。<br>
+STUN 服务器告诉 A：<br>
+“你在公网上的地址是 <code>1.2.3.4:8000</code>，你的 NAT 类型是 XXX。”</p>
+<p>B 也去照，得到自己的公网地址：<code>5.6.7.8:9000</code>。</p>
+<p><strong>第 2 步：交换地址</strong><br>
+A 和 B 通过某个聊天服务器（信令服务器）互相告诉对方：<br>
+“我的公网地址是 <code>1.2.3.4:8000</code>”<br>
+“我的公网地址是 <code>5.6.7.8:9000</code>”</p>
+<p><strong>第 3 步：互相打洞</strong><br>
+A 和 B 同时向对方的公网地址发 UDP 数据包：</p>
+<ul>
+<li>A 往 <code>5.6.7.8:9000</code> 发。</li>
+<li>B 往 <code>1.2.3.4:8000</code> 发。</li>
+</ul>
+<p>这个动作的目的，是让各自的 NAT 路由器“以为”双方正在通信，从而允许后续对方的数据进入。这就是常说的 <strong>UDP 打洞</strong>。</p>
+<hr>
+<h2 id="三-针对-nat1~nat4stun-打洞的结果如何"><a class="markdownIt-Anchor" href="#三-针对-nat1~nat4stun-打洞的结果如何"></a> 三、针对 NAT1～NAT4，STUN 打洞的结果如何？</h2>
+<p>仍然用上面的 A (<code>1.2.3.4:8000</code>) 和 B (<code>5.6.7.8:9000</code>)。</p>
+<h3 id="nat1完全圆锥型"><a class="markdownIt-Anchor" href="#nat1完全圆锥型"></a> ✅ NAT1（完全圆锥型）</h3>
+<ul>
+<li><strong>场景</strong>：A 是 NAT1，或者双方都是 NAT1。</li>
+<li><strong>过程</strong>：A 通过 STUN 拿到 <code>1.2.3.4:8000</code> 告诉 B。B 完全不需要做什么打洞准备，直接往 <code>1.2.3.4:8000</code> 发数据，A 就能收到。因为 NAT1 无论谁来都能进。</li>
+<li><strong>结果</strong>：<strong>直接穿透成功，最容易。</strong></li>
+</ul>
+<hr>
+<h3 id="nat2受限圆锥型"><a class="markdownIt-Anchor" href="#nat2受限圆锥型"></a> ✅ NAT2（受限圆锥型）</h3>
+<ul>
+<li><strong>过程</strong>：
+<ol>
+<li>A、B 交换地址后，如果 B 直接往 <code>1.2.3.4:8000</code> 发数据，会被 A 的路由器丢掉（因为 A 还没给 B 发过包）。</li>
+<li>于是执行打洞：A 主动往 <code>5.6.7.8:9000</code> 发送一个“打洞包”。这个包到了 B 的路由器虽然会被丢弃，但 A 的路由器已经记录了“允许 IP <code>5.6.7.8</code> 的数据进入”。</li>
+<li>紧接着 B 往 <code>1.2.3.4:8000</code> 发数据包，这一次 A 的路由器看到源 IP 是 <code>5.6.7.8</code>，就放行了。</li>
+<li>此时 B 的数据成功进入 A，双向通道建立。</li>
+</ol>
+</li>
+<li><strong>结果</strong>：<strong>可以通过打洞穿透成功。</strong><br>
+NAT2 只检查 IP，B 用任意端口回复都可以。</li>
+</ul>
+<hr>
+<h3 id="nat3端口受限圆锥型"><a class="markdownIt-Anchor" href="#nat3端口受限圆锥型"></a> ✅ NAT3（端口受限圆锥型）</h3>
+<ul>
+<li><strong>过程</strong>：和 NAT2 类似，但对端口有要求。
+<ol>
+<li>A 先往 <code>5.6.7.8:9000</code>（注意必须是 B 告知的端口）发一个打洞包。</li>
+<li>A 的路由器这时只允许 <code>5.6.7.8:9000</code> 回复。</li>
+<li>B 再用 <code>5.6.7.8:9000</code> 往 <code>1.2.3.4:8000</code> 发数据，刚好符合“IP+端口都匹配”，打洞成功。</li>
+</ol>
+</li>
+<li><strong>关键</strong>：B 使用的源端口必须是 A 发送时的目标端口。而 B 一般就拿自己的公网映射端口作为源端口，所以打洞时天然满足这个条件。</li>
+<li><strong>结果</strong>：<strong>同样可以打洞穿透成功。</strong></li>
+</ul>
+<hr>
+<h3 id="nat4对称型"><a class="markdownIt-Anchor" href="#nat4对称型"></a> ❌ NAT4（对称型）</h3>
+<ul>
+<li><strong>场景</strong>：假设 A 是 NAT4（或双方都是）。</li>
+<li><strong>过程</strong>：
+<ol>
+<li>A 向 STUN 查询，获得专用于与 STUN 通信的地址 <code>1.2.3.4:8000</code>。</li>
+<li>A 把这个 <code>8000</code> 告诉 B。</li>
+<li>A 为了打洞，向 B 的地址 <code>5.6.7.8:9000</code> 发了一个包。<br>
+因为 A 是 NAT4，目标变了，路由器立刻为“与 B 通信”分配了<strong>一个新端口</strong>，比如 <code>1.2.3.4:8001</code>。</li>
+<li>B 只知道 <code>8000</code>，所以它的打洞包依然发往 <code>1.2.3.4:8000</code>。</li>
+<li>A 的路由器收到后一看，<code>8000</code> 这个映射只允许 STUN 服务器的 IP 进来，或者根本就不接受 B 的数据；而且真正留给 B 的通道是 <code>8001</code>。结果包被丢弃。</li>
+<li>B 无法猜到 <code>8001</code>，穿透失败。</li>
+</ol>
+</li>
+<li><strong>结果</strong>：<strong>STUN 打洞基本无效。</strong><br>
+如果双方都是 NAT4，更不可能打通；即便只有一方是 NAT4，通常也无法穿透。这种情况只能借助 <strong>TURN 中继服务器</strong> 来转发数据。</li>
+</ul>
+<hr>
+<h2 id="四-一句话总结"><a class="markdownIt-Anchor" href="#四-一句话总结"></a> 四、一句话总结</h2>
+<ul>
+<li><strong>NAT1～NAT3</strong> 都属于“圆锥形”NAT，只要 A、B 都不是 NAT4，<strong>STUN 打洞几乎必成</strong>。</li>
+<li><strong>NAT4（对称型）</strong> 每次换目标就换外网端口，让对方无法猜到，<strong>STUN 无能为力，必须用中转服务器</strong>。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>赏杯可乐🥤</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="悬崖不勒马 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="悬崖不勒马 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>悬崖不勒马
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://xuanyabulema.github.io/posts/NAT-and-STUN.html" title="NAT 和 STUN">https://xuanyabulema.github.io/posts/NAT-and-STUN.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/STUN/" rel="tag"># STUN</a>
+              <a href="/tags/NAT/" rel="tag"># NAT</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/Undo-a-Pushed-Git-Commit.html" rel="prev" title="Git 撤销已提交远程仓库的推送">
+                  <i class="fa fa-chevron-left"></i> Git 撤销已提交远程仓库的推送
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+            <li class="tab"><a href="#comment-livere">livere</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline"></div>
+            </div>
+            <div class="tab-pane livere" id="comment-livere">
+              <div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC81NzM4My8zMzg0Nw=="></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">悬崖不勒马</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"forest","dark":"forest"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.1.7/mermaid.min.js","integrity":"sha256-G58AID1YoX5YaEtWfXSI0VLrZ6N4kvNvwg0BI8zUFxE="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"waline-test-beta.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"请文明评论呀","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/posts/NAT-and-STUN.html"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+<script src="/js/third-party/comments/livere.js"></script>
+
+<!-- hexo injector body_end start --><script src="/js/outdate.js"></script><!-- hexo injector body_end end --></body>
+</html>
