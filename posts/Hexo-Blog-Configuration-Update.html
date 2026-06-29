@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.2">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xuanyabulema.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="前言 自从2021-11-26首次用 Hexo 配置博客后，配置内容以及插件已经有段时间没有更新了，此次重新安装配置，并简单记录一下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博客网站配置更新">
+<meta property="og:url" content="https://xuanyabulema.github.io/posts/Hexo-Blog-Configuration-Update.html">
+<meta property="og:site_name" content="悬崖不勒马的小站">
+<meta property="og:description" content="前言 自从2021-11-26首次用 Hexo 配置博客后，配置内容以及插件已经有段时间没有更新了，此次重新安装配置，并简单记录一下。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-05-29T08:26:47.000Z">
+<meta property="article:modified_time" content="2026-06-29T14:01:46.209Z">
+<meta property="article:author" content="悬崖不勒马">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="NexT">
+<meta name="twitter:card" content="&lt;twitter:card&gt;">
+<meta name="twitter:image" content="https://xuanyabulema.github.io/posts/%3Ctwitter:image%3E">
+<meta name="twitter:creator" content="@&lt;twitter:creator&gt;">
+<meta name="twitter:site" content="<twitter:site>">
+<meta property="fb:admins" content="&lt;fb:admin_id&gt;">
+<meta property="fb:app_id" content="&lt;fb:app_id&gt;">
+
+
+<link rel="canonical" href="https://xuanyabulema.github.io/posts/Hexo-Blog-Configuration-Update.html">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://xuanyabulema.github.io/posts/Hexo-Blog-Configuration-Update.html","path":"posts/Hexo-Blog-Configuration-Update.html","title":"博客网站配置更新"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>博客网站配置更新 | 悬崖不勒马的小站</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.31/fancybox/fancybox.umd.js" integrity="sha256-a+H7FYzJv6oU2hfsfDGM2Ohw/cR9v+hPfxHCLdmCrE8=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.5.0/search.js" integrity="sha256-xFC6PJ82SL9b3WkGjFavNiA9gm5z6UBxWPiu4CYjptg=" crossorigin="anonymous" defer></script>
+<script src="/js/third-party/search/local-search.js" defer></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.3.1/pdfobject.min.js","integrity":"sha256-jI72I8ZLVflVOisZIOaLvRew3tyvzeu6aZXFm7P7dEo="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js" defer></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"forest","dark":"forest"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.1/mermaid.min.js","integrity":"sha256-BmQmdWDS8X2OTbrwELWK366LV6escyWhHHe0XCTU/Hk="}}</script>
+  <script src="/js/third-party/tags/mermaid.js" defer></script>
+
+
+  <script src="/js/third-party/fancybox.js" defer></script>
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"ams","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js" defer></script>
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start --><script> let HEXO_MMEDIA_DATA = { js: [], css: [], aplayerData: [], metingData: [], artPlayerData: [], dplayerData: []}; </script><!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">悬崖不勒马的小站</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      <div class="search-header">
+        <span class="search-icon">
+          <i class="fa fa-search"></i>
+        </span>
+        <div class="search-input-container">
+          <input autocomplete="off" autocapitalize="off" maxlength="80"
+                placeholder="搜索..." spellcheck="false"
+                type="search" class="search-input">
+        </div>
+        <span class="popup-btn-close" role="button">
+          <i class="fa fa-times-circle"></i>
+        </span>
+      </div>
+      <div class="search-result-container">
+        <div class="search-result-icon">
+          <i class="fa fa-spinner fa-pulse fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-hexo-%E5%B9%B6%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">安装 Hexo 并初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-init-%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">hexo init 初始化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-%E5%88%9D%E5%A7%8B%E5%8C%96-%E5%90%8D%E5%AD%97-%E9%82%AE%E7%AE%B1%E4%BF%A1%E6%81%AF%E9%85%8D%E7%BD%AE"><span class="nav-text">git 初始化、名字、邮箱信息配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%9F%BA%E7%A1%80%E4%BF%A1%E6%81%AF%E6%9B%B4%E6%96%B0"><span class="nav-text">个人博客基础信息更新</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87"><span class="nav-text">添加阅读全文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF"><span class="nav-text">设置文章模板</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E4%BD%BF%E7%94%A8-markdown-%E5%B5%8C%E5%85%A5%E5%9B%BE%E7%89%87"><span class="nav-text">配置使用 Markdown 嵌入图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#url%E4%BC%98%E5%8C%96"><span class="nav-text">URL优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0-next-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE"><span class="nav-text">更新 NexT 主题配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="nav-text">基础配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next-%E4%B8%BB%E9%A2%98%E6%94%B9%E4%B8%BA-gemini"><span class="nav-text">NexT 主题改为 Gemini</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E7%94%A8-%E6%98%BE%E7%A4%BA%E7%9F%A5%E8%AF%86%E5%85%B1%E4%BA%AB-40-%E5%9B%BD%E9%99%85%E8%AE%B8%E5%8F%AF%E5%8D%8F%E8%AE%AE"><span class="nav-text">启用 显示知识共享 4.0 国际许可协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#open_graph%E8%AE%BE%E7%BD%AE%E6%95%88%E6%9E%9C%E6%9C%AA%E9%AA%8C%E8%AF%81"><span class="nav-text">open_graph设置（效果未验证）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E8%8F%9C%E5%8D%95%E9%A1%B9"><span class="nav-text">配置菜单项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%8D%9A%E5%AE%A2%E5%A4%B4%E5%83%8F"><span class="nav-text">设置博客头像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%9E%E8%B5%8F%E9%85%8D%E7%BD%AE"><span class="nav-text">赞赏配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%AB%99%E4%BF%A1%E6%81%AF"><span class="nav-text">添加社交网站信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%A7%E6%A0%8F%E6%A0%87%E9%A2%98%E8%AE%BE%E7%BD%AE"><span class="nav-text">侧栏标题设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97%E8%AE%BE%E7%BD%AE"><span class="nav-text">代码块设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8%E6%8C%89%E9%92%AE%E8%AE%BE%E7%BD%AE"><span class="nav-text">返回顶部按钮设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B6%E9%83%A8%E9%98%85%E8%AF%BB%E8%BF%9B%E5%BA%A6%E6%9D%A1"><span class="nav-text">顶部阅读进度条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#facybox-%E8%AE%BE%E7%BD%AE"><span class="nav-text">facybox 设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E6%90%9C%E7%B4%A2%E8%AE%BE%E7%BD%AE"><span class="nav-text">本地搜索设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E5%8A%A0%E8%BD%BD%E5%8A%A8%E7%94%BB"><span class="nav-text">关闭加载动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mermaid-%E7%BB%98%E5%9B%BE%E6%94%AF%E6%8C%81"><span class="nav-text">Mermaid  绘图支持</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0github%E6%8E%A8%E9%80%81%E6%94%AF%E6%8C%81"><span class="nav-text">添加GitHub推送支持</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9%E6%96%87%E4%BB%B6"><span class="nav-text">添加站点文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AErobotstxt"><span class="nav-text">配置robots.txt</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-emoji-%E6%94%AF%E6%8C%81"><span class="nav-text">添加 Emoji 支持</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-latex-%E5%85%AC%E5%BC%8F%E6%98%BE%E7%A4%BA"><span class="nav-text">添加 LaTeX  公式显示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-toc-%E4%BF%AE%E5%A4%8D"><span class="nav-text">hexo toc 修复</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%8F%92%E5%85%A5%E9%9F%B3%E8%A7%86%E9%A2%91%E6%94%AF%E6%8C%81"><span class="nav-text">添加插入音视频支持</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E9%86%92"><span class="nav-text">添加时效性提醒</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%9A%90%E8%97%8F%E6%96%87%E7%AB%A0%E5%8A%9F%E8%83%BD"><span class="nav-text">添加隐藏文章功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E5%90%8E-npm-%E5%8C%85%E7%89%88%E6%9C%AC"><span class="nav-text">更新后 npm 包版本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E5%90%88%E9%9B%86"><span class="nav-text">命令合集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">初始化</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="悬崖不勒马"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">悬崖不勒马</p>
+  <div class="site-description" itemprop="description">The time you enjoy wasting is not wasted time!</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xuanyabulema" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xuanyabulema" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xuanyabulema@qq.com" title="E-Mail → mailto:xuanyabulema@qq.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/45045474/" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;45045474&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-bilibili fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://xuanyabulema.github.io/posts/Hexo-Blog-Configuration-Update.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="悬崖不勒马">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="悬崖不勒马的小站">
+      <meta itemprop="description" content="The time you enjoy wasting is not wasted time!">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="博客网站配置更新 | 悬崖不勒马的小站">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          博客网站配置更新
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2026-05-29 16:26:47" itemprop="dateCreated datePublished" datetime="2026-05-29T16:26:47+08:00">2026-05-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-06-29 22:01:46" itemprop="dateModified" datetime="2026-06-29T22:01:46+08:00">2026-06-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="前言">前言</h1>
+<p><a href="/posts/Hexo-Installation-Log.html#hexo安装">自从2021-11-26首次用 Hexo 配置博客</a>后，配置内容以及插件已经有段时间没有更新了，此次重新安装配置，并简单记录一下。</p>
+<span id="more"></span>
+<h1 id="安装-hexo-并初始化">安装 Hexo 并初始化</h1>
+<h2 id="安装"><a class="header-anchor" href="#安装">¶</a>安装</h2>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a></p>
+</blockquote>
+<ul>
+<li>
+<p><strong>安装 Git 和 Node.js</strong></p>
+<ul>
+<li>参考 Hexo 官方文档，安装 Hexo 前需安装 Git 和 Node.js</li>
+</ul>
+</li>
+<li>
+<p><strong>正式安装 Hexo</strong></p>
+<p>所有必备的应用程序安装完成后，即可使用 npm 安装 Hexo。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装</span>
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> hexo-cli<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h2 id="hexo-init-初始化"><a class="header-anchor" href="#hexo-init-初始化">¶</a>hexo init 初始化</h2>
+<p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹 <code>&lt;folder&gt;</code> 中新建所需要的文件。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo init <span class="token operator">&lt;</span>folder<span class="token operator">></span> 
+<span class="token builtin class-name">cd</span> <span class="token operator">&lt;</span>folder<span class="token operator">></span>
+<span class="token function">npm</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>我以 new_blog 文件夹为例</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 初始化配置</span>
+hexo init new_blog
+<span class="token builtin class-name">cd</span> new_blog
+<span class="token function">npm</span> <span class="token function">install</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>初始化后，您的项目文件夹将如下所示：</p>
+<pre class="line-numbers language-none"><code class="language-none">.
+├── _config.yml  # 网站的配置文件。 您可以在此配置大部分的参数。
+├── package.json
+├── scaffolds  # 模版 文件夹。 当您新建文章时，Hexo 会根据 scaffold 来创建文件。
+├── source
+|   ├── _drafts
+|   └── _posts
+└── themes<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="git-初始化-名字-邮箱信息配置">git 初始化、名字、邮箱信息配置</h1>
+<p>初始化完成后，进行一下</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># git init初始化</span>
+<span class="token function">git</span> init<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>并设置 git 信息，以我的名字和邮箱为例</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 并设置 git 信息，以我的名字和邮箱为例</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"xuanyabulema"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"xuanyabulema@qq.com"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h1 id="个人博客基础信息更新">个人博客基础信息更新</h1>
+<p>打开 <folder> /_config.yml 文件夹，进行基础的信息的更新，以我的为例</folder></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Site</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> 悬崖不勒马的小站
+<span class="token key atrule">subtitle</span><span class="token punctuation">:</span> <span class="token string">''</span>
+<span class="token key atrule">description</span><span class="token punctuation">:</span> <span class="token string">'The time you enjoy wasting is not wasted time!'</span>
+<span class="token key atrule">keywords</span><span class="token punctuation">:</span>
+<span class="token key atrule">author</span><span class="token punctuation">:</span> 悬崖不勒马
+<span class="token key atrule">language</span><span class="token punctuation">:</span> zh<span class="token punctuation">-</span>CN
+<span class="token key atrule">timezone</span><span class="token punctuation">:</span> Asia/Shanghai
+
+<span class="token comment"># URL</span>
+<span class="token comment">## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'</span>
+<span class="token key atrule">url</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//xuanyabulema.github.io<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="添加阅读全文">添加阅读全文</h1>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://theme-next.iissnan.com/faqs.html#read-more">常见问题 - NexT 使用文档</a></p>
+<p>如何设置「阅读全文」？</p>
+<p>在首页显示一篇文章的部分内容，并提供一个链接跳转到全文页面是一个常见的需求。 NexT 提供三种方式来控制文章在首页的显示方式。 也就是说，在首页显示文章的摘录并显示 <strong>阅读全文</strong> 按钮，可以通过以下方法：</p>
+<ol>
+<li>在文章中使用 <code>&lt;!-- more --&gt;</code> 手动进行截断，Hexo 提供的方式 <strong>推荐</strong></li>
+</ol>
+</blockquote>
+<p>将下述内容添加到想添加的范围即可</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">&lt;<span class="token tag">!--</span> more <span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 id="设置文章模板">设置文章模板</h1>
+<p>模板文件信息位于<code>./scaffold </code>文件夹下的 <code>post.md</code> 和 <code>draft.md</code></p>
+<p>对应就是 <code>hexo new [layout] &lt;title&gt;</code> 中的 <code>layout</code> , 默认为 <code>post</code>, 草稿为 <code>draft</code>, 如果标题包含空格的话，请使用引号括起来。</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> title <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> date <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> 
+<span class="token key atrule">categories</span><span class="token punctuation">:</span> 
+<span class="token punctuation">---</span>
+
+
+
+点击阅读前文前，首页能看到的文章的简短描述
+
+
+
+&lt;<span class="token tag">!--</span> more <span class="token punctuation">-</span><span class="token punctuation">-</span><span class="token punctuation">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="配置使用-markdown-嵌入图片">配置使用 Markdown 嵌入图片</h1>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders#%E4%BD%BF%E7%94%A8-Markdown-%E5%B5%8C%E5%85%A5%E5%9B%BE%E7%89%87">资源文件夹 | Hexo</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/6882619951857811469">hexo博客中如何插入图片Hexo是一个静态的博客网站生成器，生成一个博客只需要分分钟的时间就能搞定。 Hexo的博文是 - 掘金</a></p>
+</blockquote>
+<p>修改站点配置  <folder> /_config.yml 文件</folder></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">post_asset_folder</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 配置使用 Markdown 嵌入图片</span>
+<span class="token key atrule">marked</span><span class="token punctuation">:</span>
+  <span class="token key atrule">prependRoot</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">postAsset</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>此外，需要修改修改站点配置  <folder> /_config.yml 文件如下内容（同属于<strong>URL优化</strong>），否则如 <code>&lt;img src=&quot;test.jpg&quot; alt=&quot;test&quot; style=&quot;width:50%;&quot; /&gt;</code> 格式的图片无法链接正确而无法显示</folder></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># permalink: :year/:month/:day/:title/</span>
+<span class="token key atrule">permalink</span><span class="token punctuation">:</span> posts/<span class="token punctuation">:</span>title.html    <span class="token comment"># 修改   三层结构  于 posts/ 下</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h1 id="url优化">URL优化</h1>
+<p>一般来说，网站的最佳结构是 <strong>用户从首页点击三次就可以到达任何一个页面</strong>，但是<code>Hexo</code>编译的是：<code>域名/年/月/日/文章标题</code> 这样五层的结构。这样的结构很不利于<code>SEO</code>，爬虫会经常爬不到我们的文章，所以我们需要优化一下URL。</p>
+<p>需要修改修改站点配置  <folder> /_config.yml 文件如下内容：</folder></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># permalink: :year/:month/:day/:title/</span>
+<span class="token key atrule">permalink</span><span class="token punctuation">:</span> posts/<span class="token punctuation">:</span>title.html    <span class="token comment"># 修改   三层结构  于 posts/ 下</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>即在<strong>配置使用 Markdown 嵌入图片</strong>时，同步完成配置。</p>
+<h1 id="更新-next-主题配置">更新 NexT 主题配置</h1>
+<h2 id="基础配置"><a class="header-anchor" href="#基础配置">¶</a>基础配置</h2>
+<p>之前通过直接编辑主题配置文件来配置 NexT 主题，给升级是带来了不便，现参考官方推荐的新方式进行配置：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/getting-started/configuration.html">Configuration | NexT</a></p>
+<p>如何配置 NexT 主题？传统的方法是直接编辑默认主题配置文件（ <code>themes/next/_config.yml</code> 或 <code>node_modules/hexo-theme-next/_config.yml</code> ）。然而，当通过 git 或 npm 升级 NexT 主题时，配置文件会被覆盖，这给主题配置带来了不便。</p>
+<p>目前，NexT 鼓励用户使用 Alternate Theme Config。这是 Hexo 的一个功能，文档位于：<a target="_blank" rel="noopener" href="https://hexo.io/docs/configuration.html#Using-an-Alternate-Config">Hexo Configuration</a></p>
+<p>配置方式</p>
+<ul>
+<li>
+<p>在站点根目录创建名为 <code>_config.next.yml</code> 的 NexT 配置文件。</p>
+</li>
+<li>
+<p>将所需的 NexT 主题选项从默认主题配置文件复制到这个配置文件中。如果是首次安装 NexT，则可以通过以下命令复制整个默认主题配置文件：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Installed through npm</span>
+<span class="token function">cp</span> node_modules/hexo-theme-next/_config.yml _config.next.yml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</blockquote>
+<p>安装</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-theme-next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>修改 <folder> /_config.yml 文件，以更新启用 next 主题</folder></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">theme</span><span class="token punctuation">:</span> next<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>Alternate Theme Config 方式配置 NexT 主题</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cp</span> node_modules/hexo-theme-next/_config.yml _config.next.yml<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settings/">Theme Settings | NexT</a></p>
+<p>修改 _config.next.yml 文件进行如下配置</p>
+<h2 id="next-主题改为-gemini"><a class="header-anchor" href="#NexT-主题改为-Gemini">¶</a>NexT 主题改为 Gemini</h2>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Schemes</span>
+<span class="token comment">#scheme: Muse</span>
+<span class="token comment">#scheme: Mist</span>
+<span class="token comment">#scheme: Pisces</span>
+<span class="token key atrule">scheme</span><span class="token punctuation">:</span> Gemini <span class="token comment"># 修改为Gemini主题</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="启用-显示知识共享-40-国际许可协议"><a class="header-anchor" href="#启用-显示知识共享-4-0-国际许可协议">¶</a>启用 显示知识共享 4.0 国际许可协议</h2>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Creative Commons 4.0 International License.</span>
+<span class="token comment"># See: https://creativecommons.org/about/cclicenses/</span>
+<span class="token key atrule">creative_commons</span><span class="token punctuation">:</span>
+<span class="token comment"># Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero</span>
+<span class="token key atrule">license</span><span class="token punctuation">:</span> by<span class="token punctuation">-</span>nc<span class="token punctuation">-</span>sa
+<span class="token comment"># Available values: big | small</span>
+<span class="token key atrule">size</span><span class="token punctuation">:</span> small
+<span class="token key atrule">sidebar</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>  <span class="token comment"># 启用 显示知识共享 4.0 国际许可协议</span>
+<span class="token key atrule">post</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>  <span class="token comment"># 启用 显示知识共享 4.0 国际许可协议</span>
+<span class="token comment"># You can set a language value if you prefer a translated version of CC license, e.g. deed.zh</span>
+<span class="token comment"># CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org</span>
+language<span class="token punctuation">:</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="open_graph设置效果未验证"><a class="header-anchor" href="#open-graph设置（效果未验证）">¶</a>open_graph设置（效果未验证）</h2>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Open graph settings</span>
+<span class="token comment"># See: https://hexo.io/docs/helpers#open-graph</span>
+<span class="token key atrule">open_graph</span><span class="token punctuation">:</span>
+<span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">options</span><span class="token punctuation">:</span>
+ <span class="token key atrule">twitter_card</span><span class="token punctuation">:</span> &lt;twitter<span class="token punctuation">:</span>card<span class="token punctuation">></span>  <span class="token comment"># open_graph设置</span>
+ <span class="token key atrule">twitter_id</span><span class="token punctuation">:</span> &lt;twitter<span class="token punctuation">:</span>creator<span class="token punctuation">></span>
+ <span class="token key atrule">twitter_site</span><span class="token punctuation">:</span> &lt;twitter<span class="token punctuation">:</span>site<span class="token punctuation">></span>
+ <span class="token key atrule">twitter_image</span><span class="token punctuation">:</span> &lt;twitter<span class="token punctuation">:</span>image<span class="token punctuation">></span>
+ <span class="token key atrule">google_plus</span><span class="token punctuation">:</span> &lt;g+<span class="token punctuation">:</span>profile_link<span class="token punctuation">></span>
+ <span class="token key atrule">fb_admins</span><span class="token punctuation">:</span> &lt;fb<span class="token punctuation">:</span>admin_id<span class="token punctuation">></span>
+ <span class="token key atrule">fb_app_id</span><span class="token punctuation">:</span> &lt;fb<span class="token punctuation">:</span>app_id<span class="token punctuation">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="配置菜单项"><a class="header-anchor" href="#配置菜单项">¶</a>配置菜单项</h2>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Usage: `Key: /link/ || icon`</span>
+<span class="token comment"># Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-sensitive.</span>
+<span class="token comment"># Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.</span>
+<span class="token comment"># External url should start with http:// or https://</span>
+<span class="token key atrule">menu</span><span class="token punctuation">:</span>  <span class="token comment"># 配置菜单项</span>
+<span class="token key atrule">home</span><span class="token punctuation">:</span> / <span class="token punctuation">|</span><span class="token punctuation">|</span> fa fa<span class="token punctuation">-</span>home
+<span class="token key atrule">about</span><span class="token punctuation">:</span> /about/ <span class="token punctuation">|</span><span class="token punctuation">|</span> fa fa<span class="token punctuation">-</span>user
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> /tags/ <span class="token punctuation">|</span><span class="token punctuation">|</span> fa fa<span class="token punctuation">-</span>tags
+<span class="token key atrule">categories</span><span class="token punctuation">:</span> /categories/ <span class="token punctuation">|</span><span class="token punctuation">|</span> fa fa<span class="token punctuation">-</span>th
+<span class="token key atrule">archives</span><span class="token punctuation">:</span> /archives/ <span class="token punctuation">|</span><span class="token punctuation">|</span> fa fa<span class="token punctuation">-</span>archive
+<span class="token comment">#schedule: /schedule/ || fa fa-calendar</span>
+<span class="token key atrule">sitemap</span><span class="token punctuation">:</span> /sitemap.xml <span class="token punctuation">|</span><span class="token punctuation">|</span> fa fa<span class="token punctuation">-</span>sitemap
+<span class="token comment">#commonweal: /404/ || fa fa-heartbeat</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在上述的修改的基础上，还需要新建对应的分类、标签界面</p>
+<ul>
+<li>
+<p>新建分类界面</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new page categories<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>
+<p>修改对应 <folder> /source/categories/index.md 内容如下：</folder></p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> 文章分类
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2026-06-07 15:29:43</span>
+<span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"categories"</span></span>
+<span class="token punctuation">---</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>
+<p>给文件添加对应分类信息：如下添加了“折腾”一级分类、“Hexo”二级分类信息</p>
+<pre class="line-numbers language-none"><code class="language-none">---
+title: Hexo安装日志
+date: 2021-11-26 07:39:29
+categories: 
+- 折腾
+- Hexo
+tags: [Hexo,ubuntu]
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>新建标签界面（与上类似）</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new page tags<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>
+<p>修改对应 <folder> /source/tags/index.md 内容如下：</folder></p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> 标签
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2026-06-07 15:41:19</span>
+<span class="token key atrule">type</span><span class="token punctuation">:</span> <span class="token string">"tags"</span></span>
+<span class="token punctuation">---</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>新建关于界面</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo new page <span class="token string">"about"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>修改对应 <folder> /source/about/index.md 内容，及可添加个人信息介绍</folder></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="设置博客头像"><a class="header-anchor" href="#设置博客头像">¶</a>设置博客头像</h2>
+<p>修改 _config.next.yml 文件进行如下配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Sidebar Avatar</span>
+<span class="token key atrule">avatar</span><span class="token punctuation">:</span>
+  <span class="token comment"># Replace the default image and set the url here.</span>
+  <span class="token key atrule">url</span><span class="token punctuation">:</span> /images/avatar.png  <span class="token comment"># 设置头像，avatar.png 位于主目录 source/images/avatar.png</span>
+  <span class="token comment"># If true, the avatar will be displayed in circle.</span>
+  <span class="token key atrule">rounded</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token comment"># If true, the avatar will be rotated with the cursor.</span>
+  <span class="token key atrule">rotated</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="赞赏配置"><a class="header-anchor" href="#赞赏配置">¶</a>赞赏配置</h2>
+<p>修改 _config.next.yml 文件进行如下配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Donate (Sponsor) settings</span>
+<span class="token comment"># Front-matter variable (nonsupport animation).</span>
+<span class="token key atrule">reward_settings</span><span class="token punctuation">:</span>
+  <span class="token comment"># If true, a donate button will be displayed in every article by default.</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">animation</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token comment"># comment: 赏杯可乐🥤  # 没生效</span>
+
+<span class="token key atrule">reward</span><span class="token punctuation">:</span>
+  <span class="token key atrule">wechatpay</span><span class="token punctuation">:</span> /images/wechatpay.png
+  <span class="token key atrule">alipay</span><span class="token punctuation">:</span> /images/alipay.jpg
+  <span class="token comment">#paypal: /images/paypal.png</span>
+  <span class="token comment">#bitcoin: /images/bitcoin.png</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="添加社交网站信息"><a class="header-anchor" href="#添加社交网站信息">¶</a>添加社交网站信息</h2>
+<p>修改 _config.next.yml 文件进行如下配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">social</span><span class="token punctuation">:</span>
+  <span class="token key atrule">GitHub</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//github.com/xuanyabulema <span class="token punctuation">|</span><span class="token punctuation">|</span> fab fa<span class="token punctuation">-</span>github <span class="token comment"># 添加GitHub</span>
+  <span class="token key atrule">E-Mail</span><span class="token punctuation">:</span> mailto<span class="token punctuation">:</span>xuanyabulema@qq.com <span class="token punctuation">|</span><span class="token punctuation">|</span> fa fa<span class="token punctuation">-</span>envelope <span class="token comment"># 添加邮箱</span>
+  <span class="token comment">#Weibo: https://weibo.com/yourname || fab fa-weibo</span>
+  <span class="token comment">#Twitter: https://twitter.com/yourname || fab fa-twitter</span>
+  <span class="token comment">#FB Page: https://www.facebook.com/yourname || fab fa-facebook</span>
+  <span class="token comment">#StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow</span>
+  <span class="token comment">#YouTube: https://youtube.com/yourname || fab fa-youtube</span>
+  <span class="token comment">#Instagram: https://instagram.com/yourname || fab fa-instagram</span>
+  <span class="token comment">#Skype: skype:yourname?call|chat || fab fa-skype</span>
+  <span class="token key atrule">Bilibili</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//space.bilibili.com/45045474/ <span class="token punctuation">|</span><span class="token punctuation">|</span> fab fa<span class="token punctuation">-</span>bilibili  <span class="token comment"># 添加B站</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="侧栏标题设置"><a class="header-anchor" href="#侧栏标题设置">¶</a>侧栏标题设置</h2>
+<p>修改 _config.next.yml 文件进行如下配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Table of Contents in the Sidebar</span>
+<span class="token comment"># Front-matter variable (nonsupport wrap expand_all).</span>
+<span class="token key atrule">toc</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token comment"># Automatically add list number to toc.</span>
+  <span class="token key atrule">number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token comment"># If true, all words will placed on next lines if header width longer then sidebar width.</span>
+  <span class="token key atrule">wrap</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token comment"># If true, all level of TOC in a post will be displayed, rather than the activated part of it.</span>
+  <span class="token key atrule">expand_all</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token comment"># Maximum heading depth of generated toc.</span>
+  <span class="token key atrule">max_depth</span><span class="token punctuation">:</span> <span class="token number">6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="代码块设置"><a class="header-anchor" href="#代码块设置">¶</a>代码块设置</h2>
+<p>修改 _config.next.yml 文件进行如下配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">codeblock</span><span class="token punctuation">:</span>
+  <span class="token comment"># Code Highlight theme</span>
+  <span class="token comment"># All available themes: https://theme-next.js.org/highlight/</span>
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span>
+    <span class="token key atrule">light</span><span class="token punctuation">:</span> default
+    <span class="token key atrule">dark</span><span class="token punctuation">:</span> stackoverflow<span class="token punctuation">-</span>dark
+  <span class="token key atrule">prism</span><span class="token punctuation">:</span>
+    <span class="token key atrule">light</span><span class="token punctuation">:</span> prism
+    <span class="token key atrule">dark</span><span class="token punctuation">:</span> prism<span class="token punctuation">-</span>dark
+  <span class="token comment"># Add copy button on codeblock</span>
+  <span class="token key atrule">copy_button</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 代码块复制按钮</span>
+    <span class="token comment"># Available values: default | flat | mac</span>
+    <span class="token key atrule">style</span><span class="token punctuation">:</span>
+  <span class="token comment"># Fold code block</span>
+  <span class="token key atrule">fold</span><span class="token punctuation">:</span>
+    <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">height</span><span class="token punctuation">:</span> <span class="token number">500</span>
+  <span class="token comment"># Display language name</span>
+  <span class="token key atrule">language</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="返回顶部按钮设置"><a class="header-anchor" href="#返回顶部按钮设置">¶</a>返回顶部按钮设置</h2>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">back2top</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token comment"># Back to top in sidebar.</span>
+  <span class="token key atrule">sidebar</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token comment"># Scroll percent label in b2t button.</span>
+  <span class="token key atrule">scrollpercent</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 添加进度</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="顶部阅读进度条"><a class="header-anchor" href="#顶部阅读进度条">¶</a>顶部阅读进度条</h2>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Reading progress bar</span>
+<span class="token key atrule">reading_progress</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 启用</span>
+  <span class="token comment"># Available values: left | right</span>
+  <span class="token key atrule">start_at</span><span class="token punctuation">:</span> left
+  <span class="token comment"># Available values: top | bottom</span>
+  <span class="token key atrule">position</span><span class="token punctuation">:</span> top
+  <span class="token key atrule">reversed</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">color</span><span class="token punctuation">:</span> <span class="token string">"#455667"</span> <span class="token comment"># 修改配色</span>
+  <span class="token key atrule">height</span><span class="token punctuation">:</span> 3px<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="facybox-设置"><a class="header-anchor" href="#facybox-设置">¶</a>facybox 设置</h2>
+<p>fancybox 可以在点击图片时放大该图片，并且可以快速浏览当前文章的所有图片</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.</span>
+<span class="token comment"># For more information: https://fancyapps.com/fancybox/</span>
+<span class="token key atrule">fancybox</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="本地搜索设置"><a class="header-anchor" href="#本地搜索设置">¶</a>本地搜索设置</h2>
+<p>安装</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-searchdb<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>修改站点配置文件<folder> /_config.yml，添加如下内容</folder></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Local Search</span>
+<span class="token comment"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span>
+<span class="token key atrule">search</span><span class="token punctuation">:</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> search.json
+  <span class="token key atrule">field</span><span class="token punctuation">:</span> post
+  <span class="token key atrule">content</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">format</span><span class="token punctuation">:</span> striptags<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>修改 _config.next.yml 文件进行如下配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Local Search</span>
+<span class="token comment"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span>
+<span class="token key atrule">local_search</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token comment"># Show top n results per article, show all results by setting to -1</span>
+  <span class="token key atrule">top_n_per_article</span><span class="token punctuation">:</span> <span class="token number">1</span>
+  <span class="token comment"># Unescape html strings to the readable one.</span>
+  <span class="token key atrule">unescape</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token comment"># Preload the search data when the page loads.</span>
+  <span class="token key atrule">preload</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="关闭加载动画"><a class="header-anchor" href="#关闭加载动画">¶</a>关闭加载动画</h2>
+<p>修改 _config.next.yml 文件进行如下配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">motion</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 关闭动画</span>
+  <span class="token key atrule">async</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="mermaid-绘图支持"><a class="header-anchor" href="#Mermaid-绘图支持">¶</a>Mermaid  绘图支持</h2>
+<p>Mermaid  支持甘特图（gantt）、类图、时序图等</p>
+<p><a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/tag-plugins/mermaid.html">Mermaid | NexT</a></p>
+<p>修改 _config.next.yml 文件进行如下配置</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Mermaid tag</span>
+<span class="token key atrule">mermaid</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># 添加 mermaid 支持</span>
+  <span class="token comment"># Available themes: default | dark | forest | neutral</span>
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span>
+    <span class="token key atrule">light</span><span class="token punctuation">:</span> forest
+    <span class="token key atrule">dark</span><span class="token punctuation">:</span> forest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>配置站点<code>_config.yml</code>文件</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">auto_detect</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span>
+  <span class="token key atrule">wrap</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">hljs</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">exclude_languages</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> mermaid  <span class="token comment"># 添加 mermaid 支持</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="添加github推送支持">添加GitHub推送支持</h1>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment">One-Command Deployment | Hexo</a></p>
+<ol>
+<li>
+<p>安装 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a> 。</p>
+<pre class="line-numbers language-none"><code class="language-none">npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li>
+<p>配置站点<code>_config.yml</code>文件</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment">## Docs: https://hexo.io/docs/one-command-deployment</span>
+<span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+<span class="token punctuation">-</span> <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span> ssh<span class="token punctuation">:</span>//git@ssh.github.com<span class="token punctuation">:</span>443/xuanyabulema/xuanyabulema.github.io.git
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<h1 id="添加站点文件">添加站点文件</h1>
+<p>安装扩展</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-sitemap <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>配置站点<code>_config.yml</code>文件</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># 自动生成sitemap</span>
+<span class="token key atrule">sitemap</span><span class="token punctuation">:</span>
+  <span class="token key atrule">path</span><span class="token punctuation">:</span> 
+    <span class="token punctuation">-</span> sitemap.xml
+    <span class="token punctuation">-</span> sitemap.txt
+  <span class="token comment"># template: ./sitemap_template.xml</span>
+  <span class="token comment"># template_txt: ./sitemap_template.txt</span>
+  <span class="token key atrule">rel</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">categories</span><span class="token punctuation">:</span> <span class="token boolean important">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="配置robotstxt">配置<code>robots.txt</code></h1>
+<p>在<code>hexo</code>根目录下的 <code>source</code> 目录下新建一个<code>robots.txt</code>文件，内容如下：</p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt"># 允许所有用户代理的浏览器爬虫进行访问（爬起数据）
+User-agent: *
+
+# 允许访问的内容
+Allow: /
+Allow: /about/
+Allow: /archives/
+Allow: /book/
+Allow: /categories/
+Allow: /microchip/
+Allow: /page/
+Allow: /posts/
+Allow: /surfing/
+Allow: /tags/
+
+# 网站地图Sitemap
+Sitemap: https://xuanyabulema.github.io/sitemap.xml
+Sitemap: https://xuanyabulema.github.io/baidusitemap.xml
+Sitemap: https://xuanyabulema.github.io/sitemap.txt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="添加-emoji-支持">添加 Emoji 支持</h1>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fsong/p/5929773.html">Hexo中添加emoji表情 - 五毛钱的饼 - 博客园</a>   实际测试发现好像不需要执行 npm install markdown-it-emoji --save</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-renderer-markdown-it">hexojs/hexo-renderer-markdown-it: Markdown-it is a Markdown parser, done right. A faster and CommonMark compliant alternative for Hexo.</a></p>
+</blockquote>
+<ul>
+<li>
+<p>卸载原有 Markdown 渲染器</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> un hexo-renderer-marked <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li>
+<p>安装 hexo-renderer-markdown-it 渲染器</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> i hexo-renderer-markdown-it <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li>
+<p>修改站点配置  <folder> /_config.yml 文件，末尾添加如下内容：</folder></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Markdown-it config</span>
+<span class="token comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span>
+<span class="token key atrule">markdown</span><span class="token punctuation">:</span>
+  <span class="token key atrule">render</span><span class="token punctuation">:</span>
+    <span class="token key atrule">html</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">xhtmlOut</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">breaks</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">linkify</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">typographer</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">quotes</span><span class="token punctuation">:</span> <span class="token string">'“”‘’'</span>
+  <span class="token key atrule">plugins</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>abbr
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>footnote
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>ins
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>sub
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>sup
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>emoji  <span class="token comment"># add emoji</span>
+  <span class="token key atrule">anchors</span><span class="token punctuation">:</span>
+    <span class="token key atrule">level</span><span class="token punctuation">:</span> <span class="token number">2</span>
+    <span class="token key atrule">collisionSuffix</span><span class="token punctuation">:</span> <span class="token string">'v'</span>
+    <span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">permalinkClass</span><span class="token punctuation">:</span> header<span class="token punctuation">-</span>anchor
+    <span class="token key atrule">permalinkSymbol</span><span class="token punctuation">:</span> ¶<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>
+<p>hexo s 预览效果前，需要 hexo clean 一下，清除之前的缓存</p>
+</li>
+</ul>
+<h1 id="添加-latex-公式显示">添加 LaTeX  公式显示</h1>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zenfish-zy.github.io/2026/01/27/hexo-latex-config/index.html">Hexo Fluid 主题配置 LaTeX 数学公式渲染 | Fishのblog</a></p>
+</blockquote>
+<ul>
+<li>
+<p>在上述安装 <code>hexo-renderer-markdown-it</code> 插件的基础上，安装 <code>markdown-it-mathjax3</code> 插件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装 MathJax 插件</span>
+<span class="token function">npm</span> <span class="token function">install</span> markdown-it-mathjax3 <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li>
+<p>修改站点配置  <folder> /_config.yml 文件</folder></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># Markdown-it config</span>
+<span class="token comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span>
+<span class="token key atrule">markdown</span><span class="token punctuation">:</span>
+  <span class="token key atrule">render</span><span class="token punctuation">:</span>
+    <span class="token key atrule">html</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">xhtmlOut</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">breaks</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">linkify</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">typographer</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">quotes</span><span class="token punctuation">:</span> <span class="token string">'“”‘’'</span>
+  <span class="token key atrule">plugins</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>abbr
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>footnote
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>ins
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>sub
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>sup
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>emoji  <span class="token comment"># add emoji</span>
+    <span class="token punctuation">-</span> markdown<span class="token punctuation">-</span>it<span class="token punctuation">-</span>mathjax3 <span class="token comment"># 添加 LeTeX 渲染支持</span>
+  <span class="token key atrule">anchors</span><span class="token punctuation">:</span>
+    <span class="token key atrule">level</span><span class="token punctuation">:</span> <span class="token number">2</span>
+    <span class="token key atrule">collisionSuffix</span><span class="token punctuation">:</span> <span class="token string">'v'</span>
+    <span class="token key atrule">permalink</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">permalinkClass</span><span class="token punctuation">:</span> header<span class="token punctuation">-</span>anchor
+    <span class="token key atrule">permalinkSymbol</span><span class="token punctuation">:</span> ¶<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h1 id="hexo-toc-修复">hexo toc 修复</h1>
+<p><a href="/posts/Problems-Encountered-During-the-Use-of-Hexo.html#hexo一级标题不跳转问题解决">hexo一级标题不跳转问题解决</a></p>
+<p>最新配置上述内容后，点击一级标题竟然还是无法跳转，按老办法竟然可以解决。。。。</p>
+<p>执行如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-toc<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>然后修改该目录下的<code>node_modules\hexo-toc\lib\filter.js</code>的“28-31行”为如下</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">$title<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">'id'</span><span class="token punctuation">,</span> id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// $title.children('a').remove();</span>
+<span class="token comment">// $title.html( '&lt;span id="' + id + '">' + $title.html() + '&lt;/span>' );</span>
+<span class="token comment">// $title.removeAttr('id');</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="添加插入音视频支持">添加插入音视频支持</h1>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.u2sb.com/OpenSw/hexo-tag-mmedia/install.html">安装和基本介绍</a></p>
+</blockquote>
+<p>安装命令</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-tag-mmedia@1 <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>配置</p>
+<ul>
+<li><strong>配置项较多目的是给予最大的自定义权限，默认情况下不做配置也可以使用</strong>。</li>
+<li>配置文件放在博客根目录的 <code>_config.yml</code> 中</li>
+<li>default 为默认配置，在 <code>_config.yml</code> 中填写就不需要在每个标签全部写入了，所有允许在 mmedia 标签上写入的配置项，均可在 default 下配置。</li>
+</ul>
+<p>模板</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">mmedia</span><span class="token punctuation">:</span>
+  <span class="token key atrule">audio</span><span class="token punctuation">:</span>
+    <span class="token key atrule">default</span><span class="token punctuation">:</span>
+  <span class="token key atrule">video</span><span class="token punctuation">:</span>
+    <span class="token key atrule">default</span><span class="token punctuation">:</span>
+  <span class="token key atrule">aplayer</span><span class="token punctuation">:</span>
+    <span class="token key atrule">js</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js
+    <span class="token key atrule">css</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css
+    <span class="token key atrule">default</span><span class="token punctuation">:</span>
+      <span class="token key atrule">contents</span><span class="token punctuation">:</span>
+  <span class="token key atrule">meting</span><span class="token punctuation">:</span>
+    <span class="token key atrule">js</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js
+    <span class="token key atrule">api</span><span class="token punctuation">:</span>
+    <span class="token key atrule">default</span><span class="token punctuation">:</span>
+  <span class="token key atrule">dplayer</span><span class="token punctuation">:</span>
+    <span class="token key atrule">js</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/dplayer@1/dist/DPlayer.min.js
+    <span class="token key atrule">hls_js</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/hls.js/dist/hls.min.js
+    <span class="token key atrule">dash_js</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/dashjs/dist/dash.all.min.js
+    <span class="token key atrule">shaka_dash_js</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/shaka<span class="token punctuation">-</span>player/dist/shaka<span class="token punctuation">-</span>player.compiled.js
+    <span class="token key atrule">flv_js</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/flv.js/dist/flv.min.js
+    <span class="token key atrule">webtorrent_js</span><span class="token punctuation">:</span> https<span class="token punctuation">:</span>//cdn.jsdelivr.net/npm/webtorrent/webtorrent.min.js
+    <span class="token key atrule">default</span><span class="token punctuation">:</span>
+      <span class="token key atrule">contents</span><span class="token punctuation">:</span>
+  <span class="token key atrule">bilibili</span><span class="token punctuation">:</span>
+    <span class="token key atrule">default</span><span class="token punctuation">:</span>
+      <span class="token key atrule">page</span><span class="token punctuation">:</span> <span class="token number">1</span>
+      <span class="token key atrule">danmaku</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+      <span class="token key atrule">allowfullscreen</span><span class="token punctuation">:</span> allowfullscreen
+      <span class="token key atrule">sandbox</span><span class="token punctuation">:</span> allow<span class="token punctuation">-</span>top<span class="token punctuation">-</span>navigation allow<span class="token punctuation">-</span>same<span class="token punctuation">-</span>origin allow<span class="token punctuation">-</span>forms allow<span class="token punctuation">-</span>scripts allow<span class="token punctuation">-</span>popups
+      <span class="token key atrule">width</span><span class="token punctuation">:</span> 100%
+      <span class="token key atrule">max_width</span><span class="token punctuation">:</span> 850px
+      <span class="token key atrule">margin</span><span class="token punctuation">:</span> auto
+  <span class="token key atrule">xigua</span><span class="token punctuation">:</span>
+    <span class="token key atrule">default</span><span class="token punctuation">:</span>
+      <span class="token key atrule">autoplay</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+      <span class="token key atrule">startTime</span><span class="token punctuation">:</span> <span class="token number">0</span>
+      <span class="token key atrule">allowfullscreen</span><span class="token punctuation">:</span> allowfullscreen
+      <span class="token key atrule">sandbox</span><span class="token punctuation">:</span> allow<span class="token punctuation">-</span>top<span class="token punctuation">-</span>navigation allow<span class="token punctuation">-</span>same<span class="token punctuation">-</span>origin allow<span class="token punctuation">-</span>forms allow<span class="token punctuation">-</span>scripts allow<span class="token punctuation">-</span>popups
+      <span class="token key atrule">width</span><span class="token punctuation">:</span> 100%
+      <span class="token key atrule">max_width</span><span class="token punctuation">:</span> 850px
+      <span class="token key atrule">margin</span><span class="token punctuation">:</span> auto<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>示例</p>
+<pre class="line-numbers language-none"><code class="language-none">&#123;% mmedia &quot;bilibili&quot; &quot;bvid:BV1vJ411U7Ji&quot; %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<style>.bbplayer{width: 100%; max-width: 850px; margin: auto}</style><div class="bbplayer"><iframe class="bbplayer" id="mmedia-zhfdGQEOmyFDjDBj" src="https://player.bilibili.com/player.html?bvid=BV1vJ411U7Ji&page=1&high_quality=1&danmaku=true&autoplay=0" allowfullscreen="allowfullscreen" scrolling="no" border="0" frameborder="0" framespacing="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts allow-popups"></iframe></div><script> document.getElementById("mmedia-zhfdGQEOmyFDjDBj").style.height=document.getElementById("mmedia-zhfdGQEOmyFDjDBj").scrollWidth*0.76+"px";
+    window.onresize = function(){
+      document.getElementById("mmedia-zhfdGQEOmyFDjDBj").style.height=document.getElementById("mmedia-zhfdGQEOmyFDjDBj").scrollWidth*0.76+"px";
+    }; </script>
+<h1 id="添加时效性提醒">添加时效性提醒</h1>
+<p>随着时间的推移，很多程序都会更新，网上很多关于对程序记录的内容往往会过时，出现不能在复现的问题。因此根据文章发布时间设置时效性提醒，有助于读者辨别信息的可靠性。</p>
+<ul>
+<li>
+<p>添加注入器</p>
+<p><code>Hexo</code>提供了 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/api/injector">注入器（Injector）</a>，可以<strong>将指定的静态代码片段注入到生成的静态页面中</strong>。</p>
+<p>在主题的 <code>scripts</code> 目录（没有则新建一个）下新建一个名为 <code>injector.js</code> 的文件，</p>
+<p>内容如下：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//注入文章过期提示</span>
+hexo<span class="token punctuation">.</span>extend<span class="token punctuation">.</span>injector<span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">'body_end'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">&lt;script src="/js/outdate.js">&lt;/script></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token string">'post'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li><code>body_end</code> 代表注入到文章开头。</li>
+<li>由于注入的代码有点长，我们就用一个 <code>Javascript</code> 文件单独处理，作为注入的代码片段引入</li>
+<li><code>post</code> 代表只注入到文章详情页面中。</li>
+</ul>
+</li>
+<li>
+<p>添加静态代码片段</p>
+<p>在主题或根目录下的 <code>source</code> 目录下新建 <code>js</code> 文件夹，新建一个名为 <code>outdate.js</code> 的文件，</p>
+<p>添加以下代码：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">//不同的日期显示不同的样式，200 天为黄色提示，400天为红色提示，可以自己定义。</span>
+    <span class="token keyword">let</span> warningDay <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> errorDay <span class="token operator">=</span> <span class="token number">400</span><span class="token punctuation">;</span>
+    <span class="token comment">// 确保能够获取到文章时间以及在文章详情页</span>
+    <span class="token keyword">let</span> times <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'time'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>times<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+    <span class="token keyword">let</span> posts <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">'post-body'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>posts<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">// 获取系统当前的时间</span>
+    <span class="token keyword">let</span> pubTime <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>times<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dateTime<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">/* 文章发布时间戳 */</span>
+    <span class="token keyword">let</span> now <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">/* 当前时间戳 */</span>
+    <span class="token keyword">let</span> interval <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>now <span class="token operator">-</span> pubTime<span class="token punctuation">)</span>
+    <span class="token keyword">let</span> days <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>interval <span class="token operator">/</span> <span class="token number">86400000</span><span class="token punctuation">)</span>
+        <span class="token comment">/* 发布时间超过指定时间（毫秒） */</span>
+        <span class="token comment">//note warning 以及 note danger 是 Next 主题的自定义模板语法，如果使用其他主题，请自行更改样式以达到最佳显示效果</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>interval <span class="token operator">></span> warningDay <span class="token operator">*</span> <span class="token number">3600</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">1000</span> <span class="token operator">&amp;&amp;</span> interval <span class="token operator">&lt;</span> errorDay <span class="token operator">*</span> <span class="token number">3600</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        posts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'&lt;div class="note warning">'</span> <span class="token operator">+</span>
+            <span class="token string">'&lt;h5>文章时效性提示&lt;/h5>&lt;p>这是一篇发布于 '</span> <span class="token operator">+</span> days <span class="token operator">+</span> <span class="token string">' 天前的文章，部分信息可能已发生改变，请注意甄别。&lt;/p>'</span> <span class="token operator">+</span>
+            <span class="token string">'&lt;/div>'</span> <span class="token operator">+</span> posts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>interval <span class="token operator">>=</span> errorDay <span class="token operator">*</span> <span class="token number">3600</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        posts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'&lt;div class="note danger">'</span> <span class="token operator">+</span>
+            <span class="token string">'&lt;h5>文章时效性提示&lt;/h5>&lt;p>这是一篇发布于 '</span> <span class="token operator">+</span> days <span class="token operator">+</span> <span class="token string">' 天前的文章，部分信息可能已发生改变，请注意甄别。&lt;/p>'</span> <span class="token operator">+</span>
+            <span class="token string">'&lt;/div>'</span> <span class="token operator">+</span> posts<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>innerHTML<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ul>
+<h1 id="添加隐藏文章功能">添加隐藏文章功能</h1>
+<p>安装</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-hide-posts <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>修改站点配置  <folder> /_config.yml 文件，末尾添加如下内容：</folder></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># https://github.com/prinsss/hexo-hide-posts/blob/master/README_ZH.md</span>
+hide_posts: 
+  <span class="token comment"># 是否启用 hexo-hide-posts</span>
+  enable: <span class="token boolean">true</span>
+
+  <span class="token comment"># 隐藏文章的 front-matter 标识，也可以改成其他你喜欢的名字</span>
+  filter: hidden
+
+  <span class="token comment"># 为隐藏的文章添加 noindex meta 标签，阻止搜索引擎收录</span>
+  noindex: <span class="token boolean">true</span>
+
+  <span class="token comment"># 设置白名单，白名单中的 generator 可以访问隐藏文章</span>
+  <span class="token comment"># 常见的 generators 有：index, tag, category, archive, sitemap, feed, etc.</span>
+  <span class="token comment"># allowlist_generators: []</span>
+
+  <span class="token comment"># 设置黑名单，黑名单中的 generator 不可以访问隐藏文章</span>
+  <span class="token comment"># 如果同时设置了黑名单和白名单，白名单的优先级更高</span>
+  <span class="token comment"># blocklist_generators: ['*']</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>文章模版添加 “hidden” 标签</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> title <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> date <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>
+<span class="token key atrule">tags</span><span class="token punctuation">:</span> 
+<span class="token key atrule">categories</span><span class="token punctuation">:</span> 
+hidden<span class="token punctuation">:</span></span>   
+<span class="token punctuation">---</span></span>
+
+
+
+点击阅读前文前，首页能看到的文章的简短描述
+
+
+
+<span class="token comment">&lt;!-- more --></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="更新后-npm-包版本">更新后 npm 包版本</h1>
+<p>使用 npm list 命令查看</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>结果如下：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo-site@0.0.0 /root/blog_hexo_new
+├── hexo-deployer-git@4.0.0
+├── hexo-generator-archive@2.0.0
+├── hexo-generator-category@2.0.0
+├── hexo-generator-index@4.0.0
+├── hexo-generator-searchdb@1.5.0
+├── hexo-generator-sitemap@3.0.1
+├── hexo-generator-tag@2.0.0
+├── hexo-hide-posts@0.4.3
+├── hexo-renderer-ejs@2.0.0
+├── hexo-renderer-markdown-it@7.1.1
+├── hexo-renderer-stylus@3.0.1
+├── hexo-server@3.0.0
+├── hexo-tag-mmedia@1.2.1
+├── hexo-theme-landscape@1.1.0
+├── hexo-theme-next@8.27.0
+├── hexo-toc@1.1.0
+├── hexo@8.1.2
+└── markdown-it-mathjax3@5.2.0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="命令合集">命令合集</h1>
+<h2 id="初始化"><a class="header-anchor" href="#初始化">¶</a>初始化</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 安装</span>
+<span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> hexo-cli
+
+<span class="token comment"># 初始化配置</span>
+hexo init new_blog
+<span class="token builtin class-name">cd</span> new_blog
+<span class="token function">npm</span> <span class="token function">install</span>
+
+<span class="token comment"># git init初始化</span>
+<span class="token function">git</span> init
+<span class="token comment"># 并设置 git 信息，以我的名字和邮箱为例</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"xuanyabulema"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"xuanyabulema@qq.com"</span>
+
+<span class="token comment"># 安装 NexT 主题</span>
+<span class="token function">npm</span> <span class="token function">install</span> hexo-theme-next<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.png" alt="悬崖不勒马 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="悬崖不勒马 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>悬崖不勒马
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://xuanyabulema.github.io/posts/Hexo-Blog-Configuration-Update.html" title="博客网站配置更新">https://xuanyabulema.github.io/posts/Hexo-Blog-Configuration-Update.html</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/NexT/" rel="tag"># NexT</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/NAT-and-STUN.html" rel="prev" title="NAT 和 STUN">
+                  <i class="fa fa-angle-left"></i> NAT 和 STUN
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">悬崖不勒马</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+<!-- hexo injector body_end start --><script src="/assets/mmedia/mmedia-loader.js"></script><script src="/js/outdate.js"></script><!-- hexo injector body_end end --></body>
+</html>
